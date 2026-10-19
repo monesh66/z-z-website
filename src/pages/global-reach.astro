@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlobalReach from '../components/GlobalReach.astro';
+import Logistics from '../components/Logistics.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout
+  title={`Global Reach & International Trade Corridors | ${siteConfig.legalName}`}
+  description="Explore the global trade corridors, international port connections, and multi-modal logistics managed by ZIYA ZARA TRADING COMPANY."
+>
+  <!-- Global Reach Banner -->
+  <section class="bg-navy-950 text-white py-20 lg:py-24 border-b border-navy-800 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#FFFFFF_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl space-y-4">
+        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-400">
+          <span class="w-8 h-0.5 bg-emerald-500"></span>
+          <span>International Connectivity</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white leading-tight">
+          Seamless Trade <br />
+          <span class="text-emerald-400 font-editorial-serif italic font-normal">Across Key Corridors.</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed pt-2">
+          Coordinating multi-modal freight routing, port-to-port maritime journeys, and regulatory clearances connecting South Asian, Middle Eastern, European, and American markets.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <GlobalReach />
+
+  <!-- Multi-Mode Logistics Capabilities -->
+  <Logistics />
+
+  <!-- Port Operations & Customs Advisory -->
+  <section class="py-20 bg-white border-b border-subtle">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-bold font-display text-navy-950">
+          Port Operations & Customs Advisory
+        </h2>
+        <p class="text-base text-slate-600">
+          Navigating international maritime documentation, terminal handling, and regulatory clearances with precision.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-lg font-mono">
+            01
+          </div>
+          <h3 class="text-xl font-bold font-display text-navy-950">Port Terminal Handling</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Coordinating container stuffing, drayage to terminal gates, vessel booking slots, and terminal handling charges (THC) with port authorities.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-lg font-mono">
+            02
+          </div>
+          <h3 class="text-xl font-bold font-display text-navy-950">Export Documentation</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Issuing Commercial Invoices, Packing Lists, Bills of Lading (B/L), Certificates of Origin (COO), and Phytosanitary certificates according to buyer requirements.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-lg font-mono">
+            03
+          </div>
+          <h3 class="text-xl font-bold font-display text-navy-950">Customs Clearance</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Ensuring correct Harmonized System (HS) code classification, duty estimations, and fast-track clearance via authorized customs brokers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-navy-950 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 space-y-6">
+      <h2 class="text-3xl font-display font-bold">Inquire About Freight Routing or Sourcing Feasibility</h2>
+      <p class="text-slate-300 text-sm max-w-xl mx-auto">
+        Speak with our logistics officers to discuss maritime routes, transit schedules, and port handling.
+      </p>
+      <div>
+        <a href="/contact" class="trade-btn-primary">
+          <span>Request Trade Consultation</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

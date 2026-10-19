@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout
+  title={`Contact Trade Desk | ${siteConfig.legalName}`}
+  description="Contact ZIYA ZARA TRADING COMPANY for commercial inquiries, product sourcing specifications, and international trade partnerships."
+>
+  <!-- Contact Banner -->
+  <section class="bg-navy-950 text-white py-16 lg:py-20 border-b border-navy-800 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#FFFFFF_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="max-w-3xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-400">
+          <span class="w-8 h-0.5 bg-emerald-500"></span>
+          <span>Commercial Trade Desk</span>
+          <span class="w-8 h-0.5 bg-emerald-500"></span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white leading-tight">
+          Direct Commercial Liaison
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed pt-1">
+          Whether you are an institutional buyer seeking reliable commodity supply or an international producer looking to enter new trade corridors, our trade team is ready to assist.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Contact Section Form -->
+  <ContactSection />
+
+  <!-- Trade Inquiry FAQ -->
+  <section class="py-20 bg-white border-b border-subtle">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-navy-950">
+          Frequently Asked Trade Questions
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Key operational information regarding our trading framework.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <h3 class="text-base font-bold text-navy-950 font-display">How quickly do you respond to trade inquiries?</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            All commercial inquiries submitted with complete product specifications, target volumes, and port of destination are reviewed by our sourcing officers within 24 to 48 business hours.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <h3 class="text-base font-bold text-navy-950 font-display">Can you provide product samples before contract finalization?</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Yes. For agricultural commodities, food grains, and textiles, verified buyer accounts may request pre-shipment sample dispatch via express international air courier, complete with certificate of analysis (CoA).
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <h3 class="text-base font-bold text-navy-950 font-display">What payment terms do you accept for international shipments?</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Standard international trade payment structures include Irrevocable Letter of Credit at Sight (L/C at Sight) issued by prime international banks, or Telegraphic Transfer (T/T) deposit with balance against copy of Bill of Lading (B/L).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 56" fill="none" aria-label="ZIYA ZARA TRADING COMPANY">
+  <!-- Monogram ZZ Mark -->
+  <g transform="translate(6, 6)">
+    <!-- Primary white Z -->
+    <path d="M2 6 H26 L8 36 H32 V44 H2 L20 14 H2 Z" fill="#FFFFFF" />
+    <!-- Overlapping emerald Z -->
+    <path d="M22 2 H46 L28 32 H52 V40 H22 L40 10 H22 Z" fill="#10B981" />
+    <!-- Golden trade node -->
+    <circle cx="44" cy="5" r="3" fill="#E5C583" />
+  </g>
+  <!-- Wordmark -->
+  <text x="68" y="28" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="20" font-weight="700" letter-spacing="3" fill="#FFFFFF">ZIYA ZARA</text>
+  <text x="69" y="44" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="8.5" font-weight="600" letter-spacing="4.5" fill="#34D399">TRADING COMPANY</text>
+</svg>

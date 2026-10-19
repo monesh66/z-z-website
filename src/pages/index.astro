@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import AboutSection from '../components/AboutSection.astro';
+import SourcingProcess from '../components/SourcingProcess.astro';
+import ProductGrid from '../components/ProductGrid.astro';
+import GlobalReach from '../components/GlobalReach.astro';
+import Logistics from '../components/Logistics.astro';
+import TrustSection from '../components/TrustSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<BaseLayout
+  title="ZIYA ZARA TRADING COMPANY | International Trade, Import/Export & Global Sourcing"
+  description="ZIYA ZARA TRADING COMPANY connects global markets with premium agricultural commodities, textiles, industrial supplies, and multi-modal logistics with integrity and precision."
+>
+  <!-- Signature Hero Experience -->
+  <Hero />
+
+  <!-- Distinctive Company Introduction -->
+  <AboutSection />
+
+  <!-- 4-Stage Sourcing Storytelling -->
+  <SourcingProcess />
+
+  <!-- Products & Sourcing Discovery -->
+  <ProductGrid limit={6} showAllLink={true} />
+
+  <!-- Signature Interactive Global Reach Trade Map -->
+  <GlobalReach />
+
+  <!-- Multi-Mode Logistics Capabilities -->
+  <Logistics />
+
+  <!-- Trust, Governance & Operational Discipline -->
+  <TrustSection />
+
+  <!-- High-Conversion Contact Experience -->
+  <ContactSection />
+</BaseLayout>

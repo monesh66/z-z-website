@@ -1,0 +1,170 @@
+---
+import { siteConfig } from '../data/site';
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string) {
+  if (href === '/') {
+    return currentPath === '/' || currentPath === '';
+  }
+  return currentPath.startsWith(href);
+}
+---
+
+<header id="site-header" class="sticky top-0 z-40 w-full transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-subtle">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Identity / Logo -->
+      <a href="/" class="flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg p-1" aria-label="ZIYA ZARA TRADING COMPANY Home">
+        <div class="flex items-center">
+          <img 
+            src="/images/logo/logo-light.svg" 
+            alt="ZIYA ZARA TRADING COMPANY Logo" 
+            width="230" 
+            height="46"
+            class="h-10 sm:h-11 w-auto object-contain"
+            loading="eager"
+          />
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Primary Navigation">
+        {siteConfig.nav.map((item) => {
+          const active = isActive(item.href);
+          return (
+            <a
+              href={item.href}
+              class={`px-3.5 py-2 text-sm font-medium rounded-full transition-colors relative ${
+                active
+                  ? "text-emerald-700 font-semibold"
+                  : "text-slate-700 hover:text-emerald-600 hover:bg-slate-50"
+              }`}
+              aria-current={active ? "page" : undefined}
+            >
+              {item.name}
+              {active && (
+                <span class="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-emerald-600 rounded-full" />
+              )}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Desktop CTA Action -->
+      <div class="hidden md:flex items-center gap-3">
+        <a
+          href="/contact"
+          class="trade-btn-primary group"
+          id="nav-send-inquiry-btn"
+        >
+          <span>Send an Inquiry</span>
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex md:hidden items-center">
+        <button
+          type="button"
+          id="mobile-menu-toggle"
+          class="p-2 rounded-lg text-slate-700 hover:text-emerald-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          aria-expanded="false"
+          aria-controls="mobile-menu-drawer"
+          aria-label="Toggle navigation menu"
+        >
+          <!-- Hamburger Icon -->
+          <svg id="menu-icon-open" class="w-6 h-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close Icon -->
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div
+    id="mobile-menu-drawer"
+    class="hidden md:hidden border-b border-slate-200 bg-white/98 backdrop-blur-xl px-4 pt-3 pb-6 transition-all duration-300"
+    aria-label="Mobile Navigation"
+  >
+    <div class="flex flex-col space-y-1">
+      {siteConfig.nav.map((item) => {
+        const active = isActive(item.href);
+        return (
+          <a
+            href={item.href}
+            class={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+              active
+                ? "bg-emerald-50 text-emerald-700 font-semibold"
+                : "text-slate-700 hover:bg-slate-50 hover:text-emerald-600"
+            }`}
+            aria-current={active ? "page" : undefined}
+          >
+            {item.name}
+          </a>
+        );
+      })}
+      <div class="pt-4 border-t border-slate-100">
+        <a
+          href="/contact"
+          class="trade-btn-primary w-full justify-center"
+        >
+          <span>Send an Inquiry</span>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile Menu Interaction
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const drawer = document.getElementById('mobile-menu-drawer');
+  const openIcon = document.getElementById('menu-icon-open');
+  const closeIcon = document.getElementById('menu-icon-close');
+
+  if (toggleBtn && drawer && openIcon && closeIcon) {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+      drawer.classList.toggle('hidden');
+      openIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !drawer.classList.contains('hidden')) {
+        drawer.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.focus();
+      }
+    });
+  }
+
+  // Header Elevation on Scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header?.classList.add('shadow-sm', 'bg-white/98');
+    } else {
+      header?.classList.remove('shadow-sm');
+    }
+  }, { passive: true });
+</script>

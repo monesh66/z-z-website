@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { productCategories } from '../data/products';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout
+  title={`Product Categories & Trade Portfolio | ${siteConfig.legalName}`}
+  description="Explore the trade portfolio of ZIYA ZARA TRADING COMPANY: Agricultural commodities, food and grains, textiles, industrial supplies, consumer goods, and custom sourcing."
+>
+  <!-- Products Header Banner -->
+  <section class="bg-navy-950 text-white py-20 lg:py-24 border-b border-navy-800 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#FFFFFF_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl space-y-4">
+        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-400">
+          <span class="w-8 h-0.5 bg-emerald-500"></span>
+          <span>Global Trade Portfolio</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white leading-tight">
+          Diverse Products for <br />
+          <span class="text-emerald-400 font-editorial-serif italic font-normal">Global Commercial Demand.</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed pt-2">
+          From certified primary agricultural commodities to precision-engineered industrial components, we supply commercial buyers worldwide with strict adherence to contracted specifications.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Categories List -->
+  <section class="py-20 lg:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      
+      {productCategories.map((category, index) => {
+        const isReversed = index % 2 === 1;
+        return (
+          <div
+            id={category.slug}
+            class={`bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch ${
+              isReversed ? 'lg:flex-row-reverse' : ''
+            }`}
+          >
+            <!-- Image Column -->
+            <div class={`lg:col-span-6 relative min-h-[320px] lg:min-h-full ${isReversed ? 'lg:order-2' : ''}`}>
+              <img
+                src={category.image}
+                alt={category.title}
+                width="800"
+                height="600"
+                class="w-full h-full object-cover min-h-[340px]"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-60"></div>
+              
+              <!-- Floating Category Tag -->
+              <div class="absolute top-6 left-6 bg-navy-950/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 text-white text-xs font-mono uppercase tracking-wider">
+                Category 0{index + 1}
+              </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class={`lg:col-span-6 p-8 sm:p-10 lg:p-12 flex flex-col justify-between space-y-8 ${isReversed ? 'lg:order-1' : ''}`}>
+              
+              <div class="space-y-4">
+                <h2 class="text-2xl sm:text-3xl font-bold font-display text-navy-950">
+                  {category.title}
+                </h2>
+                
+                <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                  {category.longDescription}
+                </p>
+
+                <!-- Typical Products List -->
+                <div class="pt-4 border-t border-slate-100 space-y-3">
+                  <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold">Typical Portfolio Items:</div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {category.items.map((item) => (
+                      <div class="flex items-center gap-2 text-xs text-slate-700">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0"></span>
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <!-- Specifications & Compliance Box -->
+                <div class="pt-4 border-t border-slate-100 bg-slate-50 rounded-xl p-4 space-y-2">
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-emerald-800 font-bold">Standard Benchmarks & Assays:</div>
+                  <div class="flex flex-wrap gap-1.5">
+                    {category.keySpecs.map((spec) => (
+                      <span class="inline-block bg-white border border-slate-200 text-slate-700 text-[11px] px-2.5 py-1 rounded-md">
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA Row -->
+              <div class="pt-2 flex flex-wrap items-center gap-4">
+                <a
+                  href={`/contact?interest=${encodeURIComponent(category.title)}`}
+                  class="trade-btn-primary"
+                >
+                  <span>Inquire for {category.title.split('&')[0].trim()}</span>
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        );
+      })}
+
+    </div>
+  </section>
+</BaseLayout>

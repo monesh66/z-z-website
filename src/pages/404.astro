@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout
+  title={`Page Not Found | ${siteConfig.legalName}`}
+  description="The requested page could not be located on ZIYA ZARA TRADING COMPANY."
+>
+  <section class="min-h-[70vh] flex items-center justify-center bg-navy-950 text-white py-20 px-4 relative overflow-hidden">
+    <div class="max-w-xl mx-auto text-center space-y-6 relative z-10">
+      
+      <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-emerald-400 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full">
+        <span>Error 404</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-bold font-display tracking-tight text-white">
+        Cargo Not Located.
+      </h1>
+
+      <p class="text-base text-slate-300 font-normal leading-relaxed">
+        The international trade route or page you were seeking does not exist or may have been relocated.
+      </p>
+
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+        <a href="/" class="trade-btn-primary">
+          <span>Return to Homepage</span>
+        </a>
+        <a href="/products" class="trade-btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-navy-950">
+          <span>Explore Products</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
