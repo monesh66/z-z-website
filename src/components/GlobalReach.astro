@@ -1,232 +1,175 @@
 ---
 ---
 
-<section id="global-reach" class="py-20 lg:py-28 bg-white border-b border-subtle relative overflow-hidden">
+<section id="global-reach" class="py-16 lg:py-20 bg-[#F2F6FA] border-b border-slate-200/60 overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Top Introduction Row -->
-    <div class="max-w-3xl mb-12 space-y-3">
-      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-700">
-        <span class="w-8 h-0.5 bg-emerald-600"></span>
-        <span>Global Reach</span>
-      </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy-950 tracking-tight">
-        Importing & Exporting <br />
-        <span class="text-emerald-700 font-editorial-serif italic font-normal">Across Continents.</span>
-      </h2>
-      <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed pt-1">
-        We bridge international trade hubs, coordinating reliable import and export operations that link strategic producer zones with key global consuming markets.
-      </p>
-    </div>
-
-    <!-- Main Grid: SVG Map Visualization on Left, Capability Pillars on Right -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
       
-      <!-- Left/Center: Interactive SVG World Trade Map Visualization -->
-      <div class="lg:col-span-8 bg-navy-950 rounded-2xl p-6 sm:p-8 border border-navy-800 shadow-2xl relative overflow-hidden">
+      <!-- Left Column: Headline & Description (col-span-4) -->
+      <div class="lg:col-span-4 space-y-4">
         
-        <!-- Header Info in Visualization -->
-        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4 text-xs">
-          <div class="flex items-center gap-2 text-slate-300">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="font-mono uppercase tracking-wider text-emerald-400 font-bold">Strategic Trade Corridors</span>
-          </div>
-          <div class="font-mono text-slate-400 text-[11px] hidden sm:block">
-            Cross-Border Logistics Network
-          </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Global Reach</span>
+          <span class="w-8 h-[2px] bg-[#138848]"></span>
         </div>
 
-        <!-- SVG Map Composition -->
-        <div class="relative w-full aspect-[16/9] sm:aspect-[2/1] flex items-center justify-center">
-          <svg
-            viewBox="0 0 1000 500"
-            class="w-full h-full select-none"
-            aria-label="Interactive world map showing global trade corridors and maritime routes"
-          >
-            <defs>
-              <!-- Route Gradient -->
-              <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#10B981" stop-opacity="0.9" />
-                <stop offset="100%" stop-color="#D6B879" stop-opacity="0.9" />
-              </linearGradient>
+        <h2 class="text-3xl sm:text-4xl font-bold font-editorial-serif text-[#0B1F36] leading-tight tracking-tight">
+          Importing & Exporting<br />
+          <span class="text-[#138848]">Across Continents</span>
+        </h2>
 
-              <!-- Glow Filter -->
-              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="3" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+          We work with a wide network of suppliers and buyers across the globe, enabling seamless import and export operations to key international markets.
+        </p>
 
-            <!-- Abstract World Continents (Geometric/Dotted Silhouette) -->
-            <g fill="#162E4A" opacity="0.6">
-              <!-- North America -->
-              <path d="M120 100 Q 180 80, 260 110 Q 240 180, 200 230 Q 150 210, 110 160 Z" />
-              <path d="M180 230 Q 220 250, 230 300 Q 200 320, 170 280 Z" />
-              
-              <!-- South America -->
-              <path d="M260 300 Q 340 320, 310 420 Q 270 480, 240 430 Q 230 350, 260 300 Z" />
-              
-              <!-- Europe & UK -->
-              <path d="M470 110 Q 550 90, 560 160 Q 520 200, 470 170 Q 450 140, 470 110 Z" />
-              <path d="M430 110 Q 460 100, 450 140 Q 420 130, 430 110 Z" />
-
-              <!-- Africa -->
-              <path d="M480 200 Q 590 190, 580 300 Q 540 410, 490 380 Q 440 300, 460 220 Z" />
-
-              <!-- Asia -->
-              <path d="M570 100 Q 750 80, 850 150 Q 820 250, 700 250 Q 600 220, 570 100 Z" />
-              
-              <!-- India & South Asia Hub -->
-              <path d="M640 200 Q 720 210, 690 300 Q 640 310, 620 240 Z" fill="#1C3F66" opacity="0.9" />
-
-              <!-- Southeast Asia & Oceania -->
-              <path d="M750 270 Q 820 280, 810 330 Q 750 350, 740 300 Z" />
-              <path d="M780 370 Q 890 360, 880 450 Q 810 470, 770 420 Z" />
-            </g>
-
-            <!-- Trade Route Arcs (Connecting Major Global Port Regions) -->
-            <!-- Route 1: South Asia to Middle East / Europe -->
-            <path
-              d="M 660 260 Q 560 200, 490 150"
-              fill="none"
-              stroke="url(#routeGrad)"
-              stroke-width="2.5"
-              stroke-dasharray="6,6"
-              class="animate-dash-flow"
-            />
-            
-            <!-- Route 2: South Asia to East Asia / Pacific -->
-            <path
-              d="M 670 260 Q 740 220, 820 180"
-              fill="none"
-              stroke="url(#routeGrad)"
-              stroke-width="2.5"
-              stroke-dasharray="6,6"
-              class="animate-dash-flow"
-            />
-
-            <!-- Route 3: South Asia to East Africa / Southern Corridors -->
-            <path
-              d="M 660 265 Q 580 310, 530 350"
-              fill="none"
-              stroke="url(#routeGrad)"
-              stroke-width="2"
-              stroke-dasharray="6,6"
-              class="animate-dash-flow"
-            />
-
-            <!-- Route 4: Europe to Americas Transatlantic -->
-            <path
-              d="M 480 140 Q 340 120, 230 150"
-              fill="none"
-              stroke="#10B981"
-              stroke-opacity="0.6"
-              stroke-width="2"
-              stroke-dasharray="6,6"
-              class="animate-dash-flow"
-            />
-
-            <!-- Key Trade Hub Nodes -->
-            <!-- South Asia Hub (Primary) -->
-            <g transform="translate(660, 260)" class="cursor-pointer">
-              <circle r="16" fill="#10B981" opacity="0.2" class="animate-pulse-node" />
-              <circle r="7" fill="#10B981" filter="url(#glow)" />
-              <circle r="3" fill="#FFFFFF" />
-              <text x="12" y="4" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">South Asia Hub</text>
-            </g>
-
-            <!-- Middle East Hub -->
-            <g transform="translate(560, 210)" class="cursor-pointer">
-              <circle r="5" fill="#D6B879" filter="url(#glow)" />
-              <circle r="2" fill="#FFFFFF" />
-              <text x="9" y="3" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#E5C583">Middle East Gateway</text>
-            </g>
-
-            <!-- European Hub -->
-            <g transform="translate(485, 145)" class="cursor-pointer">
-              <circle r="5" fill="#10B981" filter="url(#glow)" />
-              <circle r="2" fill="#FFFFFF" />
-              <text x="-95" y="3" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">European Corridors</text>
-            </g>
-
-            <!-- East Asia Hub -->
-            <g transform="translate(820, 180)" class="cursor-pointer">
-              <circle r="5" fill="#10B981" filter="url(#glow)" />
-              <circle r="2" fill="#FFFFFF" />
-              <text x="10" y="3" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">East Asia Ports</text>
-            </g>
-
-            <!-- Americas Port Gateway -->
-            <g transform="translate(230, 160)" class="cursor-pointer">
-              <circle r="5" fill="#D6B879" filter="url(#glow)" />
-              <circle r="2" fill="#FFFFFF" />
-              <text x="10" y="3" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">Americas Trade</text>
-            </g>
-          </svg>
-        </div>
-
-        <!-- Explanatory Footer inside map card -->
-        <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between text-[11px] text-slate-400 font-mono">
-          <div>* Illustrative trade corridors and multimodal freight connections.</div>
-          <div class="text-emerald-400 font-semibold">Continuous Port Coordination</div>
-        </div>
-
-      </div>
-
-      <!-- Right Column: Capability Pillars -->
-      <div class="lg:col-span-4 space-y-5">
-        
-        <!-- Pillar 1: Import Markets -->
-        <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 hover:border-emerald-600 transition-colors shadow-sm group">
-          <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 text-emerald-700 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors shadow-xs">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold font-display text-navy-950">Import Markets</h3>
-          <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-            Sourcing high-demand raw materials, agricultural commodities, and industrial components from accredited international producers.
-          </p>
-        </div>
-
-        <!-- Pillar 2: Export Markets -->
-        <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 hover:border-emerald-600 transition-colors shadow-sm group">
-          <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 text-emerald-700 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors shadow-xs">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold font-display text-navy-950">Export Markets</h3>
-          <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-            Supplying graded products, grains, textiles, and specialty items to international commercial destinations with strict customs compliance.
-          </p>
-        </div>
-
-        <!-- Pillar 3: Logistics Network -->
-        <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 hover:border-emerald-600 transition-colors shadow-sm group">
-          <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 text-emerald-700 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors shadow-xs">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold font-display text-navy-950">Logistics Network</h3>
-          <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-            Integrated maritime freight, air express routing, and inland haulage synchronized for predictable port turnaround.
-          </p>
-        </div>
-
-        <!-- Action Link -->
         <div class="pt-2">
           <a
             href="/global-reach"
-            class="trade-btn-primary w-full justify-center group"
+            class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#138848] hover:bg-[#0f6f3b] transition-all duration-200 shadow-sm group"
           >
-            <span>Explore Trade Capabilities</span>
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <span>Our Global Reach</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
+        </div>
+
+      </div>
+
+      <!-- Center Column: World Map Illustration (col-span-5) -->
+      <div class="lg:col-span-5 flex items-center justify-center">
+        <div class="relative w-full aspect-[16/10] max-w-lg">
+          <svg viewBox="0 0 800 450" class="w-full h-full select-none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#138848" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#0B1F36" stop-opacity="0.8" />
+              </linearGradient>
+            </defs>
+
+            <!-- Light Cyan/Blue Silhouette Map of Continents -->
+            <g fill="#CBDDEB" opacity="0.85">
+              <!-- North America -->
+              <path d="M90 70 Q 150 50, 220 80 Q 200 150, 160 190 Q 120 170, 80 120 Z" />
+              <path d="M140 190 Q 180 210, 190 250 Q 160 270, 130 230 Z" />
+              <!-- South America -->
+              <path d="M210 250 Q 280 270, 260 360 Q 220 410, 190 370 Q 180 300, 210 250 Z" />
+              <!-- Europe -->
+              <path d="M380 80 Q 460 60, 470 130 Q 430 160, 380 140 Q 360 110, 380 80 Z" />
+              <!-- Africa -->
+              <path d="M390 160 Q 490 150, 480 250 Q 440 350, 400 320 Q 350 250, 370 180 Z" />
+              <!-- Asia -->
+              <path d="M470 70 Q 640 50, 720 120 Q 690 220, 580 210 Q 500 180, 470 70 Z" />
+              <!-- India Subcontinent (Accented) -->
+              <path d="M530 160 Q 600 170, 570 250 Q 530 260, 510 200 Z" fill="#A8C8E2" />
+              <!-- Australia / Oceania -->
+              <path d="M640 310 Q 740 300, 730 380 Q 670 400, 630 360 Z" />
+            </g>
+
+            <!-- Curved Dashed Trade Routes connecting Hubs -->
+            <path d="M 545 210 Q 460 160, 400 120" stroke="#138848" stroke-width="2" stroke-dasharray="4,4" />
+            <path d="M 550 210 Q 630 170, 690 130" stroke="#138848" stroke-width="2" stroke-dasharray="4,4" />
+            <path d="M 540 215 Q 470 260, 420 300" stroke="#138848" stroke-width="2" stroke-dasharray="4,4" />
+            <path d="M 395 120 Q 280 100, 180 130" stroke="#138848" stroke-width="1.8" stroke-dasharray="4,4" />
+            <path d="M 550 215 Q 610 270, 670 330" stroke="#138848" stroke-width="1.8" stroke-dasharray="4,4" />
+
+            <!-- Trade Location Pins -->
+            <!-- South Asia Hub (Large Pin) -->
+            <g transform="translate(545, 210)">
+              <circle r="7" fill="#138848" />
+              <circle r="3" fill="#FFFFFF" />
+            </g>
+
+            <!-- Middle East Pin -->
+            <g transform="translate(470, 170)">
+              <circle r="5" fill="#0B1F36" />
+              <circle r="2" fill="#FFFFFF" />
+            </g>
+
+            <!-- Europe Pin -->
+            <g transform="translate(400, 120)">
+              <circle r="5" fill="#0B1F36" />
+              <circle r="2" fill="#FFFFFF" />
+            </g>
+
+            <!-- East Asia Pin -->
+            <g transform="translate(680, 140)">
+              <circle r="5" fill="#138848" />
+              <circle r="2" fill="#FFFFFF" />
+            </g>
+
+            <!-- North America Pin -->
+            <g transform="translate(180, 130)">
+              <circle r="5" fill="#0B1F36" />
+              <circle r="2" fill="#FFFFFF" />
+            </g>
+
+            <!-- South America Pin -->
+            <g transform="translate(240, 310)">
+              <circle r="4.5" fill="#0B1F36" />
+              <circle r="2" fill="#FFFFFF" />
+            </g>
+
+            <!-- Africa Pin -->
+            <g transform="translate(430, 260)">
+              <circle r="4.5" fill="#138848" />
+              <circle r="2" fill="#FFFFFF" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Right Column: 3 Strategic Pillars (col-span-3) -->
+      <div class="lg:col-span-3 space-y-6">
+        
+        <!-- 1. Import Markets -->
+        <div class="flex items-start gap-3.5">
+          <div class="w-10 h-10 rounded-lg bg-white shadow-xs border border-slate-200 flex items-center justify-center text-slate-800 flex-shrink-0">
+            <svg class="w-5 h-5 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-[#0B1F36]">Import Markets</h3>
+            <p class="text-xs text-slate-500 mt-0.5 leading-normal">
+              Sourcing quality products from global markets.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. Export Markets -->
+        <div class="flex items-start gap-3.5">
+          <div class="w-10 h-10 rounded-lg bg-white shadow-xs border border-slate-200 flex items-center justify-center text-slate-800 flex-shrink-0">
+            <svg class="w-5 h-5 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-[#0B1F36]">Export Markets</h3>
+            <p class="text-xs text-slate-500 mt-0.5 leading-normal">
+              Supplying products to international destinations.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. Logistics Network -->
+        <div class="flex items-start gap-3.5">
+          <div class="w-10 h-10 rounded-lg bg-white shadow-xs border border-slate-200 flex items-center justify-center text-slate-800 flex-shrink-0">
+            <svg class="w-5 h-5 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-[#0B1F36]">Logistics Network</h3>
+            <p class="text-xs text-slate-500 mt-0.5 leading-normal">
+              Integrated air, sea and road transport solutions.
+            </p>
+          </div>
         </div>
 
       </div>
