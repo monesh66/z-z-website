@@ -163,7 +163,7 @@ export const siteConfig: SiteConfig = {
       location: "India",
       quote: "Ziya Zara has been a reliable partner for our sourcing needs. Their professionalism and timely delivery have been impressive.",
       rating: 5,
-      avatar: "/images/testimonials/avatar_ramesh.png",
+      avatar: "/images/testimonials/avatar_ramesh_hd.jpg",
     },
     {
       id: "fatima-al-nasser",
@@ -172,7 +172,7 @@ export const siteConfig: SiteConfig = {
       location: "UAE",
       quote: "Excellent quality products and smooth communication. We highly recommend Ziya Zara for international trade.",
       rating: 5,
-      avatar: "/images/testimonials/avatar_fatima.png",
+      avatar: "/images/testimonials/avatar_fatima_hd.jpg",
     },
     {
       id: "michael-thompson",
@@ -181,7 +181,7 @@ export const siteConfig: SiteConfig = {
       location: "UK",
       quote: "A trusted partner with deep market knowledge and a customer-centric approach. Great experience working with their team.",
       rating: 5,
-      avatar: "/images/testimonials/avatar_michael.png",
+      avatar: "/images/testimonials/avatar_michael_hd.jpg",
     },
   ],
 
@@ -191,7 +191,7 @@ export const siteConfig: SiteConfig = {
       name: "Founder 01",
       role: "Co-Founder",
       bio: "Driving strategic growth and global partnerships.",
-      image: "/images/founders/founder_1.png",
+      image: "/images/founders/founder_1_hd.jpg",
       linkedin: "#",
     },
     {
@@ -199,7 +199,7 @@ export const siteConfig: SiteConfig = {
       name: "Founder 02",
       role: "Co-Founder",
       bio: "Focused on operations and customer success.",
-      image: "/images/founders/founder_2.png",
+      image: "/images/founders/founder_2_hd.jpg",
       linkedin: "#",
     },
   ],

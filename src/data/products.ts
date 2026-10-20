@@ -1,6 +1,6 @@
 /**
  * ZIYA ZARA TRADING COMPANY
- * Product Categories Data matching reference design
+ * Product Categories Data matching reference design exactly
  */
 
 export interface ProductCategory {

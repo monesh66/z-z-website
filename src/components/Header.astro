@@ -4,9 +4,9 @@ import { siteConfig } from '../data/site';
 const currentPath = Astro.url.pathname;
 ---
 
-<header id="site-header" class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs">
+<header id="site-header" class="sticky top-0 z-50 w-full bg-white/98 backdrop-blur-md border-b border-slate-100 shadow-xs">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-16 sm:h-[68px]">
       
       <!-- Brand Logo -->
       <a href="/" class="flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-emerald-600 rounded-md" aria-label="ZIYA ZARA TRADING COMPANY Home">
@@ -15,20 +15,22 @@ const currentPath = Astro.url.pathname;
           alt="ZIYA ZARA TRADING COMPANY Logo" 
           width="210" 
           height="44"
-          class="h-9 sm:h-10 w-auto object-contain"
+          class="h-8 sm:h-9 w-auto object-contain"
           loading="eager"
         />
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-1.5 lg:gap-5" aria-label="Primary Navigation">
-        {siteConfig.nav.map((item, index) => {
+      <nav class="hidden md:flex items-center gap-2 lg:gap-6" aria-label="Primary Navigation">
+        {siteConfig.nav.map((item) => {
           const isHome = item.name === 'Home';
           return (
             <a
               href={item.href}
-              class={`text-sm font-medium transition-colors hover:text-[#138848] px-1 py-1 ${
-                isHome ? "text-[#138848] font-semibold" : "text-slate-700"
+              class={`text-xs sm:text-[13px] font-medium transition-all px-1 py-1 ${
+                isHome
+                  ? "text-[#138848] font-semibold border-b-2 border-[#138848]"
+                  : "text-slate-700 hover:text-[#138848]"
               }`}
             >
               {item.name}
@@ -41,7 +43,7 @@ const currentPath = Astro.url.pathname;
       <div class="hidden md:flex items-center">
         <a
           href="/#contact"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#138848] hover:bg-[#0f6f3b] transition-all duration-200 shadow-sm hover:shadow group"
+          class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-[13px] font-semibold text-white bg-[#138848] hover:bg-[#0f6f3b] transition-all duration-200 shadow-xs hover:shadow-sm group"
         >
           <span>Send an Inquiry</span>
           <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">

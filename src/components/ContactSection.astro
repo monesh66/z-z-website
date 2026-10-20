@@ -3,39 +3,47 @@ import { siteConfig } from '../data/site';
 import { productCategories } from '../data/products';
 ---
 
-<section id="contact" class="py-16 lg:py-20 bg-[#0B1F36] text-white relative overflow-hidden">
-  <!-- Subtle Industrial Harbor Silhouette Background Overlay -->
-  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#FFFFFF_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+<section id="contact" class="py-12 lg:py-14 bg-[#08182B] text-white relative overflow-hidden">
+  <!-- Left Twilight Port Atmosphere (Zero Text Ghosting, 8K Ultra-HD) -->
+  <div class="absolute inset-y-0 left-0 w-full lg:w-8/12 opacity-30 pointer-events-none mix-blend-screen">
+    <img
+      src="/images/contact/harbor_hd.jpg"
+      alt="Harbor cranes at dusk"
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+  <div class="absolute inset-y-0 left-0 w-full lg:w-8/12 bg-gradient-to-r from-transparent via-[#08182B]/60 to-[#08182B] pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
       
       <!-- Left Column: Executive Trade Invitation & Contact Details (col-span-5) -->
-      <div class="lg:col-span-5 space-y-6">
+      <div class="lg:col-span-5 space-y-5">
         
-        <div class="space-y-3">
+        <div class="space-y-2">
           <div class="flex items-center gap-2">
             <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Get in Touch</span>
             <span class="w-8 h-[2px] bg-[#138848]"></span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-bold font-editorial-serif text-white tracking-tight leading-tight">
+          <h2 class="text-3xl sm:text-4xl font-bold font-editorial-serif text-white tracking-tight leading-tight">
             Let's Create<br />
             Global Opportunities
           </h2>
 
-          <p class="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed pt-1 max-w-md">
+          <p class="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed pt-1 max-w-sm">
             We are always open to new opportunities, partnerships and inquiries. Reach out to us and our team will get back to you shortly.
           </p>
         </div>
 
-        <!-- Verified Contact Details List with Icons -->
-        <div class="space-y-4 pt-2">
+        <!-- Contact Channels with Round Outline Icons -->
+        <div class="space-y-3.5 pt-1">
           
           <!-- Email -->
-          <div class="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0 text-slate-300">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <div class="flex items-center gap-3 text-xs text-slate-200">
+            <div class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center flex-shrink-0 text-slate-300">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
@@ -45,9 +53,9 @@ import { productCategories } from '../data/products';
           </div>
 
           <!-- Phone -->
-          <div class="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0 text-slate-300">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <div class="flex items-center gap-3 text-xs text-slate-200">
+            <div class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center flex-shrink-0 text-slate-300">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
             </div>
@@ -55,9 +63,9 @@ import { productCategories } from '../data/products';
           </div>
 
           <!-- Location -->
-          <div class="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0 text-slate-300">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <div class="flex items-center gap-3 text-xs text-slate-200">
+            <div class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center flex-shrink-0 text-slate-300">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
@@ -70,10 +78,10 @@ import { productCategories } from '../data/products';
       </div>
 
       <!-- Right Column: White Card Form (col-span-7) -->
-      <div class="lg:col-span-7 bg-white text-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
+      <div class="lg:col-span-7 bg-white text-slate-800 rounded-2xl p-6 sm:p-7 shadow-2xl">
         
-        <div class="mb-6 space-y-1">
-          <h3 class="text-xl sm:text-2xl font-bold font-editorial-serif text-[#0B1F36]">
+        <div class="mb-5 space-y-0.5">
+          <h3 class="text-xl font-bold font-editorial-serif text-[#0B1F36]">
             Send an Inquiry
           </h3>
           <p class="text-xs text-slate-500">
@@ -81,7 +89,7 @@ import { productCategories } from '../data/products';
           </p>
         </div>
 
-        <form id="trade-inquiry-form" class="space-y-4" novalidate>
+        <form id="trade-inquiry-form" class="space-y-3.5" novalidate>
           
           <!-- Row 1: Name, Email, Company -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -129,7 +137,6 @@ import { productCategories } from '../data/products';
 
           <!-- Row 2: Interested In & Message -->
           <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
-            <!-- Interested In (col-span-5) -->
             <div class="sm:col-span-5 space-y-1">
               <label for="contact-interest" class="block text-[11px] font-semibold text-slate-700">
                 Interested In <span class="text-red-500">*</span>
@@ -149,7 +156,6 @@ import { productCategories } from '../data/products';
               </select>
             </div>
 
-            <!-- Message (col-span-7) -->
             <div class="sm:col-span-7 space-y-1">
               <label for="contact-message" class="block text-[11px] font-semibold text-slate-700">
                 Message <span class="text-red-500">*</span>
@@ -171,11 +177,11 @@ import { productCategories } from '../data/products';
           </div>
 
           <!-- Submit Button -->
-          <div class="pt-2">
+          <div class="pt-1">
             <button
               type="submit"
               id="submit-inquiry-btn"
-              class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-white bg-[#138848] hover:bg-[#0f6f3b] transition-all duration-200 shadow-sm cursor-pointer group"
+              class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#138848] hover:bg-[#0f6f3b] transition-all duration-200 shadow-sm cursor-pointer group"
             >
               <span>Submit Inquiry</span>
               <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -187,36 +193,6 @@ import { productCategories } from '../data/products';
 
         </form>
 
-        <!-- Dynamic Success & Fallback Modal -->
-        <div id="inquiry-fallback-modal" class="hidden mt-4 p-4 rounded-xl bg-slate-50 border border-emerald-500 text-left space-y-3">
-          <div class="flex items-center gap-2 text-[#138848]">
-            <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <h4 class="text-xs font-bold">Email Client Opened</h4>
-          </div>
-          <p class="text-[11px] text-slate-600">
-            If your email app did not launch automatically, you can copy the inquiry details below and email them directly to <strong class="text-slate-900">{siteConfig.email}</strong>:
-          </p>
-          <div class="bg-white p-2.5 rounded-lg text-xs font-mono text-slate-700 overflow-x-auto max-h-28 whitespace-pre-wrap border border-slate-200" id="inquiry-text-preview"></div>
-          <div class="flex items-center gap-3">
-            <button
-              type="button"
-              id="copy-inquiry-btn"
-              class="px-3 py-1.5 rounded-md bg-[#138848] text-white text-xs font-medium hover:bg-[#0f6f3b] transition-colors"
-            >
-              <span id="copy-btn-text">Copy Inquiry Details</span>
-            </button>
-            <a
-              id="manual-mailto-link"
-              href={`mailto:${siteConfig.email}`}
-              class="text-xs text-[#138848] underline font-medium"
-            >
-              Open Direct Mailto
-            </a>
-          </div>
-        </div>
-
       </div>
 
     </div>
@@ -226,11 +202,6 @@ import { productCategories } from '../data/products';
 <script>
   const form = document.getElementById('trade-inquiry-form') as HTMLFormElement | null;
   const errorMsg = document.getElementById('form-error-msg');
-  const fallbackModal = document.getElementById('inquiry-fallback-modal');
-  const inquiryTextPreview = document.getElementById('inquiry-text-preview');
-  const copyBtn = document.getElementById('copy-inquiry-btn');
-  const copyBtnText = document.getElementById('copy-btn-text');
-  const manualMailtoLink = document.getElementById('manual-mailto-link') as HTMLAnchorElement | null;
 
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -275,29 +246,7 @@ ${name}`;
 
       const recipientEmail = "your@email.com";
       const mailtoUrl = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      if (fallbackModal && inquiryTextPreview) {
-        inquiryTextPreview.textContent = body;
-        fallbackModal.classList.remove('hidden');
-      }
-
-      if (manualMailtoLink) {
-        manualMailtoLink.href = mailtoUrl;
-      }
-
       window.location.href = mailtoUrl;
-    });
-  }
-
-  if (copyBtn && inquiryTextPreview && copyBtnText) {
-    copyBtn.addEventListener('click', () => {
-      const textToCopy = inquiryTextPreview.textContent || '';
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        copyBtnText.textContent = "Copied!";
-        setTimeout(() => {
-          copyBtnText.textContent = "Copy Inquiry Details";
-        }, 3000);
-      });
     });
   }
 </script>

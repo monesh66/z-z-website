@@ -2,9 +2,9 @@
 import { siteConfig } from '../data/site';
 ---
 
-<section id="logistics" class="py-16 lg:py-20 bg-[#0B1F36] text-white overflow-hidden">
+<section id="logistics" class="py-12 lg:py-14 bg-[#08182B] text-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
       
       <!-- Left Column: Headline & Description (col-span-5) -->
       <div class="lg:col-span-5 space-y-4">
@@ -19,14 +19,14 @@ import { siteConfig } from '../data/site';
           Across the World
         </h2>
 
-        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal max-w-md">
           We ensure efficient and cost-effective delivery through a well-connected network of air, sea and road transport partners, giving you reliable logistics solutions for every shipment.
         </p>
 
-        <div class="pt-2">
+        <div class="pt-1">
           <a
             href="/#contact"
-            class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#138848] hover:bg-[#0f6f3b] transition-all duration-200 shadow-sm group"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#138848] hover:bg-[#0f6f3b] transition-all duration-200 shadow-sm group"
           >
             <span>Our Logistics Solutions</span>
             <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -38,72 +38,72 @@ import { siteConfig } from '../data/site';
 
       </div>
 
-      <!-- Right Column: 3 Photo Cards (col-span-7) -->
-      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <!-- Right Column: 3 Slanted Photo Panels matching reference (col-span-7) -->
+      <div class="lg:col-span-7 flex flex-col sm:flex-row items-stretch gap-2.5 sm:gap-2 h-auto sm:h-52 lg:h-56">
         
         <!-- Air Freight -->
-        <div class="rounded-2xl overflow-hidden bg-slate-900 border border-white/10 group shadow-md flex flex-col justify-between">
-          <div class="relative h-44 overflow-hidden">
+        <div class="relative flex-1 rounded-lg sm:rounded-none overflow-hidden h-44 sm:h-full bg-slate-900 group shadow-md sm:transform sm:-skew-x-6 sm:first:rounded-l-lg border-y sm:border-y-0 sm:border-r border-white/20">
+          <div class="w-full h-full sm:transform sm:skew-x-6 sm:scale-115">
             <img
               src="/images/logistics/air.jpg"
-              alt="Air Freight"
-              width="300"
-              height="200"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              alt="Air Freight logistics cargo aircraft"
+              width="600"
+              height="400"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
-          </div>
-          <div class="p-3.5 bg-[#09182B]">
-            <h3 class="text-xs font-bold text-white uppercase tracking-wider font-display">
-              Air Freight
-            </h3>
-            <p class="text-[11px] text-slate-300 mt-0.5">
-              Fast. Reliable. Global.
-            </p>
+            <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-[#08182B] via-[#08182B]/85 to-transparent">
+              <h3 class="text-xs font-bold text-white uppercase tracking-wider font-display">
+                Air Freight
+              </h3>
+              <p class="text-[10px] sm:text-[11px] text-slate-300 mt-0.5">
+                Fast. Reliable. Global.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Sea Freight -->
-        <div class="rounded-2xl overflow-hidden bg-slate-900 border border-white/10 group shadow-md flex flex-col justify-between">
-          <div class="relative h-44 overflow-hidden">
+        <div class="relative flex-1 rounded-lg sm:rounded-none overflow-hidden h-44 sm:h-full bg-slate-900 group shadow-md sm:transform sm:-skew-x-6 border-y sm:border-y-0 sm:border-r border-white/20">
+          <div class="w-full h-full sm:transform sm:skew-x-6 sm:scale-115">
             <img
               src="/images/logistics/sea.jpg"
-              alt="Sea Freight"
-              width="300"
-              height="200"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              alt="Sea Freight container ship"
+              width="600"
+              height="400"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
-          </div>
-          <div class="p-3.5 bg-[#09182B]">
-            <h3 class="text-xs font-bold text-white uppercase tracking-wider font-display">
-              Sea Freight
-            </h3>
-            <p class="text-[11px] text-slate-300 mt-0.5">
-              Cost-effective, High Capacity.
-            </p>
+            <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-[#08182B] via-[#08182B]/85 to-transparent">
+              <h3 class="text-xs font-bold text-white uppercase tracking-wider font-display">
+                Sea Freight
+              </h3>
+              <p class="text-[10px] sm:text-[11px] text-slate-300 mt-0.5">
+                Cost-effective. High Capacity.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Road Transport -->
-        <div class="rounded-2xl overflow-hidden bg-slate-900 border border-white/10 group shadow-md flex flex-col justify-between">
-          <div class="relative h-44 overflow-hidden">
+        <div class="relative flex-1 rounded-lg sm:rounded-none overflow-hidden h-44 sm:h-full bg-slate-900 group shadow-md sm:transform sm:-skew-x-6 sm:last:rounded-r-lg">
+          <div class="w-full h-full sm:transform sm:skew-x-6 sm:scale-115">
             <img
               src="/images/logistics/road.jpg"
-              alt="Road Transport"
-              width="300"
-              height="200"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              alt="Road Transport cargo truck"
+              width="600"
+              height="400"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
-          </div>
-          <div class="p-3.5 bg-[#09182B]">
-            <h3 class="text-xs font-bold text-white uppercase tracking-wider font-display">
-              Road Transport
-            </h3>
-            <p class="text-[11px] text-slate-300 mt-0.5">
-              Flexible. Door-to-Door.
-            </p>
+            <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-[#08182B] via-[#08182B]/85 to-transparent">
+              <h3 class="text-xs font-bold text-white uppercase tracking-wider font-display">
+                Road Transport
+              </h3>
+              <p class="text-[10px] sm:text-[11px] text-slate-300 mt-0.5">
+                Flexible. Door-to-Door.
+              </p>
+            </div>
           </div>
         </div>
 
