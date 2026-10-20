@@ -65,14 +65,31 @@ import { siteConfig } from '../data/site';
     </div>
   </div>
 
-  <!-- Handwritten Script positioned in the sky on the right -->
-  <div class="absolute top-12 right-6 sm:top-16 sm:right-12 lg:right-20 pointer-events-none select-none z-20">
+  <!-- Realistic Cinematic Cargo Aircraft Flight Animation Layer -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden z-15 hidden sm:block" aria-hidden="true">
+    <div class="cargo-aircraft-flight absolute top-[1.5%] left-[2%] w-[96px] lg:w-[110px] h-auto">
+      <img
+        src="/images/hero/cargo_aircraft.svg"
+        alt=""
+        width="110"
+        height="32"
+        class="w-full h-auto object-contain filter drop-shadow-[0_2px_4px_rgba(11,31,54,0.18)]"
+        loading="eager"
+      />
+    </div>
+  </div>
+
+  <!-- Elegant Script Badge in the sky on the right matching reference style -->
+  <div class="absolute top-10 right-6 sm:top-14 sm:right-12 lg:right-20 pointer-events-none select-none z-20">
     <div class="transform -rotate-6 text-right">
       <span class="block text-[#08182B] text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight drop-shadow-sm" style="font-family: 'Caveat', 'Dancing Script', cursive, serif;">
-        From Anywhere
+        Global
       </span>
-      <span class="block text-[#138848] text-lg sm:text-xl lg:text-2xl font-bold tracking-tight -mt-1 drop-shadow-sm" style="font-family: 'Caveat', 'Dancing Script', cursive, serif;">
-        to Everywhere
+      <span class="block text-[#138848] text-lg sm:text-xl lg:text-2xl font-bold tracking-tight -mt-1 drop-shadow-sm flex items-center justify-end gap-1.5" style="font-family: 'Caveat', 'Dancing Script', cursive, serif;">
+        Reach
+        <svg class="w-7 h-2 text-[#138848] inline-block -mb-0.5" viewBox="0 0 60 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M2 9 C 20 2, 42 2, 58 8" />
+        </svg>
       </span>
     </div>
   </div>
@@ -127,4 +144,62 @@ import { siteConfig } from '../data/site';
   </div>
 
 </section>
+
+<style>
+  /* Cinematic Realistic Cargo Aircraft Flight Animation */
+  .cargo-aircraft-flight {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform-origin: center center;
+    /* Initial state: distant, slight bank */
+    opacity: 0;
+    transform: translate3d(-6vw, -1vh, 0) scale(0.38) rotate(1.5deg);
+    /* Plays once per page load: 16s majestic cinematic approach */
+    animation: cinematicCargoApproach 16s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s 1 normal forwards;
+  }
+
+  @keyframes cinematicCargoApproach {
+    0% {
+      opacity: 0;
+      transform: translate3d(-4vw, 0vh, 0) scale(0.38) rotate(1.8deg);
+    }
+    /* Emerges gracefully from distant atmospheric horizon */
+    8% {
+      opacity: 0.75;
+      transform: translate3d(6vw, 1.2vh, 0) scale(0.42) rotate(2.2deg);
+    }
+    /* Smooth cruising glide across mid-sky, well above text */
+    35% {
+      opacity: 0.90;
+      transform: translate3d(30vw, 5.5vh, 0) scale(0.56) rotate(3.0deg);
+    }
+    /* Sinking smoothly along glide-slope toward horizon */
+    65% {
+      opacity: 0.85;
+      transform: translate3d(58vw, 11.2vh, 0) scale(0.70) rotate(2.6deg);
+    }
+    /* Approaching distant sunset horizon above cranes */
+    85% {
+      opacity: 0.55;
+      transform: translate3d(78vw, 15.8vh, 0) scale(0.78) rotate(2.0deg);
+    }
+    /* Fades gently into distant sunset haze */
+    96% {
+      opacity: 0.15;
+      transform: translate3d(88vw, 18.2vh, 0) scale(0.82) rotate(1.8deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translate3d(94vw, 19.5vh, 0) scale(0.84) rotate(1.5deg);
+    }
+  }
+
+  /* Accessibility: Respect user motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .cargo-aircraft-flight {
+      animation: none !important;
+      display: none !important;
+    }
+  }
+</style>
 
