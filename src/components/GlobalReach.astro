@@ -1,35 +1,235 @@
 ---
+// src/components/GlobalReach.astro
 ---
 
-<section id="global-reach" class="py-12 lg:py-14 bg-[#EDF4F9] border-b border-slate-200/60 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="global-reach" class="py-16 lg:py-24 bg-[#EAF3FB] border-b border-slate-200/70 overflow-hidden relative">
+  <!-- Subtle ambient background grid -->
+  <div class="absolute inset-0 opacity-[0.035] pointer-events-none" style="background-image: radial-gradient(#0B1F3A 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+  <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
-      
-      <!-- Left Column: Headline & Description (col-span-4) -->
-      <div class="lg:col-span-4 space-y-4">
-        
+    <!-- Top Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 lg:mb-10">
+      <div class="space-y-3 max-w-2xl">
         <div class="flex items-center gap-2">
-          <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Global Reach</span>
-          <span class="w-8 h-[2px] bg-[#138848]"></span>
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#2E8B2E] shadow-[0_0_10px_#2E8B2E]"></span>
+          <span class="text-[11px] font-bold uppercase tracking-[0.22em] text-[#2E8B2E] font-mono">Global Trade Matrix</span>
+          <span class="w-8 h-[2px] bg-[#2E8B2E]"></span>
         </div>
 
-        <h2 class="text-3xl sm:text-4xl font-bold font-editorial-serif text-[#0B1F36] leading-tight tracking-tight">
+        <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-bold font-editorial-serif text-[#0B1F3A] leading-[1.1] tracking-tight">
           Importing & Exporting<br />
-          <span class="text-[#138848]">Across Continents</span>
+          <span class="text-[#2E8B2E]">Across Continents</span>
         </h2>
 
-        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+        <p class="text-[14px] sm:text-[15px] text-[#5B6573] leading-relaxed font-normal">
           We work with a wide network of suppliers and buyers across the globe, enabling seamless import and export operations to key international markets.
         </p>
+      </div>
 
-        <div class="pt-1">
-          <a
-            href="/global-reach"
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#138848] hover:bg-[#0f6f3b] transition-all duration-200 shadow-sm group"
+      <!-- Corridor Mode Filter Switcher -->
+      <div class="flex flex-wrap items-center gap-2 self-start md:self-end bg-white/80 p-1.5 rounded-xl border border-slate-200 shadow-xs backdrop-blur-md">
+        <button
+          type="button"
+          class="map-filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer bg-[#0B1F3A] text-white shadow-xs"
+          data-filter="all"
+        >
+          <span>All Corridors</span>
+        </button>
+        <button
+          type="button"
+          class="map-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer text-[#0B1F3A] hover:bg-slate-100"
+          data-filter="air"
+        >
+          <span class="text-[#0284C7] font-bold">✈</span> <span>Air Freight</span>
+        </button>
+        <button
+          type="button"
+          class="map-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer text-[#0B1F3A] hover:bg-slate-100"
+          data-filter="sea"
+        >
+          <span class="text-[#2E8B2E] font-bold">⚓</span> <span>Maritime Lanes</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Grid: 3D Interactive Map Stage & Strategic Pillars -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+      
+      <!-- 3D Interactive Map Canvas Container (8 cols) -->
+      <div class="lg:col-span-8 relative">
+        <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-gradient-to-b from-[#030814] via-[#07152B] to-[#040D1D] rounded-2xl sm:rounded-3xl border border-slate-700/60 shadow-2xl overflow-hidden group select-none">
+          
+          <!-- Atmospheric Radial Lights -->
+          <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-emerald-500/15 blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-sky-500/15 blur-3xl pointer-events-none"></div>
+
+          <!-- Top HUD Overlay -->
+          <div class="absolute top-4 inset-x-4 z-20 flex items-center justify-between pointer-events-none">
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 border border-white/10 backdrop-blur-md text-[10px] font-mono text-emerald-400">
+              <span class="w-2 h-2 rounded-full bg-[#2E8B2E] animate-ping"></span>
+              <span class="tracking-wider">3D ACTIVE TRADE MATRIX // DISPATCH ONLINE</span>
+            </div>
+
+            <div class="hidden sm:flex items-center gap-2 text-[10px] font-mono text-slate-300">
+              <span class="flex items-center gap-1 bg-black/50 border border-white/10 px-2.5 py-1 rounded-full backdrop-blur-md">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#2E8B2E]"></span> 10 GLOBAL HUBS
+              </span>
+            </div>
+          </div>
+
+          <!-- WebGL Three.js 3D Map Viewport -->
+          <div
+            id="map-3d-mount"
+            class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing flex items-center justify-center"
           >
-            <span>Our Global Reach</span>
-            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Canvas is created dynamically by Three.js -->
+          </div>
+
+          <!-- Interactive City Hub 3D Tooltip Card -->
+          <div
+            id="map-3d-tooltip"
+            class="absolute z-30 pointer-events-none opacity-0 transition-opacity duration-150 px-3.5 py-2.5 rounded-xl bg-black/90 text-white border border-emerald-400/50 backdrop-blur-md shadow-2xl text-left -translate-x-1/2 -translate-y-full mb-3 min-w-[210px]"
+          >
+            <div class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-[#2E8B2E] shadow-[0_0_8px_#2E8B2E]"></span>
+              <span id="map-3d-tooltip-city" class="text-xs font-bold text-white tracking-wide">City</span>
+            </div>
+            <div id="map-3d-tooltip-country" class="text-[10px] text-emerald-400 font-mono uppercase mt-0.5">Country</div>
+            <div id="map-3d-tooltip-role" class="text-[11px] text-slate-300 font-sans mt-1 leading-tight border-t border-white/10 pt-1">Role</div>
+          </div>
+
+          <!-- Bottom 3D Controls Bar -->
+          <div class="absolute bottom-4 inset-x-4 z-20 flex items-center justify-between pointer-events-none">
+            <!-- 3D Navigation Hint -->
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 border border-white/10 backdrop-blur-md text-[11px] font-sans text-slate-200 shadow-md">
+              <svg class="w-3.5 h-3.5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+              </svg>
+              <span>Drag to Orbit in 3D &bull; Scroll to Zoom</span>
+            </div>
+
+            <!-- Reset 3D View Button -->
+            <button
+              id="map-3d-reset-btn"
+              type="button"
+              class="pointer-events-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 border border-white/15 backdrop-blur-md text-[10px] font-mono text-slate-200 hover:text-white transition-all cursor-pointer shadow-md"
+            >
+              <svg class="w-3 h-3 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+              </svg>
+              <span>RESET 3D VIEW</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Metric Cards Strip below map -->
+        <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-xs text-center sm:text-left">
+            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono">ACTIVE CORRIDORS</div>
+            <div class="text-base sm:text-lg font-bold font-editorial-serif text-[#0B1F3A] mt-0.5">36 Connected</div>
+          </div>
+          <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-xs text-center sm:text-left">
+            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono">STRATEGIC HUBS</div>
+            <div class="text-base sm:text-lg font-bold font-editorial-serif text-[#2E8B2E] mt-0.5">10 Key Ports</div>
+          </div>
+          <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-xs text-center sm:text-left">
+            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono">CLEARANCE RATE</div>
+            <div class="text-base sm:text-lg font-bold font-editorial-serif text-[#0B1F3A] mt-0.5">99.8% On-Time</div>
+          </div>
+          <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-xs text-center sm:text-left">
+            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono">DISPATCH STATUS</div>
+            <div class="text-base sm:text-lg font-bold font-editorial-serif text-[#2E8B2E] mt-0.5">24/7 Active</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: 3 Strategic Pillars (4 cols) -->
+      <div class="lg:col-span-4 space-y-4">
+        
+        <!-- 1. Import Markets -->
+        <div
+          class="pillar-trigger p-4 sm:p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer group"
+          data-highlight="import"
+        >
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-[#2E8B2E] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-[#2E8B2E]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm sm:text-base font-bold text-[#0B1F3A] group-hover:text-[#2E8B2E] transition-colors">Import Markets</h3>
+                <span class="text-[9px] font-mono font-semibold text-[#2E8B2E] bg-emerald-50 px-2 py-0.5 rounded-full">INBOUND</span>
+              </div>
+              <p class="text-[12px] sm:text-[13px] text-[#5B6573] mt-1.5 leading-relaxed">
+                Sourcing quality products and raw materials from verified international suppliers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Export Markets -->
+        <div
+          class="pillar-trigger p-4 sm:p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer group"
+          data-highlight="export"
+        >
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#0B1F3A] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-[#0B1F3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2 17l2 3h16l2-3-4-1H6l-4 1zM6 16V9a1 1 0 011-1h10a1 1 0 011 1v7M9 8V5a1 1 0 011-1h4a1 1 0 011 1v3" />
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm sm:text-base font-bold text-[#0B1F3A] group-hover:text-[#2E8B2E] transition-colors">Export Markets</h3>
+                <span class="text-[9px] font-mono font-semibold text-[#0B1F3A] bg-blue-50 px-2 py-0.5 rounded-full">OUTBOUND</span>
+              </div>
+              <p class="text-[12px] sm:text-[13px] text-[#5B6573] mt-1.5 leading-relaxed">
+                Supplying products to international destinations with seamless logistics coordination.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Logistics Network -->
+        <div
+          class="pillar-trigger p-4 sm:p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer group"
+          data-highlight="logistics"
+        >
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm sm:text-base font-bold text-[#0B1F3A] group-hover:text-[#2E8B2E] transition-colors">Logistics Network</h3>
+                <span class="text-[9px] font-mono font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">MULTIMODAL</span>
+              </div>
+              <p class="text-[12px] sm:text-[13px] text-[#5B6573] mt-1.5 leading-relaxed">
+                Integrated air, sea and road transport solutions connecting major global trade lanes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Link -->
+        <div class="pt-2">
+          <a
+            href="/#contact"
+            class="w-full inline-flex items-center justify-center gap-2 px-6 h-[46px] rounded-xl text-sm font-semibold text-white bg-[#2E8B2E] hover:bg-[#257325] transition-all duration-200 shadow-sm hover:shadow-md group cursor-pointer"
+          >
+            <span>Inquire About Freight Routing</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
@@ -38,77 +238,501 @@
 
       </div>
 
-      <!-- Center Column: Ultra-Sharp Dot-Matrix World Map from Mockup (col-span-5) -->
-      <div class="lg:col-span-5 flex items-center justify-center">
-        <div class="relative w-full max-w-xl group">
-          <img
-            src="/images/reach/map_hd_transparent.png"
-            alt="World trade routes map"
-            width="1376"
-            height="768"
-            class="w-full h-auto object-contain filter drop-shadow-xs transition-transform duration-700 ease-out group-hover:scale-102"
-            loading="lazy"
-          />
-        </div>
-      </div>
-
-      <!-- Right Column: 3 Strategic Pillars (col-span-3) -->
-      <div class="lg:col-span-3 space-y-5">
-        
-        <!-- 1. Import Markets -->
-        <div class="flex items-start gap-3">
-          <div class="w-6 h-6 flex items-center justify-center text-[#0B1F36] flex-shrink-0 mt-0.5">
-            <!-- Commercial Airplane Icon -->
-            <svg class="w-5 h-5 text-[#0B1F36]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-xs sm:text-sm font-bold text-[#0B1F36]">Import Markets</h3>
-            <p class="text-[11px] text-slate-500 mt-0.5 leading-normal">
-              Sourcing quality products from global markets.
-            </p>
-          </div>
-        </div>
-
-        <!-- 2. Export Markets -->
-        <div class="flex items-start gap-3">
-          <div class="w-6 h-6 flex items-center justify-center text-[#0B1F36] flex-shrink-0 mt-0.5">
-            <!-- Cargo Container Ship Icon -->
-            <svg class="w-5 h-5 text-[#0B1F36]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2 17l2 3h16l2-3-4-1H6l-4 1zM6 16V9a1 1 0 011-1h10a1 1 0 011 1v7M9 8V5a1 1 0 011-1h4a1 1 0 011 1v3" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-xs sm:text-sm font-bold text-[#0B1F36]">Export Markets</h3>
-            <p class="text-[11px] text-slate-500 mt-0.5 leading-normal">
-              Supplying products to international destinations.
-            </p>
-          </div>
-        </div>
-
-        <!-- 3. Logistics Network -->
-        <div class="flex items-start gap-3">
-          <div class="w-6 h-6 flex items-center justify-center text-[#0B1F36] flex-shrink-0 mt-0.5">
-            <!-- Freight Truck Icon -->
-            <svg class="w-5 h-5 text-[#0B1F36]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <rect x="1" y="3" width="15" height="13"></rect>
-              <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
-              <circle cx="5.5" cy="18.5" r="2.5"></circle>
-              <circle cx="18.5" cy="18.5" r="2.5"></circle>
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-xs sm:text-sm font-bold text-[#0B1F36]">Logistics Network</h3>
-            <p class="text-[11px] text-slate-500 mt-0.5 leading-normal">
-              Integrated air, sea and road transport solutions.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
     </div>
 
   </div>
 </section>
+
+<!-- Interactive 3D Map Three.js Client Engine -->
+<script>
+  import * as THREE from 'three';
+
+  (function () {
+    const mount = document.getElementById('map-3d-mount');
+    const tooltip = document.getElementById('map-3d-tooltip');
+    const tipCity = document.getElementById('map-3d-tooltip-city');
+    const tipCountry = document.getElementById('map-3d-tooltip-country');
+    const tipRole = document.getElementById('map-3d-tooltip-role');
+    const resetBtn = document.getElementById('map-3d-reset-btn');
+    const filterBtns = document.querySelectorAll('.map-filter-btn');
+    const pillarTriggers = document.querySelectorAll('.pillar-trigger');
+
+    if (!mount) return;
+
+    // Three.js Scene Setup
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x040d1d, 0.035);
+
+    const camera = new THREE.PerspectiveCamera(40, mount.clientWidth / mount.clientHeight, 0.1, 1000);
+    
+    // Default Cinematic 3D Oblique View
+    const DEFAULT_CAM_POS = new THREE.Vector3(0, -6.8, 8.2);
+    const DEFAULT_CAM_LOOK = new THREE.Vector3(0, 0.2, 0);
+    camera.position.copy(DEFAULT_CAM_POS);
+    camera.lookAt(DEFAULT_CAM_LOOK);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setSize(mount.clientWidth, mount.clientHeight);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+    mount.appendChild(renderer.domElement);
+
+    // Root Group for 3D Map
+    const mapGroup = new THREE.Group();
+    scene.add(mapGroup);
+
+    // 1. 3D Map Base Plane
+    const textureLoader = new THREE.TextureLoader();
+    const mapTexture = textureLoader.load('/images/reach/map_hd_transparent.png');
+    mapTexture.colorSpace = THREE.SRGBColorSpace;
+
+    const planeW = 16;
+    const planeH = 8.93; // 1376 / 768 aspect ratio
+    const planeGeo = new THREE.PlaneGeometry(planeW, planeH, 32, 32);
+    
+    // Luminous shader/material for the map base
+    const planeMat = new THREE.MeshStandardMaterial({
+      map: mapTexture,
+      transparent: true,
+      roughness: 0.8,
+      metalness: 0.1,
+      emissive: new THREE.Color(0x0e2b48),
+      emissiveIntensity: 0.35,
+    });
+    const mapPlane = new THREE.Mesh(planeGeo, planeMat);
+    mapGroup.add(mapPlane);
+
+    // Subtle dark underlay to give rich depth
+    const underlayGeo = new THREE.PlaneGeometry(planeW * 1.05, planeH * 1.05);
+    const underlayMat = new THREE.MeshBasicMaterial({
+      color: 0x051324,
+      transparent: true,
+      opacity: 0.7,
+    });
+    const underlay = new THREE.Mesh(underlayGeo, underlayMat);
+    underlay.position.z = -0.05;
+    mapGroup.add(underlay);
+
+    // 2. Lighting Setup
+    const sunLight = new THREE.DirectionalLight(0xffffff, 2.0);
+    sunLight.position.set(4, -4, 8);
+    scene.add(sunLight);
+
+    const ambientLight = new THREE.AmbientLight(0x1e3a5f, 1.4);
+    scene.add(ambientLight);
+
+    const emeraldGlow = new THREE.PointLight(0x2e8b2e, 1.8, 12);
+    emeraldGlow.position.set(2, 0, 3);
+    scene.add(emeraldGlow);
+
+    // 3. Trade Hubs: Exact 3D Coordinate Mapping
+    // Formula: x3d = (pixelX / 1376 - 0.5) * planeW, y3d = -(pixelY / 768 - 0.5) * planeH
+    function pixelTo3D(px: number, py: number) {
+      return new THREE.Vector3(
+        (px / 1376 - 0.5) * planeW,
+        -(py / 768 - 0.5) * planeH,
+        0.02
+      );
+    }
+
+    interface Hub3D {
+      name: string;
+      country: string;
+      role: string;
+      pos: THREE.Vector3;
+      color: number;
+      mesh?: THREE.Mesh;
+      ring?: THREE.Mesh;
+      pillar?: THREE.Mesh;
+    }
+
+    const hubs: Hub3D[] = [
+      { name: 'Los Angeles / West Coast', country: 'United States', role: 'Pacific Gateway & Distribution', pos: pixelTo3D(180, 281), color: 0x0284c7 },
+      { name: 'New York / New Jersey', country: 'United States', role: 'Atlantic Freight Terminal', pos: pixelTo3D(368, 265), color: 0x2e8b2e },
+      { name: 'Santos (São Paulo)', country: 'Brazil', role: 'Agricultural Commodities Hub', pos: pixelTo3D(491, 529), color: 0x2e8b2e },
+      { name: 'Rotterdam & London', country: 'Netherlands / UK', role: 'Primary European Hub', pos: pixelTo3D(621, 212), color: 0x34d399 },
+      { name: 'Cape Town / Durban', country: 'South Africa', role: 'Southern African Maritime Gateway', pos: pixelTo3D(686, 581), color: 0x0284c7 },
+      { name: 'Dubai / Jebel Ali', country: 'United Arab Emirates', role: 'Strategic Multi-Modal Hub', pos: pixelTo3D(861, 304), color: 0xf59e0b },
+      { name: 'Chennai & Mumbai (JNPT)', country: 'India', role: 'Primary Sourcing Origin & Export', pos: pixelTo3D(922, 351), color: 0x34d399 },
+      { name: 'Singapore Port', country: 'Singapore', role: 'Premier Asia-Pacific Transshipment', pos: pixelTo3D(1076, 399), color: 0x2e8b2e },
+      { name: 'Shanghai / Ningbo', country: 'China', role: 'East Asian Sourcing Gateway', pos: pixelTo3D(1105, 319), color: 0x0284c7 },
+      { name: 'Sydney & Melbourne', country: 'Australia', role: 'Oceania Distribution Center', pos: pixelTo3D(1207, 598), color: 0x2e8b2e },
+    ];
+
+    const interactivePins: THREE.Object3D[] = [];
+
+    // Create 3D Holographic Light Pillars & Beacons for each hub
+    hubs.forEach((hub) => {
+      // 1. Surface Base Ring
+      const ringGeo = new THREE.RingGeometry(0.12, 0.2, 32);
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: hub.color,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.6,
+      });
+      const ring = new THREE.Mesh(ringGeo, ringMat);
+      ring.position.copy(hub.pos);
+      mapGroup.add(ring);
+      hub.ring = ring;
+
+      // 2. Vertical Light Pillar (shooting up from map into 3D airspace)
+      const pillarHeight = 0.5;
+      const pillarGeo = new THREE.CylinderGeometry(0.02, 0.02, pillarHeight, 16);
+      pillarGeo.rotateX(Math.PI / 2); // align along Z axis
+      const pillarMat = new THREE.MeshBasicMaterial({
+        color: hub.color,
+        transparent: true,
+        opacity: 0.5,
+      });
+      const pillar = new THREE.Mesh(pillarGeo, pillarMat);
+      pillar.position.set(hub.pos.x, hub.pos.y, pillarHeight / 2);
+      mapGroup.add(pillar);
+      hub.pillar = pillar;
+
+      // 3. Floating 3D Beacon Node
+      const nodeGeo = new THREE.SphereGeometry(0.08, 16, 16);
+      const nodeMat = new THREE.MeshStandardMaterial({
+        color: hub.color,
+        emissive: hub.color,
+        emissiveIntensity: 0.8,
+        roughness: 0.2,
+      });
+      const node = new THREE.Mesh(nodeGeo, nodeMat);
+      node.position.set(hub.pos.x, hub.pos.y, pillarHeight);
+      node.userData = { hub };
+      mapGroup.add(node);
+      hub.mesh = node;
+      interactivePins.push(node);
+    });
+
+    // 4. True 3D Flight & Maritime Arcs (Lifting into 3D Space Above the Map)
+    interface Route3D {
+      origin: number;
+      dest: number;
+      type: 'air' | 'sea';
+      color: number;
+      curve: THREE.CubicBezierCurve3;
+      tube: THREE.Mesh;
+      photon: THREE.Mesh;
+      aircraft?: THREE.Group;
+      progress: number;
+      speed: number;
+    }
+
+    const routeDefs = [
+      { origin: 6, dest: 5, type: 'sea', color: 0x34d399, height: 0.9 },   // India -> Dubai
+      { origin: 5, dest: 3, type: 'air', color: 0x38bdf8, height: 1.5 },   // Dubai -> Rotterdam
+      { origin: 6, dest: 7, type: 'sea', color: 0x2e8b2e, height: 1.1 },   // India -> Singapore
+      { origin: 7, dest: 8, type: 'air', color: 0x38bdf8, height: 0.8 },   // Singapore -> Shanghai
+      { origin: 3, dest: 1, type: 'sea', color: 0x2e8b2e, height: 1.6 },   // Rotterdam -> New York
+      { origin: 1, dest: 2, type: 'sea', color: 0x34d399, height: 1.4 },   // New York -> Santos
+      { origin: 3, dest: 4, type: 'sea', color: 0x2e8b2e, height: 1.6 },   // Rotterdam -> Cape Town
+      { origin: 7, dest: 9, type: 'sea', color: 0x34d399, height: 1.3 },   // Singapore -> Sydney
+      { origin: 1, dest: 0, type: 'air', color: 0x0284c7, height: 1.0 },   // New York -> Los Angeles
+    ];
+
+    // Helper: Build 3D Arch Curve lifting off the map
+    function create3DArch(p1: THREE.Vector3, p2: THREE.Vector3, maxHeight: number) {
+      const mid = p1.clone().lerp(p2, 0.5);
+      mid.z = maxHeight;
+
+      const cp1 = p1.clone().lerp(mid, 0.6);
+      cp1.z = maxHeight * 0.75;
+
+      const cp2 = p2.clone().lerp(mid, 0.6);
+      cp2.z = maxHeight * 0.75;
+
+      return new THREE.CubicBezierCurve3(p1, cp1, cp2, p2);
+    }
+
+    // Small 3D Airplane Mesh for Air Routes
+    function create3DPlane() {
+      const group = new THREE.Group();
+      const bodyGeo = new THREE.ConeGeometry(0.04, 0.22, 6);
+      bodyGeo.rotateX(Math.PI / 2);
+      const bodyMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      const body = new THREE.Mesh(bodyGeo, bodyMat);
+      group.add(body);
+
+      const wingGeo = new THREE.BoxGeometry(0.26, 0.01, 0.08);
+      const wingMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
+      const wings = new THREE.Mesh(wingGeo, wingMat);
+      wings.position.set(0, 0, -0.02);
+      group.add(wings);
+
+      return group;
+    }
+
+    const routes3D: Route3D[] = [];
+
+    routeDefs.forEach((def, idx) => {
+      const h1 = hubs[def.origin];
+      const h2 = hubs[def.dest];
+      const curve = create3DArch(h1.pos, h2.pos, def.height);
+
+      // Tube Geometry for Luminous 3D Arc
+      const tubeGeo = new THREE.TubeGeometry(curve, 48, 0.025, 8, false);
+      const tubeMat = new THREE.MeshStandardMaterial({
+        color: def.color,
+        emissive: def.color,
+        emissiveIntensity: 0.6,
+        transparent: true,
+        opacity: 0.75,
+      });
+      const tube = new THREE.Mesh(tubeGeo, tubeMat);
+      mapGroup.add(tube);
+
+      // Traveling Photon Light Bead
+      const photonGeo = new THREE.SphereGeometry(0.06, 12, 12);
+      const photonMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      const photon = new THREE.Mesh(photonGeo, photonMat);
+      mapGroup.add(photon);
+
+      // 3D Airplane on Air Routes
+      let aircraft: THREE.Group | undefined;
+      if (def.type === 'air') {
+        aircraft = create3DPlane();
+        mapGroup.add(aircraft);
+      }
+
+      routes3D.push({
+        origin: def.origin,
+        dest: def.dest,
+        type: def.type as 'air' | 'sea',
+        color: def.color,
+        curve,
+        tube,
+        photon,
+        aircraft,
+        progress: (idx * 0.2) % 1,
+        speed: def.type === 'air' ? 0.0035 : 0.002,
+      });
+    });
+
+    // 5. 3D Interactivity: Orbit Drag, Tilt, and Raycast
+    let isDragging = false;
+    let prevX = 0;
+    let prevY = 0;
+    let targetRotX = 0.28; // default 3D tilt
+    let targetRotZ = 0;
+    let currentRotX = 0.28;
+    let currentRotZ = 0;
+
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    function onPointerDown(x: number, y: number) {
+      isDragging = true;
+      prevX = x;
+      prevY = y;
+    }
+
+    function onPointerMove(x: number, y: number) {
+      if (isDragging) {
+        const dx = x - prevX;
+        const dy = y - prevY;
+        targetRotZ += dx * 0.004;
+        targetRotX += dy * 0.004;
+        targetRotX = Math.max(-0.2, Math.min(0.7, targetRotX));
+        prevX = x;
+        prevY = y;
+      }
+
+      // Raycast for Hover Tooltips on City Beacons
+      const rect = renderer.domElement.getBoundingClientRect();
+      mouse.x = ((x - rect.left) / rect.width) * 2 - 1;
+      mouse.y = -((y - rect.top) / rect.height) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(interactivePins);
+
+      if (intersects.length > 0) {
+        const target = intersects[0].object;
+        const hub = target.userData.hub as Hub3D;
+        if (hub && tooltip && tipCity && tipCountry && tipRole) {
+          tipCity.textContent = hub.name;
+          tipCountry.textContent = hub.country;
+          tipRole.textContent = hub.role;
+          tooltip.style.left = `${x - rect.left}px`;
+          tooltip.style.top = `${y - rect.top}px`;
+          tooltip.style.opacity = '1';
+        }
+      } else {
+        if (tooltip) tooltip.style.opacity = '0';
+      }
+    }
+
+    function onPointerUp() {
+      isDragging = false;
+    }
+
+    // Mouse Listeners
+    mount.addEventListener('mousedown', (e) => onPointerDown(e.clientX, e.clientY));
+    window.addEventListener('mousemove', (e) => onPointerMove(e.clientX, e.clientY));
+    window.addEventListener('mouseup', onPointerUp);
+
+    // Touch Listeners
+    mount.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) onPointerDown(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (isDragging && e.touches.length === 1) onPointerMove(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+
+    window.addEventListener('touchend', onPointerUp);
+
+    // Zoom on wheel (prevent full page scroll capture if scrolling over map)
+    mount.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      camera.position.z += e.deltaY * 0.004;
+      camera.position.z = Math.max(5.0, Math.min(12.0, camera.position.z));
+    }, { passive: false });
+
+    // Reset 3D View Button
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        targetRotX = 0.28;
+        targetRotZ = 0;
+        camera.position.copy(DEFAULT_CAM_POS);
+        camera.lookAt(DEFAULT_CAM_LOOK);
+      });
+    }
+
+    // 6. Filter Buttons Handler
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const target = e.currentTarget as HTMLElement;
+        const filter = target.getAttribute('data-filter');
+
+        filterBtns.forEach((b) => {
+          b.className = 'map-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer text-[#0B1F3A] hover:bg-slate-100';
+        });
+        target.className = 'map-filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer bg-[#0B1F3A] text-white shadow-xs';
+
+        routes3D.forEach((route) => {
+          if (filter === 'all' || route.type === filter) {
+            route.tube.visible = true;
+            route.photon.visible = true;
+            if (route.aircraft) route.aircraft.visible = true;
+          } else {
+            route.tube.visible = false;
+            route.photon.visible = false;
+            if (route.aircraft) route.aircraft.visible = false;
+          }
+        });
+      });
+    });
+
+    // 7. Strategic Pillar Hover Triggers
+    pillarTriggers.forEach((trigger) => {
+      trigger.addEventListener('mouseenter', (e) => {
+        const highlight = (e.currentTarget as HTMLElement).getAttribute('data-highlight');
+        routes3D.forEach((route) => {
+          const mat = route.tube.material as THREE.MeshStandardMaterial;
+          if (highlight === 'import') {
+            // Emphasize Asia/Middle East inbound lanes
+            if (route.origin === 6 || route.origin === 5) {
+              mat.emissiveIntensity = 1.2;
+              route.speed = 0.006;
+            } else {
+              mat.emissiveIntensity = 0.2;
+            }
+          } else if (highlight === 'export') {
+            // Emphasize transatlantic and transpacific outbound
+            if (route.origin === 3 || route.origin === 1) {
+              mat.emissiveIntensity = 1.2;
+              route.speed = 0.006;
+            } else {
+              mat.emissiveIntensity = 0.2;
+            }
+          } else if (highlight === 'logistics') {
+            mat.emissiveIntensity = 1.0;
+            route.speed = 0.005;
+          }
+        });
+      });
+
+      trigger.addEventListener('mouseleave', () => {
+        routes3D.forEach((route) => {
+          const mat = route.tube.material as THREE.MeshStandardMaterial;
+          mat.emissiveIntensity = 0.6;
+          route.speed = route.type === 'air' ? 0.0035 : 0.002;
+        });
+      });
+    });
+
+    // 8. Performance: IntersectionObserver (Zero CPU when off-screen)
+    let isVisible = true;
+    const observer = new IntersectionObserver((entries) => {
+      isVisible = entries[0].isIntersecting;
+    }, { threshold: 0.1 });
+    observer.observe(mount);
+
+    document.addEventListener('visibilitychange', () => {
+      isVisible = !document.hidden;
+    });
+
+    // 9. Main Animation Loop
+    let clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      if (!isVisible) return;
+
+      const elapsed = clock.getElapsedTime();
+
+      // Smooth camera tilt & rotation inertia
+      currentRotX += (targetRotX - currentRotX) * 0.06;
+      currentRotZ += (targetRotZ - currentRotZ) * 0.06;
+      mapGroup.rotation.x = currentRotX;
+      mapGroup.rotation.z = currentRotZ;
+
+      // Pulse city beacon rings
+      hubs.forEach((hub, idx) => {
+        if (hub.ring) {
+          const pulse = 1.0 + 0.4 * Math.sin(elapsed * 3 + idx);
+          hub.ring.scale.set(pulse, pulse, 1);
+          (hub.ring.material as THREE.MeshBasicMaterial).opacity = Math.max(0.2, 0.7 - (pulse - 1.0) * 1.2);
+        }
+      });
+
+      // Animate 3D routes and traveling aircraft/photons
+      routes3D.forEach((route) => {
+        route.progress = (route.progress + route.speed) % 1.0;
+
+        // Position photon bead
+        const pt = route.curve.getPointAt(route.progress);
+        route.photon.position.copy(pt);
+
+        // Position & orient 3D aircraft along curve tangent
+        if (route.aircraft) {
+          route.aircraft.position.copy(pt);
+          const tangent = route.curve.getTangentAt(route.progress).normalize();
+          const target = pt.clone().add(tangent);
+          route.aircraft.lookAt(target);
+          route.aircraft.rotateZ(0.08 * Math.sin(route.progress * Math.PI));
+        }
+      });
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // 10. Resize Handler
+    function onResize() {
+      if (!mount) return;
+      const w = mount.clientWidth;
+      const h = mount.clientHeight;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
+    }
+
+    window.addEventListener('resize', onResize);
+  })();
+</script>

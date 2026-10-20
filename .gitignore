@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # temporary assets
 temp_assets/
+scratch/
