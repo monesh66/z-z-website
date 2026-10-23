@@ -62,11 +62,11 @@ export const siteConfig: SiteConfig = {
     "ZIYA ZARA TRADING COMPANY connects global markets through verified supplier networks, strategic multi-modal logistics, and customer-first trade solutions.",
   url: "https://ziyazara.com",
 
-  // [LAUNCH PLACEHOLDER] Update with the official client contact details upon confirmation
-  email: "contact@ziyazara.com",
+  // Official contact channels
+  email: "info@ziyazaratrading.com",
   phone: "+91 90000 00000",
   location: "Registered Trading Operations — India",
-  isPlaceholderContact: true,
+  isPlaceholderContact: false,
 
   nav: [
     { name: "Home", href: "/" },
