@@ -1,0 +1,731 @@
+---
+// src/components/SplashScreen.astro
+---
+
+<!-- Instant Return-Visit Script (Zero layout shift, zero FOUC) -->
+<script is:inline>
+  (function () {
+    try {
+      var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      var isForced = window.location.search.indexOf('splash=true') !== -1;
+      // In production, remember seen state in sessionStorage unless ?splash=true is passed
+      if (!isLocal && !isForced && sessionStorage.getItem('ziya_zara_splash_shown') === 'true') {
+        document.documentElement.classList.add('splash-dismissed');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+<style>
+  html.splash-dismissed #splash-screen-root {
+    display: none !important;
+  }
+
+  /* 3D Flight Perspective Container */
+  .perspective-viewport {
+    perspective: 1200px;
+    perspective-origin: 50% 45%;
+    transform-style: preserve-3d;
+  }
+
+  /* Realistic Cinematic 3D Aircraft Flight Trajectory */
+  @keyframes flightCinematic3D {
+    0% {
+      opacity: 0;
+      transform: translate3d(-38vw, 16vh, -600px) scale(0.1) rotateX(12deg) rotateY(-18deg) rotateZ(-12deg);
+      filter: blur(5px) brightness(0.8);
+    }
+    14% {
+      opacity: 0.95;
+      filter: blur(2.5px) brightness(0.9);
+    }
+    45% {
+      opacity: 1;
+      transform: translate3d(-12vw, 4vh, -180px) scale(0.48) rotateX(6deg) rotateY(-8deg) rotateZ(-6deg);
+      filter: blur(0.5px) brightness(1.05);
+    }
+    72% {
+      opacity: 1;
+      transform: translate3d(8vw, -4vh, 20px) scale(0.84) rotateX(2deg) rotateY(-2deg) rotateZ(-1deg);
+      filter: blur(0px) brightness(1.04);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(16vw, -8vh, 80px) scale(1.02) rotateX(0deg) rotateY(0deg) rotateZ(0.5deg);
+      filter: blur(0px) brightness(1.02);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .splash-actor-anim {
+      animation: flightCinematicTablet 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .splash-actor-anim {
+      animation: flightCinematicMobile 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  }
+
+  @keyframes flightCinematicTablet {
+    0% {
+      opacity: 0;
+      transform: translate3d(-30vw, 12vh, -400px) scale(0.12) rotateX(8deg) rotateY(-14deg) rotateZ(-10deg);
+      filter: blur(4px);
+    }
+    20% {
+      opacity: 1;
+    }
+    55% {
+      transform: translate3d(-6vw, 2vh, -80px) scale(0.46) rotateX(4deg) rotateY(-5deg) rotateZ(-4deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(10vw, -6vh, 40px) scale(0.85) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes flightCinematicMobile {
+    0% {
+      opacity: 0;
+      transform: translate3d(-22vw, 10vh, -250px) scale(0.15) rotateZ(-8deg);
+      filter: blur(3px);
+    }
+    25% {
+      opacity: 1;
+    }
+    60% {
+      transform: translate3d(0vw, 1vh, 0px) scale(0.5) rotateZ(-3deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(7vw, -5vh, 20px) scale(0.72) rotateZ(0deg);
+      filter: blur(0px);
+    }
+  }
+
+  /* Anamorphic Sunrise Glint */
+  @keyframes lensFlareSweep {
+    0% {
+      opacity: 0;
+      transform: scaleX(0.2) translate3d(-60%, 0, 0);
+    }
+    50% {
+      opacity: 0.85;
+      transform: scaleX(1.4) translate3d(10%, 0, 0);
+    }
+    100% {
+      opacity: 0;
+      transform: scaleX(0.4) translate3d(80%, 0, 0);
+    }
+  }
+
+  /* Dynamic Flight Contrail Expansion */
+  @keyframes contrailFlow {
+    0% {
+      opacity: 0.1;
+      transform: scaleX(0.6) translate3d(0, 0, 0);
+    }
+    50% {
+      opacity: 0.55;
+      transform: scaleX(1.25) translate3d(-10px, 0, 0);
+    }
+    100% {
+      opacity: 0.1;
+      transform: scaleX(0.6) translate3d(0, 0, 0);
+    }
+  }
+
+  /* Tagline & Headline Reveal */
+  @keyframes headlineSlideIn {
+    0% {
+      opacity: 0;
+      transform: translate3d(-20px, 24px, 0);
+      letter-spacing: -0.04em;
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      letter-spacing: -0.01em;
+    }
+  }
+
+  /* SVG Flight Corridor Stroke Animation */
+  @keyframes flightCorridorDraw {
+    0% {
+      stroke-dashoffset: 1600;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Waypoint Beacon Pulse */
+  @keyframes radarSweep {
+    0% {
+      transform: scale(0.6);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.8);
+      opacity: 0;
+    }
+  }
+
+  /* Subtle pulsing aura for loading phase */
+  @keyframes loadingHaloPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.45;
+    }
+    50% {
+      transform: scale(1.08);
+      opacity: 0.75;
+    }
+  }
+
+  /* Animation Assignment Classes */
+  .splash-actor-anim {
+    animation: flightCinematic3D 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .splash-corridor-path {
+    stroke-dasharray: 1600;
+    stroke-dashoffset: 1600;
+    animation: flightCorridorDraw 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+  }
+
+  .splash-headline-anim {
+    animation: headlineSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+  }
+
+  .splash-radar-ring {
+    animation: radarSweep 2.2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  }
+
+  .splash-flare-anim {
+    animation: lensFlareSweep 1.8s ease-in-out 0.6s forwards;
+  }
+</style>
+
+<!-- Fullscreen Splash & Loading Screen Root -->
+<div
+  id="splash-screen-root"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Welcome to ZIYA ZARA Trading Company"
+  class="fixed inset-0 z-[100] overflow-hidden bg-white select-none pointer-events-auto transition-opacity duration-700 ease-out"
+>
+  <!-- Preload flight photography into browser cache -->
+  <link rel="preload" as="image" href="/images/hero/hero_hd.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/hero/cinematic_aircraft.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/hero/splash_backdrop.jpg" />
+  <link rel="preload" as="video" href="/videos/zz_loading_3s.mp4" type="video/mp4" />
+
+  <!-- =========================================================================
+       PHASE 1: THE 3-SECOND VIDEO LOADING ANIMATION & STATUS DISPLAY
+       Plays immediately upon opening, stays until content is loaded + 3s complete
+       ========================================================================= -->
+  <div
+    id="splash-loading-phase"
+    class="absolute inset-0 z-50 flex flex-col items-center justify-center bg-white px-6 transition-all duration-700 ease-out"
+  >
+    <!-- Ambient emerald/blue radial backdrop glow -->
+    <div
+      class="absolute w-[450px] h-[450px] sm:w-[650px] sm:h-[650px] rounded-full pointer-events-none blur-3xl"
+      style="background: radial-gradient(circle, rgba(46, 139, 46, 0.12) 0%, rgba(11, 31, 58, 0.08) 45%, transparent 70%); animation: loadingHaloPulse 3s ease-in-out infinite;"
+    ></div>
+
+    <!-- Fine Geodesic Coordinate Lat/Long Grid (Subtle luxury texture) -->
+    <div
+      class="absolute inset-0 opacity-[0.035] pointer-events-none"
+      style="background-image: linear-gradient(#0B1F3A 1px, transparent 1px), linear-gradient(90deg, #0B1F3A 1px, transparent 1px); background-size: 60px 60px;"
+    ></div>
+
+    <div class="relative flex flex-col items-center max-w-lg w-full text-center">
+      <!-- 3-Second Loading Video Player -->
+      <div class="relative w-full max-w-[320px] sm:max-w-[420px] md:max-w-[460px] aspect-[16/9] flex items-center justify-center overflow-hidden">
+        <video
+          id="splash-loading-video"
+          autoplay
+          muted
+          playsinline
+          preload="auto"
+          class="w-full h-full object-contain"
+        >
+          <source src="/videos/zz_loading_3s.webm" type="video/webm" />
+          <source src="/videos/zz_loading_3s.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- Loading Text & Real-Time Telemetry Bar -->
+      <div class="mt-4 sm:mt-6 flex flex-col items-center gap-3 w-full max-w-xs sm:max-w-sm">
+        <!-- Live Loading Status Text -->
+        <div class="flex items-center gap-2.5">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2E8B2E]"></span>
+          </span>
+          <span
+            id="splash-loading-status"
+            class="text-xs sm:text-sm font-semibold tracking-wider text-slate-800 uppercase font-mono transition-opacity duration-200"
+          >
+            Connecting Global Markets...
+          </span>
+        </div>
+
+        <!-- Animated Progress Track -->
+        <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200/80 shadow-inner">
+          <div
+            id="splash-loading-bar"
+            class="h-full bg-gradient-to-r from-[#2E8B2E] via-[#34D399] to-[#0B1F3A] w-0 transition-all duration-100 ease-linear rounded-full shadow-sm"
+          ></div>
+        </div>
+
+        <!-- Telemetry Details Row -->
+        <div class="flex justify-between w-full text-[10px] text-slate-400 font-mono tracking-widest uppercase">
+          <span>ZIYA ZARA NETWORK</span>
+          <span id="splash-loading-pct" class="text-emerald-600 font-bold">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PHASE 2: THE 3D CINEMATIC FLIGHT ANIMATION & GLOBAL REACH SEQUENCE
+       Plays once loading phase is complete, then transitions into the website
+       ========================================================================= -->
+  <div
+    id="splash-flight-phase"
+    class="absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700 ease-out"
+  >
+    <!-- 1. Background Panoramic Atmosphere -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/hero/splash_backdrop.jpg"
+        alt=""
+        class="w-full h-full object-cover object-[center_30%] sm:object-[center_35%] lg:object-[center_38%] opacity-85"
+        id="splash-backdrop-img"
+      />
+
+      <!-- Deep Navy Atmospheric Veil -->
+      <div
+        id="splash-navy-veil"
+        class="absolute inset-0 bg-gradient-to-b from-[#061222]/90 via-[#0B1F3A]/65 to-[#061222]/85"
+      ></div>
+
+      <!-- Solar Core Dawn Glow -->
+      <div
+        class="absolute top-1/4 right-1/4 w-[500px] h-[500px] sm:w-[900px] sm:h-[900px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4 blur-3xl opacity-45"
+        style="background: radial-gradient(circle, rgba(245, 158, 11, 0.45) 0%, rgba(220, 38, 38, 0.15) 40%, transparent 70%);"
+      ></div>
+
+      <!-- Emerald Logistics Trade Beacon Glow -->
+      <div
+        class="absolute bottom-1/3 left-1/4 w-[450px] h-[450px] sm:w-[700px] sm:h-[700px] rounded-full pointer-events-none blur-3xl opacity-35"
+        style="background: radial-gradient(circle, rgba(46, 139, 46, 0.35) 0%, rgba(16, 185, 129, 0.1) 45%, transparent 70%);"
+      ></div>
+    </div>
+
+    <!-- 2. Global Trade Telemetry HUD -->
+    <div class="absolute inset-0 z-10 p-6 sm:p-10 flex flex-col justify-between text-white/50 text-[10px] sm:text-xs font-mono tracking-widest uppercase">
+      <!-- Top HUD Row -->
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2E8B2E]"></span>
+          </span>
+          <span class="text-emerald-400 font-semibold tracking-[0.2em]">ZZ-CORRIDOR // INT'L FREIGHT NETWORK</span>
+          <span class="hidden md:inline text-white/30">|</span>
+          <span class="hidden md:inline text-white/40">GEO-COORD 25.2048° N &bull; 55.2708° E</span>
+        </div>
+
+        <div class="hidden sm:flex items-center gap-2 text-white/60">
+          <span class="text-white/40">FLIGHT CLEARANCE:</span>
+          <span class="text-emerald-300 font-semibold">AUTHORIZED</span>
+        </div>
+      </div>
+
+      <!-- Bottom HUD Row -->
+      <div class="flex items-end justify-between">
+        <div class="space-y-1">
+          <div class="text-[9px] sm:text-[11px] text-white/40 tracking-[0.25em]">MULTIMODAL PRECISION LOGISTICS</div>
+          <div class="flex items-center gap-2 text-emerald-400/80 font-sans text-xs font-medium">
+            <span>AIR FREIGHT</span> &bull; <span>OCEAN CONTAINER</span> &bull; <span>INTERMODAL OVERLAND</span>
+          </div>
+        </div>
+
+        <div class="hidden sm:block text-right text-[10px] text-white/50 tracking-widest">
+          DESTINATION: <span class="text-emerald-300 font-bold">GLOBAL TRADE HUB</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Geodesic Flight Route Vector (SVG) -->
+    <svg
+      id="splash-route-svg"
+      class="absolute inset-0 w-full h-full z-15 pointer-events-none"
+      viewBox="0 0 1440 900"
+      preserveAspectRatio="none"
+      fill="none"
+    >
+      <defs>
+        <linearGradient id="corridorGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#2E8B2E" stop-opacity="0.25" />
+          <stop offset="30%" stop-color="#34D399" stop-opacity="0.85" />
+          <stop offset="70%" stop-color="#2E8B2E" stop-opacity="0.95" />
+          <stop offset="100%" stop-color="#A7F3D0" stop-opacity="1" />
+        </linearGradient>
+
+        <filter id="corridorGlow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="3.5" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+
+      <!-- Master Flight Corridor Arc -->
+      <path
+        d="M 100,740 C 300,700 460,540 700,440 C 920,350 1120,260 1340,190"
+        stroke="url(#corridorGrad)"
+        stroke-width="3"
+        stroke-linecap="round"
+        filter="url(#corridorGlow)"
+        class="splash-corridor-path"
+      />
+
+      <!-- Parallel Echo Line -->
+      <path
+        d="M 130,760 C 330,720 490,560 730,460 C 950,370 1150,280 1370,210"
+        stroke="#2E8B2E"
+        stroke-width="1.2"
+        stroke-dasharray="6 10"
+        stroke-opacity="0.45"
+        class="splash-corridor-path"
+      />
+
+      <!-- Waypoint 1: Sourcing Origin -->
+      <g transform="translate(160, 725)">
+        <circle cx="0" cy="0" r="16" fill="#2E8B2E" fill-opacity="0.25" class="splash-radar-ring" />
+        <circle cx="0" cy="0" r="6.5" fill="#2E8B2E" />
+        <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" />
+        <text x="14" y="4" fill="#34D399" font-family="monospace" font-size="10" font-weight="600" letter-spacing="1.5">PACIFIC SOURCING</text>
+      </g>
+
+      <!-- Waypoint 2: Middle East Hub -->
+      <g transform="translate(560, 495)">
+        <circle cx="0" cy="0" r="16" fill="#2E8B2E" fill-opacity="0.25" class="splash-radar-ring" style="animation-delay: 0.5s;" />
+        <circle cx="0" cy="0" r="6.5" fill="#2E8B2E" />
+        <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" />
+        <text x="14" y="4" fill="#34D399" font-family="monospace" font-size="10" font-weight="600" letter-spacing="1.5">MIDDLE EAST HUB</text>
+      </g>
+
+      <!-- Waypoint 3: European Gateway -->
+      <g transform="translate(930, 345)">
+        <circle cx="0" cy="0" r="16" fill="#2E8B2E" fill-opacity="0.25" class="splash-radar-ring" style="animation-delay: 1.0s;" />
+        <circle cx="0" cy="0" r="6.5" fill="#2E8B2E" />
+        <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" />
+        <text x="14" y="4" fill="#34D399" font-family="monospace" font-size="10" font-weight="600" letter-spacing="1.5">EURO TRADE GATEWAY</text>
+      </g>
+
+      <!-- Waypoint 4: Global Destination -->
+      <g transform="translate(1260, 215)">
+        <circle cx="0" cy="0" r="22" fill="#34D399" fill-opacity="0.35" class="splash-radar-ring" style="animation-delay: 1.5s;" />
+        <circle cx="0" cy="0" r="8" fill="#2E8B2E" />
+        <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+        <text x="-140" y="-12" fill="#FFFFFF" font-family="monospace" font-size="10" font-weight="700" letter-spacing="1.5">GLOBAL DESTINATION</text>
+      </g>
+    </svg>
+
+    <!-- 4. 3D Realistic Aircraft Approach (The Flight Animation Actor) -->
+    <div
+      id="splash-aircraft-container"
+      class="absolute inset-0 z-25 perspective-viewport flex items-center justify-center pointer-events-none"
+    >
+      <div
+        id="splash-aircraft-actor"
+        class="relative w-[340px] sm:w-[560px] md:w-[740px] lg:w-[880px] aspect-[1254/503] will-change-transform opacity-0"
+      >
+        <!-- Dynamic Engine Wake Contrails -->
+        <div
+          class="absolute top-[48%] -left-32 sm:-left-48 w-36 sm:w-56 h-2 sm:h-3 rounded-full pointer-events-none"
+          style="background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45)); filter: blur(3px); animation: contrailFlow 1.6s ease-in-out infinite;"
+        ></div>
+        <div
+          class="absolute top-[63%] -left-28 sm:-left-40 w-32 sm:w-48 h-2 sm:h-2.5 rounded-full pointer-events-none"
+          style="background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35)); filter: blur(3px); animation: contrailFlow 1.6s ease-in-out infinite 0.3s;"
+        ></div>
+
+        <!-- Anamorphic Sunrise Glint across fuselage -->
+        <div
+          class="absolute top-[32%] left-[45%] w-48 sm:w-80 h-1 sm:h-1.5 pointer-events-none rounded-full splash-flare-anim"
+          style="background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.8), rgba(255, 255, 255, 1), rgba(245, 158, 11, 0.9), transparent); filter: drop-shadow(0 0 12px rgba(255,255,255,0.9));"
+        ></div>
+
+        <!-- Photorealistic Keyed Transparent Aircraft Image matching Hero Section -->
+        <img
+          src="/images/hero/cinematic_aircraft.png"
+          alt="Commercial cargo airliner approaching"
+          width="1254"
+          height="503"
+          class="w-full h-full object-contain drop-shadow-[0_20px_48px_rgba(0,0,0,0.7)]"
+        />
+      </div>
+    </div>
+
+    <!-- 5. Tagline Display - "GLOBAL REACH" -->
+    <div
+      id="splash-tagline-container"
+      class="absolute bottom-12 sm:bottom-16 left-6 sm:left-12 lg:left-20 z-30 max-w-xl pointer-events-none opacity-0"
+    >
+      <div class="space-y-2">
+        <div class="flex items-center gap-2.5">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#2E8B2E] shadow-[0_0_10px_#2E8B2E]"></span>
+          <span class="text-[11px] sm:text-xs font-semibold tracking-[0.24em] text-emerald-400 uppercase font-mono">
+            INTERNATIONAL TRADE & LOGISTICS
+          </span>
+        </div>
+
+        <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-editorial-serif tracking-tight leading-[0.95] drop-shadow-lg">
+          <span class="bg-gradient-to-r from-white via-slate-100 to-white bg-clip-text text-transparent">Global</span>
+          <span class="bg-gradient-to-r from-[#2E8B2E] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent ml-2">Reach</span>
+        </h2>
+
+        <div class="pt-1 flex flex-wrap items-center gap-3">
+          <span class="h-[1.5px] w-12 bg-gradient-to-r from-[#2E8B2E] to-transparent"></span>
+          <span class="text-xs sm:text-sm text-slate-200/90 font-sans tracking-wide">
+            Connecting Markets &bull; Reliable Sourcing Worldwide
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accessible Skip Control -->
+  <button
+    id="splash-skip-btn"
+    type="button"
+    aria-label="Skip introduction animation"
+    class="absolute top-5 right-5 sm:top-7 sm:right-8 z-[60] flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/40 hover:bg-slate-900/60 active:bg-slate-900/80 border border-white/20 backdrop-blur-md text-white text-xs font-medium tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-xl focus:outline-none focus:ring-2 focus:ring-[#2E8B2E]"
+  >
+    <span>Skip Intro</span>
+    <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+    </svg>
+  </button>
+</div>
+
+<!-- Complete Loading & Flight Orchestration Controller -->
+<script>
+  (function () {
+    const SPLASH_KEY = 'ziya_zara_splash_shown';
+    const root = document.getElementById('splash-screen-root');
+    const loadingPhase = document.getElementById('splash-loading-phase');
+    const flightPhase = document.getElementById('splash-flight-phase');
+    const video = document.getElementById('splash-loading-video') as HTMLVideoElement | null;
+    const statusText = document.getElementById('splash-loading-status');
+    const progressBar = document.getElementById('splash-loading-bar');
+    const pctText = document.getElementById('splash-loading-pct');
+    const skipBtn = document.getElementById('splash-skip-btn');
+    const aircraftActor = document.getElementById('splash-aircraft-actor');
+    const tagline = document.getElementById('splash-tagline-container');
+
+    if (!root) return;
+
+    // Check query params & sessionStorage
+    const urlParams = new URLSearchParams(window.location.search);
+    const forceSplash = urlParams.get('splash') === 'true';
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+    let hasSeenSplash = false;
+    try {
+      hasSeenSplash = !isLocal && !forceSplash && sessionStorage.getItem(SPLASH_KEY) === 'true';
+    } catch (e) {}
+
+    const prefersReducedMotion = !forceSplash && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Fast-path for reduced motion or return visits
+    if (hasSeenSplash || prefersReducedMotion) {
+      root.style.display = 'none';
+      root.setAttribute('aria-hidden', 'true');
+      document.documentElement.classList.add('splash-dismissed');
+      return;
+    }
+
+    // Lock page scrolling while intro plays
+    document.body.classList.add('overflow-hidden');
+
+    let isDismissed = false;
+    let flightStarted = false;
+    let pageLoaded = document.readyState === 'complete';
+    let videoCompleted = false;
+
+    // Loading status text messages for the 3 seconds
+    const statusMessages = [
+      'Connecting Global Markets...',
+      'Synchronizing Freight Corridors...',
+      'Verifying Multimodal Logistics...',
+      'Finalizing Flight Clearance...'
+    ];
+
+    // Track real elapsed time (exact 3000ms duration)
+    const startTime = performance.now();
+    const TARGET_DURATION = 3000; // 3 seconds
+
+    function updateProgress() {
+      if (flightStarted || isDismissed) return;
+
+      const elapsed = performance.now() - startTime;
+      const progress = Math.min(elapsed / TARGET_DURATION, 1.0);
+      const pct = Math.floor(progress * 100);
+
+      if (progressBar) progressBar.style.width = pct + '%';
+      if (pctText) pctText.textContent = pct + '%';
+
+      // Change status message dynamically
+      if (statusText) {
+        const msgIdx = Math.min(Math.floor(progress * statusMessages.length), statusMessages.length - 1);
+        statusText.textContent = statusMessages[msgIdx];
+      }
+
+      if (progress >= 1.0) {
+        videoCompleted = true;
+        checkProceedToFlight();
+      } else {
+        requestAnimationFrame(updateProgress);
+      }
+    }
+    requestAnimationFrame(updateProgress);
+
+    // Page Load Listener: ensure all page content (DOM, images, stylesheets) has loaded
+    if (!pageLoaded) {
+      window.addEventListener('load', () => {
+        pageLoaded = true;
+        checkProceedToFlight();
+      });
+    }
+
+    // Video ended event listener
+    if (video) {
+      video.addEventListener('ended', () => {
+        videoCompleted = true;
+        checkProceedToFlight();
+      });
+
+      // Attempt to ensure video is playing
+      video.play().catch(() => {
+        // Fallback: timer handles progress even if autoplay is blocked
+      });
+    }
+
+    // Condition Check: Page content loaded AND 3s video complete
+    function checkProceedToFlight() {
+      if (flightStarted || isDismissed) return;
+
+      if (videoCompleted && pageLoaded) {
+        startFlightPhase();
+      } else if (videoCompleted && !pageLoaded) {
+        // Video finished but page is still loading: keep holding with updated text
+        if (statusText) {
+          statusText.textContent = 'Synchronizing Website Content...';
+        }
+      }
+    }
+
+    // Safety timeout: Never hold longer than 5s even if network is throttled
+    setTimeout(() => {
+      if (!flightStarted && !isDismissed) {
+        pageLoaded = true;
+        videoCompleted = true;
+        startFlightPhase();
+      }
+    }, 5000);
+
+    // =========================================================================
+    // PHASE 2: FLIGHT ANIMATION TRIGGER
+    // =========================================================================
+    function startFlightPhase() {
+      if (flightStarted || isDismissed) return;
+      flightStarted = true;
+
+      // 1. Loading phase zooms out / dissolves smoothly
+      if (loadingPhase) {
+        loadingPhase.style.opacity = '0';
+        loadingPhase.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+          loadingPhase.style.display = 'none';
+        }, 700);
+      }
+
+      // 2. Flight phase reveals
+      if (flightPhase) {
+        flightPhase.style.opacity = '1';
+      }
+
+      // 3. Initiate aircraft 3D flight trajectory
+      if (aircraftActor) {
+        aircraftActor.style.opacity = '1';
+        aircraftActor.classList.add('splash-actor-anim');
+      }
+
+      // 4. Reveal "GLOBAL REACH" tagline
+      if (tagline) {
+        setTimeout(() => {
+          if (!isDismissed) {
+            tagline.style.opacity = '1';
+            tagline.classList.add('splash-headline-anim');
+          }
+        }, 400);
+      }
+
+      // 5. Flight completes: Transition smoothly to the main website
+      setTimeout(() => {
+        if (!isDismissed) {
+          completeSplash();
+        }
+      }, 2600);
+    }
+
+    // =========================================================================
+    // PHASE 3: MOVE TO MAIN WEBSITE
+    // =========================================================================
+    function completeSplash() {
+      if (isDismissed) return;
+      isDismissed = true;
+
+      // Crossfade out entire splash screen to reveal main homepage
+      root.style.opacity = '0';
+      root.style.pointerEvents = 'none';
+
+      // Restore scroll
+      document.body.classList.remove('overflow-hidden');
+
+      setTimeout(() => {
+        root.style.display = 'none';
+        root.setAttribute('aria-hidden', 'true');
+        document.documentElement.classList.add('splash-dismissed');
+
+        try {
+          sessionStorage.setItem(SPLASH_KEY, 'true');
+        } catch (e) {}
+      }, 700);
+    }
+
+    // Skip Button Handler
+    if (skipBtn) {
+      skipBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        completeSplash();
+      });
+    }
+
+    // Keyboard support: Escape / Space / Enter skips intro
+    window.addEventListener('keydown', (e) => {
+      if (!isDismissed && (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter')) {
+        completeSplash();
+      }
+    });
+  })();
+</script>
