@@ -1,0 +1,108 @@
+---
+// src/components/ui/ProgressiveImage.astro
+// Progressive Image Loader matching user specifications:
+// 1. Web loads first without waiting for heavy images
+// 2. While individual image loads, displays a small looping logo animation (under 2s loop)
+// 3. Loops continuously until this particular image is fully downloaded & GPU-decoded
+// 4. Smoothly crossfades into the crisp image with zero layout shift
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number | string;
+  height?: number | string;
+  class?: string;
+  containerClass?: string;
+  priority?: boolean;
+  size?: 'sm' | 'md' | 'lg';
+  showText?: boolean;
+}
+
+const {
+  src,
+  alt,
+  width = 600,
+  height = 400,
+  class: className = '',
+  containerClass = '',
+  priority = false,
+  size = 'md',
+  showText = true,
+} = Astro.props;
+
+// Size variations for the small centered loader badge
+const sizeMap = {
+  sm: {
+    card: 'p-1.5 sm:p-2 rounded-xl max-w-[100px] shadow-sm',
+    video: 'w-14 sm:w-16 aspect-[16/9] rounded-md',
+    text: 'text-[8px]',
+  },
+  md: {
+    card: 'p-2 sm:p-2.5 rounded-xl max-w-[130px] shadow-md',
+    video: 'w-20 sm:w-24 aspect-[16/9] rounded-lg',
+    text: 'text-[9px]',
+  },
+  lg: {
+    card: 'p-3 sm:p-4 rounded-2xl max-w-[180px] sm:max-w-[200px] shadow-xl',
+    video: 'w-32 sm:w-36 aspect-[16/9] rounded-xl',
+    text: 'text-[10px]',
+  },
+};
+
+const currentSize = sizeMap[size] || sizeMap.md;
+---
+
+<div
+  class={`progressive-image-container relative overflow-hidden bg-slate-100 ${containerClass}`}
+  data-progressive-image
+>
+  <!-- The Main Image (Initially transparent, crossfades in smoothly upon GPU rasterization) -->
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={priority ? "eager" : "lazy"}
+    fetchpriority={priority ? "high" : "auto"}
+    decoding="async"
+    class={`progressive-img w-full h-full object-cover opacity-0 transition-opacity duration-700 ease-out will-change-opacity ${className}`}
+  />
+
+  <!-- Individual Small Looping Logo Video Loader Overlay -->
+  <div
+    class="progressive-loader-overlay absolute inset-0 z-10 flex flex-col items-center justify-center bg-slate-100/70 backdrop-blur-[2px] transition-all duration-400 ease-out pointer-events-none select-none"
+  >
+    <!-- Small Glassmorphic Loader Badge -->
+    <div
+      class={`progressive-loader-card flex flex-col items-center justify-center bg-white/95 backdrop-blur-md border border-white/90 text-center will-change-transform ${currentSize.card}`}
+    >
+      <!-- Small Looping Logo Video (Plays in Under 2s Loop) -->
+      <div class={`overflow-hidden bg-slate-50 border border-slate-100 flex items-center justify-center ${currentSize.video}`}>
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          class="w-full h-full object-contain"
+        >
+          <source src="/videos/zz_loading_loop.webm" type="video/webm" />
+          <source src="/videos/zz_loading_loop.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- Compact Status Caption -->
+      {showText && (
+        <div class="flex items-center gap-1.5 mt-1.5">
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#16a34a]"></span>
+          </span>
+          <span class={`font-mono font-semibold tracking-wider text-navy-950 uppercase ${currentSize.text}`}>
+            Loading...
+          </span>
+        </div>
+      )}
+    </div>
+  </div>
+</div>

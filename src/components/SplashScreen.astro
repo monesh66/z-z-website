@@ -8,8 +8,7 @@
     try {
       var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       var isForced = window.location.search.indexOf('splash=true') !== -1;
-      var isSkipped = window.location.search.indexOf('splash=false') !== -1;
-      if (isSkipped || (!isLocal && !isForced && sessionStorage.getItem('ziya_zara_splash_shown') === 'true')) {
+      if (!isForced) {
         document.documentElement.classList.add('splash-dismissed');
       }
     } catch (e) {}

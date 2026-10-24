@@ -7,19 +7,40 @@ import { siteConfig } from '../data/site';
 
 <section class="relative bg-white text-navy-950 overflow-hidden min-h-[580px] lg:min-h-[660px] flex items-center" id="hero">
   
-  <!-- High-Resolution Full-Bleed Logistics Background Scene -->
-  <div class="absolute inset-0 z-0">
+  <!-- High-Resolution Full-Bleed Logistics Background Scene with Per-Image Progressive Loader -->
+  <div class="absolute inset-0 z-0 bg-slate-100 progressive-image-container" data-progressive-image>
     <img
       src="/images/hero/hero_full_hd.jpg"
       alt="Ziya Zara Global Logistics - Air Freight, Ocean Cargo Ship, Container Truck, and Port Terminal at Sunset"
       width="1376"
       height="768"
-      class="w-full h-full object-cover object-[70%_center] sm:object-center"
+      class="w-full h-full object-cover object-[70%_center] sm:object-center opacity-0 transition-opacity duration-700 ease-out will-change-opacity"
       loading="eager"
       fetchpriority="high"
+      decoding="async"
     />
+
+    <!-- Individual Small Looping Logo Video Loader Overlay (loops until hero image is downloaded & decoded) -->
+    <div class="progressive-loader-overlay absolute inset-0 z-5 flex items-center justify-center sm:justify-end sm:pr-24 lg:pr-36 bg-slate-100/50 backdrop-blur-[2px] transition-all duration-500 ease-out pointer-events-none select-none">
+      <div class="flex flex-col items-center bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-xl border border-white/90 max-w-[170px] sm:max-w-[190px] text-center will-change-transform">
+        <div class="w-28 sm:w-32 aspect-[16/9] overflow-hidden rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+          <video autoplay muted loop playsinline preload="auto" class="w-full h-full object-contain">
+            <source src="/videos/zz_loading_loop.webm" type="video/webm" />
+            <source src="/videos/zz_loading_loop.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="flex items-center gap-1.5 mt-2">
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#16a34a]"></span>
+          </span>
+          <span class="text-[9px] font-mono font-semibold tracking-wider text-navy-950 uppercase">Loading Image...</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Subtle Left Gradient: Preserves Vibrant Sunset, Waterfront Skyline and Ship while keeping text readable -->
-    <div class="absolute inset-y-0 left-0 w-full sm:w-3/4 md:w-3/5 lg:w-1/2 bg-gradient-to-r from-white/95 via-white/70 to-transparent pointer-events-none"></div>
+    <div class="absolute inset-y-0 left-0 w-full sm:w-3/4 md:w-3/5 lg:w-1/2 bg-gradient-to-r from-white/95 via-white/70 to-transparent pointer-events-none z-10"></div>
   </div>
 
   <!-- Elegant "Global Reach" Script in the sky on the right -->

@@ -196,6 +196,61 @@ const structuredData = {
           setTimeout(initScrollReveal, 100);
         });
       })();
+
+      // Progressive Per-Image Loading Controller
+      // Loops logo animation video per container until that particular image is downloaded and GPU-decoded
+      (function () {
+        function initProgressiveImages() {
+          var containers = document.querySelectorAll('[data-progressive-image]');
+          containers.forEach(function (container) {
+            var img = container.querySelector('img');
+            var overlay = container.querySelector('.progressive-loader-overlay');
+            if (!img) return;
+
+            function reveal() {
+              if (img.classList.contains('is-revealed-img')) return;
+              img.classList.add('is-revealed-img');
+              var targetOpacity = img.getAttribute('data-target-opacity') || '1';
+              img.style.opacity = targetOpacity;
+
+              if (overlay) {
+                overlay.style.opacity = '0';
+                overlay.style.transform = 'scale(0.92)';
+                setTimeout(function () {
+                  overlay.style.display = 'none';
+                  var video = overlay.querySelector('video');
+                  if (video) video.pause();
+                }, 400);
+              }
+            }
+
+            if (img.complete && img.naturalWidth > 0) {
+              if (img.decode) {
+                img.decode().then(reveal).catch(reveal);
+              } else {
+                reveal();
+              }
+            } else {
+              img.addEventListener('load', function () {
+                if (img.decode) {
+                  img.decode().then(reveal).catch(reveal);
+                } else {
+                  reveal();
+                }
+              }, { once: true });
+              img.addEventListener('error', reveal, { once: true });
+            }
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initProgressiveImages);
+        } else {
+          initProgressiveImages();
+        }
+
+        window.addEventListener('load', initProgressiveImages);
+      })();
     </script>
   </body>
 </html>

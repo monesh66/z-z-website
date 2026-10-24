@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../data/site';
+import ProgressiveImage from './ui/ProgressiveImage.astro';
 ---
 
 <section id="about" class="py-14 lg:py-20 bg-white relative overflow-hidden border-b border-slate-200/80">
@@ -116,17 +117,16 @@ import { siteConfig } from '../data/site';
             <div class="w-10 h-0.5 bg-emerald-500 mt-2 ml-auto"></div>
           </div>
 
-          <!-- Ultra-HD Glowing Earth Globe -->
-          <div class="relative z-10 rounded-2xl overflow-hidden aspect-square flex items-center justify-center bg-black/40">
-            <img
-              src="/images/about/globe_night_hd.jpg"
-              alt="Global Markets Connected Network Globe"
-              width="600"
-              height="600"
-              class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-              loading="lazy"
-            />
-          </div>
+          <!-- Ultra-HD Glowing Earth Globe with Individual Progressive Loader -->
+          <ProgressiveImage
+            src="/images/about/globe_night_hd.jpg"
+            alt="Global Markets Connected Network Globe"
+            width="600"
+            height="600"
+            containerClass="relative z-10 rounded-2xl overflow-hidden aspect-square bg-black/40"
+            class="transform hover:scale-105 transition-transform duration-700"
+            size="md"
+          />
 
         </div>
       </div>
