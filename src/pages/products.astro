@@ -1,467 +1,222 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { productCategories } from '../data/products';
+import { individualProducts } from '../data/individualProducts';
 import { siteConfig } from '../data/site';
+
+// Build unique categories with counts
+const categoriesWithCounts = [
+  { name: 'All Commodities', slug: 'all', count: individualProducts.length },
+  ...Array.from(new Set(individualProducts.map((p) => p.category))).map((catName) => {
+    const matching = individualProducts.filter((p) => p.category === catName);
+    return {
+      name: catName,
+      slug: matching[0].categorySlug,
+      count: matching.length,
+    };
+  }),
+];
 ---
 
 <BaseLayout
-  title={`Export Product Catalog & Multi-Commodity Portfolio | ${siteConfig.legalName}`}
-  description="Explore the comprehensive export portfolio of ZIYA ZARA TRADING COMPANY: Indian spices, 1121 Basmati rice, millets, pulses, coconut derivatives, ready-to-eat retort meals, food machinery, textiles, and industrial supplies."
+  title={`Export Commodity Catalogue | ${siteConfig.legalName}`}
+  description="Explore the comprehensive export portfolio of ZIYA ZARA TRADING COMPANY: Milling wheat, organic chickpeas, spices, 1121 Basmati rice, millets, pulses, coconut derivatives, textiles, and industrial supplies."
 >
-  <!-- Products Header Banner -->
-  <section class="bg-[#0B1F3A] text-white py-16 lg:py-24 border-b border-navy-800 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.04] pointer-events-none bg-[radial-gradient(#FFFFFF_1px,transparent_1px)] [background-size:24px_24px]"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl space-y-4">
-        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-400">
-          <span class="w-8 h-0.5 bg-emerald-500"></span>
-          <span>Verified Merchant Exporter & Global Sourcing</span>
-        </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-editorial-serif tracking-tight text-white leading-tight">
-          Diverse Products for <br />
-          <span class="text-emerald-400 font-editorial-serif italic font-normal">Global Commercial Demand.</span>
-        </h1>
-        <p class="text-sm sm:text-base text-slate-300 font-normal leading-relaxed pt-1">
-          Supplying international food importers, hypermarket chains, agro-distributors, and industrial contractors across 50+ countries. Sourced directly from certified farmer cooperatives, modern processing mills, and audited manufacturers with strict contract specification compliance.
-        </p>
+  <!-- Main Catalog Section -->
+  <main class="min-h-screen bg-[#F8FAFC] py-8 sm:py-12 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 
-        <!-- Quick Capability Badges -->
-        <div class="pt-4 flex flex-wrap gap-2.5">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/10 text-slate-200 border border-white/15">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            9 Trade Sectors
-          </span>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/10 text-slate-200 border border-white/15">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            70+ Export Varieties
-          </span>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/10 text-slate-200 border border-white/15">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            APEDA & Spices Board
-          </span>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/10 text-slate-200 border border-white/15">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            FCL & LCL Consolidated
-          </span>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/10 text-slate-200 border border-white/15">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            Private Label Available
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Client Sourcing Flexibility & Multi-Commodity Callout -->
-  <section class="bg-gradient-to-r from-emerald-900 to-navy-950 text-white py-6 border-b border-emerald-800/40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="flex items-start sm:items-center gap-3">
-          <div class="w-9 h-9 rounded-lg bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center flex-shrink-0 text-emerald-300">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-            </svg>
-          </div>
-          <div>
-            <h2 class="text-sm font-bold text-white tracking-wide">
-              Custom Commodity Sourcing & Private Label Packaging on Demand
-            </h2>
-            <p class="text-xs text-emerald-100/80">
-              Need a specific crop grade, custom spice mesh size, private-label retail pouch, or industrial fitting not listed below? We procure directly to your custom contract parameters.
-            </p>
-          </div>
-        </div>
-        <button
-          type="button"
-          data-open-quote-modal
-          data-product-name="Custom Multi-Commodity Sourcing Inquiry"
-          class="flex-shrink-0 px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-navy-950 font-bold text-xs rounded-md transition-all shadow-md hover:shadow-lg flex items-center gap-2"
-        >
-          <span>Request Custom Sourcing</span>
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Controls: Live Search & Category Filter Bar -->
-  <section class="sticky top-[72px] z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs py-3.5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
-        
-        <!-- Live Instant Search -->
-        <div class="relative w-full lg:w-96 flex-shrink-0">
-          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+      <!-- ============================================================ -->
+      <!-- SEARCH & COMMODITY COUNTER BAR (Exact VR Traders Style)       -->
+      <!-- ============================================================ -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-2">
+        <!-- Search Input -->
+        <div class="relative flex-1 max-w-xl">
+          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
           <input
             type="text"
-            id="product-search-input"
-            placeholder="Search commodities, varieties (e.g. 1121 Basmati, Turmeric, Foxtail, Retort, Charcoal...), HS code..."
-            class="w-full pl-9 pr-8 py-2 text-xs rounded-lg border border-slate-200 bg-slate-50 focus:bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#2E8B2E] focus:ring-1 focus:ring-[#2E8B2E] transition-all"
+            id="catalog-search-input"
+            placeholder="Search by commodity name, variety or HSN code..."
+            class="w-full pl-11 pr-10 py-3 text-xs sm:text-sm rounded-full border border-slate-200/90 bg-white text-slate-800 placeholder-slate-400 shadow-xs focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition-all"
           />
           <button
-            id="product-search-clear"
+            id="catalog-search-clear"
             type="button"
-            class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600"
+            class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 cursor-pointer"
             title="Clear search"
           >
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
         </div>
 
-        <!-- Category Filter Pills (Scrollable on small screens) -->
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 scrollbar-none" id="category-filter-bar">
-          <button
-            type="button"
-            data-filter="all"
-            class="category-pill active flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition-all bg-[#0B1F3A] text-white shadow-xs"
-          >
-            All Sectors ({productCategories.length})
-          </button>
-          {productCategories.map((cat) => (
-            <button
-              type="button"
-              data-filter={cat.slug}
-              class="category-pill flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
-            >
-              {cat.title.split('&')[0].trim()}
-            </button>
-          ))}
+        <!-- Total Products Counter -->
+        <div class="flex-shrink-0 text-xs sm:text-sm font-medium text-slate-600 sm:text-right">
+          <span id="catalog-products-counter">Showing {individualProducts.length} products</span>
         </div>
-
       </div>
 
-      <!-- Live Search Results Counter -->
-      <div id="search-status-bar" class="hidden mt-2 pt-2 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
-        <span id="search-matches-count">Showing matching items</span>
-        <button id="search-reset-btn" class="text-emerald-700 hover:underline font-semibold">Reset search</button>
+      <!-- ============================================================ -->
+      <!-- CATEGORY FILTER PILLS (Exact VR Traders Horizontal Scroll)   -->
+      <!-- ============================================================ -->
+      <div class="overflow-x-auto pb-2 scrollbar-none pt-1" id="catalog-filter-pills-container">
+        <div class="flex items-center gap-2 w-max">
+          {categoriesWithCounts.map((cat, idx) => {
+            const isActive = idx === 0;
+            return (
+              <button
+                type="button"
+                data-filter={cat.slug}
+                class={`catalog-pill flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer shadow-xs ${
+                  isActive
+                    ? 'active bg-[#134E34] text-white border border-[#134E34]'
+                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/90'
+                }`}
+              >
+                <span>{cat.name}</span>
+                <span
+                  class={`px-1.5 py-0.2 rounded-full text-[10px] font-mono ${
+                    isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'
+                  }`}
+                >
+                  {cat.count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Empty State for Zero Search Results -->
-  <div id="no-results-banner" class="hidden max-w-2xl mx-auto px-4 py-16 text-center">
-    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
-      <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    </div>
-    <h3 class="text-lg font-bold text-slate-800">No Traded Items Matched Your Query</h3>
-    <p class="text-xs text-slate-500 mt-1 max-w-md mx-auto">
-      We frequently trade additional commodities, varieties, and non-standard contract grades that may not be cataloged here.
-    </p>
-    <div class="mt-5 flex justify-center gap-3">
-      <button
-        type="button"
-        id="clear-filter-btn"
-        class="px-4 py-2 text-xs font-semibold rounded-md bg-slate-200 text-slate-700 hover:bg-slate-300"
-      >
-        View All Categories
-      </button>
-      <button
-        type="button"
-        data-open-quote-modal
-        data-product-name="Special Commodity Sourcing Request"
-        class="px-4 py-2 text-xs font-semibold rounded-md bg-[#2E8B2E] text-white hover:bg-[#257325]"
-      >
-        Submit Custom Sourcing Request
-      </button>
-    </div>
-  </div>
+      <!-- ============================================================ -->
+      <!-- ZERO SEARCH RESULTS BANNER                                   -->
+      <!-- ============================================================ -->
+      <div id="catalog-no-results" class="hidden py-16 text-center max-w-md mx-auto">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-base font-bold text-navy-950">No Traded Commodities Matched</h3>
+        <p class="text-xs text-slate-500 mt-1">
+          Try searching for a different variety, keyword, or clear your current filter.
+        </p>
+        <button
+          type="button"
+          id="catalog-reset-filter-btn"
+          class="mt-4 px-4 py-2 bg-[#134E34] text-white text-xs font-bold rounded-full hover:bg-emerald-800 transition-colors cursor-pointer"
+        >
+          View All Commodities
+        </button>
+      </div>
 
-  <!-- Detailed Categories List -->
-  <section class="py-12 lg:py-20 bg-slate-50/70" id="product-catalog-section">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-      
-      {productCategories.map((category, index) => {
-        const isReversed = index % 2 === 1;
-        return (
-          <article
-            id={category.slug}
-            data-category-slug={category.slug}
-            data-search-text={`${category.title} ${category.shortDescription} ${category.longDescription} ${category.hsCode} ${category.origin} ${category.items.join(' ')} ${category.keySpecs.join(' ')}`.toLowerCase()}
-            class="product-category-card bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
-          >
-            <div class={`grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
-              
-              <!-- Image Column with Badges -->
-              <div class={`lg:col-span-5 relative min-h-[300px] lg:min-h-full overflow-hidden bg-slate-900 ${isReversed ? 'lg:order-2' : ''}`}>
+      <!-- ============================================================ -->
+      <!-- 4-COLUMN INDIVIDUAL PRODUCT CARDS GRID (Exact Reference)     -->
+      <!-- ============================================================ -->
+      <div
+        id="catalog-products-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-2"
+      >
+        {individualProducts.map((product, idx) => {
+          const isAboveFold = idx < 4;
+          const whatsappMessage = encodeURIComponent(
+            `Hello Ziya Zara Trading Company, I am interested in procuring ${product.name} (HSN: ${product.hsnCode}). Please provide commercial export quotation and specifications.`
+          );
+          const whatsappUrl = `https://wa.me/919003098708?text=${whatsappMessage}`;
+
+          return (
+            <article
+              data-category-slug={product.categorySlug}
+              data-search-text={`${product.name} ${product.category} ${product.hsnCode} ${product.specs} ${product.origin}`.toLowerCase()}
+              class="individual-product-card bg-white rounded-2xl border border-slate-200/90 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col group will-change-transform"
+            >
+              <!-- Card Image with Badges -->
+              <div class="relative aspect-[4/3] overflow-hidden bg-slate-100">
                 <img
-                  src={category.image}
-                  alt={category.title}
-                  width="800"
-                  height="600"
-                  class="w-full h-full object-cover min-h-[300px] lg:min-h-full transition-transform duration-700 ease-out hover:scale-105"
-                  loading="lazy"
+                  src={product.image}
+                  alt={product.name}
+                  width="400"
+                  height="300"
+                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  loading={isAboveFold ? "eager" : "lazy"}
+                  fetchpriority={isAboveFold ? "high" : "auto"}
+                  decoding="async"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/30 to-transparent pointer-events-none"></div>
                 
-                <!-- Floating Category Number & Regulatory Tag -->
-                <div class="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 pointer-events-none">
-                  <span class="bg-[#0B1F3A]/90 backdrop-blur-md px-3 py-1 rounded-md border border-white/20 text-white text-[11px] font-mono uppercase tracking-wider font-semibold">
-                    Sector 0{index + 1}
-                  </span>
-                  <span class="bg-emerald-600/90 backdrop-blur-md px-3 py-1 rounded-md border border-emerald-400/30 text-white text-[11px] font-semibold tracking-wide shadow-sm">
-                    {category.badge}
+                <!-- Category Pill Badge (Top-Left) -->
+                <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-md border border-slate-200/60 shadow-xs">
+                  <span class="text-[11px] font-semibold text-slate-800 tracking-wide line-clamp-1">
+                    {product.category}
                   </span>
                 </div>
 
-                <!-- Bottom Image Overlay: Quick Origin & HS Code -->
-                <div class="absolute bottom-4 left-4 right-4 text-white text-xs space-y-1 pointer-events-none">
-                  <div class="flex items-center gap-1.5 text-emerald-300 text-[11px] font-semibold">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    </svg>
-                    <span>Origin: {category.origin}</span>
-                  </div>
-                  <div class="text-[11px] text-slate-300 font-mono">
-                    Classification: {category.hsCode}
-                  </div>
+                <!-- HSN Code Pill Badge (Top-Right) -->
+                <div class="absolute top-3 right-3 bg-[#134E34] text-white px-2.5 py-1 rounded-md shadow-xs">
+                  <span class="text-[11px] font-mono font-bold tracking-wider">
+                    HSN: {product.hsnCode}
+                  </span>
                 </div>
               </div>
 
-              <!-- Content Column -->
-              <div class={`lg:col-span-7 p-6 sm:p-8 lg:p-9 flex flex-col justify-between space-y-6 ${isReversed ? 'lg:order-1' : ''}`}>
-                
-                <div class="space-y-4">
-                  
-                  <!-- Title and Badges -->
-                  <div>
-                    <div class="text-xs font-semibold text-[#2E8B2E] tracking-wider uppercase mb-1">
-                      {category.shortDescription}
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold font-editorial-serif text-[#0B1F3A] leading-tight">
-                      {category.title}
-                    </h2>
-                  </div>
-                  
-                  <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    {category.longDescription}
+              <!-- Card Body -->
+              <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
+                <div class="space-y-1">
+                  <!-- Product Title -->
+                  <h3 class="text-base font-bold font-display text-navy-950 group-hover:text-emerald-700 transition-colors line-clamp-1" title={product.name}>
+                    {product.name}
+                  </h3>
+
+                  <!-- HSN Subtitle -->
+                  <p class="text-xs text-slate-500 font-mono">
+                    HS / HSN Code: <span class="font-bold text-slate-800">{product.hsnCode}</span>
                   </p>
-
-                  <!-- Traded Varieties & Product Items (Interactive Badges) -->
-                  <div class="pt-3 border-t border-slate-100 space-y-2.5">
-                    <div class="flex items-center justify-between">
-                      <span class="text-[11px] font-mono uppercase tracking-wider text-slate-500 font-bold">
-                        Traded Varieties & Line Items:
-                      </span>
-                      <span class="text-[10px] text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded">
-                        Click any item to inquire
-                      </span>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {category.items.map((item) => (
-                        <button
-                          type="button"
-                          data-open-quote-modal
-                          data-product-name={`${item} (${category.title})`}
-                          class="variety-item-btn flex items-center justify-between gap-2 p-2 rounded-lg bg-slate-50 hover:bg-emerald-50/80 border border-slate-200/80 hover:border-emerald-300 text-left transition-all group cursor-pointer"
-                          title={`Click to get a trade quote for ${item}`}
-                        >
-                          <div class="flex items-center gap-2 min-w-0">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
-                            <span class="text-xs text-slate-800 font-medium group-hover:text-emerald-950 truncate">{item}</span>
-                          </div>
-                          <span class="opacity-0 group-hover:opacity-100 text-[10px] font-bold text-emerald-700 flex items-center gap-0.5 flex-shrink-0 transition-opacity">
-                            Quote
-                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-                            </svg>
-                          </span>
-                        </button>
-                      ))}
-
-                      <!-- Dedicated Custom Item / Variety Placeholder Card -->
-                      <button
-                        type="button"
-                        data-open-quote-modal
-                        data-product-name={`Custom Variety / Grade Request for ${category.title}`}
-                        class="flex items-center justify-between gap-2 p-2 rounded-lg bg-emerald-50/50 hover:bg-emerald-100/70 border border-dashed border-emerald-300 text-left transition-all group cursor-pointer"
-                        title="Request custom variety or grade in this category"
-                      >
-                        <div class="flex items-center gap-2 min-w-0">
-                          <span class="w-4 h-4 rounded bg-emerald-600 text-white flex items-center justify-center text-[11px] font-bold flex-shrink-0">
-                            +
-                          </span>
-                          <span class="text-xs text-emerald-900 font-bold truncate">Custom Variety / Private Label</span>
-                        </div>
-                        <span class="text-[10px] font-bold text-emerald-700 flex-shrink-0">
-                          Request
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- Two-Column Specifications & Packaging -->
-                  <div class="pt-3 border-t border-slate-100 grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                    
-                    <!-- Specifications & Assays Box -->
-                    <div class="bg-slate-50/90 rounded-xl p-3 space-y-1.5 border border-slate-200/70">
-                      <div class="text-[11px] font-mono uppercase tracking-wider text-[#0B1F3A] font-bold flex items-center gap-1.5">
-                        <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span>Quality Assays & Specs:</span>
-                      </div>
-                      <ul class="space-y-1 text-[11px] text-slate-600">
-                        {category.keySpecs.map((spec) => (
-                          <li class="flex items-start gap-1.5">
-                            <span class="text-emerald-600 mt-0.5">•</span>
-                            <span>{spec}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <!-- Packaging & Containerization Box -->
-                    <div class="bg-slate-50/90 rounded-xl p-3 space-y-1.5 border border-slate-200/70">
-                      <div class="text-[11px] font-mono uppercase tracking-wider text-[#0B1F3A] font-bold flex items-center gap-1.5">
-                        <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                        </svg>
-                        <span>Packaging Standards:</span>
-                      </div>
-                      <ul class="space-y-1 text-[11px] text-slate-600">
-                        {category.packaging.map((pack) => (
-                          <li class="flex items-start gap-1.5">
-                            <span class="text-emerald-600 mt-0.5">•</span>
-                            <span>{pack}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                  </div>
-
                 </div>
 
                 <!-- Action Button Row -->
-                <div class="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100">
-                  <div class="flex items-center gap-2">
-                    <button
-                      type="button"
-                      data-open-quote-modal
-                      data-product-name={category.title}
-                      class="px-5 py-2.5 rounded-[6px] text-xs font-semibold text-white bg-[#2E8B2E] hover:bg-[#257325] transition-all duration-200 shadow-sm hover:shadow-md flex items-center gap-2"
-                    >
-                      <span>Inquire for {category.title.split('&')[0].trim()}</span>
-                      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </button>
-                    
-                    <a
-                      href={`/contact?interest=${encodeURIComponent(category.title)}`}
-                      class="px-4 py-2.5 rounded-[6px] text-xs font-semibold text-[#0B1F3A] bg-white border border-[#0B1F3A] hover:bg-[#0B1F3A] hover:text-white transition-all duration-200"
-                    >
-                      Formal Trade Desk
-                    </a>
-                  </div>
-
+                <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between gap-2">
+                  <!-- WhatsApp Link (Exact Reference Style) -->
                   <a
-                    href={`https://wa.me/919500959005?text=${encodeURIComponent(`Hello ZIYA ZARA team, I am interested in procuring export quantities of: ${category.title}. Please share CIF/FOB specifications.`)}`}
+                    href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-xs text-emerald-700 hover:text-emerald-800 font-semibold flex items-center gap-1.5"
+                    class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-emerald-700 transition-colors group/wa"
                   >
-                    <span>Instant WhatsApp Inquiry</span>
-                    <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    <!-- WhatsApp SVG Icon -->
+                    <svg class="w-4 h-4 text-emerald-600 group-hover/wa:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.948 3.018.949h.005c3.181 0 5.768-2.587 5.769-5.767.001-1.541-.599-2.99-1.688-4.08s-2.539-1.689-4.08-1.689zm0-2.001c4.288 0 7.769 3.481 7.77 7.769.001 2.078-.809 4.032-2.28 5.503s-3.424 2.281-5.502 2.281h-.007c-1.282 0-2.535-.347-3.633-.999l-5.379 1.411 1.436-5.243c-.714-1.139-1.09-2.457-1.09-3.953 0-4.288 3.481-7.769 7.769-7.769zm3.565 10.963c-.156.438-.795.833-1.109.878-.309.045-.705.066-1.144-.075-.27-.087-.618-.201-1.071-.397-1.921-.832-3.174-2.775-3.27-2.905-.096-.129-.775-1.031-.775-1.967 0-.936.491-1.397.666-1.591.175-.194.382-.243.51-.243.127 0 .255.002.366.007.118.005.276-.045.432.33.161.388.549 1.341.597 1.438.048.097.08.21.016.338-.064.129-.096.21-.192.323-.096.113-.203.253-.29.34-.097.097-.199.203-.086.397.113.194.502.828 1.077 1.341.741.66 1.365.865 1.559.962.194.097.307.081.42-.048.113-.129.485-.565.614-.759.129-.194.258-.161.436-.097.177.064 1.132.533 1.326.63.194.097.323.145.371.226.049.081.049.469-.107.907z" />
                     </svg>
+                    <span>Inquire via WhatsApp</span>
                   </a>
+
+                  <!-- RFQ Button -->
+                  <button
+                    type="button"
+                    data-open-quote-modal
+                    data-product-name={product.name}
+                    class="p-2 rounded-lg bg-slate-50 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 border border-slate-200 transition-colors cursor-pointer"
+                    title={`Request formal quote for ${product.name}`}
+                    aria-label={`Request formal quote for ${product.name}`}
+                  >
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </button>
                 </div>
-
               </div>
-
-            </div>
-          </article>
-        );
-      })}
+            </article>
+          );
+        })}
+      </div>
 
     </div>
-  </section>
+  </main>
 
-  <!-- Export Accreditations & Quality Assurance Strip -->
-  <section class="py-16 bg-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
-        <span class="text-xs font-semibold uppercase tracking-widest text-[#2E8B2E]">Compliance & Standards</span>
-        <h2 class="text-2xl sm:text-3xl font-bold font-editorial-serif text-[#0B1F3A]">
-          Export Assays & Quality Certifications
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-600">
-          Every shipment undergoes rigorous multi-tier testing, phytosanitary checks, and international pre-shipment surveyor inspections before clearance.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
-        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-          <div class="text-xs font-bold text-[#0B1F3A]">APEDA</div>
-          <div class="text-[11px] text-slate-500">Agro & Processed Foods Export Authority</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-          <div class="text-xs font-bold text-[#0B1F3A]">SPICES BOARD</div>
-          <div class="text-[11px] text-slate-500">Ministry of Commerce & Industry (Govt. of India)</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-          <div class="text-xs font-bold text-[#0B1F3A]">FSSAI & AGMARK</div>
-          <div class="text-[11px] text-slate-500">Food Safety & Quality Benchmark Grading</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-          <div class="text-xs font-bold text-[#0B1F3A]">COCONUT BOARD</div>
-          <div class="text-[11px] text-slate-500">Certified Virgin Oil & Desiccated Exporter</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-          <div class="text-xs font-bold text-[#0B1F3A]">ISO 22000 & HACCP</div>
-          <div class="text-[11px] text-slate-500">Food Safety & Retort Thermal Sterilization</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-          <div class="text-xs font-bold text-[#0B1F3A]">SGS / BV AUDITED</div>
-          <div class="text-[11px] text-slate-500">Independent Pre-Shipment Inspection</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Container Consolidation Notice -->
-  <section class="py-12 bg-slate-100 border-t border-slate-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800">
-        Freight Optimization
-      </div>
-      <h3 class="text-xl sm:text-2xl font-bold font-editorial-serif text-[#0B1F3A]">
-        Consolidated Multi-Commodity Container Shipments
-      </h3>
-      <p class="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto">
-        Optimize your working capital and inventory holding costs. We provide consolidated FCL (Full Container Load) and LCL shipping, allowing you to combine Spices, 1121 Basmati Rice, Millets, Virgin Coconut Oil, and Retort Meals into a single, customs-cleared marine container.
-      </p>
-      <div class="pt-2">
-        <a href="/contact" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-700 hover:text-emerald-800">
-          <span>Discuss Mixed Container Logistics with our Freight Desk</span>
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================== -->
-  <!-- Interactive Quick Trade Quotation Modal Dialog -->
-  <!-- ======================================================== -->
+  <!-- Quick Trade Quotation Modal Dialog -->
   <div
     id="quote-modal-backdrop"
     class="fixed inset-0 z-50 bg-[#0B1F3A]/70 backdrop-blur-xs hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6"
@@ -476,21 +231,21 @@ import { siteConfig } from '../data/site';
     >
       <!-- Modal Header -->
       <div class="bg-[#0B1F3A] text-white p-5 sm:p-6 relative">
-        <div class="text-[11px] font-semibold text-emerald-400 uppercase tracking-widest">
-          ZIYA ZARA Commercial Trade Desk
+        <div class="text-[11px] font-semibold text-emerald-400 uppercase tracking-widest font-mono">
+          ZIYA ZARA COMMERCIAL TRADE DESK
         </div>
         <h3 id="modal-title" class="text-xl font-bold font-editorial-serif text-white mt-1">
           Request Commercial Quotation
         </h3>
         <p class="text-xs text-slate-300 mt-1">
-          Direct response with CIF/FOB specifications within 24 to 48 hours.
+          Direct response with CIF/FOB pricing and specifications within 24 to 48 hours.
         </p>
 
         <!-- Close Button -->
         <button
           type="button"
           id="close-modal-btn"
-          class="absolute top-5 right-5 text-white/70 hover:text-white p-1 rounded-md hover:bg-white/10 transition-colors"
+          class="absolute top-5 right-5 text-white/70 hover:text-white p-1 rounded-md hover:bg-white/10 transition-colors cursor-pointer"
           aria-label="Close modal"
         >
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -533,7 +288,7 @@ import { siteConfig } from '../data/site';
               <option value="1x 40ft FCL / High Cube">1x 40ft FCL / High Cube</option>
               <option value="Consolidated LCL Batch (5 - 10 MT)">Consolidated LCL Batch (5 - 10 MT)</option>
               <option value="Pre-Shipment Commercial Sample Batch">Pre-Shipment Commercial Sample Batch</option>
-              <option value="Custom Multiple Containers / Annual Contract">Annual Contract / Multiple Containers</option>
+              <option value="Annual Contract / Multiple Containers">Annual Contract / Multiple Containers</option>
             </select>
           </div>
 
@@ -547,27 +302,26 @@ import { siteConfig } from '../data/site';
               class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 bg-white focus:outline-none focus:border-[#2E8B2E]"
             >
               <option value="Standard Export Sacks (25kg / 50kg)">Standard Export Sacks (25kg / 50kg)</option>
-              <option value="Retail Nitrogen Standup Pouches (500g / 1kg)">Retail Nitrogen Pouches (500g / 1kg)</option>
-              <option value="Custom Private Labeling (OEM)">Custom Private Labeling (OEM)</option>
-              <option value="Bulk Flexi-Tank / Drums (Liquids)">Bulk Flexi-Tank / Drums (Liquids)</option>
-              <option value="Wooden Crates / Palletized (Machinery/Metals)">Wooden Crates / Palletized</option>
+              <option value="Retail Pouches (500g / 1kg)">Retail Pouches (500g / 1kg)</option>
+              <option value="Jumbo FIBC Dry Bulk Bags (1 MT)">Jumbo FIBC Bulk Bags (1 MT)</option>
+              <option value="Custom Private Labeling">Custom Private Labeling</option>
             </select>
           </div>
         </div>
 
-        <!-- Destination Port & Trade Incoterm -->
+        <!-- Destination Port & Incoterm -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div class="space-y-1">
             <label for="modal-port" class="block text-xs font-semibold text-slate-700">
-              Destination Sea Port / Country <span class="text-red-500">*</span>
+              Target Port of Discharge <span class="text-red-500">*</span>
             </label>
             <input
               type="text"
               id="modal-port"
-              name="destinationPort"
+              name="port"
+              placeholder="e.g. Jebel Ali, Rotterdam, Singapore"
               required
-              placeholder="e.g. Jebel Ali, Rotterdam, Singapore, Newark"
-              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#2E8B2E]"
+              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 bg-white focus:outline-none focus:border-[#2E8B2E]"
             />
           </div>
 
@@ -581,73 +335,55 @@ import { siteConfig } from '../data/site';
               class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 bg-white focus:outline-none focus:border-[#2E8B2E]"
             >
               <option value="CIF (Cost, Insurance & Freight)">CIF (Cost, Insurance & Freight)</option>
-              <option value="FOB (Free On Board - Indian Ports)">FOB (Indian Sea / Air Ports)</option>
+              <option value="FOB (Free On Board)">FOB (Free On Board)</option>
               <option value="CFR (Cost & Freight)">CFR (Cost & Freight)</option>
-              <option value="EXW (Ex-Works Mill / Warehouse)">EXW (Ex-Works)</option>
+              <option value="EXW (Ex Works)">EXW (Ex Works)</option>
             </select>
           </div>
         </div>
 
-        <!-- Buyer Contact Info -->
+        <!-- Buyer Contact Email & WhatsApp -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div class="space-y-1">
-            <label for="modal-buyer-name" class="block text-xs font-semibold text-slate-700">
-              Your Name & Company <span class="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="modal-buyer-name"
-              name="buyerName"
-              required
-              placeholder="e.g. John Doe, Global Foods LLC"
-              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#2E8B2E]"
-            />
-          </div>
-
-          <div class="space-y-1">
-            <label for="modal-buyer-email" class="block text-xs font-semibold text-slate-700">
-              Business Email <span class="text-red-500">*</span>
+            <label for="modal-email" class="block text-xs font-semibold text-slate-700">
+              Corporate Email <span class="text-red-500">*</span>
             </label>
             <input
               type="email"
-              id="modal-buyer-email"
-              name="buyerEmail"
+              id="modal-email"
+              name="email"
               required
-              placeholder="import@company.com"
-              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#2E8B2E]"
+              placeholder="procurement@company.com"
+              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 bg-white focus:outline-none focus:border-[#2E8B2E]"
+            />
+          </div>
+
+          <div class="space-y-1">
+            <label for="modal-phone" class="block text-xs font-semibold text-slate-700">
+              Phone / WhatsApp
+            </label>
+            <input
+              type="tel"
+              id="modal-phone"
+              name="phone"
+              placeholder="+971 50 ... / +1 ..."
+              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 bg-white focus:outline-none focus:border-[#2E8B2E]"
             />
           </div>
         </div>
 
-        <!-- Form Success State Message -->
-        <div id="modal-success-msg" class="hidden p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-800">
-          <strong>Thank you!</strong> Your quote request has been transmitted to our export desk. An export executive will respond with complete CIF/FOB specifications shortly.
-        </div>
-
-        <!-- Form Actions -->
-        <div class="pt-2 flex items-center justify-between gap-3">
+        <!-- Submit Button -->
+        <div class="pt-2">
           <button
             type="submit"
             id="modal-submit-btn"
-            class="flex-1 h-11 bg-[#2E8B2E] hover:bg-[#257325] text-white font-semibold text-xs rounded-lg transition-colors flex items-center justify-center gap-2 shadow-sm"
+            class="w-full h-11 bg-[#134E34] hover:bg-emerald-900 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Submit Quotation Request</span>
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
+            <span>Transmit RFQ to Trade Desk</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
             </svg>
-          </button>
-
-          <button
-            type="button"
-            id="modal-whatsapp-btn"
-            class="h-11 px-4 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold text-xs rounded-lg border border-emerald-300 transition-colors flex items-center gap-2 flex-shrink-0"
-            title="Chat directly on WhatsApp"
-          >
-            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-            </svg>
-            <span>WhatsApp</span>
           </button>
         </div>
 
@@ -655,32 +391,29 @@ import { siteConfig } from '../data/site';
     </div>
   </div>
 
-  <!-- Client-side Interactive Script for Filters, Search & Modal -->
+  <!-- Interactive Filtering, Search & Modal Script -->
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Filter Pills & Live Search Elements
-      const filterPills = document.querySelectorAll('#category-filter-bar .category-pill');
-      const searchInput = document.getElementById('product-search-input');
-      const searchClearBtn = document.getElementById('product-search-clear');
-      const searchStatusBar = document.getElementById('search-status-bar');
-      const searchMatchesCount = document.getElementById('search-matches-count');
-      const searchResetBtn = document.getElementById('search-reset-btn');
-      const noResultsBanner = document.getElementById('no-results-banner');
-      const categoryCards = document.querySelectorAll('.product-category-card');
-      const clearFilterBtn = document.getElementById('clear-filter-btn');
+      const searchInput = document.getElementById('catalog-search-input');
+      const searchClearBtn = document.getElementById('catalog-search-clear');
+      const counterEl = document.getElementById('catalog-products-counter');
+      const filterPills = document.querySelectorAll('.catalog-pill');
+      const productCards = document.querySelectorAll('.individual-product-card');
+      const noResultsEl = document.getElementById('catalog-no-results');
+      const resetFilterBtn = document.getElementById('catalog-reset-filter-btn');
 
-      let activeFilter = 'all';
-      let searchQuery = '';
+      let currentFilter = 'all';
+      let currentQuery = '';
 
-      function applyFilterAndSearch() {
+      function filterCatalogue() {
         let visibleCount = 0;
-        const query = searchQuery.trim().toLowerCase();
+        const query = currentQuery.trim().toLowerCase();
 
-        categoryCards.forEach((card) => {
+        productCards.forEach((card) => {
           const categorySlug = card.getAttribute('data-category-slug');
           const searchText = card.getAttribute('data-search-text') || '';
 
-          const matchesCategory = activeFilter === 'all' || categorySlug === activeFilter;
+          const matchesCategory = currentFilter === 'all' || categorySlug === currentFilter;
           const matchesSearch = query === '' || searchText.includes(query);
 
           if (matchesCategory && matchesSearch) {
@@ -691,115 +424,108 @@ import { siteConfig } from '../data/site';
           }
         });
 
-        // Search feedback bar
-        if (query.length > 0) {
-          searchStatusBar?.classList.remove('hidden');
-          searchClearBtn?.classList.remove('hidden');
-          if (searchMatchesCount) {
-            searchMatchesCount.textContent = `Found ${visibleCount} trade sector${visibleCount === 1 ? '' : 's'} matching "${query}"`;
+        // Update counter text
+        if (counterEl) {
+          counterEl.textContent = `Showing ${visibleCount} products`;
+        }
+
+        // Search clear icon
+        if (searchClearBtn) {
+          if (query.length > 0) {
+            searchClearBtn.classList.remove('hidden');
+          } else {
+            searchClearBtn.classList.add('hidden');
           }
-        } else {
-          searchStatusBar?.classList.add('hidden');
-          searchClearBtn?.classList.add('hidden');
         }
 
         // Zero results banner
-        if (visibleCount === 0) {
-          noResultsBanner?.classList.remove('hidden');
-        } else {
-          noResultsBanner?.classList.add('hidden');
+        if (noResultsEl) {
+          if (visibleCount === 0) {
+            noResultsEl.classList.remove('hidden');
+          } else {
+            noResultsEl.classList.add('hidden');
+          }
         }
       }
 
-      // Filter Pill Click Handlers
+      // Filter Pill Handlers
       filterPills.forEach((pill) => {
         pill.addEventListener('click', () => {
           filterPills.forEach((p) => {
-            p.classList.remove('active', 'bg-[#0B1F3A]', 'text-white', 'shadow-xs');
-            p.classList.add('bg-slate-100', 'text-slate-700');
+            p.classList.remove('active', 'bg-[#134E34]', 'text-white', 'border-[#134E34]');
+            p.classList.add('bg-white', 'text-slate-700', 'border-slate-200/90');
+            const countBadge = p.querySelector('span:last-child');
+            if (countBadge) {
+              countBadge.classList.remove('bg-white/20', 'text-white');
+              countBadge.classList.add('bg-slate-100', 'text-slate-500');
+            }
           });
 
-          pill.classList.add('active', 'bg-[#0B1F3A]', 'text-white', 'shadow-xs');
-          pill.classList.remove('bg-slate-100', 'text-slate-700');
+          pill.classList.add('active', 'bg-[#134E34]', 'text-white', 'border-[#134E34]');
+          pill.classList.remove('bg-white', 'text-slate-700', 'border-slate-200/90');
+          const activeBadge = pill.querySelector('span:last-child');
+          if (activeBadge) {
+            activeBadge.classList.add('bg-white/20', 'text-white');
+            activeBadge.classList.remove('bg-slate-100', 'text-slate-500');
+          }
 
-          activeFilter = pill.getAttribute('data-filter') || 'all';
-          applyFilterAndSearch();
+          currentFilter = pill.getAttribute('data-filter') || 'all';
+          filterCatalogue();
         });
       });
 
-      // Search Input Handlers
+      // Search Handlers
       searchInput?.addEventListener('input', (e) => {
-        searchQuery = e.target.value;
-        applyFilterAndSearch();
+        currentQuery = e.target.value;
+        filterCatalogue();
       });
 
-      function resetSearch() {
+      function clearSearch() {
         if (searchInput) searchInput.value = '';
-        searchQuery = '';
-        applyFilterAndSearch();
+        currentQuery = '';
+        filterCatalogue();
       }
 
-      searchClearBtn?.addEventListener('click', resetSearch);
-      searchResetBtn?.addEventListener('click', resetSearch);
-      clearFilterBtn?.addEventListener('click', () => {
-        resetSearch();
-        const allPill = document.querySelector('#category-filter-bar [data-filter="all"]');
+      searchClearBtn?.addEventListener('click', clearSearch);
+      resetFilterBtn?.addEventListener('click', () => {
+        clearSearch();
+        const allPill = document.querySelector('.catalog-pill[data-filter="all"]');
         if (allPill) allPill.click();
       });
 
-      // 2. Interactive Quotation Modal
+      // Quick Quotation Modal Logic
       const modalBackdrop = document.getElementById('quote-modal-backdrop');
       const modalCard = document.getElementById('quote-modal-card');
       const closeModalBtn = document.getElementById('close-modal-btn');
-      const quoteForm = document.getElementById('quick-quote-form');
       const modalProductName = document.getElementById('modal-product-name');
-      const modalWhatsAppBtn = document.getElementById('modal-whatsapp-btn');
-      const modalSuccessMsg = document.getElementById('modal-success-msg');
-      const modalSubmitBtn = document.getElementById('modal-submit-btn');
+      const quoteForm = document.getElementById('quick-quote-form');
 
       function openModal(productName) {
-        if (!modalBackdrop || !modalCard) return;
-        if (modalProductName) {
-          modalProductName.value = productName || 'Multi-Commodity Export Inquiry';
+        if (modalProductName && productName) {
+          modalProductName.value = productName;
         }
-        if (modalSuccessMsg) {
-          modalSuccessMsg.classList.add('hidden');
-        }
-        if (modalSubmitBtn) {
-          modalSubmitBtn.removeAttribute('disabled');
-          modalSubmitBtn.innerHTML = `<span>Submit Quotation Request</span><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
-        }
-
-        modalBackdrop.classList.remove('hidden');
-        // Trigger transitions
-        requestAnimationFrame(() => {
-          modalBackdrop.classList.remove('opacity-0');
-          modalBackdrop.classList.add('opacity-100');
-          modalCard.classList.remove('scale-95', 'opacity-0');
-          modalCard.classList.add('scale-100', 'opacity-100');
-        });
-        document.body.style.overflow = 'hidden';
+        modalBackdrop?.classList.remove('hidden');
+        setTimeout(() => {
+          modalBackdrop?.classList.remove('opacity-0');
+          modalCard?.classList.remove('scale-95', 'opacity-0');
+          modalCard?.classList.add('scale-100', 'opacity-100');
+        }, 10);
       }
 
       function closeModal() {
-        if (!modalBackdrop || !modalCard) return;
-        modalBackdrop.classList.remove('opacity-100');
-        modalBackdrop.classList.add('opacity-0');
-        modalCard.classList.remove('scale-100', 'opacity-100');
-        modalCard.classList.add('scale-95', 'opacity-0');
-
+        modalBackdrop?.classList.add('opacity-0');
+        modalCard?.classList.remove('scale-100', 'opacity-100');
+        modalCard?.classList.add('scale-95', 'opacity-0');
         setTimeout(() => {
-          modalBackdrop.classList.add('hidden');
-          document.body.style.overflow = '';
+          modalBackdrop?.classList.add('hidden');
         }, 300);
       }
 
-      // Bind all open buttons
       document.querySelectorAll('[data-open-quote-modal]').forEach((btn) => {
         btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const prodName = btn.getAttribute('data-product-name') || '';
-          openModal(prodName);
+          const target = e.currentTarget;
+          const pName = target.getAttribute('data-product-name') || 'Export Commodity';
+          openModal(pName);
         });
       });
 
@@ -808,42 +534,39 @@ import { siteConfig } from '../data/site';
         if (e.target === modalBackdrop) closeModal();
       });
 
-      // Escape key closes modal
-      document.addEventListener('keydown', (e) => {
+      window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && !modalBackdrop?.classList.contains('hidden')) {
           closeModal();
         }
       });
 
-      // WhatsApp Button in Modal
-      modalWhatsAppBtn?.addEventListener('click', () => {
-        const item = modalProductName?.value || 'Products';
-        const port = document.getElementById('modal-port')?.value || 'Destination Port';
-        const vol = document.getElementById('modal-volume')?.value || '';
-        const text = encodeURIComponent(`Hello ZIYA ZARA, I would like to request an export quote for: ${item}. Quantity: ${vol}, Destination Port: ${port}. Please provide CIF terms.`);
-        window.open(`https://wa.me/919500959005?text=${text}`, '_blank');
-      });
-
-      // Form Submit Handler
+      // Form submission via mailto link
       quoteForm?.addEventListener('submit', (e) => {
         e.preventDefault();
-        if (modalSubmitBtn) {
-          modalSubmitBtn.setAttribute('disabled', 'true');
-          modalSubmitBtn.innerHTML = `<span>Transmitting Inquiry...</span>`;
-        }
+        const formData = new FormData(quoteForm);
+        const pName = formData.get('productName') || '';
+        const volume = formData.get('volume') || '';
+        const packaging = formData.get('packaging') || '';
+        const port = formData.get('port') || '';
+        const incoterm = formData.get('incoterm') || '';
+        const email = formData.get('email') || '';
+        const phone = formData.get('phone') || '';
 
-        setTimeout(() => {
-          if (modalSuccessMsg) {
-            modalSuccessMsg.classList.remove('hidden');
-          }
-          if (modalSubmitBtn) {
-            modalSubmitBtn.innerHTML = `<span>Inquiry Transmitted ✓</span>`;
-          }
-          setTimeout(() => {
-            closeModal();
-            quoteForm.reset();
-          }, 2400);
-        }, 800);
+        const subject = encodeURIComponent(`RFQ: ${pName} - ${volume}`);
+        const body = encodeURIComponent(
+          `COMMERCIAL TRADE INQUIRY\n\n` +
+          `Commodity: ${pName}\n` +
+          `Order Volume: ${volume}\n` +
+          `Packaging: ${packaging}\n` +
+          `Destination Port: ${port}\n` +
+          `Incoterm: ${incoterm}\n` +
+          `Buyer Corporate Email: ${email}\n` +
+          `Phone / WhatsApp: ${phone}\n\n` +
+          `Transmitted via ZIYA ZARA Commercial Trade Desk`
+        );
+
+        window.location.href = `mailto:info@ziyazaratrading.com?subject=${subject}&body=${body}`;
+        closeModal();
       });
     });
   </script>

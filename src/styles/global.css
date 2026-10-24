@@ -1,21 +1,26 @@
 @import "tailwindcss";
 
 @layer base {
+
   :root {
     --brand-navy: #0B1F3A;
+    --brand-navy-deep: #0B1F3A;
     --brand-navy-light: #112847;
     --brand-emerald: #2E8B2E;
     --brand-emerald-hover: #257325;
+    --brand-emerald-bright: #2E8B2E;
     --brand-pale-blue: #EAF3FB;
-    --brand-text-dark: #0B1F3A;
-    --brand-text-muted: #5B6573;
-    --star-gold: #F5B301;
+    --brand-gold: #D6B879;
+    --brand-gold-light: #EBD6A7;
+    --brand-offwhite: #F8FAFC;
+    --brand-slate: #354456;
+    --brand-slate-light: #64748B;
   }
 
   html {
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #354456;
+    color: var(--brand-slate);
     background-color: #FFFFFF;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -26,132 +31,110 @@
   }
 
   ::selection {
-    background-color: #138848;
+    background-color: #2E8B2E;
     color: #FFFFFF;
   }
 }
 
-/* Serif Display Typography matching reference */
-.font-editorial-serif {
-  font-family: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
-}
-
+/* Custom Display Typography */
 .font-display {
   font-family: 'Playfair Display', Georgia, serif;
 }
 
-/* Color Utilities */
-.bg-brand-navy { background-color: #0B1F3A; }
-.bg-brand-navy-card { background-color: #112847; }
-.bg-brand-emerald { background-color: #2E8B2E; }
-.bg-brand-pale-blue { background-color: #EAF3FB; }
-
-.text-brand-navy { color: #0B1F3A; }
-.text-brand-emerald { color: #2E8B2E; }
-
-/* Global Button Styles matching Reference */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: #2E8B2E;
-  color: #FFFFFF;
-  font-weight: 600;
-  font-size: 0.875rem;
-  height: 44px;
-  padding: 0 1.5rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(46, 139, 46, 0.2);
+.font-editorial-serif {
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
-.btn-primary:hover {
-  background-color: #257325;
+.font-body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: #FFFFFF;
-  color: #0B1F3A;
-  border: 1px solid #0B1F3A;
-  font-weight: 600;
-  font-size: 0.875rem;
-  height: 44px;
-  padding: 0 1.5rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+/* Custom UI Utility Styles */
+.bg-navy-950 { background-color: #0B1F3A; }
+.bg-navy-900 { background-color: #112847; }
+.bg-navy-850 { background-color: #153259; }
+.bg-navy-800 { background-color: #1A3E6B; }
+.bg-navy-700 { background-color: #1F4A7D; }
+
+.bg-emerald-700 { background-color: #257325; }
+.bg-emerald-600 { background-color: #2E8B2E; }
+.bg-emerald-500 { background-color: #34A853; }
+.bg-pale-blue { background-color: #EAF3FB; }
+
+.bg-offwhite { background-color: #F8FAFC; }
+.bg-warm-light { background-color: #F1F5F9; }
+
+.text-navy-950 { color: #0B1F3A; }
+.text-navy-900 { color: #112847; }
+.text-navy-700 { color: #1A3E6B; }
+.text-emerald-700 { color: #257325; }
+.text-emerald-600 { color: #2E8B2E; }
+.text-emerald-500 { color: #2E8B2E; }
+.text-emerald-400 { color: #34A853; }
+.text-champagne { color: #D6B879; }
+.text-champagne-light { color: #EBD6A7; }
+.text-slate-muted { color: #64748B; }
+.text-slate-body { color: #354456; }
+
+.border-navy-800 { border-color: #122F50; }
+.border-navy-700 { border-color: #1A3E66; }
+.border-emerald-600 { border-color: #168447; }
+.border-emerald-500 { border-color: #10B981; }
+.border-champagne { border-color: #D6B879; }
+.border-subtle { border-color: rgba(11, 31, 54, 0.08); }
+.border-dark-subtle { border-color: rgba(255, 255, 255, 0.1); }
+
+/* Editorial Fine Lines & Badges */
+.editorial-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(214, 184, 121, 0.4), transparent);
 }
 
-.btn-secondary:hover {
-  background-color: #0B1F3A;
-  color: #FFFFFF;
+.editorial-line-emerald {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent);
 }
 
-.btn-emerald {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: #2E8B2E;
-  color: #FFFFFF;
-  font-weight: 600;
-  font-size: 0.875rem;
-  height: 44px;
-  padding: 0 1.5rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(46, 139, 46, 0.2);
+/* Glassmorphism & Depth Layers */
+.glass-panel-dark {
+  background: rgba(11, 31, 54, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.btn-emerald:hover {
-  background-color: #257325;
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(11, 31, 54, 0.06);
 }
 
-.btn-outline-navy {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: #FFFFFF;
-  color: #0B1F3A;
-  border: 1px solid #0B1F3A;
-  font-weight: 600;
-  font-size: 0.875rem;
-  height: 44px;
-  padding: 0 1.5rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-.btn-outline-navy:hover {
-  background-color: #0B1F3A;
-  color: #FFFFFF;
-}
-
-/* Trade Button Aliases for Legacy and Page Templates */
+/* Button & Card Animations */
 .trade-btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #2E8B2E;
-  color: #FFFFFF;
+  padding: 0.875rem 1.75rem;
   font-weight: 600;
-  font-size: 0.875rem;
-  height: 44px;
-  padding: 0 1.5rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(46, 139, 46, 0.2);
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  background-color: #2E8B2E;
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(46, 139, 46, 0.25);
 }
 
 .trade-btn-primary:hover {
   background-color: #257325;
-  box-shadow: 0 4px 8px rgba(46, 139, 46, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 139, 46, 0.35);
+}
+
+.trade-btn-primary:active {
+  transform: translateY(0);
 }
 
 .trade-btn-secondary {
@@ -159,33 +142,76 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #FFFFFF;
-  color: #0B1F3A;
-  border: 1px solid #0B1F3A;
+  padding: 0.875rem 1.75rem;
   font-weight: 600;
-  font-size: 0.875rem;
-  height: 44px;
-  padding: 0 1.5rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  color: #0B1F3A;
+  background-color: #FFFFFF;
+  border: 1.5px solid #0B1F3A;
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .trade-btn-secondary:hover {
   background-color: #0B1F3A;
   color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(11, 31, 58, 0.15);
 }
 
-/* Keyboard Accessibility */
+.trade-btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Card Hover Elevation */
+.trade-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trade-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(11, 31, 54, 0.12), 0 1px 3px rgba(11, 31, 54, 0.05);
+}
+
+/* Route Animation Keyframes */
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-dash-flow {
+  animation: dash-flow 2.5s linear infinite;
+}
+
+@keyframes pulse-node {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.3;
+  }
+}
+
+.animate-pulse-node {
+  animation: pulse-node 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Accessibility Focus States */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #138848;
-  outline-offset: 2px;
+  outline: 2px solid #10B981;
+  outline-offset: 3px;
 }
 
-/* Reduced Motion */
+/* Motion Preferences Support */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

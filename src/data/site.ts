@@ -1,30 +1,14 @@
 /**
  * ZIYA ZARA TRADING COMPANY
  * Central Business & Site Configuration Module
+ * 
+ * Update contact details, branding, operational scope, and metadata here.
+ * Items marked [LAUNCH PLACEHOLDER] should be updated with verified client data before deployment.
  */
 
 export interface NavItem {
   name: string;
   href: string;
-}
-
-export interface Testimonial {
-  id: string;
-  name: string;
-  role: string;
-  location: string;
-  quote: string;
-  rating: number;
-  avatar: string;
-}
-
-export interface Founder {
-  id: string;
-  name: string;
-  role: string;
-  bio: string;
-  image: string;
-  linkedin: string;
 }
 
 export interface SiteConfig {
@@ -43,14 +27,10 @@ export interface SiteConfig {
   nav: NavItem[];
   badges: Array<{
     title: string;
+    description: string;
     icon: string;
   }>;
   principles: Array<{
-    title: string;
-    icon: string;
-  }>;
-  sourcingSteps: Array<{
-    step: string;
     title: string;
     description: string;
     icon: string;
@@ -60,9 +40,14 @@ export interface SiteConfig {
     tagline: string;
     description: string;
     image: string;
+    features: string[];
   }>;
-  testimonials: Testimonial[];
-  founders: Founder[];
+  sourcingSteps: Array<{
+    step: string;
+    title: string;
+    description: string;
+    deliverables: string[];
+  }>;
 }
 
 export const siteConfig: SiteConfig = {
@@ -70,137 +55,122 @@ export const siteConfig: SiteConfig = {
   legalName: "ZIYA ZARA TRADING COMPANY",
   tagline: "Connecting Markets, Delivering Possibilities.",
   heroEyebrow: "IMPORT | EXPORT | GLOBAL SOURCING",
-  heroHeadline: "Bridging Markets Worldwide",
+  heroHeadline: "The World, Within Reach.",
   heroSubheadline:
-    "ZIYA ZARA TRADING COMPANY connects global markets by sourcing and supplying quality products with reliability, integrity and long-term partnerships.",
+    "ZIYA ZARA TRADING COMPANY bridges international markets by sourcing and supplying premium commodities, industrial supplies, and consumer goods with uncompromising integrity and disciplined global execution.",
   description:
     "ZIYA ZARA TRADING COMPANY connects global markets through verified supplier networks, strategic multi-modal logistics, and customer-first trade solutions.",
   url: "https://ziyazara.com",
 
   // Official contact channels
   email: "info@ziyazaratrading.com",
-  phone: "+91 90000 00000",
-  location: "Your Address, City, State, India",
+  phone: "+91 90030 98708",
+  location: "Registered Trading Operations — India",
   isPlaceholderContact: false,
 
   nav: [
     { name: "Home", href: "/" },
-    { name: "About", href: "/#about" },
-    { name: "Sourcing", href: "/#sourcing-process" },
-    { name: "Products", href: "/#products" },
-    { name: "Global Reach", href: "/#global-reach" },
-    { name: "Founders", href: "/#founders" },
-    { name: "Contact", href: "/#contact" },
+    { name: "About", href: "/about" },
+    { name: "Sourcing", href: "/sourcing" },
+    { name: "Products", href: "/products" },
+    { name: "Global Reach", href: "/global-reach" },
+    { name: "Contact", href: "/contact" },
   ],
 
   badges: [
-    { title: "Reliable Sourcing", icon: "ShieldCheck" },
-    { title: "Global Network", icon: "Globe" },
-    { title: "Long-term Partnerships", icon: "Handshake" },
-    { title: "Sustainable Growth", icon: "Leaf" },
+    {
+      title: "Reliable Sourcing",
+      description: "Rigorous supplier discovery and specification adherence.",
+      icon: "ShieldCheck",
+    },
+    {
+      title: "Global Network",
+      description: "Direct linkages across key trade routes and markets.",
+      icon: "Globe",
+    },
+    {
+      title: "Long-term Partnerships",
+      description: "Sustainable commercial value built on transparency.",
+      icon: "Handshake",
+    },
+    {
+      title: "Multimodal Logistics",
+      description: "Synchronized sea, air, and overland delivery coordination.",
+      icon: "Truck",
+    },
   ],
 
   principles: [
-    { title: "Quality Products Across Industries", icon: "Award" },
-    { title: "Transparent Trade Practices", icon: "FileCheck" },
-    { title: "Global Supplier Network", icon: "Network" },
-    { title: "Commitment to Long-term Growth", icon: "TrendingUp" },
+    {
+      title: "Quality Products Across Industries",
+      description: "From certified agricultural commodities to precision industrial supplies, every trade order adheres to verified buyer benchmarks.",
+      icon: "Award",
+    },
+    {
+      title: "Transparent Trade Practices",
+      description: "Complete clarity in commercial agreements, compliance documentation, origin certification, and pricing models.",
+      icon: "FileCheck",
+    },
+    {
+      title: "Global Supplier Network",
+      description: "Established channels across producer hubs, manufacturing centers, and regional distribution corridors worldwide.",
+      icon: "Network",
+    },
+    {
+      title: "Commitment to Long-Term Growth",
+      description: "Dedicated to building enduring, repeat trading relationships that scale smoothly alongside buyer demand.",
+      icon: "TrendingUp",
+    },
   ],
 
   sourcingSteps: [
     {
       step: "01",
       title: "Understand",
-      description: "Your requirements, specifications and target markets.",
-      icon: "Search",
+      description: "We clarify the buyer's exact technical specifications, volume schedules, packaging standards, and target port requirements.",
+      deliverables: ["Product Specification Matrix", "Compliance & Tolerance Check", "Estimated Lead Times"],
     },
     {
       step: "02",
       title: "Source",
-      description: "We identify and engage trusted suppliers globally to source the right products.",
-      icon: "Compass",
+      description: "We identify and engage vetted producer hubs and manufacturers with proven production capability and verifiable trade history.",
+      deliverables: ["Supplier Due Diligence", "Batch Sampling & Quotation", "Optimal Origin Selection"],
     },
     {
       step: "03",
       title: "Verify",
-      description: "We ensure quality, compliance and documentation.",
-      icon: "ShieldCheck",
+      description: "We oversee rigorous quality checks, laboratory assays, export documentation, and regulatory phytosanitary/customs filings.",
+      deliverables: ["Pre-Shipment Inspections", "Certification of Origin & Assays", "Export Customs Clearance"],
     },
     {
       step: "04",
       title: "Deliver",
-      description: "We manage logistics and coordinate delivery to your destination.",
-      icon: "Truck",
+      description: "We synchronize maritime, air, or overland freight routing, customs coordination, and track cargo to destination ports.",
+      deliverables: ["Bill of Lading / Airway Bill", "Multimodal Freight Booking", "End-to-End Port Dispatch"],
     },
   ],
 
   logisticsModes: [
     {
-      title: "AIR FREIGHT",
-      tagline: "Fast. Reliable. Global.",
-      description: "Time-critical air shipments connecting prime international airport terminals with security and speed.",
-      image: "/images/logistics/air.jpg",
-    },
-    {
-      title: "SEA FREIGHT",
-      tagline: "Cost-effective, High Capacity.",
-      description: "Cost-effective FCL and LCL containerized shipping across major maritime corridors and ports.",
+      title: "Sea Freight",
+      tagline: "Cost-Effective, High Capacity",
+      description: "FCL and LCL containerized shipping across major maritime routes, linking global manufacturing hubs and consumer markets.",
       image: "/images/logistics/sea.jpg",
+      features: ["Full Container Load (FCL)", "Less than Container (LCL)", "Bulk Commodity Vessels", "Port-to-Port Handling"],
     },
     {
-      title: "ROAD TRANSPORT",
-      tagline: "Flexible. Door-to-Door.",
-      description: "Reliable overland transport networks for regional distribution, inland container depots, and door delivery.",
+      title: "Air Freight",
+      tagline: "Fast, Reliable, Global",
+      description: "Time-critical cargo delivery and temperature-controlled air shipments connecting prime international airport terminals.",
+      image: "/images/logistics/air.jpg",
+      features: ["Scheduled Cargo Charters", "Priority Express Freight", "High-Value Goods Security", "Urgent Sample Dispatch"],
+    },
+    {
+      title: "Road Transport",
+      tagline: "Flexible, Door-to-Door",
+      description: "Reliable overland transport networks for regional distribution, inland container depots, and final destination handovers.",
       image: "/images/logistics/road.jpg",
-    },
-  ],
-
-  testimonials: [
-    {
-      id: "ramesh-k",
-      name: "Ramesh K.",
-      role: "Import Manager",
-      location: "India",
-      quote: "Ziya Zara has been a reliable partner for our sourcing needs. Their professionalism and timely delivery have been impressive.",
-      rating: 5,
-      avatar: "/images/testimonials/avatar_ramesh_hd.jpg",
-    },
-    {
-      id: "fatima-al-nasser",
-      name: "Fatima Al Nasser",
-      role: "Procurement Head",
-      location: "UAE",
-      quote: "Excellent quality products and smooth communication. We highly recommend Ziya Zara for international trade.",
-      rating: 5,
-      avatar: "/images/testimonials/avatar_fatima_hd.jpg",
-    },
-    {
-      id: "michael-thompson",
-      name: "Michael Thompson",
-      role: "Supply Chain Director",
-      location: "UK",
-      quote: "A trusted partner with deep market knowledge and a customer-centric approach. Great experience working with their team.",
-      rating: 5,
-      avatar: "/images/testimonials/avatar_michael_hd.jpg",
-    },
-  ],
-
-  founders: [
-    {
-      id: "founder-01",
-      name: "Founder 01",
-      role: "Co-Founder",
-      bio: "Driving strategic growth and global partnerships.",
-      image: "/images/founders/founder_1_hd.jpg",
-      linkedin: "#",
-    },
-    {
-      id: "founder-02",
-      name: "Founder 02",
-      role: "Co-Founder",
-      bio: "Focused on operations and customer success.",
-      image: "/images/founders/founder_2_hd.jpg",
-      linkedin: "#",
+      features: ["Inland Container Depots (ICD)", "Heavy-Duty Haulage", "Cross-Border Trucking", "Last-Mile Distribution"],
     },
   ],
 };

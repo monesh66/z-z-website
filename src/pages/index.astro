@@ -7,42 +7,46 @@ import SourcingProcess from '../components/SourcingProcess.astro';
 import ProductGrid from '../components/ProductGrid.astro';
 import GlobalReach from '../components/GlobalReach.astro';
 import Logistics from '../components/Logistics.astro';
-import TestimonialsSection from '../components/TestimonialsSection.astro';
-import FoundersSection from '../components/FoundersSection.astro';
+import TrustSection from '../components/TrustSection.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Founders from '../components/Founders.astro';
 import ContactSection from '../components/ContactSection.astro';
 ---
 
 <BaseLayout
-  title="ZIYA ZARA TRADING COMPANY | Bridging Markets Worldwide"
-  description="ZIYA ZARA TRADING COMPANY connects global markets by sourcing and supplying quality products with reliability, integrity and long-term partnerships."
+  title="ZIYA ZARA TRADING COMPANY | International Trade, Import/Export & Global Sourcing"
+  description="ZIYA ZARA TRADING COMPANY connects global markets with premium agricultural commodities, textiles, industrial supplies, and multi-modal logistics with integrity and precision."
 >
-  <!-- Cinematic Aircraft Opening Splash Screen -->
+  <!-- Cinematic 3-Second Loading Animation & 3D Flight Transition -->
   <SplashScreen />
 
-  <!-- 1. Signature Hero Viewport -->
+  <!-- Signature Hero Experience -->
   <Hero />
 
-  <!-- 2. Company Introduction (About Ziya Zara) -->
+  <!-- Distinctive Company Introduction -->
   <AboutSection />
 
-  <!-- 3. Our Sourcing Process (From Demand to Delivery) -->
+  <!-- 4-Stage Sourcing Storytelling -->
   <SourcingProcess />
 
-  <!-- 4. Our Products (Diverse Products for Global Markets) -->
+  <!-- Products & Sourcing Discovery -->
   <ProductGrid limit={6} showAllLink={true} />
 
-  <!-- 5. Global Reach (Importing & Exporting Across Continents) -->
+  <!-- Signature Interactive Global Reach Trade Map -->
   <GlobalReach />
 
-  <!-- 6. Multi-Mode Logistics (By Air, Sea and Road Across the World) -->
+  <!-- Multi-Mode Logistics Capabilities -->
   <Logistics />
 
-  <!-- 7. Testimonials (Trusted by Our Partners) -->
-  <TestimonialsSection />
+  <!-- Trust, Governance & Operational Discipline -->
+  <TrustSection />
 
-  <!-- 8. Our Founders (Built on Trust. Driven by Opportunity.) -->
-  <FoundersSection />
+  <!-- Testimonials Section -->
+  <Testimonials />
 
-  <!-- 9. Get In Touch (Let's Create Global Opportunities) -->
+  <!-- 2 Founders Section -->
+  <Founders />
+
+  <!-- High-Conversion Contact Experience -->
   <ContactSection />
 </BaseLayout>

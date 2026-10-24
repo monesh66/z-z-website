@@ -1,39 +1,43 @@
-# ZIYA ZARA TRADING COMPANY
+# Astro Starter Kit: Minimal
 
-> Connecting Markets Worldwide — Import, Export & Global Sourcing
-
-A modern, high-performance static website for **ZIYA ZARA TRADING COMPANY**, built with [Astro](https://astro.build/) and [TailwindCSS](https://tailwindcss.com/).
-
-## 🚀 Overview
-
-- **Static Performance**: Compiled to 100% static HTML for maximum speed and security.
-- **Responsive Architecture**: Pixel-aligned across Desktop (1440px), Tablet (768px), and Mobile (390px).
-- **Core Sections**:
-  - Full-width Multimodal Logistics Hero with trust badge strip
-  - About Ziya Zara narrative, trade principles, and 3D illuminated globe dome
-  - Sourcing Process (Understand, Source, Verify, Deliver)
-  - 6 Key Product Categories (Agricultural, Food & Grains, Textiles, Industrial, Consumer Goods, Custom Sourcing)
-  - Global Reach & Interactive Dot-Matrix Maritime/Air Route Map
-  - Multi-Mode Freight Solutions (Air Freight, Sea Freight, Road Transport)
-  - Partner Testimonials & Leadership Profiles
-  - Inquiry & Contact Form with validation and direct `mailto:` dispatch
-
-## 🛠️ Development
-
-```bash
-# Install dependencies
-npm install
-
-# Start local development server
-npm run dev
-
-# Compile production static build
-npm run build
-
-# Preview production build locally
-npm run preview
+```sh
+npm create astro@latest -- --template minimal
 ```
 
-## 📄 License
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-All rights reserved © 2026 ZIYA ZARA TRADING COMPANY.
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

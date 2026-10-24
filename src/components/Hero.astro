@@ -2,137 +2,147 @@
 import { siteConfig } from '../data/site';
 ---
 
-<section class="relative bg-white border-b border-slate-100 overflow-hidden min-h-[580px] lg:min-h-[640px] xl:min-h-[680px] flex flex-col justify-between">
-  
-  <!-- Full-Width Panoramic Background Image (User's Exact 16:9 Master Photograph) -->
+<section class="relative overflow-hidden bg-white text-navy-950 pt-10 sm:pt-14 lg:pt-20" id="hero">
+  <!-- Background Media: Cargo Vessel & Global Logistics -->
   <div class="absolute inset-0 z-0">
     <img
-      src="/images/hero/hero_hd.jpg"
-      alt="International multimodal freight logistics showing container vessel, aircraft, and freight truck"
-      width="1024"
-      height="576"
-      class="w-full h-full object-cover object-[center_30%] sm:object-[center_35%] lg:object-[center_38%]"
+      src="/images/hero/mockup-hero-sunset.jpg"
+      alt="Ziya Zara Global Cargo Container Vessel and Air Logistics"
+      width="1920"
+      height="1080"
+      class="w-full h-full object-cover object-[85%_center] sm:object-center opacity-85"
       loading="eager"
       fetchpriority="high"
     />
-    
-    <!-- Luminous Left Atmospheric Wash - softens sunrise glow for crisp text legibility without obscuring the harbor and sea -->
-    <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 sm:via-white/50 md:via-white/25 to-transparent z-10 pointer-events-none"></div>
-    <div class="absolute inset-y-0 left-0 w-full sm:w-5/12 bg-gradient-to-r from-white/60 via-white/15 to-transparent z-10 pointer-events-none"></div>
+    <!-- Luminous Light Gradient Overlay ensuring high contrast for editorial typography -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 sm:via-white/80 md:via-white/65 to-white/20"></div>
   </div>
 
-  <!-- Content Container (Top Left Area) -->
-  <div class="relative z-20 max-w-[1240px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 lg:pt-16 pb-4">
-    <div class="max-w-xl text-left space-y-4 sm:space-y-5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-2xl space-y-6 pt-4 sm:pt-6">
       
-      <!-- Eyebrow -->
-      <div class="text-[12px] font-semibold tracking-[0.14em] text-[#0B1F3A] uppercase">
-        IMPORT | EXPORT | GLOBAL SOURCING
+      <!-- Top Eyebrow Badge -->
+      <div class="inline-flex flex-wrap items-center gap-2 sm:gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-800 backdrop-blur-md">
+        <span>GLOBAL SOURCING</span>
+        <span class="text-emerald-300 font-normal">|</span>
+        <span>INTERNATIONAL TRADE</span>
+        <span class="text-emerald-300 font-normal">|</span>
+        <span>RELIABLE PARTNERSHIP</span>
       </div>
 
-      <!-- Display Headline matching reference typography -->
-      <h1 class="text-4xl sm:text-5xl lg:text-[62px] font-bold font-editorial-serif tracking-tight text-[#0B1F3A] leading-[1.04]">
-        Bridging<br />
-        <span class="text-[#2E8B2E]">Markets</span><br />
-        Worldwide
+      <!-- Main Headline in Luxury Editorial Serif -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-editorial-serif tracking-tight text-navy-950 leading-[1.12]">
+        Connecting Markets.<br />
+        <span class="text-emerald-700 italic font-normal">Delivering Possibilities.</span>
       </h1>
 
-      <!-- Subheadline -->
-      <p class="text-sm sm:text-[15px] text-[#5B6573] leading-relaxed max-w-[430px] font-normal">
-        ZIYA ZARA TRADING COMPANY connects global markets by sourcing and supplying quality products with reliability, integrity and long-term partnerships.
+      <!-- Description -->
+      <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-normal max-w-xl">
+        <strong class="font-semibold text-navy-950">ZIYA ZARA TRADING COMPANY</strong> bridges global markets by sourcing and supplying quality products across borders with reliability, integrity and a commitment to long-term partnerships.
       </p>
 
-      <!-- Two Buttons side by side -->
-      <div class="pt-2 flex flex-wrap items-center gap-4">
+      <!-- CTA Actions -->
+      <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 max-w-md sm:max-w-none">
         <a
-          href="/#products"
-          class="inline-flex items-center gap-2 px-6 h-[44px] rounded-[6px] text-sm font-semibold text-white bg-[#2E8B2E] hover:bg-[#257325] transition-all duration-200 shadow-sm hover:shadow-md group cursor-pointer"
+          href="/products"
+          class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm sm:text-base shadow-lg shadow-emerald-950/20 transition-all duration-300 hover:-translate-y-0.5 group"
+          id="hero-explore-products-btn"
         >
           <span>Explore Our Products</span>
-          <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </a>
 
         <a
-          href="/#contact"
-          class="inline-flex items-center justify-center px-6 h-[44px] rounded-[6px] text-sm font-semibold text-[#0B1F3A] bg-white border border-[#0B1F3A] hover:bg-[#0B1F3A] hover:text-white transition-all duration-200 cursor-pointer"
+          href="/network"
+          class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white hover:bg-slate-50 border border-navy-950 text-navy-950 font-semibold text-sm sm:text-base transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
+          id="hero-global-reach-btn"
         >
-          <span>Get a Quote</span>
+          <span>Our Global Reach</span>
+          <svg class="w-4 h-4 text-emerald-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
         </a>
       </div>
 
     </div>
-  </div>
 
-  <!-- Slanted Script Badge in the sky on the right matching reference style -->
-  <div class="absolute top-10 right-6 sm:top-12 sm:right-10 lg:top-14 lg:right-16 xl:right-24 pointer-events-none select-none z-20">
-    <div class="transform -rotate-[7deg] text-right">
-      <span class="block text-[#0B1F3A] text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight drop-shadow-sm leading-tight" style="font-family: 'Caveat', cursive, serif;">
-        Global
-      </span>
-      <span class="block text-[#2E8B2E] text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight -mt-0.5 drop-shadow-sm flex items-center justify-end gap-1.5" style="font-family: 'Caveat', cursive, serif;">
-        Reach
-        <svg class="w-9 h-2.5 text-[#2E8B2E] inline-block -mb-0.5" viewBox="0 0 60 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-          <path d="M2 9 C 20 2, 42 2, 58 8" />
-        </svg>
-      </span>
-    </div>
-  </div>
-
-  <!-- Full-Width Trust Strip with 4 Items at bottom left -->
-  <div class="relative z-20 max-w-[1240px] mx-auto w-full px-4 sm:px-6 lg:px-8 pb-10 pt-4">
-    <div class="max-w-xl grid grid-cols-4 divide-x divide-slate-300/70">
+    <!-- 4 Bottom Features Strip directly on light background -->
+    <div class="mt-16 sm:mt-20 pt-8 pb-4 border-t border-slate-200/90 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       
-      <!-- 1. Reliable Sourcing -->
-      <div class="flex flex-col items-center text-center space-y-1.5 px-1 sm:px-2">
-        <svg class="w-5 h-5 text-[#0B1F3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-        <span class="text-[12px] font-semibold text-[#0B1F3A] leading-tight">Reliable<br />Sourcing</span>
+      <!-- 1. Global Network -->
+      <div class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-navy-950 leading-snug">Global Network</h4>
+          <p class="text-xs text-slate-600 mt-0.5">Trusted partners worldwide</p>
+        </div>
       </div>
 
-      <!-- 2. Global Network -->
-      <div class="flex flex-col items-center text-center space-y-1.5 px-1 sm:px-2">
-        <svg class="w-5 h-5 text-[#0B1F3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="2" y1="12" x2="22" y2="12"></line>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-        </svg>
-        <span class="text-[12px] font-semibold text-[#0B1F3A] leading-tight">Global<br />Network</span>
+      <!-- 2. Quality Assurance -->
+      <div class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-navy-950 leading-snug">Quality Assurance</h4>
+          <p class="text-xs text-slate-600 mt-0.5">Consistent quality and compliance</p>
+        </div>
       </div>
 
-      <!-- 3. Long-term Partnerships -->
-      <div class="flex flex-col items-center text-center space-y-1.5 px-1 sm:px-2">
-        <svg class="w-5 h-5 text-[#0B1F3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-        <span class="text-[12px] font-semibold text-[#0B1F3A] leading-tight">Long-term<br />Partnerships</span>
+      <!-- 3. Reliable Supply -->
+      <div class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-navy-950 leading-snug">Reliable Supply</h4>
+          <p class="text-xs text-slate-600 mt-0.5">On-time delivery and transparency</p>
+        </div>
       </div>
 
       <!-- 4. Sustainable Growth -->
-      <div class="flex flex-col items-center text-center space-y-1.5 px-1 sm:px-2">
-        <svg class="w-5 h-5 text-[#0B1F3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M11 20A7 7 0 019.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-        </svg>
-        <span class="text-[12px] font-semibold text-[#0B1F3A] leading-tight">Sustainable<br />Growth</span>
+      <div class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-navy-950 leading-snug">Sustainable Growth</h4>
+          <p class="text-xs text-slate-600 mt-0.5">Creating value for a better tomorrow</p>
+        </div>
       </div>
 
     </div>
+
   </div>
 
-  <!-- Bottom Decorative Dual Blue Wave + Transition to About section matching reference image -->
-  <div class="absolute bottom-0 inset-x-0 z-10 pointer-events-none overflow-hidden leading-none h-10 sm:h-12 lg:h-16">
-    <svg class="relative block w-full h-full" viewBox="0 0 1440 64" fill="none" preserveAspectRatio="none">
-      <!-- Deep Blue Ocean Wave on the bottom right -->
-      <path d="M740,64 C940,34 1160,20 1440,10 L1440,64 L740,64 Z" fill="#143B66" opacity="0.9"></path>
-      <!-- Vibrant Blue Accent Ribbon on bottom right -->
-      <path d="M860,64 C1020,38 1200,24 1440,18 L1440,64 L860,64 Z" fill="#0284C7" opacity="0.75"></path>
-      <!-- Pure White Smooth Wave divider across bottom transitioning into About section -->
-      <path d="M0,64 L0,26 C260,26 520,52 780,56 C1020,58 1240,62 1440,64 L1440,64 Z" fill="#FFFFFF"></path>
+  <!-- Signature Wave Curve Divider Transition into next section -->
+  <div class="w-full leading-none -mb-px relative z-20">
+    <svg viewBox="0 0 1440 95" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-12 sm:h-16 lg:h-20 block">
+      <!-- Green Accent Stroke along the crest -->
+      <path d="M0,75 C360,10 880,95 1440,25" stroke="#2E8B2E" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.95" />
+      <!-- Solid ground filling into next section -->
+      <path d="M0,80 C360,15 880,100 1440,30 L1440,95 L0,95 Z" fill="#ffffff" />
     </svg>
   </div>
-
 </section>

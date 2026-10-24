@@ -1,0 +1,91 @@
+---
+// Founders Section matching root website design
+const founders = [
+  {
+    name: "Founder 01",
+    role: "Co-Founder",
+    photo: "/images/founders/mockup-founder-01.png"
+  },
+  {
+    name: "Founder 02",
+    role: "Co-Founder",
+    photo: "/images/founders/mockup-founder-02.png"
+  }
+];
+---
+
+<section class="py-16 lg:py-24 bg-white relative overflow-hidden" id="founders">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+      
+      <!-- Left Column: Manifesto & Story -->
+      <div class="lg:col-span-5 relative">
+        <!-- Background watermark quote symbol -->
+        <div class="absolute -top-12 -right-4 text-9xl font-editorial-serif text-slate-100 select-none pointer-events-none -z-0">
+          “
+        </div>
+
+        <div class="relative z-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-xs font-bold uppercase tracking-wider text-emerald-800 mb-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+            <span>Our Founders</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-editorial-serif tracking-tight text-navy-950 leading-[1.15] mb-5">
+            Built on trust.<br />
+            <span class="text-emerald-700 italic font-normal">Driven by opportunity.</span>
+          </h2>
+
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+            Our founders bring a shared vision to create meaningful connections across global markets. With a commitment to integrity, quality and long-term partnerships, we work towards building a more connected and prosperous world.
+          </p>
+
+          <div class="mt-8 pt-6 border-t border-slate-100 flex items-center gap-6 text-sm text-slate-500">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+              <span class="font-semibold text-navy-950">Active Global Leadership</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+              <span class="font-semibold text-navy-950">Enduring Commercial Ethics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: 2 Founder Cards Side-by-Side -->
+      <div class="lg:col-span-7">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+          {founders.map((founder) => (
+            <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-5 sm:gap-6 group">
+              <!-- Portrait Image Wrap -->
+              <div class="w-28 sm:w-32 h-36 sm:h-40 rounded-xl overflow-hidden bg-slate-100 border border-slate-200/90 flex-shrink-0">
+                <img
+                  src={founder.photo}
+                  alt={`${founder.name} - ${founder.role}`}
+                  width="130"
+                  height="160"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Information Details -->
+              <div class="flex-grow">
+                <h3 class="text-xl sm:text-2xl font-bold text-navy-950 font-editorial-serif mb-1 group-hover:text-emerald-700 transition-colors">
+                  {founder.name}
+                </h3>
+                <p class="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">
+                  {founder.role}
+                </p>
+                <!-- Emerald Accent Bar -->
+                <div class="w-9 h-1 bg-emerald-600 rounded-full transition-all duration-300 group-hover:w-14"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
