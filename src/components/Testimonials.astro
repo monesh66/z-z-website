@@ -33,7 +33,7 @@ const testimonials = [
     
     <!-- Section Header -->
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-      <div>
+      <div class="scroll-reveal">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-xs font-bold uppercase tracking-wider text-emerald-800 mb-3">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
           <span>Testimonials</span>
@@ -44,14 +44,14 @@ const testimonials = [
       </div>
 
       <!-- Trust Note -->
-      <div class="hidden md:flex items-center gap-3 text-sm text-slate-500 bg-white px-4 py-2.5 rounded-full border border-slate-200 shadow-xs">
+      <div class="hidden md:flex items-center gap-3 text-sm text-slate-500 bg-white px-4 py-2.5 rounded-full border border-slate-200 shadow-xs scroll-reveal-right stagger-1">
         <span class="flex text-amber-400">★★★★★</span>
         <span class="font-medium text-slate-700">5.0 Trade Partner Satisfaction</span>
       </div>
     </div>
 
     <!-- Testimonials Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8" data-reveal-group data-reveal-stagger="90">
       {testimonials.map((item) => (
         <div class="bg-white rounded-2xl p-7 lg:p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group">
           <div>

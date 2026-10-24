@@ -15,7 +15,7 @@ const displayCategories = productCategories.slice(0, limit);
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+    <div class="scroll-reveal flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
       <div class="space-y-2 max-w-2xl">
         <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-700">
           <span class="w-8 h-0.5 bg-emerald-600"></span>
@@ -48,7 +48,7 @@ const displayCategories = productCategories.slice(0, limit);
     </div>
 
     <!-- Product Grid: 6 Cards in 3x2 on desktop -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div data-reveal-group data-reveal-stagger="90" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {displayCategories.map((product) => (
         <ProductCard product={product} />
       ))}

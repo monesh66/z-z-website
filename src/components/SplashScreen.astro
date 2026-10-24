@@ -555,6 +555,9 @@
       // Restore scroll immediately
       document.body.classList.remove('overflow-hidden');
 
+      // Notify page components to begin smooth scroll reveals
+      window.dispatchEvent(new CustomEvent('splashDismissed'));
+
       setTimeout(() => {
         root.style.display = 'none';
         root.setAttribute('aria-hidden', 'true');

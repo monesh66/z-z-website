@@ -9,7 +9,7 @@ import { siteConfig } from '../data/site';
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20 space-y-3">
+    <div class="scroll-reveal text-center max-w-3xl mx-auto mb-16 lg:mb-20 space-y-3">
       <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-700">
         <span class="w-8 h-0.5 bg-emerald-600"></span>
         <span>Our Sourcing Process</span>
@@ -29,7 +29,7 @@ import { siteConfig } from '../data/site';
       <!-- Desktop Connecting Line Behind Steps -->
       <div class="hidden lg:block absolute top-1/2 left-12 right-12 h-0.5 bg-gradient-to-r from-emerald-600/20 via-emerald-600/50 to-emerald-600/20 -translate-y-12 z-0"></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+      <div data-reveal-group data-reveal-stagger="90" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
         {siteConfig.sourcingSteps.map((item, index) => (
           <div class="relative bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 hover:border-emerald-500/60 transition-all duration-300 group hover:-translate-y-1.5 flex flex-col justify-between shadow-sm hover:shadow-xl">
             

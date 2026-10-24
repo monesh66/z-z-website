@@ -201,6 +201,79 @@
   transform-origin: center;
 }
 
+/* =========================================================================
+   PROFESSIONAL SCROLL REVEAL SYSTEM (Silky 60/120 FPS GPU Transitions)
+   Subtle Luxury Fade & Slide (Apple / Stripe enterprise style)
+   ========================================================================= */
+
+/* Default progressive enhancement:
+   If JS is active, elements marked for reveal start invisible and translate slightly */
+html.js .scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* When in viewport, smoothly transition to full opacity and original position */
+html.js .scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Directional and visual variations */
+html.js .scroll-reveal-left {
+  opacity: 0;
+  transform: translate3d(-28px, 0, 0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+html.js .scroll-reveal-left.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+html.js .scroll-reveal-right {
+  opacity: 0;
+  transform: translate3d(28px, 0, 0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+html.js .scroll-reveal-right.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+html.js .scroll-reveal-scale {
+  opacity: 0;
+  transform: scale3d(0.96, 0.96, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+html.js .scroll-reveal-scale.is-revealed {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+}
+
+html.js .scroll-reveal-fade {
+  opacity: 0;
+  transform: none;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
+}
+html.js .scroll-reveal-fade.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Clean Stagger Delays for child cards and items */
+html.js .stagger-1 { transition-delay: 75ms; }
+html.js .stagger-2 { transition-delay: 150ms; }
+html.js .stagger-3 { transition-delay: 225ms; }
+html.js .stagger-4 { transition-delay: 300ms; }
+html.js .stagger-5 { transition-delay: 375ms; }
+html.js .stagger-6 { transition-delay: 450ms; }
+
 /* Accessibility Focus States */
 a:focus-visible,
 button:focus-visible,
@@ -213,6 +286,16 @@ textarea:focus-visible {
 
 /* Motion Preferences Support */
 @media (prefers-reduced-motion: reduce) {
+  html.js .scroll-reveal,
+  html.js .scroll-reveal-left,
+  html.js .scroll-reveal-right,
+  html.js .scroll-reveal-scale,
+  html.js .scroll-reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
   *,
   *::before,
   *::after {

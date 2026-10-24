@@ -82,8 +82,10 @@ const structuredData = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
 
-    <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <!-- Progressive Enhancement JS Detection -->
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
   </head>
   <body class="bg-white text-slate-body min-h-screen flex flex-col selection:bg-emerald-600 selection:text-white">
     <!-- Accessible Skip Link -->
@@ -104,5 +106,96 @@ const structuredData = {
 
     <!-- Global Footer -->
     <Footer />
+
+    <!-- =======================================================================
+         PROFESSIONAL SCROLL REVEAL OBSERVER
+         Lightweight, zero-shift, hardware-accelerated scroll animations
+         ======================================================================= -->
+    <script is:inline>
+      (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          return;
+        }
+
+        function initScrollReveal() {
+          // 1. Automatically configure data-reveal-group children
+          document.querySelectorAll('[data-reveal-group]').forEach(function (group) {
+            var children = Array.from(group.children);
+            var baseDelay = parseInt(group.getAttribute('data-reveal-stagger') || '80', 10);
+            children.forEach(function (child, idx) {
+              if (!child.classList.contains('scroll-reveal') &&
+                  !child.classList.contains('scroll-reveal-left') &&
+                  !child.classList.contains('scroll-reveal-right') &&
+                  !child.classList.contains('scroll-reveal-scale') &&
+                  !child.classList.contains('scroll-reveal-fade')) {
+                child.classList.add('scroll-reveal');
+              }
+              if (!child.style.transitionDelay) {
+                child.style.transitionDelay = (idx * baseDelay) + 'ms';
+              }
+            });
+          });
+
+          // 2. Query all reveal targets
+          var targets = document.querySelectorAll(
+            '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale, .scroll-reveal-fade, [data-reveal]'
+          );
+
+          if (!targets.length) return;
+
+          // If IntersectionObserver is not supported, reveal all immediately
+          if (!('IntersectionObserver' in window)) {
+            targets.forEach(function (el) {
+              el.classList.add('is-revealed');
+            });
+            return;
+          }
+
+          var observer = new IntersectionObserver(
+            function (entries, obs) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  var target = entry.target;
+                  var customDelay = target.getAttribute('data-reveal-delay');
+                  if (customDelay) {
+                    target.style.transitionDelay = customDelay + 'ms';
+                  }
+                  target.classList.add('is-revealed');
+                  obs.unobserve(target);
+                }
+              });
+            },
+            {
+              threshold: 0.08,
+              rootMargin: '0px 0px -40px 0px'
+            }
+          );
+
+          targets.forEach(function (el) {
+            // Check if element is already inside viewport on load
+            var rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              // Delay slightly for smooth page entry
+              setTimeout(function () {
+                el.classList.add('is-revealed');
+              }, 60);
+            } else {
+              observer.observe(el);
+            }
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initScrollReveal);
+        } else {
+          initScrollReveal();
+        }
+
+        // Re-check when splash screen is dismissed
+        window.addEventListener('splashDismissed', function () {
+          setTimeout(initScrollReveal, 100);
+        });
+      })();
+    </script>
   </body>
 </html>

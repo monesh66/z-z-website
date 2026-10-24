@@ -7,7 +7,7 @@ import { siteConfig } from '../data/site';
     
     <!-- Section Header -->
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-      <div class="space-y-2 max-w-2xl">
+      <div class="space-y-2 max-w-2xl scroll-reveal">
         <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-700">
           <span class="w-8 h-0.5 bg-emerald-600"></span>
           <span>Multi-Mode Logistics</span>
@@ -21,7 +21,7 @@ import { siteConfig } from '../data/site';
         </p>
       </div>
 
-      <div class="flex-shrink-0">
+      <div class="flex-shrink-0 scroll-reveal-right stagger-1">
         <a
           href="/contact?interest=Logistics%20Consultation"
           class="trade-btn-primary group"
@@ -36,7 +36,7 @@ import { siteConfig } from '../data/site';
     </div>
 
     <!-- 3 Cinematic Logistics Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-reveal-group data-reveal-stagger="90">
       {siteConfig.logisticsModes.map((mode) => (
         <div class="trade-card flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-200/90 group shadow-md hover:shadow-xl transition-all duration-300">
           
