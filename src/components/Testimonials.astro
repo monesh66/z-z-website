@@ -1,93 +1,102 @@
 ---
-// Testimonials Section matching the root website
 const testimonials = [
   {
-    name: "Rahul Mehta",
-    role: "Procurement Manager",
-    company: "Commercial Commodities",
+    name: "Ramesh K.",
+    role: "Import Manager, India",
     avatar: "/images/testimonials/mockup-avatar-rahul.jpg",
     quote: "Ziya Zara has been a reliable partner for our sourcing needs. Their professionalism and timely delivery have been impressive.",
-    rating: 5
+    rating: 5,
   },
   {
-    name: "Ahmed Al Mansoori",
-    role: "Business Owner",
-    company: "UAE Logistics & Trade",
-    avatar: "/images/testimonials/mockup-avatar-ahmed.jpg",
-    quote: "Quality products and excellent communication. We highly recommend Ziya Zara for international trade.",
-    rating: 5
-  },
-  {
-    name: "Sarah Thompson",
-    role: "Supply Chain Director",
-    company: "UK Distribution Group",
+    name: "Fatima Al Nasser",
+    role: "Procurement Head, UAE",
     avatar: "/images/testimonials/mockup-avatar-sarah.jpg",
+    quote: "Excellent quality products and smooth communication. We highly recommend Ziya Zara for international trade.",
+    rating: 5,
+  },
+  {
+    name: "Michael Thompson",
+    role: "Supply Chain Director, UK",
+    avatar: "/images/testimonials/mockup-avatar-ahmed.jpg",
     quote: "A trusted partner with deep market knowledge and a customer-centric approach. Great experience working with their team.",
-    rating: 5
-  }
+    rating: 5,
+  },
 ];
 ---
 
-<section class="py-16 lg:py-24 bg-slate-50 border-t border-b border-slate-200/80 relative" id="testimonials">
+<section id="testimonials" class="py-16 lg:py-24 bg-white border-b border-slate-200/80">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-      <div class="scroll-reveal">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-xs font-bold uppercase tracking-wider text-emerald-800 mb-3">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-          <span>Testimonials</span>
+    <div class="scroll-reveal flex items-end justify-between mb-12 gap-4">
+      <div class="space-y-1.5">
+        <div class="text-xs font-bold uppercase tracking-widest text-emerald-600 font-mono">
+          TESTIMONIALS
         </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-editorial-serif tracking-tight text-navy-950">
-          What Our <span class="text-emerald-700 italic font-normal">Partners Say</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy-950 tracking-tight">
+          Trusted by Our Partners
         </h2>
       </div>
 
-      <!-- Trust Note -->
-      <div class="hidden md:flex items-center gap-3 text-sm text-slate-500 bg-white px-4 py-2.5 rounded-full border border-slate-200 shadow-xs scroll-reveal-right stagger-1">
-        <span class="flex text-amber-400">★★★★★</span>
-        <span class="font-medium text-slate-700">5.0 Trade Partner Satisfaction</span>
+      <!-- Left / Right Carousel Indicator Buttons -->
+      <div class="hidden sm:flex items-center gap-2">
+        <button
+          type="button"
+          class="w-10 h-10 rounded-full border border-slate-200 text-slate-600 flex items-center justify-center hover:bg-slate-50 hover:border-slate-300 transition-colors"
+          aria-label="Previous Testimonials"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="w-10 h-10 rounded-full border border-slate-200 text-slate-600 flex items-center justify-center hover:bg-slate-50 hover:border-slate-300 transition-colors"
+          aria-label="Next Testimonials"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <!-- Testimonials Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8" data-reveal-group data-reveal-stagger="90">
+    <!-- 3 Testimonial Cards -->
+    <div data-reveal-group data-reveal-stagger="90" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
       {testimonials.map((item) => (
-        <div class="bg-white rounded-2xl p-7 lg:p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group">
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <!-- Large Quote Symbol -->
-            <div class="font-editorial-serif text-5xl leading-none text-emerald-600 mb-3 select-none">
-              “
-            </div>
-            
-            <!-- Quote Text -->
-            <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 font-normal">
-              {item.quote}
+            <!-- Large Quote Symbol & Text -->
+            <p class="text-slate-700 text-sm leading-relaxed mb-4 font-normal">
+              <span class="font-bold text-navy-950 text-base">“</span> {item.quote}
             </p>
+
+            <!-- 5 Gold Stars -->
+            <div class="text-amber-400 text-sm tracking-wider mb-6">
+              {"★".repeat(item.rating)}
+            </div>
           </div>
 
           <!-- Author Info -->
-          <div class="pt-6 border-t border-slate-100 flex items-center gap-4">
+          <div class="pt-4 border-t border-slate-100 flex items-center gap-3.5">
             <img
               src={item.avatar}
               alt={item.name}
-              width="48"
-              height="48"
-              class="w-12 h-12 rounded-full object-cover border-2 border-slate-200 group-hover:border-emerald-500 transition-colors"
+              width="44"
+              height="44"
+              class="w-11 h-11 rounded-full object-cover border border-slate-200"
               loading="lazy"
             />
             <div>
-              <h4 class="font-bold text-navy-950 text-sm sm:text-base leading-snug">
+              <h4 class="font-bold text-navy-950 text-sm leading-snug">
                 {item.name}
               </h4>
-              <p class="text-xs text-slate-500 font-medium">
-                {item.role}, {item.company}
+              <p class="text-xs text-slate-500 font-normal">
+                {item.role}
               </p>
-              <div class="text-amber-400 text-xs tracking-widest mt-1">
-                {"★".repeat(item.rating)}
-              </div>
             </div>
           </div>
+
         </div>
       ))}
     </div>

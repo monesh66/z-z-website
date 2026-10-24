@@ -1,55 +1,78 @@
 ---
 import ProductCard from './ProductCard.astro';
-import { productCategories } from '../data/products';
 
-interface Props {
-  limit?: number;
-  showAllLink?: boolean;
-}
-
-const { limit = 6, showAllLink = true } = Astro.props;
-const displayCategories = productCategories.slice(0, limit);
+const landingProducts = [
+  {
+    title: "Agricultural Products",
+    desc: "Grains, pulses, spices and more.",
+    image: "/images/reference_crops/prod_agri_ref.png",
+    href: "/products?category=agricultural",
+  },
+  {
+    title: "Food & Grains",
+    desc: "Rice, wheat, pulses, edible oils and food items.",
+    image: "/images/reference_crops/prod_food_ref.png",
+    href: "/products?category=food-grains",
+  },
+  {
+    title: "Textiles & Garments",
+    desc: "Fabrics, apparel and textile raw materials.",
+    image: "/images/reference_crops/prod_textiles_ref.png",
+    href: "/products?category=textiles",
+  },
+  {
+    title: "Industrial Supplies",
+    desc: "Metals, pipes, machinery and industrial materials.",
+    image: "/images/reference_crops/prod_industrial_ref.png",
+    href: "/products?category=industrial",
+  },
+  {
+    title: "Consumer Goods",
+    desc: "Daily use and general merchandise.",
+    image: "/images/reference_crops/prod_consumer_ref.png",
+    href: "/products?category=consumer",
+  },
+  {
+    title: "Custom Sourcing",
+    desc: "Tailored sourcing as per your requirements.",
+    image: "/images/reference_crops/prod_custom_ref.png",
+    href: "/products?category=custom",
+  },
+];
 ---
 
-<section id="products" class="py-20 lg:py-28 bg-slate-50/70 border-b border-subtle">
+<section id="products" class="py-16 lg:py-24 bg-white border-b border-slate-200/80">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
-    <div class="scroll-reveal flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-      <div class="space-y-2 max-w-2xl">
-        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-700">
-          <span class="w-8 h-0.5 bg-emerald-600"></span>
-          <span>Our Products</span>
+    <div class="scroll-reveal flex flex-col sm:flex-row sm:items-end justify-between mb-10 lg:mb-12 gap-4">
+      <div class="space-y-1.5">
+        <div class="text-xs font-bold uppercase tracking-widest text-emerald-600 font-mono">
+          OUR PRODUCTS
         </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy-950 tracking-tight">
-          Diverse Products for <br class="hidden sm:inline" />
-          <span class="text-emerald-700 font-editorial-serif italic font-normal">Global Markets.</span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-display text-navy-950 tracking-tight">
+          Diverse Products for Global Markets
         </h2>
-        <p class="text-base text-slate-600 font-normal pt-1">
-          Explore our primary trade categories, spanning certified agricultural commodities, refined food staples, premium textiles, and heavy industrial supplies.
-        </p>
       </div>
 
-      {showAllLink && (
-        <div class="flex-shrink-0">
-          <a
-            href="/products"
-            class="trade-btn-secondary group"
-            id="view-all-products-btn"
-          >
-            <span>View All Products</span>
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-        </div>
-      )}
+      <div class="flex-shrink-0">
+        <a
+          href="/products"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 text-xs sm:text-sm font-semibold transition-all duration-300 shadow-xs hover:border-slate-400 group"
+          id="view-all-products-btn"
+        >
+          <span>View All Products</span>
+          <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
     </div>
 
-    <!-- Product Grid: 6 Cards in 3x2 on desktop -->
-    <div data-reveal-group data-reveal-stagger="90" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {displayCategories.map((product) => (
+    <!-- Product Grid: 6 Columns on Desktop -->
+    <div data-reveal-group data-reveal-stagger="70" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+      {landingProducts.map((product) => (
         <ProductCard product={product} />
       ))}
     </div>

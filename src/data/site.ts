@@ -70,11 +70,12 @@ export const siteConfig: SiteConfig = {
 
   nav: [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Sourcing", href: "/sourcing" },
-    { name: "Products", href: "/products" },
-    { name: "Global Reach", href: "/global-reach" },
-    { name: "Contact", href: "/contact" },
+    { name: "About", href: "/#about" },
+    { name: "Sourcing", href: "/#sourcing" },
+    { name: "Products", href: "/#products" },
+    { name: "Global Reach", href: "/#network" },
+    { name: "Founders", href: "/#founders" },
+    { name: "Contact", href: "/#contact" },
   ],
 
   badges: [

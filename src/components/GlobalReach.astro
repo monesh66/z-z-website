@@ -1,522 +1,176 @@
 ---
-// Global Reach Section matching root website mockup design
-// Night lights satellite map with global trade route web and unified frosted glass stat card
 ---
 
-<section
-  class="relative py-20 lg:py-28 bg-[#0B1F3A] overflow-hidden text-white border-b border-[#112847]"
-  id="network"
->
-  <!-- Background Image: Earth at Night with Golden Web Connections -->
-  <div class="absolute inset-0 z-0 pointer-events-none opacity-95">
-    <img
-      src="/images/network/mockup-network-map.jpg"
-      alt="Ziya Zara Global Trade Network Map"
-      width="1376"
-      height="768"
-      class="w-full h-full object-cover object-center"
-      loading="eager"
-    />
-    <!-- Subtle gradient vignettes on edges to blend seamlessly -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#0B1F3A]/85 via-transparent to-[#0B1F3A]/70"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-[#0B1F3A]/40 via-transparent to-[#0B1F3A]/50"></div>
-  </div>
-
-  <!-- Interactive SVG Layer: Global Trade Hotspots & Country Details (NO moving ball) -->
-  <div class="absolute inset-0 z-10 pointer-events-none">
-    <svg
-      viewBox="0 0 1376 768"
-      preserveAspectRatio="xMidYMid slice"
-      class="w-full h-full pointer-events-auto"
-      id="night-map-svg"
-      aria-label="Interactive global trade network hotspots"
-    >
-      <defs>
-        <filter id="goldenGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="3" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
-      </defs>
-
-      <!-- Hotspots for Trade Partner Countries -->
-      <g id="country-hotspots-group">
-  <g class="country-pin-node" data-id="IN" data-name="India" data-role="Primary Sourcing Hub (HQ)" data-commodities="Basmati Rice, Spices, Cotton Yarns, Agro Commodities" data-ports="JNPT (Nhava Sheva), Mundra Port, Chennai" data-transit="Origin Berth / Continuous Dispatch" transform="translate(995, 385)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="9" fill="none" stroke="#10b981" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="5" fill="#34d399" class="pin-core" filter="drop-shadow(0 0 6px #34d399)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="AE" data-name="United Arab Emirates" data-role="Strategic Re-Export & GCC Gateway" data-commodities="Culinary Staples, Grains, Edible Oils, Metals" data-ports="Jebel Ali Port (Dubai), Khalifa Port" data-transit="3 - 5 Days Maritime Transit" transform="translate(880, 345)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="SA" data-name="Saudi Arabia" data-role="High-Volume Commodity Destination" data-commodities="Long-Grain Rice, Spices, Food Ingredients" data-ports="Jeddah Islamic Port, Dammam Port" data-transit="5 - 7 Days Maritime Transit" transform="translate(845, 345)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="OM" data-name="Oman" data-role="Regional GCC Maritime Corridor" data-commodities="Agro Produce, Pulses, Building Materials" data-ports="Port of Sohar, Salalah" data-transit="3 - 4 Days Maritime Transit" transform="translate(895, 360)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="QA" data-name="Qatar" data-role="Commercial Consumer Market" data-commodities="Premium Packaged Grains, Spices, Textiles" data-ports="Hamad Port (Doha)" data-transit="4 - 6 Days Maritime Transit" transform="translate(870, 340)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="KW" data-name="Kuwait" data-role="Established Trade Corridor" data-commodities="Basmati Rice, Pulses, Spun Yarns" data-ports="Shuwaikh Port, Shuaiba Port" data-transit="5 - 7 Days Maritime Transit" transform="translate(860, 325)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="NL" data-name="Netherlands / Europe Hub" data-role="Primary European Maritime Entryway" data-commodities="Agro Transshipment, Food Ingredients, Yarns" data-ports="Port of Rotterdam (Main Euro Gateway)" data-transit="18 - 21 Days Direct Maritime" transform="translate(705, 215)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="GB" data-name="United Kingdom" data-role="Premier European Commercial Destination" data-commodities="Graded Basmati Rice, Spices, Bed Linen" data-ports="Port of Felixstowe, London Gateway" data-transit="18 - 22 Days Maritime Freight" transform="translate(680, 210)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="DE" data-name="Germany" data-role="Central European Industrial Gateway" data-commodities="Certified Organic Ingredients, Technical Textiles" data-ports="Port of Hamburg, Bremen" data-transit="20 - 24 Days Maritime Freight" transform="translate(725, 220)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="FR" data-name="France" data-role="Consumer & Industrial Market" data-commodities="Specialty Spices, Organic Rice, Apparel" data-ports="Port of Le Havre, Marseille" data-transit="19 - 23 Days Maritime Freight" transform="translate(695, 240)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="ES" data-name="Spain" data-role="Mediterranean Commercial Entry" data-commodities="Agro Products, Food Grains, Industrial Fabrics" data-ports="Port of Valencia, Barcelona, Algeciras" data-transit="16 - 20 Days Maritime Freight" transform="translate(675, 270)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="IT" data-name="Italy" data-role="Mediterranean Distribution Hub" data-commodities="Spices, Raw Yarns, Agricultural Inputs" data-ports="Port of Genoa, Gioia Tauro" data-transit="16 - 20 Days Maritime Freight" transform="translate(725, 260)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="US" data-name="United States (East Coast)" data-role="Major Transatlantic Trade Destination" data-commodities="Specialty Spices, Food Ingredients, Textiles" data-ports="Port of New York / New Jersey, Savannah" data-transit="20 - 24 Days Maritime Freight" transform="translate(375, 255)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="US-W" data-name="United States (West Coast)" data-role="Major Transpacific Trade Destination" data-commodities="Organic Grains, Spices, Industrial Goods" data-ports="Port of Los Angeles, Long Beach" data-transit="22 - 28 Days Maritime Freight" transform="translate(265, 265)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="US-G" data-name="United States (Gulf Coast)" data-role="Energy & Commodity Entryway" data-commodities="Bulk Agricultural Goods, Petrochemical Inputs" data-ports="Port of Houston" data-transit="24 - 28 Days Maritime Freight" transform="translate(315, 300)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="CA" data-name="Canada" data-role="North American Distribution Destination" data-commodities="Food Commodities, Organic Grains, Staples" data-ports="Port of Vancouver, Montreal" data-transit="24 - 30 Days Maritime Freight" transform="translate(320, 195)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="BR" data-name="Brazil" data-role="South American Agricultural Hub" data-commodities="Raw Sugar, Edible Oils, Agricultural Feeds" data-ports="Port of Santos, Paranaguá" data-transit="26 - 32 Days Maritime Freight" transform="translate(490, 515)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="CN" data-name="China" data-role="High-Volume Bilateral Industrial Partner" data-commodities="Industrial Raw Materials, Mineral Commodities" data-ports="Port of Shanghai, Ningbo-Zhoushan, Shenzhen" data-transit="12 - 16 Days Maritime Freight" transform="translate(1115, 315)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="JP" data-name="Japan" data-role="Quality Assayed Premium Market" data-commodities="Organic Spices, Graded Grains, Fine Textiles" data-ports="Port of Tokyo, Yokohama, Kobe" data-transit="14 - 18 Days Maritime Freight" transform="translate(1225, 295)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="VN" data-name="Vietnam" data-role="Southeast Asian Agricultural Hub" data-commodities="Black Pepper, Cashews, Rice, Industrial Textiles" data-ports="Port of Ho Chi Minh City (Cat Lai), Haiphong" data-transit="8 - 12 Days Direct Maritime" transform="translate(1110, 395)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="SG" data-name="Singapore" data-role="Global Transshipment & Maritime Hub" data-commodities="Agro Transshipment, Bunkering, Re-export" data-ports="Port of Singapore (PSA)" data-transit="5 - 7 Days Direct Maritime" transform="translate(1105, 455)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="ID" data-name="Indonesia" data-role="ASEAN Raw Material & Commodity Hub" data-commodities="Palm Oil Fractions, Spices, Natural Fibres" data-ports="Port of Tanjung Priok (Jakarta), Surabaya" data-transit="7 - 10 Days Maritime Freight" transform="translate(1150, 485)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="MY" data-name="Malaysia" data-role="ASEAN Refining & Trade Gateway" data-commodities="Refined Edible Oils, Agro Products, Grains" data-ports="Port Klang, Tanjung Pelepas" data-transit="6 - 9 Days Direct Maritime" transform="translate(1095, 445)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="TH" data-name="Thailand" data-role="Regional Food & Packaging Partner" data-commodities="Specialty Grains, Culinary Foodstuffs" data-ports="Laem Chabang Port, Bangkok" data-transit="8 - 11 Days Maritime Freight" transform="translate(1080, 395)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="AU" data-name="Australia" data-role="Pacific Commodity & Consumer Destination" data-commodities="Graded Grains, Commercial Workwear, Cotton" data-ports="Port of Melbourne, Sydney Botany, Fremantle" data-transit="16 - 22 Days Maritime Freight" transform="translate(1240, 595)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="EG" data-name="Egypt" data-role="Suez Canal Transshipment Gateway" data-commodities="Agro Commodities, Spices, Cotton Yarns" data-ports="Port Said, Alexandria, Suez" data-transit="9 - 13 Days Direct Maritime" transform="translate(805, 315)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="ZA" data-name="South Africa" data-role="Sub-Saharan Industrial & Commodity Hub" data-commodities="Food Commodities, Rice, Industrial Fabrics" data-ports="Port of Durban, Cape Town" data-transit="14 - 18 Days Maritime Freight" transform="translate(800, 625)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="NG" data-name="Nigeria & West Africa" data-role="West African Commercial Market" data-commodities="Agricultural Commodities, Food Grains, Fabrics" data-ports="Port of Lagos (Apapa / Tin Can)" data-transit="18 - 24 Days Maritime Freight" transform="translate(715, 425)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-  <g class="country-pin-node" data-id="TR" data-name="Turkey" data-role="Eurasian Cross-Continental Bridge" data-commodities="Pulses, Spices, Industrial Yarns" data-ports="Port of Mersin, Istanbul" data-transit="12 - 16 Days Maritime Freight" transform="translate(800, 270)">
-    <!-- Hover Hit Target -->
-    <circle r="20" fill="transparent" class="cursor-pointer" />
-    <!-- Stationary Halo Ring (NO moving side-to-side animation) -->
-    <circle r="8" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6" class="pin-halo" />
-    <!-- Core Beacon Dot -->
-    <circle r="4" fill="#fbbf24" class="pin-core" filter="drop-shadow(0 0 6px #fbbf24)" />
-    <circle r="1.5" fill="#ffffff" />
-  </g>
-      </g>
-    </svg>
-  </div>
-
-  <!-- Floating Country Inspection Tooltip (Follows cursor smoothly on map) -->
-  <div
-    id="country-hover-tooltip"
-    class="fixed pointer-events-none z-50 hidden opacity-0 transition-opacity duration-150 rounded-xl bg-[#0B1F3A]/95 backdrop-blur-md border border-emerald-400/40 p-3.5 shadow-2xl shadow-black/90 text-white min-w-[240px] max-w-[300px]"
-    style="transform: translate(-50%, -120%);"
-  >
-    <div class="flex items-center justify-between gap-2 border-b border-white/15 pb-2 mb-2">
-      <div class="flex items-center gap-2 font-bold text-sm tracking-wide text-white" id="tooltip-country-name">
-        Country Name
-      </div>
-      <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" id="tooltip-country-code">
-        CODE
-      </span>
-    </div>
-    <div class="text-[11px] font-semibold text-emerald-400 mb-1.5 leading-snug" id="tooltip-country-role">
-      Primary Sourcing Hub (HQ)
-    </div>
-    <div class="text-[10px] text-slate-300 leading-relaxed mb-2" id="tooltip-country-commodities">
-      Commodities: Basmati Rice, Spices, Grains, Textiles
-    </div>
-    <div class="text-[9px] font-mono text-emerald-300 flex items-center gap-1.5" id="tooltip-country-ports">
-      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-      <span id="tooltip-country-ports-text">JNPT (Nhava Sheva), Mundra Port</span>
-    </div>
-  </div>
-
-  <!-- Main Content Grid Matching Reference Mockup Layout -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<section id="network" class="py-16 lg:py-24 bg-[#EBF5FB] text-navy-950 border-b border-slate-200/80 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
       
-      <!-- Col 1: Text Intro on the Left -->
-      <div class="scroll-reveal lg:col-span-5 space-y-5">
-        <!-- Eyebrow Badge in Emerald -->
-        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-400">
-          <span>GLOBAL REACH</span>
+      <!-- Left Column: Copy & Action -->
+      <div class="lg:col-span-4 space-y-6">
+        
+        <!-- Eyebrow -->
+        <div class="scroll-reveal flex items-center gap-2.5">
+          <span class="text-xs font-bold uppercase tracking-widest text-navy-950 font-mono">
+            GLOBAL REACH
+          </span>
+          <span class="w-8 h-0.5 bg-emerald-600"></span>
         </div>
 
-        <!-- Headline in Serif & Italic Green -->
-        <h2 class="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold font-editorial-serif tracking-tight text-white leading-[1.12]">
-          Connecting<br />
-          <span class="text-emerald-500 italic font-normal">Continents</span>
+        <!-- Headline -->
+        <h2 class="scroll-reveal stagger-1 text-3xl sm:text-4xl font-bold font-display text-navy-950 tracking-tight leading-tight">
+          Importing & Exporting<br />
+          <span class="text-emerald-600 font-editorial-serif italic font-normal">Across Continents</span>
         </h2>
 
-        <!-- Paragraph Description -->
-        <p class="text-base sm:text-lg text-slate-200/90 font-normal leading-relaxed max-w-lg">
-          We work with a wide network of suppliers and buyers across the globe, enabling seamless import and export operations.
+        <!-- Description -->
+        <p class="scroll-reveal stagger-2 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+          We work with a wide network of suppliers and buyers across the globe, enabling seamless import and export operations to key international markets.
         </p>
 
-        <!-- CTA Button with Emerald Border & Arrow -->
-        <div class="pt-2">
+        <!-- CTA Button -->
+        <div class="scroll-reveal stagger-3 pt-2">
           <a
-            href="/contact"
-            class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-[#0B1F3A]/60 hover:bg-emerald-600 text-white font-semibold text-sm sm:text-base border border-emerald-500/70 hover:border-emerald-600 backdrop-blur-sm transition-all duration-300 group hover:-translate-y-0.5 shadow-lg shadow-emerald-950/30"
-            id="global-reach-view-btn"
+            href="/global-reach"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg shadow-emerald-950/10 group"
           >
-            <span>View Our Global Reach</span>
-            <svg
-              class="w-4 h-4 transition-transform group-hover:translate-x-1"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+            <span>Our Global Reach</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
         </div>
+
       </div>
 
-      <!-- Col 2: Center Visual Breathing Space (Allows Full View of the Illuminated Map) -->
-      <div class="hidden lg:block lg:col-span-3 min-h-[300px]"></div>
-
-      <!-- Col 3: Single Unified Frosted Glass Stat Card on the Right (Exact Mockup Layout) -->
-      <div class="lg:col-span-4">
-        <div class="scroll-reveal-right stagger-1 bg-[#07172f]/80 backdrop-blur-md border border-white/15 rounded-2xl p-6 sm:p-7 shadow-2xl space-y-5">
+      <!-- Center: Light Blue Vector World Map with Trade Pins & Route Arcs -->
+      <div class="lg:col-span-5 relative flex items-center justify-center">
+        <div class="scroll-reveal stagger-1 relative w-full aspect-[16/10] max-w-lg mx-auto">
           
-          <!-- Stat Row 1: 50+ Countries Trade Network -->
-          <div class="flex items-center gap-4 group">
-            <div class="w-11 h-11 rounded-full bg-cyan-400/15 text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-400/25 transition-colors">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-              </svg>
-            </div>
-            <div>
-              <div class="text-2xl font-extrabold text-white leading-none">50+</div>
-              <div class="text-xs sm:text-sm text-slate-300 mt-1 leading-snug">Countries Trade Network</div>
-            </div>
-          </div>
+          <svg viewBox="0 0 800 500" class="w-full h-full drop-shadow-sm select-none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Simplified Vector Continents in Soft Slate/Cyan -->
+            <g fill="#93C5FD" fill-opacity="0.35" stroke="#60A5FA" stroke-width="0.75" stroke-opacity="0.6">
+              <!-- North America -->
+              <path d="M120 120 C 150 90, 200 80, 240 110 C 260 140, 240 180, 210 210 C 180 230, 150 210, 130 180 Z" />
+              <!-- South America -->
+              <path d="M220 250 C 250 250, 270 280, 260 330 C 250 380, 220 410, 200 370 C 190 330, 200 280, 220 250 Z" />
+              <!-- Europe -->
+              <path d="M380 110 C 420 100, 450 120, 440 160 C 420 180, 390 180, 370 150 Z" />
+              <!-- Africa -->
+              <path d="M380 200 C 430 190, 460 220, 460 280 C 440 340, 410 360, 380 320 C 360 270, 360 220, 380 200 Z" />
+              <!-- Asia -->
+              <path d="M460 100 C 540 80, 640 110, 660 170 C 640 230, 560 250, 500 220 C 470 190, 460 140, 460 100 Z" />
+              <!-- Australia -->
+              <path d="M600 320 C 650 310, 680 330, 670 370 C 650 400, 600 390, 590 360 Z" />
+            </g>
 
-          <!-- Stat Row 2: 100+ Product Categories -->
-          <div class="flex items-center gap-4 group">
-            <div class="w-11 h-11 rounded-full bg-cyan-400/15 text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-400/25 transition-colors">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="21 8 21 21 3 21 3 8"></polyline>
-                <rect x="1" y="3" width="22" height="5"></rect>
-                <line x1="10" y1="12" x2="14" y2="12"></line>
-              </svg>
-            </div>
-            <div>
-              <div class="text-2xl font-extrabold text-white leading-none">100+</div>
-              <div class="text-xs sm:text-sm text-slate-300 mt-1 leading-snug">Product Categories</div>
-            </div>
-          </div>
+            <!-- Curved Flight / Shipping Route Arcs -->
+            <g stroke="#10B981" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.7">
+              <!-- India to Europe -->
+              <path d="M 520 200 Q 450 140, 410 140" />
+              <!-- India to Middle East -->
+              <path d="M 520 200 Q 480 180, 460 190" />
+              <!-- India to Southeast Asia -->
+              <path d="M 520 200 Q 570 240, 610 250" />
+              <!-- Europe to Americas -->
+              <path d="M 410 140 Q 300 110, 210 160" />
+              <!-- India to Africa -->
+              <path d="M 520 200 Q 470 260, 430 280" />
+            </g>
 
-          <!-- Stat Row 3: 200+ Trusted Partners -->
-          <div class="flex items-center gap-4 group">
-            <div class="w-11 h-11 rounded-full bg-cyan-400/15 text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-400/25 transition-colors">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <div>
-              <div class="text-2xl font-extrabold text-white leading-none">200+</div>
-              <div class="text-xs sm:text-sm text-slate-300 mt-1 leading-snug">Trusted Partners</div>
-            </div>
-          </div>
+            <!-- Glowing Location Pins -->
+            <!-- India HQ (Primary Hub) -->
+            <g transform="translate(520, 200)">
+              <circle r="12" fill="#10B981" opacity="0.25" class="animate-ping" />
+              <circle r="7" fill="#10B981" />
+              <circle r="3" fill="#FFFFFF" />
+            </g>
 
-          <!-- Stat Row 4: Global Import & Export Operations -->
-          <div class="flex items-center gap-4 group">
-            <div class="w-11 h-11 rounded-full bg-cyan-400/15 text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-400/25 transition-colors">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 2L11 13"></path>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </div>
-            <div>
-              <div class="text-2xl font-extrabold text-white leading-none">Global</div>
-              <div class="text-xs sm:text-sm text-slate-300 mt-1 leading-snug">Import & Export Operations</div>
-            </div>
-          </div>
+            <!-- UAE / Middle East -->
+            <g transform="translate(460, 190)">
+              <circle r="5" fill="#059669" />
+              <circle r="2" fill="#FFFFFF" />
+            </g>
+
+            <!-- Europe (Rotterdam) -->
+            <g transform="translate(410, 140)">
+              <circle r="5" fill="#059669" />
+              <circle r="2" fill="#FFFFFF" />
+            </g>
+
+            <!-- Americas -->
+            <g transform="translate(210, 160)">
+              <circle r="5" fill="#059669" />
+              <circle r="2" fill="#FFFFFF" />
+            </g>
+
+            <!-- Southeast Asia -->
+            <g transform="translate(610, 250)">
+              <circle r="5" fill="#059669" />
+              <circle r="2" fill="#FFFFFF" />
+            </g>
+
+            <!-- Africa -->
+            <g transform="translate(430, 280)">
+              <circle r="5" fill="#059669" />
+              <circle r="2" fill="#FFFFFF" />
+            </g>
+          </svg>
 
         </div>
+      </div>
+
+      <!-- Right Column: 3 Clean Feature Rows -->
+      <div class="lg:col-span-3 space-y-6" data-reveal-group data-reveal-stagger="80">
+        
+        <!-- 1. Import Markets -->
+        <div class="flex items-start gap-4 group">
+          <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 text-navy-950 flex items-center justify-center flex-shrink-0 shadow-xs group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-navy-950 font-display">Import Markets</h3>
+            <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+              Sourcing quality products from global markets.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. Export Markets -->
+        <div class="flex items-start gap-4 group">
+          <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 text-navy-950 flex items-center justify-center flex-shrink-0 shadow-xs group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-navy-950 font-display">Export Markets</h3>
+            <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+              Supplying products to international destinations.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. Logistics Network -->
+        <div class="flex items-start gap-4 group">
+          <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 text-navy-950 flex items-center justify-center flex-shrink-0 shadow-xs group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-navy-950 font-display">Logistics Network</h3>
+            <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+              Integrated air, sea and road transport solutions.
+            </p>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </div>
 </section>
-
-<!-- Client Script for Interactive Country Hotspot Tooltips (Zero-Lag, No Moving Ball) -->
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const tooltip = document.getElementById('country-hover-tooltip');
-    const tName = document.getElementById('tooltip-country-name');
-    const tCode = document.getElementById('tooltip-country-code');
-    const tRole = document.getElementById('tooltip-country-role');
-    const tComm = document.getElementById('tooltip-country-commodities');
-    const tPortsText = document.getElementById('tooltip-country-ports-text');
-
-    const pinNodes = document.querySelectorAll('.country-pin-node');
-
-    pinNodes.forEach((pin) => {
-      const name = pin.getAttribute('data-name');
-      const code = pin.getAttribute('data-id');
-      const role = pin.getAttribute('data-role');
-      const comm = pin.getAttribute('data-commodities');
-      const ports = pin.getAttribute('data-ports');
-
-      pin.addEventListener('mouseenter', (e) => {
-        if (!tooltip) return;
-        tName.textContent = name;
-        tCode.textContent = code;
-        tRole.textContent = role;
-        tComm.textContent = 'Commodities: ' + comm;
-        tPortsText.textContent = ports;
-
-        tooltip.classList.remove('hidden');
-        tooltip.style.opacity = '1';
-      });
-
-      pin.addEventListener('mousemove', (e) => {
-        if (!tooltip) return;
-        const x = e.clientX;
-        const y = e.clientY;
-        tooltip.style.left = `${x}px`;
-        tooltip.style.top = `${y}px`;
-      });
-
-      pin.addEventListener('mouseleave', () => {
-        if (!tooltip) return;
-        tooltip.style.opacity = '0';
-        tooltip.classList.add('hidden');
-      });
-    });
-  });
-</script>
-
-<style>
-  /* Subtle Stationary Halo on Country Nodes - No moving side-to-side animation */
-  .country-pin-node {
-    cursor: pointer;
-  }
-
-  .country-pin-node .pin-halo {
-    transition: transform 0.25s ease, stroke 0.25s ease, opacity 0.25s ease;
-  }
-
-  .country-pin-node:hover .pin-halo {
-    transform: scale(1.6);
-    stroke: #34d399;
-    opacity: 1;
-  }
-
-  .country-pin-node:hover .pin-core {
-    fill: #ffffff;
-    filter: drop-shadow(0 0 10px #34d399);
-  }
-</style>
