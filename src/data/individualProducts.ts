@@ -59,10 +59,40 @@ export const individualProducts: IndividualProduct[] = [
     specs: "Parboiled | High Fiber | 100% Sortex Cleaned",
     origin: "Cauvery Basin, Tamil Nadu"
   },
+  {
+    id: "golden-sella-basmati",
+    name: "1121 Golden Sella Basmati Rice",
+    category: "Rice & Rice Products",
+    categorySlug: "rice-and-rice-products",
+    hsnCode: "10063020",
+    image: "/images/products/rice_golden_sella.jpg",
+    specs: "AGL 8.35mm+ | Parboiled Golden | Zero Stickiness",
+    origin: "Punjab & Haryana, India"
+  },
+  {
+    id: "ir64-parboiled-rice",
+    name: "IR-64 Parboiled Long Grain Rice",
+    category: "Rice & Rice Products",
+    categorySlug: "rice-and-rice-products",
+    hsnCode: "10063010",
+    image: "/images/products/rice_ir64.jpg",
+    specs: "5% / 25% Broken | Sortex Cleaned | High Yield",
+    origin: "Andhra Pradesh & Chhattisgarh, India"
+  },
 
   // ==========================================
   // 2. PULSES & DALS (Approved Studio Shots)
   // ==========================================
+  {
+    id: "toor-dal",
+    name: "Toor Dal (Split Yellow Pigeon Peas)",
+    category: "Pulses & Dals",
+    categorySlug: "pulses-and-dals",
+    hsnCode: "07136000",
+    image: "/images/products/pulse_toor_dal.jpg",
+    specs: "Fatka / Oily / Desi Unpolished | Sortex Cleaned",
+    origin: "Maharashtra & Gujarat, India"
+  },
   {
     id: "organic-chickpeas",
     name: "Kabuli Chickpeas (Dollar Chana)",
