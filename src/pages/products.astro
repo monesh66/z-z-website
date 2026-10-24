@@ -1,123 +1,573 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { productCategories } from '../data/products';
+import { individualProducts } from '../data/individualProducts';
 import { siteConfig } from '../data/site';
+
+// Build unique categories with counts
+const categoriesWithCounts = [
+  { name: 'All Commodities', slug: 'all', count: individualProducts.length },
+  ...Array.from(new Set(individualProducts.map((p) => p.category))).map((catName) => {
+    const matching = individualProducts.filter((p) => p.category === catName);
+    return {
+      name: catName,
+      slug: matching[0].categorySlug,
+      count: matching.length,
+    };
+  }),
+];
 ---
 
 <BaseLayout
-  title={`Product Categories & Trade Portfolio | ${siteConfig.legalName}`}
-  description="Explore the trade portfolio of ZIYA ZARA TRADING COMPANY: Agricultural commodities, food and grains, textiles, industrial supplies, consumer goods, and custom sourcing."
+  title={`Export Commodity Catalogue | ${siteConfig.legalName}`}
+  description="Explore the comprehensive export portfolio of ZIYA ZARA TRADING COMPANY: Milling wheat, organic chickpeas, spices, 1121 Basmati rice, millets, pulses, coconut derivatives, textiles, and industrial supplies."
 >
-  <!-- Products Header Banner -->
-  <section class="bg-[#EAF3FB] text-navy-950 py-20 lg:py-24 border-b border-slate-200/80 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0B1F3A_1px,transparent_1px)] [background-size:24px_24px]"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl space-y-4">
-        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-700">
-          <span class="w-8 h-0.5 bg-emerald-600"></span>
-          <span>Global Trade Portfolio</span>
-        </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-navy-950 leading-tight">
-          Diverse Products for <br />
-          <span class="text-emerald-700 font-editorial-serif italic font-normal">Global Commercial Demand.</span>
-        </h1>
-        <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed pt-2">
-          From certified primary agricultural commodities to precision-engineered industrial components, we supply commercial buyers worldwide with strict adherence to contracted specifications.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- Main Catalog Section -->
+  <main class="min-h-screen bg-[#F8FAFC] py-8 sm:py-12 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 
-  <!-- Detailed Categories List -->
-  <section class="py-20 lg:py-28 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-      
-      {productCategories.map((category, index) => {
-        const isReversed = index % 2 === 1;
-        return (
-          <div
-            id={category.slug}
-            class={`bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch ${
-              isReversed ? 'lg:flex-row-reverse' : ''
-            }`}
-          >
-            <!-- Image Column -->
-            <div class={`lg:col-span-6 relative min-h-[320px] lg:min-h-full ${isReversed ? 'lg:order-2' : ''}`}>
-              <img
-                src={category.image}
-                alt={category.title}
-                width="800"
-                height="600"
-                class="w-full h-full object-cover min-h-[340px]"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-60"></div>
-              
-              <!-- Floating Category Tag -->
-              <div class="absolute top-6 left-6 bg-navy-950/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 text-white text-xs font-mono uppercase tracking-wider">
-                Category 0{index + 1}
-              </div>
-            </div>
-
-            <!-- Content Column -->
-            <div class={`lg:col-span-6 p-8 sm:p-10 lg:p-12 flex flex-col justify-between space-y-8 ${isReversed ? 'lg:order-1' : ''}`}>
-              
-              <div class="space-y-4">
-                <h2 class="text-2xl sm:text-3xl font-bold font-display text-navy-950">
-                  {category.title}
-                </h2>
-                
-                <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                  {category.longDescription}
-                </p>
-
-                <!-- Typical Products List -->
-                <div class="pt-4 border-t border-slate-100 space-y-3">
-                  <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold">Typical Portfolio Items:</div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {category.items.map((item) => (
-                      <div class="flex items-center gap-2 text-xs text-slate-700">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0"></span>
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <!-- Specifications & Compliance Box -->
-                <div class="pt-4 border-t border-slate-100 bg-slate-50 rounded-xl p-4 space-y-2">
-                  <div class="text-[11px] font-mono uppercase tracking-wider text-emerald-800 font-bold">Standard Benchmarks & Assays:</div>
-                  <div class="flex flex-wrap gap-1.5">
-                    {category.keySpecs.map((spec) => (
-                      <span class="inline-block bg-white border border-slate-200 text-slate-700 text-[11px] px-2.5 py-1 rounded-md">
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <!-- CTA Row -->
-              <div class="pt-2 flex flex-wrap items-center gap-4">
-                <a
-                  href={`/contact?interest=${encodeURIComponent(category.title)}`}
-                  class="trade-btn-primary"
-                >
-                  <span>Inquire for {category.title.split('&')[0].trim()}</span>
-                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
-
-            </div>
-
+      <!-- ============================================================ -->
+      <!-- SEARCH & COMMODITY COUNTER BAR (Exact VR Traders Style)       -->
+      <!-- ============================================================ -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-2">
+        <!-- Search Input -->
+        <div class="relative flex-1 max-w-xl">
+          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
           </div>
-        );
-      })}
+          <input
+            type="text"
+            id="catalog-search-input"
+            placeholder="Search by commodity name, variety or HSN code..."
+            class="w-full pl-11 pr-10 py-3 text-xs sm:text-sm rounded-full border border-slate-200/90 bg-white text-slate-800 placeholder-slate-400 shadow-xs focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition-all"
+          />
+          <button
+            id="catalog-search-clear"
+            type="button"
+            class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 cursor-pointer"
+            title="Clear search"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Total Products Counter -->
+        <div class="flex-shrink-0 text-xs sm:text-sm font-medium text-slate-600 sm:text-right">
+          <span id="catalog-products-counter">Showing {individualProducts.length} products</span>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- CATEGORY FILTER PILLS (Exact VR Traders Horizontal Scroll)   -->
+      <!-- ============================================================ -->
+      <div class="overflow-x-auto pb-2 scrollbar-none pt-1" id="catalog-filter-pills-container">
+        <div class="flex items-center gap-2 w-max">
+          {categoriesWithCounts.map((cat, idx) => {
+            const isActive = idx === 0;
+            return (
+              <button
+                type="button"
+                data-filter={cat.slug}
+                class={`catalog-pill flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer shadow-xs ${
+                  isActive
+                    ? 'active bg-[#134E34] text-white border border-[#134E34]'
+                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/90'
+                }`}
+              >
+                <span>{cat.name}</span>
+                <span
+                  class={`px-1.5 py-0.2 rounded-full text-[10px] font-mono ${
+                    isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'
+                  }`}
+                >
+                  {cat.count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- ZERO SEARCH RESULTS BANNER                                   -->
+      <!-- ============================================================ -->
+      <div id="catalog-no-results" class="hidden py-16 text-center max-w-md mx-auto">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-base font-bold text-navy-950">No Traded Commodities Matched</h3>
+        <p class="text-xs text-slate-500 mt-1">
+          Try searching for a different variety, keyword, or clear your current filter.
+        </p>
+        <button
+          type="button"
+          id="catalog-reset-filter-btn"
+          class="mt-4 px-4 py-2 bg-[#134E34] text-white text-xs font-bold rounded-full hover:bg-emerald-800 transition-colors cursor-pointer"
+        >
+          View All Commodities
+        </button>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 4-COLUMN INDIVIDUAL PRODUCT CARDS GRID (Exact Reference)     -->
+      <!-- ============================================================ -->
+      <div
+        id="catalog-products-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-2"
+      >
+        {individualProducts.map((product, idx) => {
+          const isAboveFold = idx < 4;
+          const whatsappMessage = encodeURIComponent(
+            `Hello Ziya Zara Trading Company, I am interested in procuring ${product.name} (HSN: ${product.hsnCode}). Please provide commercial export quotation and specifications.`
+          );
+          const whatsappUrl = `https://wa.me/919003098708?text=${whatsappMessage}`;
+
+          return (
+            <article
+              data-category-slug={product.categorySlug}
+              data-search-text={`${product.name} ${product.category} ${product.hsnCode} ${product.specs} ${product.origin}`.toLowerCase()}
+              class="individual-product-card bg-white rounded-2xl border border-slate-200/90 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col group will-change-transform"
+            >
+              <!-- Card Image with Badges -->
+              <div class="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  width="400"
+                  height="300"
+                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  loading={isAboveFold ? "eager" : "lazy"}
+                  fetchpriority={isAboveFold ? "high" : "auto"}
+                  decoding="async"
+                />
+                
+                <!-- Category Pill Badge (Top-Left) -->
+                <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-md border border-slate-200/60 shadow-xs">
+                  <span class="text-[11px] font-semibold text-slate-800 tracking-wide line-clamp-1">
+                    {product.category}
+                  </span>
+                </div>
+
+                <!-- HSN Code Pill Badge (Top-Right) -->
+                <div class="absolute top-3 right-3 bg-[#134E34] text-white px-2.5 py-1 rounded-md shadow-xs">
+                  <span class="text-[11px] font-mono font-bold tracking-wider">
+                    HSN: {product.hsnCode}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
+                <div class="space-y-1">
+                  <!-- Product Title -->
+                  <h3 class="text-base font-bold font-display text-navy-950 group-hover:text-emerald-700 transition-colors line-clamp-1" title={product.name}>
+                    {product.name}
+                  </h3>
+
+                  <!-- HSN Subtitle -->
+                  <p class="text-xs text-slate-500 font-mono">
+                    HS / HSN Code: <span class="font-bold text-slate-800">{product.hsnCode}</span>
+                  </p>
+                </div>
+
+                <!-- Action Button Row -->
+                <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between gap-2">
+                  <!-- WhatsApp Link (Exact Reference Style) -->
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-emerald-700 transition-colors group/wa"
+                  >
+                    <!-- WhatsApp SVG Icon -->
+                    <svg class="w-4 h-4 text-emerald-600 group-hover/wa:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.948 3.018.949h.005c3.181 0 5.768-2.587 5.769-5.767.001-1.541-.599-2.99-1.688-4.08s-2.539-1.689-4.08-1.689zm0-2.001c4.288 0 7.769 3.481 7.77 7.769.001 2.078-.809 4.032-2.28 5.503s-3.424 2.281-5.502 2.281h-.007c-1.282 0-2.535-.347-3.633-.999l-5.379 1.411 1.436-5.243c-.714-1.139-1.09-2.457-1.09-3.953 0-4.288 3.481-7.769 7.769-7.769zm3.565 10.963c-.156.438-.795.833-1.109.878-.309.045-.705.066-1.144-.075-.27-.087-.618-.201-1.071-.397-1.921-.832-3.174-2.775-3.27-2.905-.096-.129-.775-1.031-.775-1.967 0-.936.491-1.397.666-1.591.175-.194.382-.243.51-.243.127 0 .255.002.366.007.118.005.276-.045.432.33.161.388.549 1.341.597 1.438.048.097.08.21.016.338-.064.129-.096.21-.192.323-.096.113-.203.253-.29.34-.097.097-.199.203-.086.397.113.194.502.828 1.077 1.341.741.66 1.365.865 1.559.962.194.097.307.081.42-.048.113-.129.485-.565.614-.759.129-.194.258-.161.436-.097.177.064 1.132.533 1.326.63.194.097.323.145.371.226.049.081.049.469-.107.907z" />
+                    </svg>
+                    <span>Inquire via WhatsApp</span>
+                  </a>
+
+                  <!-- RFQ Button -->
+                  <button
+                    type="button"
+                    data-open-quote-modal
+                    data-product-name={product.name}
+                    class="p-2 rounded-lg bg-slate-50 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 border border-slate-200 transition-colors cursor-pointer"
+                    title={`Request formal quote for ${product.name}`}
+                    aria-label={`Request formal quote for ${product.name}`}
+                  >
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
 
     </div>
-  </section>
+  </main>
+
+  <!-- Quick Trade Quotation Modal Dialog -->
+  <div
+    id="quote-modal-backdrop"
+    class="fixed inset-0 z-50 bg-[#0B1F3A]/70 backdrop-blur-xs hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6"
+    aria-hidden="true"
+  >
+    <div
+      id="quote-modal-card"
+      class="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-lg transform scale-95 opacity-0 transition-all duration-300 overflow-hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <!-- Modal Header -->
+      <div class="bg-[#0B1F3A] text-white p-5 sm:p-6 relative">
+        <div class="text-[11px] font-semibold text-emerald-400 uppercase tracking-widest font-mono">
+          ZIYA ZARA COMMERCIAL TRADE DESK
+        </div>
+        <h3 id="modal-title" class="text-xl font-bold font-editorial-serif text-white mt-1">
+          Request Commercial Quotation
+        </h3>
+        <p class="text-xs text-slate-300 mt-1">
+          Direct response with CIF/FOB pricing and specifications within 24 to 48 hours.
+        </p>
+
+        <!-- Close Button -->
+        <button
+          type="button"
+          id="close-modal-btn"
+          class="absolute top-5 right-5 text-white/70 hover:text-white p-1 rounded-md hover:bg-white/10 transition-colors cursor-pointer"
+          aria-label="Close modal"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body / Form -->
+      <form id="quick-quote-form" class="p-5 sm:p-6 space-y-4">
+        
+        <!-- Product Name (Pre-filled) -->
+        <div class="space-y-1">
+          <label for="modal-product-name" class="block text-xs font-semibold text-slate-700">
+            Selected Commodity / Item <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="modal-product-name"
+            name="productName"
+            required
+            class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-900 bg-slate-50 font-semibold focus:bg-white focus:outline-none focus:border-[#2E8B2E]"
+          />
+        </div>
+
+        <!-- Volume & Packaging Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label for="modal-volume" class="block text-xs font-semibold text-slate-700">
+              Target Order Volume <span class="text-red-500">*</span>
+            </label>
+            <select
+              id="modal-volume"
+              name="volume"
+              required
+              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 bg-white focus:outline-none focus:border-[#2E8B2E]"
+            >
+              <option value="1x 20ft FCL Container">1x 20ft FCL Container</option>
+              <option value="1x 40ft FCL / High Cube">1x 40ft FCL / High Cube</option>
+              <option value="Consolidated LCL Batch (5 - 10 MT)">Consolidated LCL Batch (5 - 10 MT)</option>
+              <option value="Pre-Shipment Commercial Sample Batch">Pre-Shipment Commercial Sample Batch</option>
+              <option value="Annual Contract / Multiple Containers">Annual Contract / Multiple Containers</option>
+            </select>
+          </div>
+
+          <div class="space-y-1">
+            <label for="modal-packaging" class="block text-xs font-semibold text-slate-700">
+              Preferred Packaging
+            </label>
+            <select
+              id="modal-packaging"
+              name="packaging"
+              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 bg-white focus:outline-none focus:border-[#2E8B2E]"
+            >
+              <option value="Standard Export Sacks (25kg / 50kg)">Standard Export Sacks (25kg / 50kg)</option>
+              <option value="Retail Pouches (500g / 1kg)">Retail Pouches (500g / 1kg)</option>
+              <option value="Jumbo FIBC Dry Bulk Bags (1 MT)">Jumbo FIBC Bulk Bags (1 MT)</option>
+              <option value="Custom Private Labeling">Custom Private Labeling</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Destination Port & Incoterm -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label for="modal-port" class="block text-xs font-semibold text-slate-700">
+              Target Port of Discharge <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="modal-port"
+              name="port"
+              placeholder="e.g. Jebel Ali, Rotterdam, Singapore"
+              required
+              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 bg-white focus:outline-none focus:border-[#2E8B2E]"
+            />
+          </div>
+
+          <div class="space-y-1">
+            <label for="modal-incoterm" class="block text-xs font-semibold text-slate-700">
+              Preferred Incoterm
+            </label>
+            <select
+              id="modal-incoterm"
+              name="incoterm"
+              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 bg-white focus:outline-none focus:border-[#2E8B2E]"
+            >
+              <option value="CIF (Cost, Insurance & Freight)">CIF (Cost, Insurance & Freight)</option>
+              <option value="FOB (Free On Board)">FOB (Free On Board)</option>
+              <option value="CFR (Cost & Freight)">CFR (Cost & Freight)</option>
+              <option value="EXW (Ex Works)">EXW (Ex Works)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Buyer Contact Email & WhatsApp -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label for="modal-email" class="block text-xs font-semibold text-slate-700">
+              Corporate Email <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="modal-email"
+              name="email"
+              required
+              placeholder="procurement@company.com"
+              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 bg-white focus:outline-none focus:border-[#2E8B2E]"
+            />
+          </div>
+
+          <div class="space-y-1">
+            <label for="modal-phone" class="block text-xs font-semibold text-slate-700">
+              Phone / WhatsApp
+            </label>
+            <input
+              type="tel"
+              id="modal-phone"
+              name="phone"
+              placeholder="+971 50 ... / +1 ..."
+              class="w-full h-10 px-3 text-xs rounded-lg border border-slate-300 text-slate-800 bg-white focus:outline-none focus:border-[#2E8B2E]"
+            />
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-2">
+          <button
+            type="submit"
+            id="modal-submit-btn"
+            class="w-full h-11 bg-[#134E34] hover:bg-emerald-900 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Transmit RFQ to Trade Desk</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Interactive Filtering, Search & Modal Script -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('catalog-search-input');
+      const searchClearBtn = document.getElementById('catalog-search-clear');
+      const counterEl = document.getElementById('catalog-products-counter');
+      const filterPills = document.querySelectorAll('.catalog-pill');
+      const productCards = document.querySelectorAll('.individual-product-card');
+      const noResultsEl = document.getElementById('catalog-no-results');
+      const resetFilterBtn = document.getElementById('catalog-reset-filter-btn');
+
+      let currentFilter = 'all';
+      let currentQuery = '';
+
+      function filterCatalogue() {
+        let visibleCount = 0;
+        const query = currentQuery.trim().toLowerCase();
+
+        productCards.forEach((card) => {
+          const categorySlug = card.getAttribute('data-category-slug');
+          const searchText = card.getAttribute('data-search-text') || '';
+
+          const matchesCategory = currentFilter === 'all' || categorySlug === currentFilter;
+          const matchesSearch = query === '' || searchText.includes(query);
+
+          if (matchesCategory && matchesSearch) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        // Update counter text
+        if (counterEl) {
+          counterEl.textContent = `Showing ${visibleCount} products`;
+        }
+
+        // Search clear icon
+        if (searchClearBtn) {
+          if (query.length > 0) {
+            searchClearBtn.classList.remove('hidden');
+          } else {
+            searchClearBtn.classList.add('hidden');
+          }
+        }
+
+        // Zero results banner
+        if (noResultsEl) {
+          if (visibleCount === 0) {
+            noResultsEl.classList.remove('hidden');
+          } else {
+            noResultsEl.classList.add('hidden');
+          }
+        }
+      }
+
+      // Filter Pill Handlers
+      filterPills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach((p) => {
+            p.classList.remove('active', 'bg-[#134E34]', 'text-white', 'border-[#134E34]');
+            p.classList.add('bg-white', 'text-slate-700', 'border-slate-200/90');
+            const countBadge = p.querySelector('span:last-child');
+            if (countBadge) {
+              countBadge.classList.remove('bg-white/20', 'text-white');
+              countBadge.classList.add('bg-slate-100', 'text-slate-500');
+            }
+          });
+
+          pill.classList.add('active', 'bg-[#134E34]', 'text-white', 'border-[#134E34]');
+          pill.classList.remove('bg-white', 'text-slate-700', 'border-slate-200/90');
+          const activeBadge = pill.querySelector('span:last-child');
+          if (activeBadge) {
+            activeBadge.classList.add('bg-white/20', 'text-white');
+            activeBadge.classList.remove('bg-slate-100', 'text-slate-500');
+          }
+
+          currentFilter = pill.getAttribute('data-filter') || 'all';
+          filterCatalogue();
+        });
+      });
+
+      // Search Handlers
+      searchInput?.addEventListener('input', (e) => {
+        currentQuery = e.target.value;
+        filterCatalogue();
+      });
+
+      function clearSearch() {
+        if (searchInput) searchInput.value = '';
+        currentQuery = '';
+        filterCatalogue();
+      }
+
+      searchClearBtn?.addEventListener('click', clearSearch);
+      resetFilterBtn?.addEventListener('click', () => {
+        clearSearch();
+        const allPill = document.querySelector('.catalog-pill[data-filter="all"]');
+        if (allPill) allPill.click();
+      });
+
+      // Quick Quotation Modal Logic
+      const modalBackdrop = document.getElementById('quote-modal-backdrop');
+      const modalCard = document.getElementById('quote-modal-card');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+      const modalProductName = document.getElementById('modal-product-name');
+      const quoteForm = document.getElementById('quick-quote-form');
+
+      function openModal(productName) {
+        if (modalProductName && productName) {
+          modalProductName.value = productName;
+        }
+        modalBackdrop?.classList.remove('hidden');
+        setTimeout(() => {
+          modalBackdrop?.classList.remove('opacity-0');
+          modalCard?.classList.remove('scale-95', 'opacity-0');
+          modalCard?.classList.add('scale-100', 'opacity-100');
+        }, 10);
+      }
+
+      function closeModal() {
+        modalBackdrop?.classList.add('opacity-0');
+        modalCard?.classList.remove('scale-100', 'opacity-100');
+        modalCard?.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+          modalBackdrop?.classList.add('hidden');
+        }, 300);
+      }
+
+      document.querySelectorAll('[data-open-quote-modal]').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const target = e.currentTarget;
+          const pName = target.getAttribute('data-product-name') || 'Export Commodity';
+          openModal(pName);
+        });
+      });
+
+      closeModalBtn?.addEventListener('click', closeModal);
+      modalBackdrop?.addEventListener('click', (e) => {
+        if (e.target === modalBackdrop) closeModal();
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modalBackdrop?.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Form submission via mailto link
+      quoteForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(quoteForm);
+        const pName = formData.get('productName') || '';
+        const volume = formData.get('volume') || '';
+        const packaging = formData.get('packaging') || '';
+        const port = formData.get('port') || '';
+        const incoterm = formData.get('incoterm') || '';
+        const email = formData.get('email') || '';
+        const phone = formData.get('phone') || '';
+
+        const subject = encodeURIComponent(`RFQ: ${pName} - ${volume}`);
+        const body = encodeURIComponent(
+          `COMMERCIAL TRADE INQUIRY\n\n` +
+          `Commodity: ${pName}\n` +
+          `Order Volume: ${volume}\n` +
+          `Packaging: ${packaging}\n` +
+          `Destination Port: ${port}\n` +
+          `Incoterm: ${incoterm}\n` +
+          `Buyer Corporate Email: ${email}\n` +
+          `Phone / WhatsApp: ${phone}\n\n` +
+          `Transmitted via ZIYA ZARA Commercial Trade Desk`
+        );
+
+        window.location.href = `mailto:info@ziyazaratrading.com?subject=${subject}&body=${body}`;
+        closeModal();
+      });
+    });
+  </script>
 </BaseLayout>

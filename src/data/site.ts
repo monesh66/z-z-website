@@ -64,7 +64,7 @@ export const siteConfig: SiteConfig = {
 
   // Official contact channels
   email: "info@ziyazaratrading.com",
-  phone: "+91 90000 00000",
+  phone: "+91 90030 98708",
   location: "Registered Trading Operations — India",
   isPlaceholderContact: false,
 
