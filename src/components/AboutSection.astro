@@ -2,40 +2,40 @@
 import { siteConfig } from '../data/site';
 ---
 
-<section id="about" class="py-16 lg:py-24 bg-white border-b border-slate-200/80 relative overflow-hidden">
+<section id="about" class="py-14 lg:py-20 bg-white relative overflow-hidden border-b border-slate-200/80">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
       
-      <!-- Left Column: Copy & Action -->
+      <!-- Left Column: Copy & Action (lg:col-span-5) -->
       <div class="lg:col-span-5 space-y-6">
         
         <!-- Eyebrow -->
-        <div class="scroll-reveal flex items-center gap-2.5">
-          <span class="text-xs font-bold uppercase tracking-widest text-navy-950 font-mono">
+        <div class="scroll-reveal flex items-center gap-3">
+          <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-slate-800 font-mono">
             ABOUT ZIYA ZARA
           </span>
           <span class="w-8 h-0.5 bg-emerald-600"></span>
         </div>
 
         <!-- Headline -->
-        <h2 class="scroll-reveal stagger-1 text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy-950 tracking-tight leading-tight">
+        <h2 class="scroll-reveal stagger-1 text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy-950 tracking-tight leading-[1.12]">
           Global Trade<br />
-          <span class="text-navy-950">Partner You Can Trust</span>
+          Partner You Can Trust
         </h2>
 
         <!-- Narrative Paragraph -->
-        <p class="scroll-reveal stagger-2 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+        <p class="scroll-reveal stagger-2 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
           We specialize in international trade and global sourcing, connecting reliable suppliers with quality products across borders. With a customer-centric approach and a strong network of partners, ZIYA ZARA TRADING COMPANY creates value through efficient trade solutions and long-term relationships.
         </p>
 
         <!-- CTA Button -->
-        <div class="scroll-reveal stagger-3 pt-2">
+        <div class="scroll-reveal stagger-3 pt-1">
           <a
             href="/about"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg shadow-emerald-950/10 group"
+            class="inline-flex items-center gap-2 px-6 py-2.5 sm:py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm transition-all duration-300 shadow-md hover:shadow-lg shadow-emerald-950/15 group"
           >
             <span>Learn More About Us</span>
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
@@ -44,84 +44,85 @@ import { siteConfig } from '../data/site';
 
       </div>
 
-      <!-- Middle Column: 4 Feature Items with Outlined Icons -->
-      <div class="lg:col-span-3 space-y-5" data-reveal-group data-reveal-stagger="70">
+      <!-- Middle Column: 4 Feature Items with Outlined Navy Icons (lg:col-span-3) -->
+      <div class="lg:col-span-3 space-y-6" data-reveal-group data-reveal-stagger="70">
         
         <!-- 1. Quality Products Across Industries -->
         <div class="flex items-center gap-3.5 group">
-          <div class="w-10 h-10 rounded-lg border border-slate-300 bg-white text-navy-950 flex items-center justify-center flex-shrink-0 group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors">
+          <div class="w-10 h-10 rounded-lg border border-slate-300 bg-white text-navy-950 flex items-center justify-center flex-shrink-0 group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors shadow-2xs">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l8 5-8 5-8-5 8-5zm0 10l8 5-8 5-8-5 8-5z" />
             </svg>
           </div>
-          <span class="text-xs sm:text-sm font-bold text-navy-950 font-display leading-snug">
-            Quality Products Across Industries
-          </span>
+          <div class="text-xs sm:text-sm font-bold text-navy-950 font-display leading-snug">
+            Quality Products<br />Across Industries
+          </div>
         </div>
 
         <!-- 2. Transparent Trade Practices -->
         <div class="flex items-center gap-3.5 group">
-          <div class="w-10 h-10 rounded-lg border border-slate-300 bg-white text-navy-950 flex items-center justify-center flex-shrink-0 group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors">
+          <div class="w-10 h-10 rounded-lg border border-slate-300 bg-white text-navy-950 flex items-center justify-center flex-shrink-0 group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors shadow-2xs">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
             </svg>
           </div>
-          <span class="text-xs sm:text-sm font-bold text-navy-950 font-display leading-snug">
-            Transparent Trade Practices
-          </span>
+          <div class="text-xs sm:text-sm font-bold text-navy-950 font-display leading-snug">
+            Transparent<br />Trade Practices
+          </div>
         </div>
 
         <!-- 3. Global Supplier Network -->
         <div class="flex items-center gap-3.5 group">
-          <div class="w-10 h-10 rounded-lg border border-slate-300 bg-white text-navy-950 flex items-center justify-center flex-shrink-0 group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors">
+          <div class="w-10 h-10 rounded-lg border border-slate-300 bg-white text-navy-950 flex items-center justify-center flex-shrink-0 group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors shadow-2xs">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
           </div>
-          <span class="text-xs sm:text-sm font-bold text-navy-950 font-display leading-snug">
-            Global Supplier Network
-          </span>
+          <div class="text-xs sm:text-sm font-bold text-navy-950 font-display leading-snug">
+            Global Supplier<br />Network
+          </div>
         </div>
 
         <!-- 4. Commitment to Long-term Growth -->
         <div class="flex items-center gap-3.5 group">
-          <div class="w-10 h-10 rounded-lg border border-slate-300 bg-white text-navy-950 flex items-center justify-center flex-shrink-0 group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors">
+          <div class="w-10 h-10 rounded-lg border border-slate-300 bg-white text-navy-950 flex items-center justify-center flex-shrink-0 group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors shadow-2xs">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
             </svg>
           </div>
-          <span class="text-xs sm:text-sm font-bold text-navy-950 font-display leading-snug">
-            Commitment to Long-term Growth
-          </span>
+          <div class="text-xs sm:text-sm font-bold text-navy-950 font-display leading-snug">
+            Commitment<br />to Long-term Growth
+          </div>
         </div>
 
       </div>
 
-      <!-- Right Column: Curved Wave Mask with Glowing Globe -->
+      <!-- Right Column: Organic Curved Mask with Glowing Night Globe (lg:col-span-4) -->
       <div class="lg:col-span-4 relative">
-        <div class="scroll-reveal-right stagger-1 relative overflow-hidden rounded-3xl bg-navy-950 p-6 sm:p-8 text-white shadow-2xl border border-navy-800">
+        <div class="scroll-reveal-right stagger-1 relative overflow-hidden rounded-[2.5rem] bg-[#0A192F] p-6 sm:p-7 text-white shadow-2xl border border-navy-800">
           
-          <!-- Curved Wave Mask in Top Left -->
-          <div class="absolute -top-12 -left-12 w-36 h-36 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+          <!-- Curved Soft Ambient Glow -->
+          <div class="absolute -top-10 -left-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
           <!-- Section Label with Green Underline -->
-          <div class="relative z-10 mb-6 text-right sm:text-left">
-            <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider font-display text-white">
+          <div class="relative z-10 mb-5 text-right">
+            <h3 class="text-xs sm:text-sm font-bold uppercase tracking-widest font-display text-white leading-tight">
               GLOBAL MARKETS<br />
-              STRONGER TOGETHER
+              STRONGER<br />
+              TOGETHER
             </h3>
-            <div class="w-10 h-0.5 bg-emerald-500 mt-2"></div>
+            <div class="w-10 h-0.5 bg-emerald-500 mt-2 ml-auto"></div>
           </div>
 
-          <!-- Globe Visual -->
-          <div class="relative z-10 rounded-2xl overflow-hidden aspect-square flex items-center justify-center">
+          <!-- Ultra-HD Glowing Earth Globe -->
+          <div class="relative z-10 rounded-2xl overflow-hidden aspect-square flex items-center justify-center bg-black/40">
             <img
-              src="/images/reference_crops/about_globe_ref.png"
+              src="/images/about/globe_night_hd.jpg"
               alt="Global Markets Connected Network Globe"
-              width="500"
-              height="500"
+              width="600"
+              height="600"
               class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />

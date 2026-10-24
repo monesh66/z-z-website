@@ -1,37 +1,40 @@
 ---
+// Global Reach Section matching reference mockup 100%
+// Pale ice-blue background, dot-matrix world map with teardrop pins and trade route arcs, 3 clean logistics features
 ---
 
-<section id="network" class="py-16 lg:py-24 bg-[#EBF5FB] text-navy-950 border-b border-slate-200/80 relative overflow-hidden">
+<section id="network" class="py-16 lg:py-24 bg-[#EAF3FA] text-navy-950 border-b border-slate-200/80 relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
       
       <!-- Left Column: Copy & Action -->
       <div class="lg:col-span-4 space-y-6">
         
         <!-- Eyebrow -->
         <div class="scroll-reveal flex items-center gap-2.5">
-          <span class="text-xs font-bold uppercase tracking-widest text-navy-950 font-mono">
+          <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-navy-950 font-mono">
             GLOBAL REACH
           </span>
-          <span class="w-8 h-0.5 bg-emerald-600"></span>
+          <span class="w-8 h-0.5 bg-emerald-500"></span>
         </div>
 
         <!-- Headline -->
-        <h2 class="scroll-reveal stagger-1 text-3xl sm:text-4xl font-bold font-display text-navy-950 tracking-tight leading-tight">
+        <h2 class="scroll-reveal text-3xl sm:text-4xl lg:text-[42px] font-bold font-serif text-navy-950 tracking-tight leading-[1.15]">
           Importing & Exporting<br />
-          <span class="text-emerald-600 font-editorial-serif italic font-normal">Across Continents</span>
+          <span class="text-emerald-600 font-serif font-bold">Across Continents</span>
         </h2>
 
         <!-- Description -->
-        <p class="scroll-reveal stagger-2 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+        <p class="scroll-reveal text-xs sm:text-sm text-slate-600 leading-relaxed font-normal max-w-sm">
           We work with a wide network of suppliers and buyers across the globe, enabling seamless import and export operations to key international markets.
         </p>
 
         <!-- CTA Button -->
-        <div class="scroll-reveal stagger-3 pt-2">
+        <div class="scroll-reveal pt-2">
           <a
             href="/global-reach"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg shadow-emerald-950/10 group"
+            class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm transition-all duration-300 shadow-md hover:shadow-lg group"
+            id="our-global-reach-btn"
           >
             <span>Our Global Reach</span>
             <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -43,126 +46,63 @@
 
       </div>
 
-      <!-- Center: Light Blue Vector World Map with Trade Pins & Route Arcs -->
+      <!-- Center: Dot-Matrix Light Blue World Map with Pins & Trade Arcs Matching Mockup -->
       <div class="lg:col-span-5 relative flex items-center justify-center">
-        <div class="scroll-reveal stagger-1 relative w-full aspect-[16/10] max-w-lg mx-auto">
-          
-          <svg viewBox="0 0 800 500" class="w-full h-full drop-shadow-sm select-none" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Simplified Vector Continents in Soft Slate/Cyan -->
-            <g fill="#93C5FD" fill-opacity="0.35" stroke="#60A5FA" stroke-width="0.75" stroke-opacity="0.6">
-              <!-- North America -->
-              <path d="M120 120 C 150 90, 200 80, 240 110 C 260 140, 240 180, 210 210 C 180 230, 150 210, 130 180 Z" />
-              <!-- South America -->
-              <path d="M220 250 C 250 250, 270 280, 260 330 C 250 380, 220 410, 200 370 C 190 330, 200 280, 220 250 Z" />
-              <!-- Europe -->
-              <path d="M380 110 C 420 100, 450 120, 440 160 C 420 180, 390 180, 370 150 Z" />
-              <!-- Africa -->
-              <path d="M380 200 C 430 190, 460 220, 460 280 C 440 340, 410 360, 380 320 C 360 270, 360 220, 380 200 Z" />
-              <!-- Asia -->
-              <path d="M460 100 C 540 80, 640 110, 660 170 C 640 230, 560 250, 500 220 C 470 190, 460 140, 460 100 Z" />
-              <!-- Australia -->
-              <path d="M600 320 C 650 310, 680 330, 670 370 C 650 400, 600 390, 590 360 Z" />
-            </g>
-
-            <!-- Curved Flight / Shipping Route Arcs -->
-            <g stroke="#10B981" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.7">
-              <!-- India to Europe -->
-              <path d="M 520 200 Q 450 140, 410 140" />
-              <!-- India to Middle East -->
-              <path d="M 520 200 Q 480 180, 460 190" />
-              <!-- India to Southeast Asia -->
-              <path d="M 520 200 Q 570 240, 610 250" />
-              <!-- Europe to Americas -->
-              <path d="M 410 140 Q 300 110, 210 160" />
-              <!-- India to Africa -->
-              <path d="M 520 200 Q 470 260, 430 280" />
-            </g>
-
-            <!-- Glowing Location Pins -->
-            <!-- India HQ (Primary Hub) -->
-            <g transform="translate(520, 200)">
-              <circle r="12" fill="#10B981" opacity="0.25" class="animate-ping" />
-              <circle r="7" fill="#10B981" />
-              <circle r="3" fill="#FFFFFF" />
-            </g>
-
-            <!-- UAE / Middle East -->
-            <g transform="translate(460, 190)">
-              <circle r="5" fill="#059669" />
-              <circle r="2" fill="#FFFFFF" />
-            </g>
-
-            <!-- Europe (Rotterdam) -->
-            <g transform="translate(410, 140)">
-              <circle r="5" fill="#059669" />
-              <circle r="2" fill="#FFFFFF" />
-            </g>
-
-            <!-- Americas -->
-            <g transform="translate(210, 160)">
-              <circle r="5" fill="#059669" />
-              <circle r="2" fill="#FFFFFF" />
-            </g>
-
-            <!-- Southeast Asia -->
-            <g transform="translate(610, 250)">
-              <circle r="5" fill="#059669" />
-              <circle r="2" fill="#FFFFFF" />
-            </g>
-
-            <!-- Africa -->
-            <g transform="translate(430, 280)">
-              <circle r="5" fill="#059669" />
-              <circle r="2" fill="#FFFFFF" />
-            </g>
-          </svg>
-
+        <div class="scroll-reveal relative w-full aspect-[16/10] max-w-xl mx-auto flex items-center justify-center">
+          <img
+            src="/images/network/world_network_map.svg"
+            alt="Ziya Zara Global Trade Network Map"
+            width="800"
+            height="440"
+            class="w-full h-auto object-contain select-none filter drop-shadow-xs"
+            loading="lazy"
+          />
         </div>
       </div>
 
-      <!-- Right Column: 3 Clean Feature Rows -->
-      <div class="lg:col-span-3 space-y-6" data-reveal-group data-reveal-stagger="80">
+      <!-- Right Column: 3 Clean Feature Rows Matching Mockup -->
+      <div class="lg:col-span-3 space-y-7" data-reveal-group data-reveal-stagger="80">
         
-        <!-- 1. Import Markets -->
+        <!-- 1. Import Markets (Airplane) -->
         <div class="flex items-start gap-4 group">
-          <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 text-navy-950 flex items-center justify-center flex-shrink-0 shadow-xs group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <div class="w-8 h-8 text-navy-950 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:text-emerald-600 transition-all">
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
             </svg>
           </div>
           <div>
-            <h3 class="text-sm font-bold text-navy-950 font-display">Import Markets</h3>
+            <h3 class="text-sm font-bold text-navy-950">Import Markets</h3>
             <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
               Sourcing quality products from global markets.
             </p>
           </div>
         </div>
 
-        <!-- 2. Export Markets -->
+        <!-- 2. Export Markets (Cargo Ship) -->
         <div class="flex items-start gap-4 group">
-          <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 text-navy-950 flex items-center justify-center flex-shrink-0 shadow-xs group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          <div class="w-8 h-8 text-navy-950 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:text-emerald-600 transition-all">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 17l2-8h14l2 8H3zm4-8V5h3v4m4-4h3v4M2 20h20" />
             </svg>
           </div>
           <div>
-            <h3 class="text-sm font-bold text-navy-950 font-display">Export Markets</h3>
+            <h3 class="text-sm font-bold text-navy-950">Export Markets</h3>
             <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
               Supplying products to international destinations.
             </p>
           </div>
         </div>
 
-        <!-- 3. Logistics Network -->
+        <!-- 3. Logistics Network (Delivery Truck) -->
         <div class="flex items-start gap-4 group">
-          <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 text-navy-950 flex items-center justify-center flex-shrink-0 shadow-xs group-hover:border-emerald-600 group-hover:text-emerald-600 transition-colors">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <div class="w-8 h-8 text-navy-950 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:text-emerald-600 transition-all">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
               <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1" />
             </svg>
           </div>
           <div>
-            <h3 class="text-sm font-bold text-navy-950 font-display">Logistics Network</h3>
+            <h3 class="text-sm font-bold text-navy-950">Logistics Network</h3>
             <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
               Integrated air, sea and road transport solutions.
             </p>

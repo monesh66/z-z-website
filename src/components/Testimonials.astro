@@ -1,60 +1,64 @@
 ---
+// Testimonials Section matching reference mockup 100%
 const testimonials = [
   {
     name: "Ramesh K.",
     role: "Import Manager, India",
-    avatar: "/images/testimonials/mockup-avatar-rahul.jpg",
+    avatar: "/images/testimonials/avatar_ramesh.jpg",
     quote: "Ziya Zara has been a reliable partner for our sourcing needs. Their professionalism and timely delivery have been impressive.",
     rating: 5,
   },
   {
     name: "Fatima Al Nasser",
     role: "Procurement Head, UAE",
-    avatar: "/images/testimonials/mockup-avatar-sarah.jpg",
+    avatar: "/images/testimonials/avatar_fatima.jpg",
     quote: "Excellent quality products and smooth communication. We highly recommend Ziya Zara for international trade.",
     rating: 5,
   },
   {
     name: "Michael Thompson",
     role: "Supply Chain Director, UK",
-    avatar: "/images/testimonials/mockup-avatar-ahmed.jpg",
+    avatar: "/images/testimonials/avatar_michael.jpg",
     quote: "A trusted partner with deep market knowledge and a customer-centric approach. Great experience working with their team.",
     rating: 5,
   },
 ];
 ---
 
-<section id="testimonials" class="py-16 lg:py-24 bg-white border-b border-slate-200/80">
+<section id="testimonials" class="py-16 lg:py-24 bg-white border-b border-slate-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
-    <div class="scroll-reveal flex items-end justify-between mb-12 gap-4">
-      <div class="space-y-1.5">
-        <div class="text-xs font-bold uppercase tracking-widest text-emerald-600 font-mono">
-          TESTIMONIALS
+    <div class="scroll-reveal flex items-end justify-between mb-10 lg:mb-12 gap-4">
+      <div class="space-y-2">
+        <div class="flex items-center gap-2.5">
+          <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-navy-950 font-mono">
+            TESTIMONIALS
+          </span>
+          <span class="w-8 h-0.5 bg-emerald-500"></span>
         </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy-950 tracking-tight">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-navy-950 tracking-tight">
           Trusted by Our Partners
         </h2>
       </div>
 
-      <!-- Left / Right Carousel Indicator Buttons -->
-      <div class="hidden sm:flex items-center gap-2">
+      <!-- Carousel Navigation Buttons matching mockup -->
+      <div class="flex items-center gap-2.5">
         <button
           type="button"
-          class="w-10 h-10 rounded-full border border-slate-200 text-slate-600 flex items-center justify-center hover:bg-slate-50 hover:border-slate-300 transition-colors"
+          class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 bg-white text-slate-700 flex items-center justify-center hover:bg-slate-50 hover:border-slate-300 transition-colors shadow-xs cursor-pointer"
           aria-label="Previous Testimonials"
         >
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
         <button
           type="button"
-          class="w-10 h-10 rounded-full border border-slate-200 text-slate-600 flex items-center justify-center hover:bg-slate-50 hover:border-slate-300 transition-colors"
+          class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 bg-white text-slate-700 flex items-center justify-center hover:bg-slate-50 hover:border-slate-300 transition-colors shadow-xs cursor-pointer"
           aria-label="Next Testimonials"
         >
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>
@@ -62,13 +66,16 @@ const testimonials = [
     </div>
 
     <!-- 3 Testimonial Cards -->
-    <div data-reveal-group data-reveal-stagger="90" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+    <div data-reveal-group data-reveal-stagger="90" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
       {testimonials.map((item) => (
-        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
           <div>
-            <!-- Large Quote Symbol & Text -->
-            <p class="text-slate-700 text-sm leading-relaxed mb-4 font-normal">
-              <span class="font-bold text-navy-950 text-base">“</span> {item.quote}
+            <!-- Quotation Symbol & Quote Text -->
+            <div class="mb-3">
+              <span class="font-serif text-3xl font-bold text-navy-950 leading-none select-none">“</span>
+            </div>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4 font-normal">
+              {item.quote}
             </p>
 
             <!-- 5 Gold Stars -->
@@ -78,20 +85,20 @@ const testimonials = [
           </div>
 
           <!-- Author Info -->
-          <div class="pt-4 border-t border-slate-100 flex items-center gap-3.5">
+          <div class="pt-4 border-t border-slate-100/80 flex items-center gap-3.5">
             <img
               src={item.avatar}
               alt={item.name}
-              width="44"
-              height="44"
-              class="w-11 h-11 rounded-full object-cover border border-slate-200"
+              width="48"
+              height="48"
+              class="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover border border-slate-200"
               loading="lazy"
             />
             <div>
-              <h4 class="font-bold text-navy-950 text-sm leading-snug">
+              <h3 class="font-bold text-navy-950 text-sm leading-snug">
                 {item.name}
-              </h4>
-              <p class="text-xs text-slate-500 font-normal">
+              </h3>
+              <p class="text-xs text-slate-500 font-normal mt-0.5">
                 {item.role}
               </p>
             </div>

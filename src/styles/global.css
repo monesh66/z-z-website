@@ -45,6 +45,10 @@
   font-family: 'Playfair Display', Georgia, serif;
 }
 
+.font-script {
+  font-family: 'Caveat', cursive, sans-serif;
+}
+
 .font-body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }

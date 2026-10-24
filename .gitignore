@@ -26,3 +26,7 @@ pnpm-debug.log*
 # temporary assets
 temp_assets/
 scratch/
+*_shot.png
+*.shot.png
+capture_*.py
+build_map_svg.py

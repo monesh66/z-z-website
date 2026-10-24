@@ -1,21 +1,6 @@
 ---
-const modes = [
-  {
-    title: "AIR FREIGHT",
-    subtitle: "Fast. Reliable. Global.",
-    image: "/images/reference_crops/logistics_air_ref.png",
-  },
-  {
-    title: "SEA FREIGHT",
-    subtitle: "Cost-effective. High Capacity.",
-    image: "/images/reference_crops/logistics_sea_ref.png",
-  },
-  {
-    title: "ROAD TRANSPORT",
-    subtitle: "Flexible. Door-to-Door.",
-    image: "/images/reference_crops/logistics_road_ref.png",
-  },
-];
+// Multi-Mode Logistics matching reference mockup 100%
+// Deep navy container, serif headline, 3 seamless slanted panels with daylight air, sea, road HD visuals
 ---
 
 <section id="logistics" class="py-16 lg:py-24 bg-[#0A192F] text-white relative overflow-hidden">
@@ -23,29 +8,33 @@ const modes = [
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
       
       <!-- Left Column: Copy & Action -->
-      <div class="lg:col-span-5 space-y-6">
+      <div class="lg:col-span-5 space-y-5">
         
         <!-- Eyebrow -->
-        <div class="scroll-reveal text-xs font-bold uppercase tracking-widest text-emerald-400 font-mono">
-          MULTI-MODE LOGISTICS
+        <div class="scroll-reveal flex items-center gap-2.5">
+          <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-white font-mono">
+            MULTI-MODE LOGISTICS
+          </span>
+          <span class="w-8 h-0.5 bg-emerald-500"></span>
         </div>
 
         <!-- Headline -->
-        <h2 class="scroll-reveal stagger-1 text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-white tracking-tight leading-tight">
+        <h2 class="scroll-reveal text-3xl sm:text-4xl lg:text-[44px] font-bold font-serif text-white tracking-tight leading-[1.15]">
           By Air, Sea and Road<br />
-          <span class="text-white">Across the World</span>
+          Across the World
         </h2>
 
         <!-- Description -->
-        <p class="scroll-reveal stagger-2 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+        <p class="scroll-reveal text-xs sm:text-sm text-slate-300 leading-relaxed font-normal max-w-md">
           We ensure efficient and cost-effective delivery through a well-connected network of air, sea and road transport partners, giving you reliable logistics solutions for every shipment.
         </p>
 
         <!-- CTA Button -->
-        <div class="scroll-reveal stagger-3 pt-2">
+        <div class="scroll-reveal pt-3">
           <a
             href="/#contact?interest=Logistics"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg shadow-emerald-950/20 group"
+            class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm transition-all duration-300 shadow-md hover:shadow-lg group"
+            id="our-logistics-btn"
           >
             <span>Our Logistics Solutions</span>
             <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -57,37 +46,93 @@ const modes = [
 
       </div>
 
-      <!-- Right Column: 3 Photo Cards Side-by-Side -->
+      <!-- Right Column: 3 Seamless Slanted Photographic Panels Matching Mockup 100% -->
       <div class="lg:col-span-7">
-        <div data-reveal-group data-reveal-stagger="90" class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          {modes.map((mode) => (
-            <div class="rounded-2xl overflow-hidden bg-[#0F2242] border border-white/10 group hover:-translate-y-1.5 transition-all duration-300 shadow-xl flex flex-col">
+        <div class="scroll-reveal relative w-full aspect-[16/9] sm:aspect-[16/8.5] rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border border-white/10 select-none">
+          
+          <svg viewBox="0 0 900 480" class="w-full h-full object-cover" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Panel 1 Clip: Air (Left) -->
+              <clipPath id="clipAir">
+                <polygon points="0,0 310,0 250,480 0,480" />
+              </clipPath>
               
-              <!-- Photo Box -->
-              <div class="relative aspect-[4/3] overflow-hidden bg-slate-900">
-                <img
-                  src={mode.image}
-                  alt={mode.title}
-                  width="400"
-                  height="300"
-                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0F2242] via-transparent to-transparent opacity-80"></div>
-              </div>
+              <!-- Panel 2 Clip: Sea (Middle) -->
+              <clipPath id="clipSea">
+                <polygon points="312,0 610,0 550,480 252,480" />
+              </clipPath>
+              
+              <!-- Panel 3 Clip: Road (Right) -->
+              <clipPath id="clipRoad">
+                <polygon points="612,0 900,0 900,480 552,480" />
+              </clipPath>
 
-              <!-- Card Info -->
-              <div class="p-4 sm:p-5 flex-grow flex flex-col justify-end text-center sm:text-left">
-                <h3 class="text-sm sm:text-base font-bold font-display text-white tracking-wide">
-                  {mode.title}
-                </h3>
-                <p class="text-[11px] sm:text-xs text-slate-300 mt-1 font-normal">
-                  {mode.subtitle}
-                </p>
-              </div>
+              <!-- Dark bottom gradient for legible white captions -->
+              <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="55%" stop-color="#000000" stop-opacity="0" />
+                <stop offset="90%" stop-color="#000000" stop-opacity="0.85" />
+                <stop offset="100%" stop-color="#000000" stop-opacity="0.95" />
+              </linearGradient>
+            </defs>
 
+            <!-- Panel 1: Air Freight -->
+            <g clip-path="url(#clipAir)">
+              <image href="/images/logistics/air_hd.jpg" x="0" y="0" width="360" height="480" preserveAspectRatio="xMidYMid slice" />
+              <rect x="0" y="0" width="360" height="480" fill="url(#panelGrad)" />
+            </g>
+
+            <!-- Panel 2: Sea Freight -->
+            <g clip-path="url(#clipSea)">
+              <image href="/images/logistics/sea_hd.jpg" x="240" y="0" width="380" height="480" preserveAspectRatio="xMidYMid slice" />
+              <rect x="240" y="0" width="380" height="480" fill="url(#panelGrad)" />
+            </g>
+
+            <!-- Panel 3: Road Transport -->
+            <g clip-path="url(#clipRoad)">
+              <image href="/images/logistics/road_hd.jpg" x="540" y="0" width="360" height="480" preserveAspectRatio="xMidYMid slice" />
+              <rect x="540" y="0" width="360" height="480" fill="url(#panelGrad)" />
+            </g>
+
+            <!-- Crisp Slanted Divider Lines -->
+            <line x1="311" y1="0" x2="251" y2="480" stroke="#FFFFFF" stroke-width="2" opacity="0.9" />
+            <line x1="611" y1="0" x2="551" y2="480" stroke="#FFFFFF" stroke-width="2" opacity="0.9" />
+          </svg>
+
+          <!-- HTML Overlay Captions Matching Mockup Exactly -->
+          <div class="absolute inset-0 pointer-events-none grid grid-cols-3 items-end p-4 sm:p-6 lg:p-7">
+            
+            <!-- Air Freight Caption -->
+            <div class="text-left space-y-0.5 pr-2">
+              <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">
+                AIR FREIGHT
+              </h3>
+              <p class="text-[10px] sm:text-xs text-slate-300 font-normal">
+                Fast. Reliable. Global.
+              </p>
             </div>
-          ))}
+
+            <!-- Sea Freight Caption -->
+            <div class="text-left space-y-0.5 px-2">
+              <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">
+                SEA FREIGHT
+              </h3>
+              <p class="text-[10px] sm:text-xs text-slate-300 font-normal">
+                Cost-effective. High Capacity.
+              </p>
+            </div>
+
+            <!-- Road Transport Caption -->
+            <div class="text-left space-y-0.5 pl-2">
+              <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">
+                ROAD TRANSPORT
+              </h3>
+              <p class="text-[10px] sm:text-xs text-slate-300 font-normal">
+                Flexible. Door-to-Door.
+              </p>
+            </div>
+
+          </div>
+
         </div>
       </div>
 
