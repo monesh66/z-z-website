@@ -28,5 +28,6 @@ temp_assets/
 scratch/
 *_shot.png
 *.shot.png
+header_and_hero.png
 capture_*.py
 build_map_svg.py
