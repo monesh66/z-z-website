@@ -24,6 +24,8 @@ export interface SiteConfig {
   phone: string;
   location: string;
   isPlaceholderContact: boolean;
+  instagram: string;
+  instagramHandle: string;
   nav: NavItem[];
   badges: Array<{
     title: string;
@@ -67,6 +69,8 @@ export const siteConfig: SiteConfig = {
   phone: "+91 90030 98708",
   location: "Registered Trading Operations — India",
   isPlaceholderContact: false,
+  instagram: "https://www.instagram.com/ziya_zara_exports/",
+  instagramHandle: "ziya_zara_exports",
 
   nav: [
     { name: "Home", href: "/" },

@@ -347,7 +347,8 @@
 
     const prefersReducedMotion = !forceSplash && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (hasSeenSplash || prefersReducedMotion) {
+    if (!forceSplash || hasSeenSplash || prefersReducedMotion) {
+      document.body.classList.remove('overflow-hidden');
       root.style.display = 'none';
       root.setAttribute('aria-hidden', 'true');
       document.documentElement.classList.add('splash-dismissed');

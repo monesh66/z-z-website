@@ -45,12 +45,17 @@ const structuredData = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" style="color-scheme: light;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Force Light Theme: Prevent Android / Chrome / iOS Auto-Dark Mode from inverting white backgrounds -->
+    <meta name="color-scheme" content="light only" />
+    <meta name="supported-color-schemes" content="light" />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
@@ -87,7 +92,7 @@ const structuredData = {
       document.documentElement.classList.add('js');
     </script>
   </head>
-  <body class="bg-white text-slate-body min-h-screen flex flex-col selection:bg-emerald-600 selection:text-white">
+  <body class="bg-white text-slate-body min-h-screen flex flex-col selection:bg-emerald-600 selection:text-white" style="color-scheme: light; background-color: #ffffff;">
     <!-- Accessible Skip Link -->
     <a
       href="#main-content"

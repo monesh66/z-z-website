@@ -3,6 +3,9 @@
 @layer base {
 
   :root {
+    color-scheme: light !important;
+    color-scheme: only light !important;
+    supported-color-schemes: light;
     --brand-navy: #0B1F3A;
     --brand-navy-deep: #0B1F3A;
     --brand-navy-light: #112847;
@@ -18,15 +21,23 @@
   }
 
   html {
+    color-scheme: light !important;
+    color-scheme: only light !important;
+    supported-color-schemes: light;
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--brand-slate);
-    background-color: #FFFFFF;
+    background-color: #FFFFFF !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
+    color-scheme: light !important;
+    color-scheme: only light !important;
+    supported-color-schemes: light;
+    background-color: #FFFFFF !important;
+    color: var(--brand-slate);
     overflow-x: hidden;
   }
 
@@ -307,5 +318,17 @@ textarea:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Hard freeze light theme across all devices & system dark mode */
+@media (prefers-color-scheme: dark) {
+  :root,
+  html,
+  body {
+    color-scheme: light !important;
+    color-scheme: only light !important;
+    background-color: #FFFFFF !important;
+    color: var(--brand-slate) !important;
   }
 }
