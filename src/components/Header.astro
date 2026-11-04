@@ -16,16 +16,20 @@ function isActive(href: string) {
     <div class="flex items-center justify-between h-20">
       
       <!-- Brand Identity / Logo -->
-      <a href="/" class="flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg p-1" aria-label="ZIYA ZARA TRADING COMPANY Home">
+      <a href="/" class="flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg p-1" aria-label="ZIYA&ZARA TRADING COMPANY Home">
         <div class="flex items-center">
-          <img 
-            src="/images/logo/logo-light.png" 
-            alt="ZIYA ZARA TRADING COMPANY Logo" 
-            width="280" 
-            height="72"
-            class="h-11 sm:h-12 md:h-13 lg:h-14 w-auto object-contain transition-all"
-            loading="eager"
-          />
+          <picture class="block">
+            <source srcset="/images/logo/logo-dark.png" media="(prefers-color-scheme: dark)" />
+            <img 
+              id="header-brand-logo"
+              src="/images/logo/logo-light.png" 
+              alt="ZIYA&ZARA TRADING COMPANY Logo" 
+              width="280" 
+              height="72"
+              class="h-11 sm:h-12 md:h-13 lg:h-14 w-auto object-contain transition-all"
+              loading="eager"
+            />
+          </picture>
         </div>
       </a>
 
@@ -55,7 +59,7 @@ function isActive(href: string) {
       <!-- Desktop CTA Action -->
       <div class="hidden md:flex items-center gap-3">
         <a
-          href="https://wa.me/919003098708?text=Hello%20ZIYA%20ZARA,%20I%20would%20like%20to%20inquire%20about%20your%20export%20commodities"
+          href="https://wa.me/919003098708?text=Hello%20ZIYA%26ZARA,%20I%20would%20like%20to%20inquire%20about%20your%20export%20commodities"
           target="_blank"
           rel="noopener noreferrer"
           class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/70 rounded-full transition-colors"
@@ -128,7 +132,7 @@ function isActive(href: string) {
       })}
       <div class="pt-4 border-t border-slate-100 space-y-2">
         <a
-          href="/contact"
+          href="/#contact"
           class="trade-btn-primary w-full justify-center"
         >
           <span>Send an Inquiry</span>
@@ -138,7 +142,7 @@ function isActive(href: string) {
           </svg>
         </a>
         <a
-          href="https://wa.me/919003098708?text=Hello%20ZIYA%20ZARA,%20I%20would%20like%20to%20inquire%20about%20your%20export%20commodities"
+          href="https://wa.me/919003098708?text=Hello%20ZIYA%26ZARA,%20I%20would%20like%20to%20inquire%20about%20your%20export%20commodities"
           target="_blank"
           rel="noopener noreferrer"
           class="trade-btn-secondary w-full justify-center text-xs text-emerald-800 border-emerald-200 bg-emerald-50/50"
@@ -169,22 +173,51 @@ function isActive(href: string) {
   const closeIcon = document.getElementById('menu-icon-close');
 
   if (toggleBtn && drawer && openIcon && closeIcon) {
-    toggleBtn.addEventListener('click', () => {
+    const closeMenu = () => {
+      drawer.classList.add('hidden');
+      openIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    };
+
+    const openMenu = () => {
+      drawer.classList.remove('hidden');
+      openIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    };
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-      toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
-      drawer.classList.toggle('hidden');
-      openIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
+      if (isExpanded) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Close mobile menu immediately whenever ANY link inside the mobile drawer is clicked
+    const drawerLinks = drawer.querySelectorAll('a');
+    drawerLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
     });
 
     // Close mobile menu on escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !drawer.classList.contains('hidden')) {
-        drawer.classList.add('hidden');
-        openIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        toggleBtn.setAttribute('aria-expanded', 'false');
+        closeMenu();
         toggleBtn.focus();
+      }
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement | null;
+      if (target && !drawer.contains(target) && !toggleBtn.contains(target) && !drawer.classList.contains('hidden')) {
+        closeMenu();
       }
     });
   }
@@ -198,4 +231,58 @@ function isActive(href: string) {
       header?.classList.remove('shadow-sm');
     }
   }, { passive: true });
+
+  // Dynamic Theme-Aware Logo Switching
+  const brandLogo = document.getElementById('header-brand-logo') as HTMLImageElement | null;
+  const darkSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const syncLogoTheme = () => {
+    if (brandLogo) {
+      if (darkSchemeQuery.matches) {
+        brandLogo.src = '/images/logo/logo-dark.png';
+      } else {
+        brandLogo.src = '/images/logo/logo-light.png';
+      }
+    }
+  };
+  darkSchemeQuery.addEventListener('change', syncLogoTheme);
+  syncLogoTheme();
 </script>
+
+<style>
+  @media (prefers-color-scheme: dark) {
+    :global(#site-header) {
+      background-color: rgba(11, 31, 58, 0.96) !important;
+      border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+    }
+    :global(#site-header.shadow-sm) {
+      background-color: rgba(11, 31, 58, 0.98) !important;
+    }
+    :global(#site-header nav a) {
+      color: #cbd5e1 !important;
+    }
+    :global(#site-header nav a:hover) {
+      color: #34d399 !important;
+    }
+    :global(#site-header nav a[aria-current="page"]) {
+      color: #34d399 !important;
+    }
+    :global(#mobile-menu-toggle) {
+      color: #e2e8f0 !important;
+    }
+    :global(#mobile-menu-toggle:hover) {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      color: #34d399 !important;
+    }
+    :global(#mobile-menu-drawer) {
+      background-color: rgba(11, 31, 58, 0.98) !important;
+      border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+    }
+    :global(#mobile-menu-drawer a) {
+      color: #e2e8f0 !important;
+    }
+    :global(#mobile-menu-drawer a:hover) {
+      background-color: rgba(255, 255, 255, 0.08) !important;
+      color: #34d399 !important;
+    }
+  }
+</style>

@@ -53,15 +53,15 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "ZIYA ZARA",
-  legalName: "ZIYA ZARA TRADING COMPANY",
+  name: "ZIYA&ZARA",
+  legalName: "ZIYA&ZARA TRADING COMPANY",
   tagline: "Connecting Markets, Delivering Possibilities.",
   heroEyebrow: "IMPORT | EXPORT | GLOBAL SOURCING",
   heroHeadline: "The World, Within Reach.",
   heroSubheadline:
-    "ZIYA ZARA TRADING COMPANY bridges international markets by sourcing and supplying premium commodities, industrial supplies, and consumer goods with uncompromising integrity and disciplined global execution.",
+    "ZIYA&ZARA TRADING COMPANY bridges international markets by sourcing and supplying premium commodities, industrial supplies, and consumer goods with uncompromising integrity and disciplined global execution.",
   description:
-    "ZIYA ZARA TRADING COMPANY connects global markets through verified supplier networks, strategic multi-modal logistics, and customer-first trade solutions.",
+    "ZIYA&ZARA TRADING COMPANY connects global markets through verified supplier networks, strategic multi-modal logistics, and customer-first trade solutions.",
   url: "https://ziyazara.com",
 
   // Official contact channels

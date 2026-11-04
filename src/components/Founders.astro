@@ -3,16 +3,18 @@ import ProgressiveImage from './ui/ProgressiveImage.astro';
 // Founders Section matching reference mockup 100%
 const founders = [
   {
-    name: "Founder 01",
+    name: "Asgar S",
     role: "Co-Founder",
     bio: "Driving strategic growth and global partnerships.",
     photo: "/images/founders/founder_01_hd.jpg",
+    linkedin: "https://www.linkedin.com/in/asgar-s-27b29b37a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     name: "Founder 02",
     role: "Co-Founder",
     bio: "Focused on operations and customer success.",
     photo: "/images/founders/founder_02_hd.jpg",
+    linkedin: "#founders",
   },
 ];
 ---
@@ -82,7 +84,9 @@ const founders = [
                 <!-- LinkedIn Icon -->
                 <div class="pt-1">
                   <a
-                    href="#founders"
+                    href={founder.linkedin}
+                    target={founder.linkedin.startsWith("http") ? "_blank" : undefined}
+                    rel={founder.linkedin.startsWith("http") ? "noopener noreferrer" : undefined}
                     class="inline-flex items-center justify-center w-5 h-5 rounded-sm bg-[#0077b5] text-white hover:opacity-90 transition-opacity"
                     aria-label={`${founder.name} LinkedIn Profile`}
                   >

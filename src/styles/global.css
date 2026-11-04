@@ -25,6 +25,7 @@
     color-scheme: only light !important;
     supported-color-schemes: light;
     scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--brand-slate);
     background-color: #FFFFFF !important;
