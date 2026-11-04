@@ -513,7 +513,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "19059090",
-    image: "/images/products/frozen_malabar_parotta.jpg",
+    image: "/images/products/frozen_chapati.jpg",
     specs: "100% Whole Wheat Atta | Soft & Fluffy | Zero Preservatives",
     origin: "Tamil Nadu & Kerala, India"
   },
@@ -600,7 +600,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
-    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    image: "/images/products/rtc_idly_batter.jpg",
     specs: "Soft & Fluffy Steamed Cakes | 100% Natural | Export Pack",
     origin: "Tamil Nadu, India"
   },
@@ -610,7 +610,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
-    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    image: "/images/products/rtc_vada_mix.jpg",
     specs: "Crispy Lentil Fritters | Spiced with Cumin & Pepper",
     origin: "Tamil Nadu, India"
   },
@@ -620,7 +620,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "21039090",
-    image: "/images/products/ready_to_eat.jpg",
+    image: "/images/products/rtc_biryani_paste.jpg",
     specs: "Concentrated Biryani Gravy Paste | No Added MSG / Artificial Colors",
     origin: "Tamil Nadu, India"
   },
@@ -630,7 +630,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "21039090",
-    image: "/images/products/ready_to_eat.jpg",
+    image: "/images/products/rtc_sambar_paste.jpg",
     specs: "Roasted Lentils & Asafoetida Base | Instant Water Blend",
     origin: "Tamil Nadu, India"
   },
@@ -640,7 +640,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "20019000",
-    image: "/images/products/ready_to_eat.jpg",
+    image: "/images/products/pickle_prawns.jpg",
     specs: "Gingelly Oil Preserved | Spicy Coastal Marinade | Export Jars",
     origin: "Kerala & Tamil Nadu, India"
   },
@@ -684,7 +684,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "15155091",
-    image: "/images/products/virgin_coconut_oil.jpg",
+    image: "/images/products/sesame_oil.jpg",
     specs: "Traditional Wood Pressed (Chekku) | Natural Aroma | Unrefined",
     origin: "Tamil Nadu, India"
   },
@@ -694,7 +694,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "04090000",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/wild_forest_honey.jpg",
     specs: "Unpasteurized Raw Forest Nectar | Antibiotic Free | Export Grade",
     origin: "Western Ghats, India"
   },
@@ -704,7 +704,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "20079910",
-    image: "/images/products/fruit_mangoes.jpg",
+    image: "/images/products/mango_pulp_export.jpg",
     specs: "16°-24° Brix Pure Fruit Puree | Aseptic Cans & Drums",
     origin: "Ratnagiri & Gujarat, India"
   },
@@ -714,7 +714,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "08013210",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/cashew_kernels.jpg",
     specs: "Whole White Kernels | Nitrogen Vacuum Packed | Zero Blemish",
     origin: "Panruti & Goa, India"
   },
@@ -724,7 +724,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "12119099",
-    image: "/images/products/millets.jpg",
+    image: "/images/products/moringa_powder.jpg",
     specs: "Shade Dried & Fine Mesh Pulverized | Rich in Vitamin A & Iron",
     origin: "Theni, Tamil Nadu, India"
   },
@@ -758,7 +758,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "21069099",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_madras_mixture.jpg",
     specs: "Omapodi, Roasted Peanuts, Curry Leaves & Boondi | Crunchy",
     origin: "Tamil Nadu, India"
   },
@@ -768,7 +768,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "19059090",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_kai_murukku.jpg",
     specs: "Hand-Twisted Rice & Butter Snack | Festival Quality",
     origin: "Tamil Nadu, India"
   },
@@ -778,7 +778,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "19041090",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_roasted_makhana.jpg",
     specs: "High Protein | Gluten-Free | Low Oil Roasted Snack",
     origin: "Bihar & Madhya Pradesh, India"
   },
@@ -788,7 +788,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "17049020",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_peanut_chikki.jpg",
     specs: "Crushed Groundnuts & Organic Jaggery | Pure Sweet Crunch",
     origin: "Kovilpatti, Tamil Nadu, India"
   },
@@ -802,7 +802,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063090",
-    image: "/images/products/rice.jpg",
+    image: "/images/products/rice_seeraga_samba.jpg",
     specs: "Tiny Grain | High Natural Aroma | Authentic Tamil Nadu Biryani",
     origin: "Cauvery Delta, Tamil Nadu"
   },
@@ -812,7 +812,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063090",
-    image: "/images/products/rice.jpg",
+    image: "/images/products/rice_karuppu_kavuni.jpg",
     specs: "Ancient Black Grain | Rich in Anthocyanins | Unpolished",
     origin: "Chettinad, Tamil Nadu, India"
   },
@@ -822,7 +822,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063090",
-    image: "/images/products/rice.jpg",
+    image: "/images/products/rice_mappillai_samba.jpg",
     specs: "Unpolished Traditional Red Rice | High Fiber & Iron",
     origin: "Tamil Nadu, India"
   },
@@ -836,7 +836,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84198990",
-    image: "/images/products/machinery.jpg",
+    image: "/images/products/machine_retort.jpg",
     specs: "High Pressure Steam (121°C+) | Kills Bacteria | 12-24M RTE Shelf Life",
     origin: "CE Certified Machinery Works"
   },
@@ -846,7 +846,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84223000",
-    image: "/images/products/machinery.jpg",
+    image: "/images/products/machine_pouch_packing.jpg",
     specs: "Multi-Head Weigher | Nitrogen Flushing | Form Fill Seal (FFS)",
     origin: "Industrial Machinery Division"
   },
@@ -856,7 +856,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84193900",
-    image: "/images/products/machinery.jpg",
+    image: "/images/products/machine_dehydrator.jpg",
     specs: "Controlled Moisture Extraction | Fruits, Veg & Spices",
     origin: "Engineering Division"
   },
@@ -1020,7 +1020,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "21039090",
-    image: "/images/products/ready_to_eat.jpg",
+    image: "/images/products/rtc_sambar_paste.jpg",
     specs: "Sundakkai Turkey Berry / Tamarind Rice Paste | Export Glass Jars",
     origin: "Tamil Nadu, India"
   },
@@ -1030,7 +1030,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
-    image: "/images/products/ready_to_eat.jpg",
+    image: "/images/products/dessert_payasam_kheer.jpg",
     specs: "Rice Flakes (Ada) with Cardamom & Cashews | Authentic Festival Dessert",
     origin: "Kerala, India"
   },
@@ -1040,7 +1040,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "20019000",
-    image: "/images/products/ready_to_eat.jpg",
+    image: "/images/products/pickle_prawns.jpg",
     specs: "Gingelly Oil Preserved Fresh Fish Chunks | Garlic & Fenugreek",
     origin: "Malabar Coast, Kerala"
   },
@@ -1050,7 +1050,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "20019000",
-    image: "/images/products/ready_to_eat.jpg",
+    image: "/images/products/pickle_prawns.jpg",
     specs: "Boneless Meat Cubes Preserved in Spiced Mustard Gingelly Oil",
     origin: "Kerala, India"
   },
@@ -1060,7 +1060,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
-    image: "/images/products/spices.jpg",
+    image: "/images/products/masala_blend_powder.jpg",
     specs: "Red Chilli, Ginger, Garlic & Corn Starch Blend | Crispy Fry Seasoning",
     origin: "Chennai, Tamil Nadu, India"
   },
@@ -1070,7 +1070,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
-    image: "/images/products/spices.jpg",
+    image: "/images/products/masala_blend_powder.jpg",
     specs: "Deggi Mirch, Kasuri Methi & Garam Masala Blend | Grill Marinade",
     origin: "North & South India"
   },
@@ -1080,7 +1080,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
-    image: "/images/products/spices.jpg",
+    image: "/images/products/curry_masala_bowl.jpg",
     specs: "Cardamom, Mace, Nutmeg & Cashew Powder Blend | Mild Sweet Spice",
     origin: "Certified Spice Mill"
   },
@@ -1090,7 +1090,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
-    image: "/images/products/spices.jpg",
+    image: "/images/products/masala_blend_powder.jpg",
     specs: "Coriander, Cumin, Pepper, Cloves & Star Anise | Rich Dark Roast",
     origin: "Karnataka & Tamil Nadu, India"
   },
@@ -1100,7 +1100,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
-    image: "/images/products/spices.jpg",
+    image: "/images/products/curry_masala_bowl.jpg",
     specs: "Coriander, Red Chilli, Bengal Gram, Toor Dal & Fenugreek | Aromatic",
     origin: "Tamil Nadu, India"
   },
@@ -1110,7 +1110,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
-    image: "/images/products/spices.jpg",
+    image: "/images/products/curry_masala_bowl.jpg",
     specs: "Black Pepper, Cumin, Toor Dal & Red Chilli | Clear Broth Blend",
     origin: "Tamil Nadu, India"
   },
@@ -1120,7 +1120,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
-    image: "/images/products/spices.jpg",
+    image: "/images/products/garam_masala_blend.jpg",
     specs: "Cardamom, Cinnamon, Cloves, Mace, Star Anise & Bay Leaf | Zero Fillers",
     origin: "Kerala & Rajasthan, India"
   },
@@ -1130,7 +1130,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
-    image: "/images/products/spices.jpg",
+    image: "/images/products/garam_masala_blend.jpg",
     specs: "Mace, Nutmeg, Shahi Jeera, Cloves & Rose Petals | Authentic Dum Aroma",
     origin: "Telangana & Andhra Pradesh, India"
   },
@@ -1140,7 +1140,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "21039040",
-    image: "/images/products/spices.jpg",
+    image: "/images/products/seasoning_blends.jpg",
     specs: "African Bird's Eye Chilli, Garlic, Oregano & Herbs | Sprinkle Seasoning",
     origin: "Certified Seasonings Facility"
   },
@@ -1150,7 +1150,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "08011100",
-    image: "/images/products/coconut.jpg",
+    image: "/images/products/desiccated_coconut.jpg",
     specs: "Fat Content 65%+ | Moisture < 3% | Pure White Bakery Grade",
     origin: "Pollachi & Kangayam, Tamil Nadu"
   },
@@ -1160,7 +1160,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "20081900",
-    image: "/images/products/coconut.jpg",
+    image: "/images/products/coconut_milk.jpg",
     specs: "17%-24% Fat Content | Smooth Homogenized | 400ml Cans & Tubs",
     origin: "Tamil Nadu & Kerala, India"
   },
@@ -1170,7 +1170,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "21069099",
-    image: "/images/products/coconut.jpg",
+    image: "/images/products/coconut_milk.jpg",
     specs: "Instant Dissolving | High Shelf Life | Easy Rehydration",
     origin: "Pollachi, Tamil Nadu, India"
   },
@@ -1180,7 +1180,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "17029090",
-    image: "/images/products/coconut.jpg",
+    image: "/images/products/coconut_sugar.jpg",
     specs: "Unrefined Natural Sap Evaporated Granules | Low GI (35) | Rich in Minerals",
     origin: "Tamil Nadu, India"
   },
@@ -1190,7 +1190,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "15089091",
-    image: "/images/products/virgin_coconut_oil.jpg",
+    image: "/images/products/groundnut_oil.jpg",
     specs: "Cold-Extracted Wooden Expeller (Chekku) | Natural Peanut Aroma",
     origin: "Gujarat & Tamil Nadu, India"
   },
@@ -1200,7 +1200,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "15149110",
-    image: "/images/products/virgin_coconut_oil.jpg",
+    image: "/images/products/mustard_oil.jpg",
     specs: "High Pungency | Rich in Omega-3 | Unrefined Pure Cold-Pressed",
     origin: "Rajasthan & UP, India"
   },
@@ -1210,7 +1210,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "04090000",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/wild_forest_honey.jpg",
     specs: "Unpasteurized Natural Bee Nectar | Pure Honey with Comb Slices",
     origin: "Himachal & Nilgiris, India"
   },
@@ -1220,7 +1220,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "08134090",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/dehydrated_fruits.jpg",
     specs: "Low-Temperature Hot Air Dried | No Added Sulfur / Color | Chewy",
     origin: "Certified Processing Facility"
   },
@@ -1230,7 +1230,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "21069099",
-    image: "/images/products/millets.jpg",
+    image: "/images/products/health_drink_smoothie.jpg",
     specs: "Dehydrated Kamalapur Red Banana & Organic Beetroot Powder | Nutrient Rich",
     origin: "Tamil Nadu, India"
   },
@@ -1240,7 +1240,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "19059090",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_madras_mixture.jpg",
     specs: "Gram Flour Seasoned with Ajwain (Omam) | Delicate Melt-in-Mouth",
     origin: "Tamil Nadu, India"
   },
@@ -1250,7 +1250,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "19059090",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_kai_murukku.jpg",
     specs: "Crispy Roasted Rice Flour Marbles with Urad & Sesame | Sweet & Salted",
     origin: "Chettinad, Tamil Nadu, India"
   },
@@ -1260,7 +1260,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "21069099",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_madras_mixture.jpg",
     specs: "Crisp Golden Gram Droplets with Curry Leaves & Garlic Pods",
     origin: "Tamil Nadu, India"
   },
@@ -1270,7 +1270,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "17049020",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_mysore_pak.jpg",
     specs: "Pure Cow Ghee, Besan & Sugar | Soft Porous Traditional Texture",
     origin: "Mysore & Tamil Nadu, India"
   },
@@ -1280,7 +1280,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "17049020",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_boondi_laddu.jpg",
     specs: "Golden Boondi Infused with Cardamom, Raisins & Pure Desi Ghee",
     origin: "Tamil Nadu, India"
   },
@@ -1290,7 +1290,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "17049020",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_coconut_burfi.jpg",
     specs: "Fresh Grated Coconut with Jaggery / Cane Sugar & Cardamom",
     origin: "Tamil Nadu, India"
   },
@@ -1300,7 +1300,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "19041090",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_boondi_laddu.jpg",
     specs: "Sprouted Pearl Millet & Ragi with Palm Jaggery & Dry Fruits",
     origin: "Tamil Nadu, India"
   },
@@ -1310,7 +1310,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "20081100",
-    image: "/images/products/consumer.jpg",
+    image: "/images/products/snack_roasted_chana.jpg",
     specs: "Wood-Ash Roasted Pottukadalai & Peanuts | High Protein / Low Oil",
     origin: "Gujarat & Tamil Nadu, India"
   },
@@ -1330,7 +1330,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063090",
-    image: "/images/products/rice.jpg",
+    image: "/images/products/rice_seeraga_samba.jpg",
     specs: "Short Grain Fragrant Rice | Easy Digestion | Historic Royal Grain",
     origin: "Tamil Nadu, India"
   },
@@ -1340,7 +1340,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063010",
-    image: "/images/products/rice.jpg",
+    image: "/images/products/rice_mappillai_samba.jpg",
     specs: "Coarse Red Grain | High Fiber Unpolished Parboiled | Nutrient Rich",
     origin: "Palakkad, Kerala, India"
   },
@@ -1380,7 +1380,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Pulses & Dals",
     categorySlug: "pulses-and-dals",
     hsnCode: "07139090",
-    image: "/images/products/pulse_chana_dal.jpg",
+    image: "/images/products/pulse_horse_gram.jpg",
     specs: "Highest Protein Ancient Pulse | Lowers Bad Cholesterol | Machine Cleaned",
     origin: "Tamil Nadu & Karnataka, India"
   },
@@ -1390,7 +1390,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84388090",
-    image: "/images/products/machinery.jpg",
+    image: "/images/products/machine_kettle_steamer.jpg",
     specs: "Automatic Planetary Stirring | Gas / Steam Heating | 50L - 500L Capacity",
     origin: "Coimbatore & Gujarat, India"
   },
@@ -1400,7 +1400,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84381010",
-    image: "/images/products/machinery.jpg",
+    image: "/images/products/machine_kettle_steamer.jpg",
     specs: "Uniform Ball Forming + Automatic Frying System | 2000 pcs/hr",
     origin: "Coimbatore, Tamil Nadu, India"
   },
@@ -1410,7 +1410,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84198990",
-    image: "/images/products/machinery.jpg",
+    image: "/images/products/machine_kettle_steamer.jpg",
     specs: "Food Grade SS304 / SS316 | Even Heating Prevents Burning | 100L - 1000L",
     origin: "Engineering Division, India"
   },
@@ -1430,7 +1430,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84223000",
-    image: "/images/products/machinery.jpg",
+    image: "/images/products/machine_ffs.jpg",
     specs: "Multi-Head Weigher | Nitrogen Flush | Spices, Snacks & Grains",
     origin: "Industrial Packaging Hub, India"
   },
@@ -1440,7 +1440,7 @@ export const individualProducts: IndividualProduct[] = [
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84223000",
-    image: "/images/products/machinery.jpg",
+    image: "/images/products/machine_bottle_filling.jpg",
     specs: "Rotary Capping | Volumetric Piston Filling | Oils, Juices & Syrups",
     origin: "Packaging Machinery Division"
   }
