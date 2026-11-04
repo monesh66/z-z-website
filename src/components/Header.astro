@@ -11,25 +11,30 @@ function isActive(href: string) {
 }
 ---
 
-<header id="site-header" class="sticky top-0 z-40 w-full transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-subtle">
+<header
+  id="site-header"
+  class="sticky top-0 z-40 w-full transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-subtle"
+  style="color-scheme: light !important; background-color: #ffffff !important;"
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       
       <!-- Brand Identity / Logo -->
       <a href="/" class="flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg p-1" aria-label="ZIYA&ZARA TRADING COMPANY Home">
         <div class="flex items-center">
-          <picture class="block">
-            <source srcset="/images/logo/logo-dark.png" media="(prefers-color-scheme: dark)" />
-            <img 
-              id="header-brand-logo"
-              src="/images/logo/logo-light.png" 
-              alt="ZIYA&ZARA TRADING COMPANY Logo" 
-              width="240"
-              height="43"
-              class="h-9 xs:h-10 sm:h-11 md:h-12 w-auto max-w-[210px] xs:max-w-[240px] sm:max-w-none object-contain transition-all [image-rendering:-webkit-optimize-contrast]"
-              loading="eager"
-            />
-          </picture>
+          <img 
+            id="header-brand-logo"
+            src="/images/logo/logo-light.png" 
+            srcset="/images/logo/logo-light@1x.png 480w, /images/logo/logo-light@2x.png 960w, /images/logo/logo-light.png 2010w"
+            sizes="(max-width: 640px) 240px, (max-width: 1024px) 270px, 300px"
+            alt="ZIYA&ZARA TRADING COMPANY Logo" 
+            width="268"
+            height="48"
+            class="h-10 sm:h-11 md:h-12 w-auto object-contain transition-all select-none"
+            loading="eager"
+            decoding="async"
+            style="color-scheme: light !important;"
+          />
         </div>
       </a>
 
@@ -112,6 +117,7 @@ function isActive(href: string) {
     id="mobile-menu-drawer"
     class="hidden md:hidden border-b border-slate-200 bg-white/98 backdrop-blur-xl px-4 pt-3 pb-6 transition-all duration-300"
     aria-label="Mobile Navigation"
+    style="color-scheme: light !important; background-color: #ffffff !important;"
   >
     <div class="flex flex-col space-y-1">
       {siteConfig.nav.map((item) => {
@@ -232,57 +238,5 @@ function isActive(href: string) {
     }
   }, { passive: true });
 
-  // Dynamic Theme-Aware Logo Switching
-  const brandLogo = document.getElementById('header-brand-logo') as HTMLImageElement | null;
-  const darkSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  const syncLogoTheme = () => {
-    if (brandLogo) {
-      if (darkSchemeQuery.matches) {
-        brandLogo.src = '/images/logo/logo-dark.png';
-      } else {
-        brandLogo.src = '/images/logo/logo-light.png';
-      }
-    }
-  };
-  darkSchemeQuery.addEventListener('change', syncLogoTheme);
-  syncLogoTheme();
-</script>
 
-<style>
-  @media (prefers-color-scheme: dark) {
-    :global(#site-header) {
-      background-color: rgba(11, 31, 58, 0.96) !important;
-      border-bottom-color: rgba(255, 255, 255, 0.12) !important;
-    }
-    :global(#site-header.shadow-sm) {
-      background-color: rgba(11, 31, 58, 0.98) !important;
-    }
-    :global(#site-header nav a) {
-      color: #cbd5e1 !important;
-    }
-    :global(#site-header nav a:hover) {
-      color: #34d399 !important;
-    }
-    :global(#site-header nav a[aria-current="page"]) {
-      color: #34d399 !important;
-    }
-    :global(#mobile-menu-toggle) {
-      color: #e2e8f0 !important;
-    }
-    :global(#mobile-menu-toggle:hover) {
-      background-color: rgba(255, 255, 255, 0.1) !important;
-      color: #34d399 !important;
-    }
-    :global(#mobile-menu-drawer) {
-      background-color: rgba(11, 31, 58, 0.98) !important;
-      border-bottom-color: rgba(255, 255, 255, 0.12) !important;
-    }
-    :global(#mobile-menu-drawer a) {
-      color: #e2e8f0 !important;
-    }
-    :global(#mobile-menu-drawer a:hover) {
-      background-color: rgba(255, 255, 255, 0.08) !important;
-      color: #34d399 !important;
-    }
-  }
-</style>
+</script>

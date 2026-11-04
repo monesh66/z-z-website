@@ -15,11 +15,14 @@ import { siteConfig } from '../data/site';
         <a href="/" class="inline-block" aria-label="ZIYA&ZARA TRADING COMPANY">
           <img
             src="/images/logo/logo-dark.png"
+            srcset="/images/logo/logo-dark@1x.png 480w, /images/logo/logo-dark@2x.png 960w, /images/logo/logo-dark.png 2010w"
+            sizes="(max-width: 640px) 240px, 260px"
             alt="ZIYA&ZARA TRADING COMPANY Logo"
             width="240"
             height="43"
-            class="h-9 sm:h-10 md:h-11 w-auto object-contain [image-rendering:-webkit-optimize-contrast]"
+            class="h-9 sm:h-10 md:h-11 w-auto object-contain select-none"
             loading="lazy"
+            decoding="async"
           />
         </a>
 

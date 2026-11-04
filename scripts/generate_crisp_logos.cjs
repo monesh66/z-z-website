@@ -204,9 +204,11 @@ async function generateAllLogos() {
   const textX = embX + embW + 35;
   const canvasW = textX + zzTotalW + 20;
 
-  // 1. Save logo-light.png
+  // 1. Save logo-light.png and retina derivatives
   const lightLogoPath = path.join(__dirname, '../public/images/logo/logo-light.png');
-  await sharp({
+  const lightLogo2xPath = path.join(__dirname, '../public/images/logo/logo-light@2x.png');
+  const lightLogo1xPath = path.join(__dirname, '../public/images/logo/logo-light@1x.png');
+  const lightBuffer = await sharp({
     create: {
       width: canvasW,
       height: canvasH,
@@ -220,12 +222,18 @@ async function generateAllLogos() {
     { input: tcLightScaled, left: textX, top: tcY }
   ])
   .png({ compressionLevel: 9 })
-  .toFile(lightLogoPath);
-  console.log(`Saved ${lightLogoPath} (${canvasW}x${canvasH})`);
+  .toBuffer();
 
-  // 2. Save logo-dark.png
+  await sharp(lightBuffer).toFile(lightLogoPath);
+  await sharp(lightBuffer).resize({ width: 960, height: 172, kernel: 'lanczos3' }).toFile(lightLogo2xPath);
+  await sharp(lightBuffer).resize({ width: 480, height: 86, kernel: 'lanczos3' }).toFile(lightLogo1xPath);
+  console.log(`Saved ${lightLogoPath} and retina variants (@2x, @1x)`);
+
+  // 2. Save logo-dark.png and retina derivatives
   const darkLogoPath = path.join(__dirname, '../public/images/logo/logo-dark.png');
-  await sharp({
+  const darkLogo2xPath = path.join(__dirname, '../public/images/logo/logo-dark@2x.png');
+  const darkLogo1xPath = path.join(__dirname, '../public/images/logo/logo-dark@1x.png');
+  const darkBuffer = await sharp({
     create: {
       width: canvasW,
       height: canvasH,
@@ -239,8 +247,12 @@ async function generateAllLogos() {
     { input: tcDarkScaled, left: textX, top: tcY }
   ])
   .png({ compressionLevel: 9 })
-  .toFile(darkLogoPath);
-  console.log(`Saved ${darkLogoPath} (${canvasW}x${canvasH})`);
+  .toBuffer();
+
+  await sharp(darkBuffer).toFile(darkLogoPath);
+  await sharp(darkBuffer).resize({ width: 960, height: 172, kernel: 'lanczos3' }).toFile(darkLogo2xPath);
+  await sharp(darkBuffer).resize({ width: 480, height: 86, kernel: 'lanczos3' }).toFile(darkLogo1xPath);
+  console.log(`Saved ${darkLogoPath} and retina variants (@2x, @1x)`);
 
   // 3. Save emblem.png
   const emblemPath = path.join(__dirname, '../public/images/logo/emblem.png');
