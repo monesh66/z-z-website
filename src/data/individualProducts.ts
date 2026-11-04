@@ -496,5 +496,368 @@ export const individualProducts: IndividualProduct[] = [
     image: "/images/products/frozen_samosas.jpg",
     specs: "Spiced Potato & Pea Filling | Ready to Fry | HORECA",
     origin: "FSSAI / Halal / BRC Certified Facility"
+  },
+  {
+    id: "frozen-malabar-parotta",
+    name: "Frozen Malabar Parottas (Layered Flaky)",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "19059090",
+    image: "/images/products/frozen_malabar_parotta.jpg",
+    specs: "Multi-Layered Hand-Tossed | Pre-Cooked | -18°C Cold Chain",
+    origin: "Kerala, India"
+  },
+  {
+    id: "frozen-whole-wheat-chapati",
+    name: "Frozen Plain Chapati & Phulka Roti",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "19059090",
+    image: "/images/products/frozen_malabar_parotta.jpg",
+    specs: "100% Whole Wheat Atta | Soft & Fluffy | Zero Preservatives",
+    origin: "Tamil Nadu & Kerala, India"
+  },
+// ==========================================
+  // 9. READY-TO-EAT RETORT CURRIES & MEALS (Sree Export Line)
+  // ==========================================
+  {
+    id: "rte-seer-fish-curry",
+    name: "Retort Ready-to-Eat Seer Fish Curry",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_seer_fish.jpg",
+    specs: "Authentic Coconut Tamarind Gravy | 18-24M Ambient Shelf Life",
+    origin: "Coastal Tamil Nadu & Kerala, India"
+  },
+  {
+    id: "rte-fish-moilee",
+    name: "Retort Ready-to-Eat Fish Moilee",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_seer_fish.jpg",
+    specs: "Mild Coconut Milk & Curry Leaf Broth | Seer Fish Steaks",
+    origin: "Kerala, India"
+  },
+  {
+    id: "rte-butter-chicken",
+    name: "Retort Ready-to-Eat Butter Chicken",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_butter_chicken.jpg",
+    specs: "Rich Cashew Tomato Gravy | Tender Boneless Chunks | Halal",
+    origin: "Certified Food Processing Facility"
+  },
+  {
+    id: "rte-kerala-chicken-curry",
+    name: "Retort Ready-to-Eat Kerala Chicken Curry",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_butter_chicken.jpg",
+    specs: "Roasted Coconut & Malabar Spices | Shelf Stable Retort Pouch",
+    origin: "Kerala, India"
+  },
+  {
+    id: "rte-kerala-beef-fry",
+    name: "Retort Ready-to-Eat Kerala Beef Fry",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_kerala_beef_fry.jpg",
+    specs: "Slow Roasted Coconut & Black Pepper Beef | Traditional Recipe",
+    origin: "Kerala, India"
+  },
+  {
+    id: "rte-beef-chilly-fry",
+    name: "Retort Ready-to-Eat Beef Chilly Fry",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_kerala_beef_fry.jpg",
+    specs: "Crisp Onions & Green Chillies | Ready in 3 Minutes | Retort Sealed",
+    origin: "Kerala, India"
+  },
+
+  // ==========================================
+  // 10. READY-TO-COOK (RTC) BATTERS, PASTES & PICKLES
+  // ==========================================
+  {
+    id: "rtc-dosa-batter-mix",
+    name: "Instant Dosa Batter Dry Mix",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "19021900",
+    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    specs: "Sortex Rice & Urad Dal Blend | Fermentation Ready | 12M Shelf Life",
+    origin: "Tamil Nadu, India"
+  },
+  {
+    id: "rtc-idly-batter-mix",
+    name: "Instant Idly Batter Dry Mix",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "19021900",
+    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    specs: "Soft & Fluffy Steamed Cakes | 100% Natural | Export Pack",
+    origin: "Tamil Nadu, India"
+  },
+  {
+    id: "rtc-vada-mix",
+    name: "Instant Medu Vada Mix",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "19021900",
+    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    specs: "Crispy Lentil Fritters | Spiced with Cumin & Pepper",
+    origin: "Tamil Nadu, India"
+  },
+  {
+    id: "rtc-biryani-paste-arcot",
+    name: "Arcot & Chettinad Biryani Pastes",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "21039090",
+    image: "/images/products/ready_to_eat.jpg",
+    specs: "Concentrated Biryani Gravy Paste | No Added MSG / Artificial Colors",
+    origin: "Tamil Nadu, India"
+  },
+  {
+    id: "rtc-sambar-paste",
+    name: "Traditional Sambar & Kathamba Paste",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "21039090",
+    image: "/images/products/ready_to_eat.jpg",
+    specs: "Roasted Lentils & Asafoetida Base | Instant Water Blend",
+    origin: "Tamil Nadu, India"
+  },
+  {
+    id: "rtc-prawns-pickle",
+    name: "Non-Veg Prawns & Fish Pickle",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "20019000",
+    image: "/images/products/ready_to_eat.jpg",
+    specs: "Gingelly Oil Preserved | Spicy Coastal Marinade | Export Jars",
+    origin: "Kerala & Tamil Nadu, India"
+  },
+
+  // ==========================================
+  // 11. VALUE-ADDED PRODUCE, DAIRY & OILS
+  // ==========================================
+  {
+    id: "val-traditional-ghee",
+    name: "Pure Traditional Desi Cow Ghee",
+    category: "Value-Added Produce",
+    categorySlug: "value-added-produce",
+    hsnCode: "04059020",
+    image: "/images/products/traditional_ghee.jpg",
+    specs: "Granular Golden Texture | 99.7% Milk Fat | Litho Tins & Jars",
+    origin: "Tamil Nadu & Gujarat, India"
+  },
+  {
+    id: "val-moringa-ghee",
+    name: "Moringa Infused Herbal Ghee",
+    category: "Value-Added Produce",
+    categorySlug: "value-added-produce",
+    hsnCode: "04059020",
+    image: "/images/products/traditional_ghee.jpg",
+    specs: "Organic Moringa Leaf Infusion | High Antioxidants | Export Grade",
+    origin: "Tamil Nadu, India"
+  },
+  {
+    id: "val-virgin-coconut-oil",
+    name: "Cold-Pressed Extra Virgin Coconut Oil",
+    category: "Value-Added Produce",
+    categorySlug: "value-added-produce",
+    hsnCode: "15131100",
+    image: "/images/products/virgin_coconut_oil.jpg",
+    specs: "Unrefined | Cold Extracted | Organic Certified | Zero Cholesterol",
+    origin: "Pollachi, Tamil Nadu, India"
+  },
+  {
+    id: "val-cold-pressed-sesame-oil",
+    name: "Cold-Pressed Sesame (Gingelly) Oil",
+    category: "Value-Added Produce",
+    categorySlug: "value-added-produce",
+    hsnCode: "15155091",
+    image: "/images/products/virgin_coconut_oil.jpg",
+    specs: "Traditional Wood Pressed (Chekku) | Natural Aroma | Unrefined",
+    origin: "Tamil Nadu, India"
+  },
+  {
+    id: "val-wild-forest-honey",
+    name: "Pure Wild Forest Honey & Comb",
+    category: "Value-Added Produce",
+    categorySlug: "value-added-produce",
+    hsnCode: "04090000",
+    image: "/images/products/consumer.jpg",
+    specs: "Unpasteurized Raw Forest Nectar | Antibiotic Free | Export Grade",
+    origin: "Western Ghats, India"
+  },
+  {
+    id: "val-mango-pulp",
+    name: "Alphonso & Kesar Mango Pulp",
+    category: "Value-Added Produce",
+    categorySlug: "value-added-produce",
+    hsnCode: "20079910",
+    image: "/images/products/fruit_mangoes.jpg",
+    specs: "16°-24° Brix Pure Fruit Puree | Aseptic Cans & Drums",
+    origin: "Ratnagiri & Gujarat, India"
+  },
+  {
+    id: "val-cashew-kernels",
+    name: "Export Graded Cashew Kernels (W240 & W320)",
+    category: "Value-Added Produce",
+    categorySlug: "value-added-produce",
+    hsnCode: "08013210",
+    image: "/images/products/consumer.jpg",
+    specs: "Whole White Kernels | Nitrogen Vacuum Packed | Zero Blemish",
+    origin: "Panruti & Goa, India"
+  },
+  {
+    id: "val-moringa-powder",
+    name: "Organic Moringa Leaf Powder & Health Mix",
+    category: "Value-Added Produce",
+    categorySlug: "value-added-produce",
+    hsnCode: "12119099",
+    image: "/images/products/millets.jpg",
+    specs: "Shade Dried & Fine Mesh Pulverized | Rich in Vitamin A & Iron",
+    origin: "Theni, Tamil Nadu, India"
+  },
+
+  // ==========================================
+  // 12. TRADITIONAL & HEALTHY PACKAGED SNACKS
+  // ==========================================
+  {
+    id: "snack-kerala-banana-chips",
+    name: "Kerala Banana Chips (Pure Coconut Oil)",
+    category: "Traditional & Healthy Snacks",
+    categorySlug: "traditional-snacks",
+    hsnCode: "20089999",
+    image: "/images/products/snack_banana_chips.jpg",
+    specs: "Nendran Banana Slices | Pure Coconut Oil Fried | Vacuum Sealed",
+    origin: "Kerala, India"
+  },
+  {
+    id: "snack-spicy-banana-chips",
+    name: "Spicy Masala & Jaggery Banana Chips",
+    category: "Traditional & Healthy Snacks",
+    categorySlug: "traditional-snacks",
+    hsnCode: "20089999",
+    image: "/images/products/snack_banana_chips.jpg",
+    specs: "Chilli Sprinkled / Jaggery Coated (Sharkara Upperi)",
+    origin: "Kerala, India"
+  },
+  {
+    id: "snack-madras-mixture",
+    name: "Authentic Madras Mixture & Savory Crunch",
+    category: "Traditional & Healthy Snacks",
+    categorySlug: "traditional-snacks",
+    hsnCode: "21069099",
+    image: "/images/products/consumer.jpg",
+    specs: "Omapodi, Roasted Peanuts, Curry Leaves & Boondi | Crunchy",
+    origin: "Tamil Nadu, India"
+  },
+  {
+    id: "snack-kai-murukku",
+    name: "Traditional Kai Murukku & Butter Murukku",
+    category: "Traditional & Healthy Snacks",
+    categorySlug: "traditional-snacks",
+    hsnCode: "19059090",
+    image: "/images/products/consumer.jpg",
+    specs: "Hand-Twisted Rice & Butter Snack | Festival Quality",
+    origin: "Tamil Nadu, India"
+  },
+  {
+    id: "snack-roasted-makhana",
+    name: "Roasted Fox Nuts (Makhana) - Spiced & Salted",
+    category: "Traditional & Healthy Snacks",
+    categorySlug: "traditional-snacks",
+    hsnCode: "19041090",
+    image: "/images/products/consumer.jpg",
+    specs: "High Protein | Gluten-Free | Low Oil Roasted Snack",
+    origin: "Bihar & Madhya Pradesh, India"
+  },
+  {
+    id: "snack-peanut-chikki",
+    name: "Traditional Jaggery Peanut Chikki / Brittle",
+    category: "Traditional & Healthy Snacks",
+    categorySlug: "traditional-snacks",
+    hsnCode: "17049020",
+    image: "/images/products/consumer.jpg",
+    specs: "Crushed Groundnuts & Organic Jaggery | Pure Sweet Crunch",
+    origin: "Kovilpatti, Tamil Nadu, India"
+  },
+
+  // ==========================================
+  // 13. HERITAGE RICE & SPECIALTY GRAINS
+  // ==========================================
+  {
+    id: "rice-seeraga-samba",
+    name: "Seeraga Samba Biryani Rice (Jeera Samba)",
+    category: "Rice & Rice Products",
+    categorySlug: "rice-and-rice-products",
+    hsnCode: "10063090",
+    image: "/images/products/rice.jpg",
+    specs: "Tiny Grain | High Natural Aroma | Authentic Tamil Nadu Biryani",
+    origin: "Cauvery Delta, Tamil Nadu"
+  },
+  {
+    id: "rice-karuppu-kavuni",
+    name: "Karuppu Kavuni Black Rice (Heritage Superfood)",
+    category: "Rice & Rice Products",
+    categorySlug: "rice-and-rice-products",
+    hsnCode: "10063090",
+    image: "/images/products/rice.jpg",
+    specs: "Ancient Black Grain | Rich in Anthocyanins | Unpolished",
+    origin: "Chettinad, Tamil Nadu, India"
+  },
+  {
+    id: "rice-mappillai-samba",
+    name: "Mappillai Samba (Ancient Red Rice)",
+    category: "Rice & Rice Products",
+    categorySlug: "rice-and-rice-products",
+    hsnCode: "10063090",
+    image: "/images/products/rice.jpg",
+    specs: "Unpolished Traditional Red Rice | High Fiber & Iron",
+    origin: "Tamil Nadu, India"
+  },
+
+  // ==========================================
+  // 14. FOOD PROCESSING & PACKAGING MACHINERY
+  // ==========================================
+  {
+    id: "machine-retort-sterilization",
+    name: "Commercial Retort Sterilization Machine",
+    category: "Processing & Packaging Machinery",
+    categorySlug: "processing-machinery",
+    hsnCode: "84198990",
+    image: "/images/products/machinery.jpg",
+    specs: "High Pressure Steam (121°C+) | Kills Bacteria | 12-24M RTE Shelf Life",
+    origin: "CE Certified Machinery Works"
+  },
+  {
+    id: "machine-pouch-packing",
+    name: "Automated Food Pouch Packing & Sealing Machine",
+    category: "Processing & Packaging Machinery",
+    categorySlug: "processing-machinery",
+    hsnCode: "84223000",
+    image: "/images/products/machinery.jpg",
+    specs: "Multi-Head Weigher | Nitrogen Flushing | Form Fill Seal (FFS)",
+    origin: "Industrial Machinery Division"
+  },
+  {
+    id: "machine-food-dehydrator",
+    name: "Commercial Cabinet & Tunnel Food Dehydrator",
+    category: "Processing & Packaging Machinery",
+    categorySlug: "processing-machinery",
+    hsnCode: "84193900",
+    image: "/images/products/machinery.jpg",
+    specs: "Controlled Moisture Extraction | Fruits, Veg & Spices",
+    origin: "Engineering Division"
   }
 ];

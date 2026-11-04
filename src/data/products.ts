@@ -404,5 +404,70 @@ export const productCategories: ProductCategory[] = [
     ],
     hsCode: "HS 2106.90 / 2005.99 / 1904.90",
     origin: "Chennai, Tamil Nadu (India)"
+  },
+// 11. VALUE-ADDED AGRO, DAIRY & OILS (Sree Export Line)
+  {
+    id: "value-added-produce",
+    slug: "value-added-produce",
+    title: "Value-Added Agro, Dairy & Health Produce",
+    badge: "100% PURE & EXPORT GRADED",
+    shortDescription: "Traditional desi cow ghee, cold-pressed virgin oils, wild forest honey, mango pulp, and moringa superfoods.",
+    longDescription:
+      "High-value food and health commodities processed to rigorous international purity benchmarks. Sourced from organic bee farms, traditional wooden expeller oil mills (chekku), and dairy cooperatives.",
+    image: "/images/products/traditional_ghee.jpg",
+    items: [
+      "Pure Traditional Desi Cow Ghee & Moringa Infused Ghee",
+      "Cold-Pressed Extra Virgin Coconut Oil & Wood-Pressed Sesame (Gingelly) Oil",
+      "Raw Wild Forest Honey & Honey with Comb / Nuts",
+      "Alphonso & Kesar Mango Pulp (16°-24° Brix Pure Fruit Puree)",
+      "Export Graded Cashew Kernels (W240 & W320 Whole Whites)",
+      "Organic Moringa Leaf Powder, Health Mix & Herbal Teas"
+    ],
+    keySpecs: [
+      "Ghee Milk Fat ≥ 99.7% | Granular Texture & Aroma",
+      "Oils: Cold Extracted / Unrefined / Chemical Free",
+      "Honey: Unpasteurized Raw / Antibiotic-Free Certified",
+      "FSSAI, Agmark & Organic Export Certified"
+    ],
+    packaging: [
+      "500ml, 1L & 5L Embossed Lithographed Tins & Glass Jars",
+      "Aseptic 3.1kg Cans & 215kg Drums for Mango Pulp",
+      "Nitrogen-Flushed Vacuum Pouches for Cashews"
+    ],
+    hsCode: "HS 0405.90 / 1513.11 / 0409.00 / 0801.32",
+    origin: "Tamil Nadu, Kerala & Western Ghats, India"
+  },
+
+  // 12. TRADITIONAL & HEALTHY INDIAN SNACKS (Sree Export Line)
+  {
+    id: "traditional-snacks",
+    slug: "traditional-snacks",
+    title: "Traditional & Healthy Packaged Snacks",
+    badge: "AUTHENTIC RECIPES • CRISP CRUNCH",
+    shortDescription: "Authentic Kerala banana chips in pure coconut oil, handmade murukku, Madras mixture, and roasted makhana.",
+    longDescription:
+      "Authentic heritage recipes prepared with zero compromise on ingredients. From pure coconut oil fried Nendran banana chips to protein-rich roasted fox nuts (makhana) and crunchy savory mixtures.",
+    image: "/images/products/snack_banana_chips.jpg",
+    items: [
+      "Kerala Banana Chips (Nendran Slices Fried in 100% Pure Coconut Oil)",
+      "Spicy Masala & Jaggery Coated Banana Chips (Sharkara Upperi)",
+      "Authentic Madras Mixture & Savory Boondi / Peanuts Crunch",
+      "Traditional Kai Murukku, Butter Murukku & Thenkuzhal",
+      "Roasted Fox Nuts (Makhana) - Spiced & Salted Superfood",
+      "Traditional Jaggery Peanut Chikki (Kovilpatti Style)"
+    ],
+    keySpecs: [
+      "100% Pure Virgin / Refined Coconut Oil for Banana Chips",
+      "Zero Trans Fat / Nitrogen Flushed for Long Shelf Life (6-9 Months)",
+      "Gluten-Free & High Protein Millet Options Available",
+      "Export Grade Multi-Layer Metallized Pouch Packaging"
+    ],
+    packaging: [
+      "150g, 200g, 500g & 1kg Nitrogen Flushed Stand-Up Zip Pouches",
+      "Outer Master Corrugated Shipper Cartons",
+      "Private Label & Custom Barcode Packaging Available"
+    ],
+    hsCode: "HS 2008.99 / 1905.90 / 1904.10 / 1704.90",
+    origin: "Kerala & Tamil Nadu, India"
   }
 ];
