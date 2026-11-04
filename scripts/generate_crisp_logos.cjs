@@ -1,11 +1,18 @@
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 async function generateAllLogos() {
-  console.log('Starting high-DPI logo generation...');
+  console.log('Starting ultra-crisp studio logo generation...');
 
-  // 1. Load raw official logo
+  // 1. First, render supersampled high-DPI ampersand (&)
+  const pyScript = path.join(__dirname, '../scratch/render_hires_amp.py');
+  if (fs.existsSync(pyScript)) {
+    execSync(`python "${pyScript}"`, { stdio: 'pipe' });
+  }
+
+  // 2. Load raw official logo
   const rawPath = path.join(__dirname, '../public/images/logo/logo_official_raw.png');
   const { data, info } = await sharp(rawPath)
     .raw()
@@ -56,9 +63,14 @@ async function generateAllLogos() {
     .extract({ left: 110, top: 98, width: 524, height: 304 })
     .toBuffer();
 
-  // Extract ZIYA ZARA (x: 45, y: 406, w: 639, h: 91)
-  const ziyaZaraBuf = await sharp(baseBuf)
-    .extract({ left: 45, top: 406, width: 639, height: 91 })
+  // Extract ZIYA (x: 45, y: 406, w: 284, h: 91)
+  const ziyaBuf = await sharp(baseBuf)
+    .extract({ left: 45, top: 406, width: 284, height: 91 })
+    .toBuffer();
+
+  // Extract ZARA (x: 349, y: 406, w: 335, h: 91)
+  const zaraBuf = await sharp(baseBuf)
+    .extract({ left: 349, top: 406, width: 335, height: 91 })
     .toBuffer();
 
   // Extract TRADING COMPANY (x: 36, y: 515, w: 648, h: 37)
@@ -66,22 +78,51 @@ async function generateAllLogos() {
     .extract({ left: 36, top: 515, width: 648, height: 37 })
     .toBuffer();
 
-  // Extract QUALITY PRODUCTS | GLOBAL REACH (x: 75, y: 568, w: 575, h: 38)
-  const qualityProductsBuf = await sharp(baseBuf)
-    .extract({ left: 75, top: 568, width: 575, height: 38 })
-    .toBuffer();
-
   // ----------------------------------------------------
   // Horizontal Lockup (for Navbar & Footer)
-  // Target Height: 560px, Width: ~2200px
+  // Target Height: 560px
   // ----------------------------------------------------
   const emblemScaled = await sharp(emblemBuf)
     .resize({ height: 480, kernel: 'lanczos3' })
     .toBuffer();
   const emblemMeta = await sharp(emblemScaled).metadata();
 
-  const zzScaled = await sharp(ziyaZaraBuf)
-    .resize({ width: 1220, kernel: 'lanczos3' })
+  const scale = 1220 / 639;
+  const ziyaW = Math.round(284 * scale);
+  const zaraW = Math.round(335 * scale);
+  const textH = Math.round(91 * scale);
+
+  const ziyaScaled = await sharp(ziyaBuf).resize({ width: ziyaW, height: textH, kernel: 'lanczos3' }).toBuffer();
+  const zaraScaled = await sharp(zaraBuf).resize({ width: zaraW, height: textH, kernel: 'lanczos3' }).toBuffer();
+
+  const ampLightPath = path.join(__dirname, '../scratch/amp_light.png');
+  const ampDarkPath = path.join(__dirname, '../scratch/amp_dark.png');
+  const ampLightBuf = fs.readFileSync(ampLightPath);
+  const ampDarkBuf = fs.readFileSync(ampDarkPath);
+  const ampMeta = await sharp(ampLightBuf).metadata();
+
+  const ampSpacing = 16;
+  const zzTotalW = ziyaW + ampSpacing + ampMeta.width + ampSpacing + zaraW;
+
+  // Composite Light ZIYA&ZARA
+  const zzLightComposite = await sharp({
+    create: {
+      width: zzTotalW,
+      height: textH,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0 }
+    }
+  })
+  .composite([
+    { input: ziyaScaled, left: 0, top: 0 },
+    { input: ampLightBuf, left: ziyaW + ampSpacing, top: 0 },
+    { input: zaraScaled, left: ziyaW + ampSpacing + ampMeta.width + ampSpacing, top: 0 }
+  ])
+  .png()
+  .toBuffer();
+
+  const zzScaled = await sharp(zzLightComposite)
+    .resize({ width: 1320, kernel: 'lanczos3' })
     .toBuffer();
   const zzMeta = await sharp(zzScaled).metadata();
 
@@ -107,7 +148,7 @@ async function generateAllLogos() {
   const qpSharpBuf = await sharp(Buffer.from(qpSvg)).png().toBuffer();
   const qpMeta = await sharp(qpSharpBuf).metadata();
 
-  const canvasWidth = 35 + emblemMeta.width + 55 + 1220 + 35;
+  const canvasWidth = 35 + emblemMeta.width + 55 + Math.max(zzMeta.width, tcMeta.width) + 35;
   const canvasHeight = 560;
 
   const textGap1 = 26;
@@ -144,18 +185,62 @@ async function generateAllLogos() {
   console.log(`Saved ${lightLogoPath} (${canvasWidth}x${canvasHeight})`);
 
   // 2. Build DARK Horizontal Logo (PNG)
-  // For dark background, convert ZIYA ZARA and QUALITY PRODUCTS to pure crisp white
-  const { data: zzData, info: zzInfo } = await sharp(zzScaled).raw().toBuffer({ resolveWithObject: true });
-  const zzWhiteBuf = Buffer.alloc(zzInfo.width * zzInfo.height * 4);
-  for (let i = 0; i < zzInfo.width * zzInfo.height; i++) {
+  // For dark background, convert ZIYA and ZARA to pure crisp white with exact alpha
+  const { data: ziyaData, info: ziyaInfo } = await sharp(ziyaScaled).raw().toBuffer({ resolveWithObject: true });
+  const ziyaWhiteBuf = Buffer.alloc(ziyaInfo.width * ziyaInfo.height * 4);
+  for (let i = 0; i < ziyaInfo.width * ziyaInfo.height; i++) {
     const idx = i * 4;
-    const a = zzData[idx + 3];
-    zzWhiteBuf[idx] = 255;
-    zzWhiteBuf[idx + 1] = 255;
-    zzWhiteBuf[idx + 2] = 255;
-    zzWhiteBuf[idx + 3] = a;
+    ziyaWhiteBuf[idx] = 255;
+    ziyaWhiteBuf[idx + 1] = 255;
+    ziyaWhiteBuf[idx + 2] = 255;
+    ziyaWhiteBuf[idx + 3] = ziyaData[idx + 3];
   }
-  const zzWhite = await sharp(zzWhiteBuf, { raw: { width: zzInfo.width, height: zzInfo.height, channels: 4 } }).png().toBuffer();
+  const ziyaWhite = await sharp(ziyaWhiteBuf, { raw: { width: ziyaInfo.width, height: ziyaInfo.height, channels: 4 } }).png().toBuffer();
+
+  const { data: zaraData, info: zaraInfo } = await sharp(zaraScaled).raw().toBuffer({ resolveWithObject: true });
+  const zaraWhiteBuf = Buffer.alloc(zaraInfo.width * zaraInfo.height * 4);
+  for (let i = 0; i < zaraInfo.width * zaraInfo.height; i++) {
+    const idx = i * 4;
+    zaraWhiteBuf[idx] = 255;
+    zaraWhiteBuf[idx + 1] = 255;
+    zaraWhiteBuf[idx + 2] = 255;
+    zaraWhiteBuf[idx + 3] = zaraData[idx + 3];
+  }
+  const zaraWhite = await sharp(zaraWhiteBuf, { raw: { width: zaraInfo.width, height: zaraInfo.height, channels: 4 } }).png().toBuffer();
+
+  // Composite Dark ZIYA&ZARA
+  const zzDarkComposite = await sharp({
+    create: {
+      width: zzTotalW,
+      height: textH,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0 }
+    }
+  })
+  .composite([
+    { input: ziyaWhite, left: 0, top: 0 },
+    { input: ampDarkBuf, left: ziyaW + ampSpacing, top: 0 },
+    { input: zaraWhite, left: ziyaW + ampSpacing + ampMeta.width + ampSpacing, top: 0 }
+  ])
+  .png()
+  .toBuffer();
+
+  const zzDarkScaled = await sharp(zzDarkComposite)
+    .resize({ width: 1320, kernel: 'lanczos3' })
+    .toBuffer();
+
+  // For dark background, convert Trading Company to vibrant luminous emerald #34D399 (matching dark SVG!)
+  const { data: tcData, info: tcInfo } = await sharp(tcScaled).raw().toBuffer({ resolveWithObject: true });
+  const tcDarkBuf = Buffer.alloc(tcInfo.width * tcInfo.height * 4);
+  for (let i = 0; i < tcInfo.width * tcInfo.height; i++) {
+    const idx = i * 4;
+    const a = tcData[idx + 3];
+    tcDarkBuf[idx] = 52;    // #34
+    tcDarkBuf[idx + 1] = 211; // #D3
+    tcDarkBuf[idx + 2] = 153; // #99
+    tcDarkBuf[idx + 3] = a;
+  }
+  const tcDarkScaled = await sharp(tcDarkBuf, { raw: { width: tcInfo.width, height: tcInfo.height, channels: 4 } }).png().toBuffer();
 
   const qpSvgDark = `
   <svg width="1220" height="75" viewBox="0 0 1220 75" xmlns="http://www.w3.org/2000/svg">
@@ -183,8 +268,8 @@ async function generateAllLogos() {
   })
   .composite([
     { input: emblemScaled, left: emblemX, top: emblemY },
-    { input: zzWhite, left: textX, top: zzY },
-    { input: tcScaled, left: textX, top: tcY },
+    { input: zzDarkScaled, left: textX, top: zzY },
+    { input: tcDarkScaled, left: textX, top: tcY },
     { input: qpDarkBuf, left: textX, top: qpY }
   ])
   .png({ compressionLevel: 9 })
@@ -196,12 +281,93 @@ async function generateAllLogos() {
   await sharp(emblemScaled).png({ compressionLevel: 9 }).toFile(emblemPath);
   console.log(`Saved ${emblemPath}`);
 
-  // 4. Save logo-stacked.png (Square official logo for about/modal/favicon)
+  // 4. Save logo-stacked.png (Square official logo for about/modal)
+  // Build stacked lockup with ZIYA&ZARA
+  const stackedW = 1400;
+  const stackedH = 1400;
+  const embStackW = 900;
+  const embStackH = Math.round(900 * 304 / 524);
+  const embStack = await sharp(emblemBuf).resize({ width: embStackW, kernel: 'lanczos3' }).toBuffer();
+  const embStackX = Math.round((stackedW - embStackW) / 2);
+  const embStackY = 120;
+
+  const zzStackW = 1100;
+  const zzStack = await sharp(zzLightComposite).resize({ width: zzStackW, kernel: 'lanczos3' }).toBuffer();
+  const zzStackMeta = await sharp(zzStack).metadata();
+  const zzStackX = Math.round((stackedW - zzStackW) / 2);
+  const zzStackY = embStackY + embStackH + 60;
+
+  const tcStackW = 1000;
+  const tcStack = await sharp(tradingCoBuf).resize({ width: tcStackW, kernel: 'lanczos3' }).toBuffer();
+  const tcStackMeta = await sharp(tcStack).metadata();
+  const tcStackX = Math.round((stackedW - tcStackW) / 2);
+  const tcStackY = zzStackY + zzStackMeta.height + 40;
+
+  const qpStackSvg = `
+  <svg width="1000" height="70" viewBox="0 0 1000 70" xmlns="http://www.w3.org/2000/svg">
+    <text x="50%" y="50" 
+      text-anchor="middle" 
+      font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" 
+      font-size="38" 
+      font-weight="700" 
+      letter-spacing="9" 
+      fill="#0B1F3A">
+      QUALITY PRODUCTS   |   GLOBAL REACH
+    </text>
+  </svg>
+  `;
+  const qpStackBuf = await sharp(Buffer.from(qpStackSvg)).png().toBuffer();
+  const qpStackMeta = await sharp(qpStackBuf).metadata();
+  const qpStackX = Math.round((stackedW - 1000) / 2);
+  const qpStackY = tcStackY + tcStackMeta.height + 40;
+
   const stackedPath = path.join(__dirname, '../public/images/logo/logo-stacked.png');
-  await sharp(baseBuf).resize({ width: 1400, kernel: 'lanczos3' }).png({ compressionLevel: 9 }).toFile(stackedPath);
+  await sharp({
+    create: {
+      width: stackedW,
+      height: stackedH,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0 }
+    }
+  })
+  .composite([
+    { input: embStack, left: embStackX, top: embStackY },
+    { input: zzStack, left: zzStackX, top: zzStackY },
+    { input: tcStack, left: tcStackX, top: tcStackY },
+    { input: qpStackBuf, left: qpStackX, top: qpStackY }
+  ])
+  .png({ compressionLevel: 9 })
+  .toFile(stackedPath);
   console.log(`Saved ${stackedPath}`);
 
-  console.log('All logo assets generated successfully with maximum clarity and full tagline!');
+  // 5. Save logo-transparent.png (640x640)
+  const transSquarePath = path.join(__dirname, '../public/images/logo/logo-transparent.png');
+  await sharp(stackedPath).resize({ width: 640, height: 640, kernel: 'lanczos3' }).png({ compressionLevel: 9 }).toFile(transSquarePath);
+  console.log(`Saved ${transSquarePath}`);
+
+  // 6. Save logo-text.png
+  const textLockupW = 1320;
+  const textLockupH = zzMeta.height + textGap1 + tcMeta.height + 20;
+  const textLockupBuf = await sharp({
+    create: {
+      width: textLockupW + 40,
+      height: textLockupH,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0 }
+    }
+  })
+  .composite([
+    { input: zzScaled, left: 20, top: 10 },
+    { input: tcScaled, left: 20, top: 10 + zzMeta.height + textGap1 }
+  ])
+  .png()
+  .toBuffer();
+
+  const logoTextPath = path.join(__dirname, '../public/images/logo/logo-text.png');
+  await sharp(textLockupBuf).resize({ width: 636, height: 188, fit: 'inside', kernel: 'lanczos3' }).png({ compressionLevel: 9 }).toFile(logoTextPath);
+  console.log(`Saved ${logoTextPath}`);
+
+  console.log('All logo assets generated successfully with razor-sharp clarity and ZIYA&ZARA!');
 }
 
 generateAllLogos().catch(console.error);
