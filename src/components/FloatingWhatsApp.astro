@@ -1,0 +1,178 @@
+---
+// src/components/FloatingWhatsApp.astro
+// Floating WhatsApp Action Button for Phone, Tablet & Desktop
+// Features a "popped" floating elevation, subtle beacon pulse, and quick-inquiry speech card.
+---
+
+<div
+  id="floating-whatsapp-widget"
+  class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end pointer-events-none select-none"
+  style="color-scheme: light;"
+>
+  <!-- Mini Pop-up Greeting Card (Floating above the button) -->
+  <div
+    id="whatsapp-pop-card"
+    class="pointer-events-auto mb-3 max-w-[270px] sm:max-w-[290px] bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-[0_12px_36px_rgba(11,31,58,0.18)] border border-emerald-100 text-slate-800 transition-all duration-400 ease-out origin-bottom-right opacity-0 scale-90 translate-y-3"
+  >
+    <!-- Close button for the bubble -->
+    <button
+      id="whatsapp-pop-close"
+      type="button"
+      aria-label="Dismiss message"
+      class="absolute top-2 right-2 p-1 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100 transition-colors"
+    >
+      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Header info -->
+    <a
+      href="https://wa.me/919003098708?text=Hello%20ZIYA%26ZARA%20Trading%20Company%2C%20I%20would%20like%20to%20inquire%20about%20your%20export%20commodities."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="block text-left group"
+    >
+      <div class="flex items-center gap-2 mb-1.5">
+        <div class="relative w-7 h-7 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-sm flex-shrink-0">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.149-.54-1.859-.769-3.056-2.658-3.148-2.782-.092-.124-.755-1.004-.755-1.918 0-.913.479-1.36.65-1.543.171-.184.373-.23.498-.23.124 0 .249.002.358.006.115.005.27-.044.423.324.156.376.534 1.303.58 1.397.047.093.078.203.016.326-.062.124-.093.202-.186.311-.093.11-.197.245-.281.33-.093.093-.191.194-.082.381.109.187.483.797 1.037 1.29.712.636 1.312.833 1.498.926.186.094.296.078.405-.047.109-.125.467-.544.591-.731.125-.187.249-.156.42-.093.172.062 1.09.514 1.277.607.187.094.312.14.358.219.046.078.046.452-.098.857z"/>
+          </svg>
+          <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 border border-white"></span>
+        </div>
+        <div class="leading-tight">
+          <p class="text-xs font-bold text-navy-950 font-sans group-hover:text-emerald-700 transition-colors">
+            ZIYA&ZARA Export Desk
+          </p>
+          <p class="text-[10px] text-emerald-600 font-medium flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            Online &bull; Instant Reply
+          </p>
+        </div>
+      </div>
+      <p class="text-xs text-slate-600 leading-snug">
+        Need rapid product quotation, specs, or shipping rates? Chat directly with our trade team.
+      </p>
+      <div class="mt-2.5 inline-flex items-center gap-1 text-[11px] font-bold text-[#168447] group-hover:text-emerald-800 transition-colors">
+        <span>Start WhatsApp Chat</span>
+        <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </div>
+    </a>
+  </div>
+
+  <!-- Popped Floating WhatsApp Trigger Button -->
+  <div class="pointer-events-auto relative flex items-center group">
+    <!-- Subtle attention pill on tablet & desktop -->
+    <a
+      href="https://wa.me/919003098708?text=Hello%20ZIYA%26ZARA%20Trading%20Company%2C%20I%20would%20like%20to%20inquire%20about%20your%20export%20commodities."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with ZIYA&ZARA on WhatsApp"
+      class="hidden md:flex items-center gap-2 pl-3.5 pr-2 py-2 mr-2.5 bg-white/95 backdrop-blur-md rounded-full shadow-[0_8px_25px_rgba(11,31,58,0.14)] border border-emerald-100 text-slate-800 text-xs font-semibold hover:bg-slate-50 hover:text-emerald-700 transition-all duration-200 active:scale-95"
+    >
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]"></span>
+      </span>
+      <span>WhatsApp Hotline</span>
+      <span class="text-[10px] text-slate-400 font-normal font-mono">+91 90030 98708</span>
+    </a>
+
+    <!-- Outer Pulsing Radar Ring (Gives the popped/elevated floating feel) -->
+    <a
+      href="https://wa.me/919003098708?text=Hello%20ZIYA%26ZARA%20Trading%20Company%2C%20I%20would%20like%20to%20inquire%20about%20your%20export%20commodities."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contact ZIYA&ZARA on WhatsApp (+91 90030 98708)"
+      class="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-[#20ba5a] via-[#25D366] to-[#34e77a] text-white shadow-[0_10px_30px_rgba(37,211,102,0.5)] hover:shadow-[0_14px_38px_rgba(37,211,102,0.7)] transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none focus:ring-4 focus:ring-emerald-400/50 float-pop-anim"
+    >
+      <!-- Pulsing Beacon Halo -->
+      <span class="absolute -inset-1 rounded-full bg-[#25D366] opacity-35 animate-ping pointer-events-none"></span>
+      <span class="absolute -inset-2.5 rounded-full bg-[#25D366] opacity-20 pulse-wave pointer-events-none"></span>
+
+      <!-- Official WhatsApp SVG Icon -->
+      <svg
+        class="w-7 h-7 sm:w-8 sm:h-8 fill-current drop-shadow-md relative z-10 transition-transform duration-200 group-hover:rotate-6"
+        viewBox="0 0 24 24"
+      >
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.149-.54-1.859-.769-3.056-2.658-3.148-2.782-.092-.124-.755-1.004-.755-1.918 0-.913.479-1.36.65-1.543.171-.184.373-.23.498-.23.124 0 .249.002.358.006.115.005.27-.044.423.324.156.376.534 1.303.58 1.397.047.093.078.203.016.326-.062.124-.093.202-.186.311-.093.11-.197.245-.281.33-.093.093-.191.194-.082.381.109.187.483.797 1.037 1.29.712.636 1.312.833 1.498.926.186.094.296.078.405-.047.109-.125.467-.544.591-.731.125-.187.249-.156.42-.093.172.062 1.09.514 1.277.607.187.094.312.14.358.219.046.078.046.452-.098.857m-3.392 9.584c-2.457 0-4.788-.73-6.757-1.996l-7.882 2.07 2.11-7.697c-1.368-2.037-2.103-4.444-2.103-6.961 0-7.058 5.742-12.8 12.8-12.8 3.42 0 6.634 1.333 9.052 3.754 2.419 2.421 3.751 5.636 3.75 9.057-.002 7.058-5.744 12.8-12.87 12.8z"/>
+      </svg>
+
+      <!-- Active Notification Dot -->
+      <span class="absolute top-1 right-1 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-white shadow-sm flex items-center justify-center">
+        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+      </span>
+    </a>
+  </div>
+</div>
+
+<style>
+  /* Popped Floating Bob Animation */
+  @keyframes floatPop {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-5px) scale(1.03);
+    }
+  }
+
+  .float-pop-anim {
+    animation: floatPop 3.2s ease-in-out infinite;
+  }
+
+  @keyframes pulseWave {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.35);
+      opacity: 0.15;
+    }
+    100% {
+      transform: scale(1.6);
+      opacity: 0;
+    }
+  }
+
+  .pulse-wave {
+    animation: pulseWave 2.8s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var popCard = document.getElementById('whatsapp-pop-card');
+    var closeBtn = document.getElementById('whatsapp-pop-close');
+
+    if (!popCard) return;
+
+    var isDismissed = false;
+    try {
+      isDismissed = sessionStorage.getItem('zz_wa_card_dismissed') === 'true';
+    } catch (e) {}
+
+    // Show speech card after 2.2 seconds on phone, tablet, and desktop unless user previously dismissed it
+    if (!isDismissed) {
+      setTimeout(function () {
+        popCard.classList.remove('opacity-0', 'scale-90', 'translate-y-3');
+        popCard.classList.add('opacity-100', 'scale-100', 'translate-y-0');
+      }, 2200);
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        popCard.classList.remove('opacity-100', 'scale-100', 'translate-y-0');
+        popCard.classList.add('opacity-0', 'scale-90', 'translate-y-3', 'pointer-events-none');
+        try {
+          sessionStorage.setItem('zz_wa_card_dismissed', 'true');
+        } catch (err) {}
+      });
+    }
+  })();
+</script>
