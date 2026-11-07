@@ -252,6 +252,8 @@ const structuredData = {
           });
         }
 
+        window.initProgressiveImages = initProgressiveImages;
+
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', initProgressiveImages);
         } else {

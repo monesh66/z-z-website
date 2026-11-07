@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProgressiveImage from '../components/ui/ProgressiveImage.astro';
 import { siteConfig } from '../data/site';
 ---
 
@@ -55,13 +56,14 @@ import { siteConfig } from '../data/site';
 
         <div class="lg:col-span-6 scroll-reveal-right stagger-1">
           <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
-            <img
+            <ProgressiveImage
               src="/images/about/global_network.jpg"
               alt="Global trade operations"
               width="800"
               height="600"
-              class="w-full h-auto object-cover"
-              loading="lazy"
+              containerClass="w-full aspect-[4/3]"
+              class="w-full h-full object-cover"
+              size="lg"
             />
             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy-950/90 to-transparent p-6 text-white">
               <div class="text-xs font-mono uppercase text-champagne font-bold">Trade Excellence Standard</div>
