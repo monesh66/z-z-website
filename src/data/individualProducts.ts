@@ -433,17 +433,6 @@ export const individualProducts: IndividualProduct[] = [
     specs: "Extended Shelf Life | Pre-Sanitized & Cut",
     origin: "Certified Agro-Processing Facility"
   },
-  {
-    id: "banana-leaf-rolls",
-    name: "Banana Leaf Dining Rolls & Strips",
-    category: "Banana Leaves & Eco",
-    categorySlug: "banana-leaves-and-eco",
-    hsnCode: "14049090",
-    image: "/images/products/leaf_banana_rolls.jpg",
-    specs: "Uniform Width | Restaurant & Catering Ready",
-    origin: "Tamil Nadu, India"
-  },
-
   // ==========================================
   // 8. FROZEN FOODS & READY TO COOK
   // ==========================================
@@ -517,6 +506,255 @@ export const individualProducts: IndividualProduct[] = [
     specs: "100% Whole Wheat Atta | Soft & Fluffy | Zero Preservatives",
     origin: "Tamil Nadu & Kerala, India"
   },
+  {
+    id: "frozen-paneer-cubes",
+    name: "IQF Frozen Malai Paneer Cubes",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "04061000",
+    image: "/images/products/frozen_paneer.jpg",
+    specs: "Individually Quick Frozen (-18°C) | 100% Pure Cow Milk | Soft & Spongy",
+    origin: "Punjab & Haryana, India"
+  },
+  {
+    id: "frozen-spring-rolls",
+    name: "Frozen Crispy Vegetable Spring Rolls",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "19049000",
+    image: "/images/products/frozen_spring_rolls.jpg",
+    specs: "Ready to Fry / Air-Fry | Crispy Pastry Crust | Indo-Chinese Veg Filling",
+    origin: "Certified Export Kitchen, India"
+  },
+  {
+    id: "frozen-aloo-tikki",
+    name: "Frozen Spiced Aloo Tikki Patties",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "20041000",
+    image: "/images/products/frozen_aloo_tikki.jpg",
+    specs: "Crispy Golden Coating | Traditional Indian Spices | 0 Trans Fat",
+    origin: "Delhi NCR & Gujarat, India"
+  },
+  {
+    id: "frozen-bhatura",
+    name: "Frozen Fluffy Amritsari Bhatura",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "19059090",
+    image: "/images/products/frozen_bhatura.jpg",
+    specs: "Pre-formed Leavened Dough | Ready to Puff | Authentic Recipe",
+    origin: "Punjab Basin, India"
+  },
+  {
+    id: "frozen-cut-okra",
+    name: "IQF Frozen Cut Okra (Bhindi)",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "07108090",
+    image: "/images/products/frozen_okra.jpg",
+    specs: "Even Cut Ring Slices | Low Slime | Natural Emerald Green | -18°C",
+    origin: "Gujarat & Maharashtra, India"
+  },
+  {
+    id: "frozen-drumsticks",
+    name: "IQF Frozen Cut Drumsticks (Moringa Pods)",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "07108090",
+    image: "/images/products/frozen_drumsticks.jpg",
+    specs: "Tender 3-inch Cut Sections | Washed & Blast Frozen | Rich in Calcium",
+    origin: "Tamil Nadu, India"
+  },
+  {
+    id: "frozen-baby-corn",
+    name: "IQF Frozen Tender Baby Corn Cuts",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "07108090",
+    image: "/images/products/frozen_baby_corn.jpg",
+    specs: "Whole & Diagonally Cut | Crisp Texture | Export Graded",
+    origin: "Karnataka & Maharashtra, India"
+  },
+
+  // ==========================================
+  // 8B. FROZEN FRUITS & IQF PRODUCE (New Dedicated Category)
+  // ==========================================
+  {
+    id: "iqf-alphonso-mango-chunks",
+    name: "IQF Alphonso Mango Dices & Chunks",
+    category: "Frozen Fruits",
+    categorySlug: "frozen-fruits",
+    hsnCode: "08119010",
+    image: "/images/products/iqf_mango_chunks.jpg",
+    specs: "10x10mm / 15x15mm Dices | 100% Ratnagiri Alphonso | Sweet & Aromatic | -18°C",
+    origin: "Konkan Belt, Maharashtra, India"
+  },
+  {
+    id: "iqf-strawberry-whole",
+    name: "IQF Whole Strawberries & Halves",
+    category: "Frozen Fruits",
+    categorySlug: "frozen-fruits",
+    hsnCode: "08111000",
+    image: "/images/products/iqf_strawberries.jpg",
+    specs: "Blast Frozen Sweet Crimson Berries | Calibrated 25-35mm | Grade A",
+    origin: "Mahabaleshwar, Maharashtra, India"
+  },
+  {
+    id: "iqf-pomegranate-arils",
+    name: "IQF Pomegranate Arils (Ruby Kernels)",
+    category: "Frozen Fruits",
+    categorySlug: "frozen-fruits",
+    hsnCode: "08119090",
+    image: "/images/products/iqf_pomegranate_arils.jpg",
+    specs: "Bhagwa Variety | Juicy Deep Red Seeds | Blemishes < 1% | Ready to Blend",
+    origin: "Solapur, Maharashtra, India"
+  },
+  {
+    id: "iqf-papaya-dices",
+    name: "IQF Red Papaya Chunks & Dices",
+    category: "Frozen Fruits",
+    categorySlug: "frozen-fruits",
+    hsnCode: "08119090",
+    image: "/images/products/iqf_papaya_chunks.jpg",
+    specs: "Red Lady Taiwan Variety | Sweet Flesh | 15x15mm Cuts | No Added Sugar",
+    origin: "Andhra Pradesh, India"
+  },
+  {
+    id: "iqf-guava-slices",
+    name: "IQF Pink & White Guava Slices",
+    category: "Frozen Fruits",
+    categorySlug: "frozen-fruits",
+    hsnCode: "08119090",
+    image: "/images/products/iqf_guava_slices.jpg",
+    specs: "De-seeded Crescent Slices | High Vitamin C | Smooth Pulp Retention",
+    origin: "Allahabad & Karnataka, India"
+  },
+  {
+    id: "iqf-coconut-chunks",
+    name: "IQF Raw Coconut Flesh Chunks",
+    category: "Frozen Fruits",
+    categorySlug: "frozen-fruits",
+    hsnCode: "08119090",
+    image: "/images/products/iqf_coconut_chunks.jpg",
+    specs: "Snow White Copra Meat Cuts | Fresh Nutty Aroma | Moisture Controlled",
+    origin: "Pollachi, Tamil Nadu, India"
+  },
+  {
+    id: "iqf-chikoo-sapota",
+    name: "IQF Sapota (Chikoo) Dices",
+    category: "Frozen Fruits",
+    categorySlug: "frozen-fruits",
+    hsnCode: "08119090",
+    image: "/images/products/iqf_chikoo_sapota.jpg",
+    specs: "Cricket Ball Variety | Caramel Sweetness | Smooth Granular Texture",
+    origin: "Gujarat & Karnataka, India"
+  },
+  {
+    id: "iqf-custard-apple-pulp",
+    name: "IQF Custard Apple (Sitaphal) Chunks & Pulp",
+    category: "Frozen Fruits",
+    categorySlug: "frozen-fruits",
+    hsnCode: "08119090",
+    image: "/images/products/iqf_custard_apple.jpg",
+    specs: "De-seeded Creamy Segments | 100% Pure Natural Fruit | Unsweetened",
+    origin: "Maharashtra, India"
+  },
+
+  // ==========================================
+  // 8C. BIO DISPOSABLES & ECO-PACKAGING (New Dedicated Category)
+  // ==========================================
+  {
+    id: "bio-areca-palm-plates-10inch",
+    name: "Areca Palm Leaf 10\" Round Dinner Plates",
+    category: "Bio Disposables",
+    categorySlug: "bio-disposables",
+    hsnCode: "14049090",
+    image: "/images/products/bio_areca_round_plates.jpg",
+    specs: "100% Naturally Fallen Areca Sheath | Microwave & Oven Safe | Leakproof",
+    origin: "Shimoga, Karnataka & Tamil Nadu, India"
+  },
+  {
+    id: "bio-areca-palm-compartment-trays",
+    name: "Areca Palm Leaf 4 & 5-Compartment Meal Trays",
+    category: "Bio Disposables",
+    categorySlug: "bio-disposables",
+    hsnCode: "14049090",
+    image: "/images/products/bio_areca_compartment_trays.jpg",
+    specs: "Heavy-Duty Catering Strength | Oil & Heat Resistant | Backyard Compostable",
+    origin: "Western Ghats Belt, India"
+  },
+  {
+    id: "bio-areca-palm-bowls",
+    name: "Areca Palm Leaf Soup & Dessert Bowls (4\" & 6\")",
+    category: "Bio Disposables",
+    categorySlug: "bio-disposables",
+    hsnCode: "14049090",
+    image: "/images/products/bio_areca_bowls.jpg",
+    specs: "Chemical-Free Heat Pressed | Zero Plastic Coating | Liquid Safe",
+    origin: "Karnataka & Kerala, India"
+  },
+  {
+    id: "bio-bagasse-clamshell-boxes",
+    name: "Sugarcane Bagasse Clamshell Burger & Meal Boxes",
+    category: "Bio Disposables",
+    categorySlug: "bio-disposables",
+    hsnCode: "48237090",
+    image: "/images/products/bio_bagasse_clamshell.jpg",
+    specs: "Upcycled Sugarcane Fiber | 6\"x6\" & 9\"x9\" | Hinged Lid | 100% Biodegradable",
+    origin: "Maharashtra & Tamil Nadu, India"
+  },
+  {
+    id: "bio-bagasse-compartment-trays",
+    name: "Sugarcane Bagasse 5-Compartment Meal Trays",
+    category: "Bio Disposables",
+    categorySlug: "bio-disposables",
+    hsnCode: "48237090",
+    image: "/images/products/bio_bagasse_trays.jpg",
+    specs: "Rigid Food-Grade Pulp | Bleached & Unbleached Brown | Heavy-Duty",
+    origin: "Certified Bio-Packaging Plant, India"
+  },
+  {
+    id: "bio-birchwood-cutlery-set",
+    name: "Natural Birchwood Cutlery Set (Fork, Spoon & Knife)",
+    category: "Bio Disposables",
+    categorySlug: "bio-disposables",
+    hsnCode: "44199090",
+    image: "/images/products/bio_birchwood_cutlery.jpg",
+    specs: "FSC Certified Birch Wood | Splinter-Free Smooth Finish | 160mm Standard",
+    origin: "Certified Sustainable Forests, India"
+  },
+  {
+    id: "bio-kraft-paper-bowls",
+    name: "Biodegradable Kraft Paper Salad & Noodle Bowls",
+    category: "Bio Disposables",
+    categorySlug: "bio-disposables",
+    hsnCode: "48239090",
+    image: "/images/products/bio_kraft_bowls.jpg",
+    specs: "PLA Bio-Lined | 500ml / 750ml / 1000ml | Leakproof Clear Lids Available",
+    origin: "Gujarat, India"
+  },
+  {
+    id: "bio-bamboo-drinking-straws",
+    name: "Natural Bamboo & Paper Drinking Straws",
+    category: "Bio Disposables",
+    categorySlug: "bio-disposables",
+    hsnCode: "14011000",
+    image: "/images/products/bio_bamboo_straws.jpg",
+    specs: "6mm & 8mm Smoothie Grade | 100% Marine Degradable | Food Safe Inks",
+    origin: "Assam & Karnataka, India"
+  },
+  {
+    id: "bio-cornstarch-garbage-bags",
+    name: "Cornstarch PLA 100% Compostable Waste Bags",
+    category: "Bio Disposables",
+    categorySlug: "bio-disposables",
+    hsnCode: "39232990",
+    image: "/images/products/bio_compostable_bags.jpg",
+    specs: "EN 13432 & ASTM D6400 Certified | High Puncture Resistance | Green Tint",
+    origin: "Certified Bio-Polymer Plant, India"
+  },
+
 // ==========================================
   // 9. READY-TO-EAT RETORT CURRIES & MEALS (Sree Export Line)
   // ==========================================

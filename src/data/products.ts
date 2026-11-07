@@ -469,5 +469,107 @@ export const productCategories: ProductCategory[] = [
     ],
     hsCode: "HS 2008.99 / 1905.90 / 1904.10 / 1704.90",
     origin: "Kerala & Tamil Nadu, India"
+  },
+
+  // 13. FROZEN FOODS & IQF TROPICAL PRODUCE
+  {
+    id: "frozen-foods-and-fruits",
+    slug: "frozen-foods-and-fruits",
+    title: "Frozen Foods & IQF Tropical Produce",
+    badge: "BLAST FROZEN • -18°C COLD CHAIN",
+    shortDescription: "IQF Alphonso mango chunks, tropical fruit dices, paneer cubes, samosas, parottas, and ready-to-fry appetizers.",
+    longDescription:
+      "State-of-the-art Individually Quick Frozen (IQF) processing locks in natural cell structure, nutritional vitamins, color, and field-fresh taste. Maintained under strict uninterrupted -18°C cold chain logistics from farm blast freezers to destination container ports.",
+    image: "/images/products/iqf_mango_chunks.jpg",
+    items: [
+      "IQF Alphonso & Kesar Mango Dices (10x10mm / 15x15mm)",
+      "IQF Whole Strawberries, Pomegranate Arils & Guava Slices",
+      "IQF Red Papaya Chunks, Raw Coconut Flesh & Custard Apple Pulp",
+      "IQF Malai Paneer Cubes & Cut Vegetables (Sweet Corn, Peas, Okra)",
+      "Frozen Multi-Layered Malabar Parottas & Amritsari Bhaturas",
+      "Crispy Vegetable Spring Rolls & Spiced Aloo Tikki Patties"
+    ],
+    featuredItems: [
+      {
+        name: "IQF Alphonso Mango Dices",
+        image: "/images/products/iqf_mango_chunks.jpg",
+        spec: "100% Ratnagiri Alphonso | -18°C",
+      },
+      {
+        name: "IQF Frozen Malai Paneer",
+        image: "/images/products/frozen_paneer.jpg",
+        spec: "Pure Cow Milk | Soft & Spongy",
+      },
+      {
+        name: "Frozen Malabar Parottas",
+        image: "/images/products/frozen_malabar_parotta.jpg",
+        spec: "Multi-Layered Hand-Tossed | Pre-Cooked",
+      },
+    ],
+    keySpecs: [
+      "Blast freezing technology at -35°C, storage at -18°C",
+      "Zero added preservatives, zero synthetic colors or sugar",
+      "Individually Quick Frozen (IQF) prevents clumping",
+      "BRC, HACCP, Halal & ISO 22000 certified processing facilities"
+    ],
+    packaging: [
+      "400g, 500g, 1kg & 2.5kg Poly Laminated Retail Stand-Up Pouches",
+      "10kg & 20kg Food-Grade Bulk Master Corrugated Cartons",
+      "Reefer Container (20ft / 40ft RF) Shipment at -18°C"
+    ],
+    hsCode: "HS 0811.90 / 0710.80 / 0406.10 / 1904.90",
+    origin: "Maharashtra, Gujarat, Punjab & Tamil Nadu, India"
+  },
+
+  // 14. BIODEGRADABLE TABLEWARE & ECO-PACKAGING
+  {
+    id: "bio-disposables",
+    slug: "bio-disposables",
+    title: "Biodegradable Tableware & Eco-Packaging",
+    badge: "100% COMPOSTABLE • ZERO PLASTIC",
+    shortDescription: "Areca palm leaf dinnerware, sugarcane bagasse clamshell boxes, natural birchwood cutlery, and compostable carry bags.",
+    longDescription:
+      "Eco-conscious, renewable alternatives to single-use plastics designed for international food service, catering, events, and supermarkets. Manufactured using naturally shed areca palm sheaths and upcycled agricultural bagasse pulp.",
+    image: "/images/products/bio_areca_round_plates.jpg",
+    items: [
+      "Areca Palm Leaf Round & Square Dinner Plates (8\", 10\", 12\")",
+      "Areca Palm Multi-Compartment Catering Trays & Soup Bowls",
+      "Sugarcane Bagasse Clamshell Burger & Meal Containers (6x6, 9x9)",
+      "Sugarcane Bagasse 5-Compartment Meal Delivery Trays",
+      "FSC Certified Natural Birchwood Cutlery Sets (Spoon, Fork, Knife)",
+      "PLA Lined Biodegradable Kraft Paper Salad & Noodle Bowls",
+      "Natural Bamboo & Marine-Degradable Paper Drinking Straws",
+      "Cornstarch PLA 100% Compostable Garbage & Bio-Waste Bags"
+    ],
+    featuredItems: [
+      {
+        name: "Areca Palm Round Dinner Plates",
+        image: "/images/products/bio_areca_round_plates.jpg",
+        spec: "100% Naturally Fallen Leaves | Oven Safe",
+      },
+      {
+        name: "Sugarcane Bagasse Clamshells",
+        image: "/images/products/bio_bagasse_clamshell.jpg",
+        spec: "Upcycled Agro Pulp | Compostable",
+      },
+      {
+        name: "Natural Birchwood Cutlery",
+        image: "/images/products/bio_birchwood_cutlery.jpg",
+        spec: "FSC Certified Wood | Splinter-Free",
+      },
+    ],
+    keySpecs: [
+      "100% biodegradable and home/industrial compostable",
+      "Microwave safe (up to 2 minutes) & oven safe (up to 200°C for 45 mins)",
+      "Liquid, hot oil, and grease resistant with zero plastic lining",
+      "EN 13432, ASTM D6400 & BPI Compostable Certified"
+    ],
+    packaging: [
+      "Shrink-wrapped retail packs (10, 20, 25 pcs) with custom barcode labels",
+      "Master export corrugated cartons with inner moisture barrier",
+      "Palletized containerized sea freight loading"
+    ],
+    hsCode: "HS 1404.90 / 4823.70 / 4419.90 / 3923.29",
+    origin: "Karnataka, Tamil Nadu & Maharashtra, India"
   }
 ];
