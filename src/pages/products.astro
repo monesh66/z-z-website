@@ -483,7 +483,17 @@ const categoriesWithCounts = [
 
       // Read initial category filter from URL query string
       const urlParams = new URLSearchParams(window.location.search);
-      const initialCategory = urlParams.get('category') || urlParams.get('filter');
+      let initialCategory = urlParams.get('category') || urlParams.get('filter');
+
+      const categoryAliases = {
+        'agricultural': 'agricultural-grains',
+        'food-grains': 'rice-and-rice-products',
+        'consumer': 'traditional-snacks',
+      };
+      if (initialCategory && categoryAliases[initialCategory]) {
+        initialCategory = categoryAliases[initialCategory];
+      }
+
       if (initialCategory) {
         const targetPill = document.querySelector(`.catalog-pill[data-filter="${initialCategory}"]`);
         if (targetPill) {

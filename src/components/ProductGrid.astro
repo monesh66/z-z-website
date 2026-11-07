@@ -2,101 +2,64 @@
 import ProductCard, { type ProductItem } from './ProductCard.astro';
 
 const landingCategories: ProductItem[] = [
+  // The 6 Original Core Trade Categories
   {
-    title: "Frozen Foods & Snacks",
-    desc: "IQF malai paneer, cocktail samosas, spring rolls & layered parottas.",
-    image: "/images/products/frozen_paneer.jpg",
+    title: "Agricultural Products",
+    desc: "Grains, pulses, whole spices, and natural farm produce.",
+    image: "/images/products/agricultural.jpg",
+    href: "/products?category=agricultural",
+    badge: "DIRECT ORIGIN",
+  },
+  {
+    title: "Food & Grains",
+    desc: "1121 Basmati rice, milling wheat, pulses, and edible oilseeds.",
+    image: "/images/products/food_grains.jpg",
+    href: "/products?category=food-grains",
+    badge: "APEDA CERTIFIED",
+  },
+  {
+    title: "Textiles & Garments",
+    desc: "Fabrics, apparel, yarns, and industrial textile raw materials.",
+    image: "/images/products/textiles.jpg",
+    href: "/products?category=textiles",
+    badge: "EXPORT GRADE",
+  },
+  {
+    title: "Industrial Supplies",
+    desc: "Metals, pipes, processing machinery, and industrial commodities.",
+    image: "/images/products/industrial.jpg",
+    href: "/products?category=industrial",
+    badge: "MILL TESTED",
+  },
+  {
+    title: "Consumer Goods",
+    desc: "Daily use, traditional packaged snacks, and culinary essentials.",
+    image: "/images/products/consumer.jpg",
+    href: "/products?category=consumer",
+    badge: "FMCG EXPORT",
+  },
+  {
+    title: "Custom Sourcing",
+    desc: "Tailored international trade procurement as per buyer specifications.",
+    image: "/images/products/custom_sourcing.jpg",
+    href: "/products?category=custom",
+    badge: "GLOBAL TRADE",
+  },
+
+  // The 2 Added Priority Categories Requested
+  {
+    title: "Frozen Foods",
+    desc: "IQF sweet corn, green peas, layered Malabar parottas & appetizers.",
+    image: "/images/products/frozen_malabar_parotta.jpg",
     href: "/products?category=frozen-foods",
     badge: "IQF -18°C",
-    count: "14 Items",
   },
   {
-    title: "Frozen Fruits (IQF)",
-    desc: "Alphonso mango chunks, whole strawberries & pomegranate arils.",
-    image: "/images/products/iqf_mango_chunks.jpg",
-    href: "/products?category=frozen-fruits",
-    badge: "BLAST FROZEN",
-    count: "8 Items",
-  },
-  {
-    title: "Bio Disposables & Eco",
-    desc: "Areca palm dinnerware, sugarcane bagasse clamshells & cutlery.",
+    title: "Bio Disposables",
+    desc: "Areca palm dinnerware, sugarcane bagasse clamshells & eco tableware.",
     image: "/images/products/bio_areca_round_plates.jpg",
     href: "/products?category=bio-disposables",
-    badge: "COMPOSTABLE",
-    count: "9 Items",
-  },
-  {
-    title: "Indian Spices & Seasonings",
-    desc: "Alleppey turmeric, Tellicherry black pepper, bold cardamom & chillies.",
-    image: "/images/products/spices.jpg",
-    href: "/products?category=spices-and-seasonings",
-    badge: "SPICES BOARD",
-    count: "16 Items",
-  },
-  {
-    title: "Export Quality Rice",
-    desc: "1121 Basmati, Sona Masoori, Ponni, and parboiled export rice.",
-    image: "/images/products/rice.jpg",
-    href: "/products?category=rice-and-rice-products",
-    badge: "APEDA CERTIFIED",
-    count: "11 Items",
-  },
-  {
-    title: "Nutritious Millets",
-    desc: "Finger millet (Ragi), pearl millet, foxtail & ancient supergrains.",
-    image: "/images/products/millets.jpg",
-    href: "/products?category=millets-and-superfoods",
-    badge: "GLUTEN-FREE",
-    count: "7 Items",
-  },
-  {
-    title: "Pulses, Lentils & Dals",
-    desc: "Sortex cleaned toor dal, moong dal, urad dal & organic chickpeas.",
-    image: "/images/products/pulses.jpg",
-    href: "/products?category=pulses-and-dals",
-    badge: "SORTEX CLEANED",
-    count: "8 Items",
-  },
-  {
-    title: "Ready-to-Eat Retort Curries",
-    desc: "Seer fish curry, butter chicken & dal makhani (24M shelf life).",
-    image: "/images/products/retort_curry_seer_fish.jpg",
-    href: "/products?category=ready-to-eat-curries",
-    badge: "RETORT STERILIZED",
-    count: "13 Items",
-  },
-  {
-    title: "Ready-to-Cook Mixes",
-    desc: "Idli dosa batter mix, instant medu vada & breakfast premixes.",
-    image: "/images/products/rtc_dosa_batter_mix.jpg",
-    href: "/products?category=ready-to-cook-mixes",
-    badge: "INSTANT PREMIX",
-    count: "18 Items",
-  },
-  {
-    title: "Traditional Indian Snacks",
-    desc: "Pure coconut oil Kerala banana chips, handmade murukku & makhana.",
-    image: "/images/products/snack_banana_chips.jpg",
-    href: "/products?category=traditional-snacks",
-    badge: "PURE COCONUT OIL",
-    count: "15 Items",
-  },
-  {
-    title: "Fresh Banana Leaves & Eco",
-    desc: "Lush emerald dining leaves, fresh-cut & vacuum sealed for air export.",
-    image: "/images/products/leaf_banana_fresh.jpg",
-    href: "/products?category=banana-leaves-and-eco",
-    badge: "DAILY AIR CARGO",
-    count: "Fresh Export",
-  },
-  {
-    title: "Value-Added Agro & Oils",
-    desc: "Desi cow ghee, wood-pressed virgin oils, wild honey & mango pulp.",
-    image: "/images/products/traditional_ghee.jpg",
-    href: "/products?category=value-added-produce",
-    badge: "100% PURE",
-    count: "17 Items",
+    badge: "100% COMPOSTABLE",
   },
 ];
 ---
@@ -109,15 +72,15 @@ const landingCategories: ProductItem[] = [
       <div class="space-y-2">
         <div class="flex items-center gap-2.5">
           <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#134E34] font-mono">
-            CORE EXPORT CATEGORIES
+            OUR PRODUCT CATEGORIES
           </span>
           <span class="w-8 h-0.5 bg-[#134E34]"></span>
         </div>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-navy-950 tracking-tight">
-          Diverse Export Portfolios for Global Markets
+          Diverse Products for Global Markets
         </h2>
         <p class="text-xs sm:text-sm text-slate-600 max-w-2xl">
-          Direct origin agricultural harvests, cold-chain IQF frozen produce, compostable tableware, and authentic packaged foods certified for international trade.
+          Direct origin agricultural harvests, staple grains, cold-chain IQF frozen foods, and eco-friendly packaging supplied across international container lanes.
         </p>
       </div>
 
@@ -127,7 +90,7 @@ const landingCategories: ProductItem[] = [
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-navy-950 text-xs sm:text-sm font-semibold transition-all duration-300 shadow-xs hover:border-slate-400 group"
           id="view-all-products-btn"
         >
-          <span>Explore All 160+ Products</span>
+          <span>View All Products</span>
           <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
@@ -136,24 +99,24 @@ const landingCategories: ProductItem[] = [
       </div>
     </div>
 
-    <!-- Product Grid: 4 Columns on Desktop, 3 on Tablet, 2 on Mobile -->
-    <div data-reveal-group data-reveal-stagger="60" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+    <!-- Product Grid: 8 Items (4 Columns × 2 Rows on Desktop) -->
+    <div data-reveal-group data-reveal-stagger="60" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6">
       {landingCategories.map((product) => (
         <ProductCard product={product} />
       ))}
     </div>
 
-    <!-- Bottom Catalogue Banner -->
+    <!-- Bottom Sourcing & Catalogue Strip -->
     <div class="mt-12 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-navy-950 to-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-slate-800">
       <div class="space-y-1.5 text-center md:text-left">
         <span class="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold">
-          CUSTOM SOURCING & PRIVATE LABELING
+          CUSTOM SOURCING & BULK SHIPMENTS
         </span>
         <h3 class="text-lg sm:text-xl font-bold font-serif text-white">
-          Looking for specific origin grades, bulk packaging, or private labeling?
+          Looking for specific commodity grades or containerized shipments?
         </h3>
         <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
-          We arrange customized container freight, phytosanitary clearance, and certified packaging according to your destination market requirements.
+          We arrange customized container freight, phytosanitary clearance, and certified packaging according to destination import regulations.
         </p>
       </div>
 
@@ -162,10 +125,10 @@ const landingCategories: ProductItem[] = [
           href="/products"
           class="px-5 py-2.5 rounded-full bg-[#134E34] hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg"
         >
-          View Full Catalogue
+          Browse Catalogue
         </a>
         <a
-          href="https://wa.me/919003098708?text=Hello%20Ziya%20Zara%20Trading%2C%20I%20am%20looking%20for%20a%20custom%20export%20quotation."
+          href="https://wa.me/919003098708?text=Hello%20Ziya%20Zara%20Trading%2C%20I%20am%20looking%20for%20a%20commercial%20export%20quotation."
           target="_blank"
           rel="noopener noreferrer"
           class="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs sm:text-sm font-semibold transition-all inline-flex items-center gap-2"
@@ -173,7 +136,7 @@ const landingCategories: ProductItem[] = [
           <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.948 3.018.949h.005c3.181 0 5.768-2.587 5.769-5.767.001-1.541-.599-2.99-1.688-4.08s-2.539-1.689-4.08-1.689zm0-2.001c4.288 0 7.769 3.481 7.77 7.769.001 2.078-.809 4.032-2.28 5.503s-3.424 2.281-5.502 2.281h-.007c-1.282 0-2.535-.347-3.633-.999l-5.379 1.411 1.436-5.243c-.714-1.139-1.09-2.457-1.09-3.953 0-4.288 3.481-7.769 7.769-7.769z"/>
           </svg>
-          <span>Chat on WhatsApp</span>
+          <span>Direct WhatsApp Quote</span>
         </a>
       </div>
     </div>
