@@ -224,12 +224,12 @@ const structuredData = {
 
               if (overlay) {
                 overlay.style.opacity = '0';
-                overlay.style.transform = 'scale(0.92)';
+                overlay.style.transform = 'scale(0.95)';
                 setTimeout(function () {
                   overlay.style.display = 'none';
                   var video = overlay.querySelector('video');
                   if (video) video.pause();
-                }, 400);
+                }, 300);
               }
             }
 
@@ -248,6 +248,9 @@ const structuredData = {
                 }
               }, { once: true });
               img.addEventListener('error', reveal, { once: true });
+
+              // Safety timeout: reveal after 3.5s max
+              setTimeout(reveal, 3500);
             }
           });
         }

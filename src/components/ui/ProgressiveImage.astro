@@ -1,10 +1,10 @@
 ---
 // src/components/ui/ProgressiveImage.astro
-// Progressive Image Loader matching user specifications:
-// 1. Web loads first without waiting for heavy images
-// 2. While individual image loads, displays a small looping logo animation (under 2s loop)
-// 3. Loops continuously until this particular image is fully downloaded & GPU-decoded
-// 4. Smoothly crossfades into the crisp image with zero layout shift
+// Ultra-High-Performance Progressive Image Loader
+// 1. Web loads at jet speed without waiting for heavy assets
+// 2. High-performance, zero-overhead loader badge (cached trade emblem + CSS pulse)
+// 3. Optional video loop for standalone hero/about highlights
+// 4. Smooth hardware-accelerated crossfade upon GPU rasterization with zero layout shift
 
 interface Props {
   src: string;
@@ -16,6 +16,7 @@ interface Props {
   priority?: boolean;
   size?: 'sm' | 'md' | 'lg';
   showText?: boolean;
+  useVideo?: boolean;
 }
 
 const {
@@ -28,23 +29,24 @@ const {
   priority = false,
   size = 'md',
   showText = true,
+  useVideo = false,
 } = Astro.props;
 
-// Size variations for the small centered loader badge
+// Size variations for the centered loader badge
 const sizeMap = {
   sm: {
-    card: 'p-1.5 sm:p-2 rounded-xl max-w-[100px] shadow-sm',
-    video: 'w-14 sm:w-16 aspect-[16/9] rounded-md',
+    card: 'p-1.5 sm:p-2 rounded-xl max-w-[90px] shadow-xs',
+    badge: 'w-10 h-7 sm:w-12 sm:h-8',
     text: 'text-[8px]',
   },
   md: {
-    card: 'p-2 sm:p-2.5 rounded-xl max-w-[130px] shadow-md',
-    video: 'w-20 sm:w-24 aspect-[16/9] rounded-lg',
+    card: 'p-2 sm:p-2.5 rounded-xl max-w-[120px] shadow-sm',
+    badge: 'w-14 h-9 sm:w-16 sm:h-10',
     text: 'text-[9px]',
   },
   lg: {
-    card: 'p-3 sm:p-4 rounded-2xl max-w-[180px] sm:max-w-[200px] shadow-xl',
-    video: 'w-32 sm:w-36 aspect-[16/9] rounded-xl',
+    card: 'p-3 sm:p-4 rounded-2xl max-w-[170px] shadow-md',
+    badge: 'w-20 h-12 sm:w-24 sm:h-14',
     text: 'text-[10px]',
   },
 };
@@ -65,31 +67,39 @@ const currentSize = sizeMap[size] || sizeMap.md;
     loading={priority ? "eager" : "lazy"}
     fetchpriority={priority ? "high" : "auto"}
     decoding="async"
-    class={`progressive-img w-full h-full object-cover opacity-0 transition-opacity duration-700 ease-out will-change-opacity ${className}`}
+    class={`progressive-img w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-out will-change-opacity ${className}`}
   />
 
-  <!-- Individual Small Looping Logo Video Loader Overlay -->
+  <!-- Individual Progressive Loader Overlay -->
   <div
-    class="progressive-loader-overlay absolute inset-0 z-10 flex flex-col items-center justify-center bg-slate-100/70 backdrop-blur-[2px] transition-all duration-400 ease-out pointer-events-none select-none"
+    class="progressive-loader-overlay absolute inset-0 z-10 flex flex-col items-center justify-center bg-slate-100/75 backdrop-blur-[2px] transition-all duration-300 ease-out pointer-events-none select-none"
   >
-    <!-- Small Glassmorphic Loader Badge -->
+    <!-- Glassmorphic Loader Badge -->
     <div
       class={`progressive-loader-card flex flex-col items-center justify-center bg-white/95 backdrop-blur-md border border-white/90 text-center will-change-transform ${currentSize.card}`}
     >
-      <!-- Small Looping Logo Video (Plays in Under 2s Loop) -->
-      <div class={`overflow-hidden bg-slate-50 border border-slate-100 flex items-center justify-center ${currentSize.video}`}>
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-          class="w-full h-full object-contain"
-        >
-          <source src="/videos/zz_loading_loop.webm" type="video/webm" />
-          <source src="/videos/zz_loading_loop.mp4" type="video/mp4" />
-        </video>
-      </div>
+      {useVideo ? (
+        <div class={`overflow-hidden bg-slate-50 border border-slate-100 flex items-center justify-center rounded-lg ${currentSize.badge}`}>
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="none"
+            class="w-full h-full object-contain"
+          >
+            <source src="/videos/zz_loading_loop.webm" type="video/webm" />
+            <source src="/videos/zz_loading_loop.mp4" type="video/mp4" />
+          </video>
+        </div>
+      ) : (
+        <div class={`relative flex items-center justify-center overflow-hidden bg-emerald-50/60 border border-emerald-100/80 rounded-lg ${currentSize.badge}`}>
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-200/40 to-transparent -translate-x-full animate-[shimmer_1.6s_infinite]"></div>
+          <div class="flex items-center gap-1 text-[#0B1F3A] font-bold font-serif text-[10px] sm:text-xs tracking-wider">
+            <span>Z</span><span class="text-emerald-600">&</span><span>Z</span>
+          </div>
+        </div>
+      )}
 
       <!-- Compact Status Caption -->
       {showText && (
@@ -106,3 +116,11 @@ const currentSize = sizeMap[size] || sizeMap.md;
     </div>
   </div>
 </div>
+
+<style>
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+</style>
