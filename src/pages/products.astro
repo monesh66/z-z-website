@@ -481,6 +481,17 @@ const categoriesWithCounts = [
         });
       });
 
+      // Read initial category filter from URL query string
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialCategory = urlParams.get('category') || urlParams.get('filter');
+      if (initialCategory) {
+        const targetPill = document.querySelector(`.catalog-pill[data-filter="${initialCategory}"]`);
+        if (targetPill) {
+          targetPill.click();
+          targetPill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+
       // Search Handlers
       searchInput?.addEventListener('input', (e) => {
         currentQuery = e.target.value;
