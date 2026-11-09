@@ -1,11 +1,9 @@
 /**
  * ZIYA ZARA TRADING COMPANY - PRODUCT IMAGE GENERATION BACKLOG
  * 
- * Memorised catalog of commodities awaiting luxury commercial image generation.
- * Temporarily withheld from active public catalogue to prevent visual imbalance with
- * our signature white marble & gold reference format.
- * 
- * Quota reset timestamp for remaining generation: 2026-11-09T11:41:16Z
+ * Memorised catalog of commodities awaiting their own unique luxury studio image generation.
+ * Temporarily withheld from active public catalogue to ensure strict 1-to-1 unique image
+ * integrity across the live website.
  */
 
 export interface BacklogProduct {
@@ -865,5 +863,313 @@ export const backlogProducts: BacklogProduct[] = [
     image: "/images/products/machine_bottle_filling.jpg",
     specs: "Rotary Capping | Volumetric Piston Filling | Oils, Juices & Syrups",
     origin: "Packaging Machinery Division"
+  },
+
+  {
+    id: "rte-fish-moilee",
+    name: "Retort Ready-to-Eat Fish Moilee",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_seer_fish.jpg",
+    specs: "Mild Coconut Milk & Curry Leaf Broth | Seer Fish Steaks",
+    origin: "Kerala, India"
+  },
+
+  {
+    id: "rte-kerala-chicken-curry",
+    name: "Retort Ready-to-Eat Kerala Chicken Curry",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_butter_chicken.jpg",
+    specs: "Roasted Coconut & Malabar Spices | Shelf Stable Retort Pouch",
+    origin: "Kerala, India"
+  },
+
+  {
+    id: "rte-beef-chilly-fry",
+    name: "Retort Ready-to-Eat Beef Chilly Fry",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_kerala_beef_fry.jpg",
+    specs: "Crisp Onions & Green Chillies | Ready in 3 Minutes | Retort Sealed",
+    origin: "Kerala, India"
+  },
+
+  {
+    id: "val-moringa-ghee",
+    name: "Moringa Infused Herbal Ghee",
+    category: "Value-Added Produce",
+    categorySlug: "value-added-produce",
+    hsnCode: "04059020",
+    image: "/images/products/traditional_ghee.jpg",
+    specs: "Organic Moringa Leaf Infusion | High Antioxidants | Export Grade",
+    origin: "Tamil Nadu, India"
+  },
+
+  {
+    id: "snack-spicy-banana-chips",
+    name: "Spicy Masala & Jaggery Banana Chips",
+    category: "Traditional & Healthy Snacks",
+    categorySlug: "traditional-snacks",
+    hsnCode: "20089999",
+    image: "/images/products/snack_banana_chips.jpg",
+    specs: "Chilli Sprinkled / Jaggery Coated (Sharkara Upperi)",
+    origin: "Kerala, India"
+  },
+
+  {
+    id: "rte-fish-mango-curry",
+    name: "Retort Ready-to-Eat Fish Mango Curry",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_seer_fish.jpg",
+    specs: "Raw Mango & Coconut Milk Broth | Seer Fish Steaks | 24M Shelf Life",
+    origin: "Kerala & Tamil Nadu, India"
+  },
+
+  {
+    id: "rte-chilly-fish",
+    name: "Retort Ready-to-Eat Chilly Fish",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_seer_fish.jpg",
+    specs: "Indo-Chinese Glaze | Boneless Fish Chunks | Ambient Retort Pouch",
+    origin: "Certified Export Facility"
+  },
+
+  {
+    id: "rte-kerala-fish-curry",
+    name: "Retort Traditional Kerala Fish Curry",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_seer_fish.jpg",
+    specs: "Clay-Pot Style Kudampuli & Red Chilli Gravy | Kingfish / Sardine",
+    origin: "Kottayam & Alleppey, Kerala"
+  },
+
+  {
+    id: "rte-kadai-chicken",
+    name: "Retort Ready-to-Eat Kadai Chicken",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_butter_chicken.jpg",
+    specs: "Crushed Coriander & Bell Pepper Masala | Boneless Halal Chicken",
+    origin: "Certified Export Facility"
+  },
+
+  {
+    id: "rte-chilly-chicken",
+    name: "Retort Ready-to-Eat Chilly Chicken",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_butter_chicken.jpg",
+    specs: "Spicy Oriental Glaze | Tender Boneless Cubes | Zero Preservatives",
+    origin: "Certified Export Facility"
+  },
+
+  {
+    id: "rte-chicken-pepper-fry",
+    name: "Retort Ready-to-Eat Chicken Pepper Fry",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_curry_butter_chicken.jpg",
+    specs: "Malabar Black Peppercorn & Curry Leaf Glaze | Dry Roast Style",
+    origin: "Kerala & Tamil Nadu, India"
+  },
+
+  {
+    id: "rte-kerala-beef-curry",
+    name: "Retort Ready-to-Eat Kerala Beef Curry",
+    category: "Ready-to-Eat & Retort Curries",
+    categorySlug: "ready-to-eat-curries",
+    hsnCode: "21069099",
+    image: "/images/products/retort_kerala_beef_fry.jpg",
+    specs: "Rich Coconut Milk & Garam Masala Gravy | Tender Boneless Cubes",
+    origin: "Kerala, India"
+  },
+
+  {
+    id: "rtc-adai-instant-mix",
+    name: "Instant Adai Multi-Lentil Breakfast Mix",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "19021900",
+    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    specs: "Rice, Toor, Chana & Urad Lentil Blend | High Protein | 12M Shelf Life",
+    origin: "Tamil Nadu, India"
+  },
+
+  {
+    id: "rtc-multigrain-dosa-mix",
+    name: "Multi-Grain Dosa Instant Mix",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "19021900",
+    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    specs: "Ragi, Jowar, Bajra & Wheat Blend | Diabetic-Friendly | Export Pack",
+    origin: "Tamil Nadu, India"
+  },
+
+  {
+    id: "rtc-rava-dosa-mix",
+    name: "Instant Rava Dosa Crispy Mix",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "19021900",
+    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    specs: "Semolina, Rice Flour, Cumin & Black Pepper | Crisp Golden Texture",
+    origin: "Tamil Nadu, India"
+  },
+
+  {
+    id: "rtc-rava-kitchadi-mix",
+    name: "Instant Rava Kitchadi & Upma Mix",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "19021900",
+    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    specs: "Roasted Semolina with Mustard, Dal & Veggies | 3-Min Preparation",
+    origin: "Tamil Nadu, India"
+  },
+
+  {
+    id: "rtc-millet-pongal-mix",
+    name: "Healthy Millet Pongal Breakfast Mix",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "19021900",
+    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    specs: "Foxtail & Little Millet with Moong Dal & Cashews | Low Glycemic",
+    origin: "Tamil Nadu, India"
+  },
+
+  {
+    id: "rtc-rice-pongal-mix",
+    name: "Traditional South Indian Ghee Pongal Mix",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "19021900",
+    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    specs: "Raw Rice, Split Yellow Moong, Cumin, Pepper & Asafoetida Blend",
+    origin: "Tamil Nadu, India"
+  },
+
+  {
+    id: "rtc-rava-kesari-mix",
+    name: "Instant Rava Kesari Dessert Mix",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "19021900",
+    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    specs: "Roasted Rava with Cardamom & Saffron Notes | Add Ghee & Water",
+    origin: "Tamil Nadu, India"
+  },
+
+  {
+    id: "rtc-ragi-dosa-mix",
+    name: "Finger Millet (Ragi) Dosa Instant Mix",
+    category: "Ready-to-Cook Mixes",
+    categorySlug: "ready-to-cook-mixes",
+    hsnCode: "19021900",
+    image: "/images/products/rtc_dosa_batter_mix.jpg",
+    specs: "100% Whole Finger Millet Flour | Calcium Rich | Traditional Blend",
+    origin: "Karnataka & Tamil Nadu, India"
+  },
+
+  {
+    id: "val-multifloral-honey",
+    name: "Organic Multifloral & Comb Honey",
+    category: "Value-Added Produce",
+    categorySlug: "value-added-produce",
+    hsnCode: "04090000",
+    image: "/images/products/wild_forest_honey.jpg",
+    specs: "Unpasteurized Natural Bee Nectar | Pure Honey with Comb Slices",
+    origin: "Himachal & Nilgiris, India"
+  },
+
+  {
+    id: "snack-omapodi-sev",
+    name: "Traditional Omapodi & Fine Bhujia Sev",
+    category: "Traditional & Healthy Snacks",
+    categorySlug: "traditional-snacks",
+    hsnCode: "19059090",
+    image: "/images/products/snack_madras_mixture.jpg",
+    specs: "Gram Flour Seasoned with Ajwain (Omam) | Delicate Melt-in-Mouth",
+    origin: "Tamil Nadu, India"
+  },
+
+  {
+    id: "snack-uppu-seedai",
+    name: "Traditional Uppu Seedai & Vella Seedai",
+    category: "Traditional & Healthy Snacks",
+    categorySlug: "traditional-snacks",
+    hsnCode: "19059090",
+    image: "/images/products/snack_kai_murukku.jpg",
+    specs: "Crispy Roasted Rice Flour Marbles with Urad & Sesame | Sweet & Salted",
+    origin: "Chettinad, Tamil Nadu, India"
+  },
+
+  {
+    id: "snack-kara-boondi",
+    name: "Spiced Kara Boondi & Masala Crunch",
+    category: "Traditional & Healthy Snacks",
+    categorySlug: "traditional-snacks",
+    hsnCode: "21069099",
+    image: "/images/products/snack_madras_mixture.jpg",
+    specs: "Crisp Golden Gram Droplets with Curry Leaves & Garlic Pods",
+    origin: "Tamil Nadu, India"
+  },
+
+  {
+    id: "snack-baked-banana-chips",
+    name: "Baked Plantain Chips (Low-Oil Healthy)",
+    category: "Traditional & Healthy Snacks",
+    categorySlug: "traditional-snacks",
+    hsnCode: "20089999",
+    image: "/images/products/snack_banana_chips.jpg",
+    specs: "Hot Air Baked Raw Banana Slices | 70% Less Oil | Pink Salt",
+    origin: "Kerala, India"
+  },
+
+  {
+    id: "millet-samai-little",
+    name: "Little Millet Grains (Samai Whole)",
+    category: "Millets & Superfoods",
+    categorySlug: "millets-and-superfoods",
+    hsnCode: "10082900",
+    image: "/images/products/millet_foxtail.jpg",
+    specs: "Small Golden Grains | Low Glycemic Index | Rice Substitute",
+    origin: "Tamil Nadu & Andhra Pradesh, India"
+  },
+
+  {
+    id: "millet-kodo-varagu",
+    name: "Kodo Millet Grains (Varagu Whole)",
+    category: "Millets & Superfoods",
+    categorySlug: "millets-and-superfoods",
+    hsnCode: "10082900",
+    image: "/images/products/millet_foxtail.jpg",
+    specs: "High Dietary Fiber (14%) | Gluten-Free | Sortex Cleaned",
+    origin: "Madhya Pradesh & Tamil Nadu, India"
+  },
+
+  {
+    id: "millet-barnyard-kuthiraivali",
+    name: "Barnyard Millet (Kuthiraivali Whole)",
+    category: "Millets & Superfoods",
+    categorySlug: "millets-and-superfoods",
+    hsnCode: "10082900",
+    image: "/images/products/millet_foxtail.jpg",
+    specs: "Fastest Digesting Ancient Grain | Rich in Iron | Fasting Food",
+    origin: "Uttarakhand & Tamil Nadu, India"
   }
 ];
