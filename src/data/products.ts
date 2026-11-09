@@ -477,48 +477,52 @@ export const productCategories: ProductCategory[] = [
     slug: "frozen-foods-and-fruits",
     title: "Frozen Foods & IQF Tropical Produce",
     badge: "BLAST FROZEN • -18°C COLD CHAIN",
-    shortDescription: "IQF Alphonso mango chunks, tropical fruit dices, paneer cubes, samosas, parottas, and ready-to-fry appetizers.",
+    shortDescription: "Export-grade Halal frozen buffalo beef cuts, IQF tropical fruits, paneer cubes, samosas, and flaky parottas.",
     longDescription:
-      "State-of-the-art Individually Quick Frozen (IQF) processing locks in natural cell structure, nutritional vitamins, color, and field-fresh taste. Maintained under strict uninterrupted -18°C cold chain logistics from farm blast freezers to destination container ports.",
+      "State-of-the-art blast freezing (-35°C) and Individually Quick Frozen (IQF) processing locks in natural cellular structure, nutritional value, and fresh flavor. From premium Halal boneless buffalo meat to IQF fruits, vegetables, and savory appetizers, maintained under continuous -18°C reefer cold chains.",
     image: "/images/products/iqf_mango_chunks.jpg",
     items: [
+      "Frozen Boneless Buffalo Meat / Beef (Bobby Veal Cuts, Topside, Silver Side, Tenderloin)",
+      "Halal Compensated Buffalo Meat & Frozen Mince / Keema",
+      "Frozen Kerala Spiced Beef Cuts & Homestyle Curries",
       "IQF Alphonso & Kesar Mango Dices (10x10mm / 15x15mm)",
-      "IQF Whole Strawberries, Pomegranate Arils & Guava Slices",
-      "IQF Red Papaya Chunks, Raw Coconut Flesh & Custard Apple Pulp",
+      "IQF Whole Strawberries, Pomegranate Arils & Papaya Chunks",
       "IQF Malai Paneer Cubes & Cut Vegetables (Sweet Corn, Peas, Okra)",
       "Frozen Multi-Layered Malabar Parottas & Amritsari Bhaturas",
-      "Crispy Vegetable Spring Rolls & Spiced Aloo Tikki Patties"
+      "Crispy Vegetable Spring Rolls, Samosas & Spiced Aloo Tikki"
     ],
     featuredItems: [
       {
-        name: "IQF Alphonso Mango Dices",
+        name: "Frozen Mango Chunks",
         image: "/images/products/iqf_mango_chunks.jpg",
         spec: "100% Ratnagiri Alphonso | -18°C",
       },
       {
-        name: "IQF Frozen Malai Paneer",
+        name: "Frozen Paneer Cubes",
         image: "/images/products/frozen_paneer.jpg",
         spec: "Pure Cow Milk | Soft & Spongy",
       },
       {
-        name: "Frozen Malabar Parottas",
+        name: "Frozen Malabar Parotta",
         image: "/images/products/frozen_malabar_parotta.jpg",
         spec: "Multi-Layered Hand-Tossed | Pre-Cooked",
       },
     ],
     keySpecs: [
       "Blast freezing technology at -35°C, storage at -18°C",
+      "Halal certified integrated abattoir processing (APEDA approved)",
       "Zero added preservatives, zero synthetic colors or sugar",
       "Individually Quick Frozen (IQF) prevents clumping",
       "BRC, HACCP, Halal & ISO 22000 certified processing facilities"
     ],
     packaging: [
+      "IWP / IVP Vacuum Poly Packs in 18kg - 25kg Master Cartons (Meats)",
       "400g, 500g, 1kg & 2.5kg Poly Laminated Retail Stand-Up Pouches",
       "10kg & 20kg Food-Grade Bulk Master Corrugated Cartons",
       "Reefer Container (20ft / 40ft RF) Shipment at -18°C"
     ],
-    hsCode: "HS 0811.90 / 0710.80 / 0406.10 / 1904.90",
-    origin: "Maharashtra, Gujarat, Punjab & Tamil Nadu, India"
+    hsCode: "HS 0202.30 / 0811.90 / 0710.80 / 0406.10 / 1904.90",
+    origin: "Maharashtra, Uttar Pradesh, Punjab, Gujarat & Tamil Nadu, India"
   },
 
   // 14. BIODEGRADABLE TABLEWARE & ECO-PACKAGING

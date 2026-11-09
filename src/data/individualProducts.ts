@@ -68,7 +68,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "golden-sella-basmati",
-    name: "1121 Golden Sella Basmati Rice",
+    name: "Golden Sella Basmati Rice",
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063020",
@@ -79,7 +79,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "ir64-parboiled-rice",
-    name: "IR-64 Parboiled Long Grain Rice",
+    name: "IR-64 Parboiled Rice",
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063010",
@@ -90,7 +90,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "toor-dal",
-    name: "Toor Dal (Split Yellow Pigeon Peas)",
+    name: "Toor Dal",
     category: "Pulses & Dals",
     categorySlug: "pulses-and-dals",
     hsnCode: "07136000",
@@ -101,7 +101,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "yellow-moong-dal",
-    name: "Yellow Moong Dal (Split Mung)",
+    name: "Yellow Moong Dal",
     category: "Pulses & Dals",
     categorySlug: "pulses-and-dals",
     hsnCode: "07133100",
@@ -112,7 +112,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "urad-dal",
-    name: "Urad Dal (Black Matpe Split & Gota)",
+    name: "Urad Dal",
     category: "Pulses & Dals",
     categorySlug: "pulses-and-dals",
     hsnCode: "07133100",
@@ -123,7 +123,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "green-moong-whole",
-    name: "Green Moong Whole (Whole Green Gram)",
+    name: "Green Moong Whole",
     category: "Pulses & Dals",
     categorySlug: "pulses-and-dals",
     hsnCode: "07133100",
@@ -134,7 +134,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "chana-dal",
-    name: "Chana Dal (Bengal Gram Split)",
+    name: "Chana Dal",
     category: "Pulses & Dals",
     categorySlug: "pulses-and-dals",
     hsnCode: "07132000",
@@ -145,7 +145,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "alleppey-turmeric",
-    name: "Alleppey Turmeric Whole Fingers",
+    name: "Alleppey Turmeric Fingers",
     category: "Spices & Condiments",
     categorySlug: "spices-and-condiments",
     hsnCode: "09103020",
@@ -156,7 +156,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "green-cardamom",
-    name: "Bold Green Cardamom",
+    name: "Green Cardamom",
     category: "Spices & Condiments",
     categorySlug: "spices-and-condiments",
     hsnCode: "09083110",
@@ -167,7 +167,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "tellicherry-black-pepper",
-    name: "Tellicherry Black Peppercorns",
+    name: "Tellicherry Black Pepper",
     category: "Spices & Condiments",
     categorySlug: "spices-and-condiments",
     hsnCode: "09041110",
@@ -178,7 +178,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "guntur-red-chillies",
-    name: "Guntur Teja Dried Red Chillies",
+    name: "Guntur Red Chillies",
     category: "Spices & Condiments",
     categorySlug: "spices-and-condiments",
     hsnCode: "09042110",
@@ -189,7 +189,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "cumin-seeds",
-    name: "Cumin Seeds (Jeera Whole)",
+    name: "Cumin Seeds",
     category: "Spices & Condiments",
     categorySlug: "spices-and-condiments",
     hsnCode: "09093129",
@@ -200,7 +200,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "coriander-seeds",
-    name: "Coriander Seeds (Dhania Whole)",
+    name: "Coriander Seeds",
     category: "Spices & Condiments",
     categorySlug: "spices-and-condiments",
     hsnCode: "09092190",
@@ -211,7 +211,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "whole-cloves",
-    name: "Whole Aromatic Cloves",
+    name: "Whole Cloves",
     category: "Spices & Condiments",
     categorySlug: "spices-and-condiments",
     hsnCode: "09071000",
@@ -222,7 +222,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "milling-wheat-grains",
-    name: "Milling Wheat & Feed Grains",
+    name: "Milling Wheat Grains",
     category: "Agricultural Grains",
     categorySlug: "agricultural-grains",
     hsnCode: "10019910",
@@ -233,7 +233,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "finger-millet-ragi",
-    name: "Finger Millet (Ragi Whole)",
+    name: "Finger Millet (Ragi)",
     category: "Millets & Superfoods",
     categorySlug: "millets-and-superfoods",
     hsnCode: "10082100",
@@ -244,7 +244,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "pearl-millet-bajra",
-    name: "Pearl Millet (Bajra Grains)",
+    name: "Pearl Millet (Bajra)",
     category: "Millets & Superfoods",
     categorySlug: "millets-and-superfoods",
     hsnCode: "10082100",
@@ -255,7 +255,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "sorghum-jowar",
-    name: "White Sorghum (Jowar Grains)",
+    name: "Sorghum (Jowar)",
     category: "Millets & Superfoods",
     categorySlug: "millets-and-superfoods",
     hsnCode: "10079000",
@@ -266,7 +266,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "foxtail-millet",
-    name: "Foxtail Millet (Thinai)",
+    name: "Foxtail Millet",
     category: "Millets & Superfoods",
     categorySlug: "millets-and-superfoods",
     hsnCode: "10082900",
@@ -277,7 +277,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "fresh-banana-leaves",
-    name: "Fresh Cut Banana Leaves",
+    name: "Fresh Banana Leaves",
     category: "Banana Leaves & Eco",
     categorySlug: "banana-leaves-and-eco",
     hsnCode: "14049090",
@@ -288,7 +288,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "frozen-sweet-corn",
-    name: "IQF Frozen Sweet Corn Kernels",
+    name: "Frozen Sweet Corn",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "07104000",
@@ -299,7 +299,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "frozen-green-peas",
-    name: "IQF Frozen Green Peas",
+    name: "Frozen Green Peas",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "07102100",
@@ -310,7 +310,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "frozen-malabar-parotta",
-    name: "Frozen Malabar Parottas (Layered Flaky)",
+    name: "Frozen Malabar Parotta",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "19059090",
@@ -321,7 +321,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "rte-seer-fish-curry",
-    name: "Retort Ready-to-Eat Seer Fish Curry",
+    name: "Seer Fish Curry",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -332,7 +332,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "rte-butter-chicken",
-    name: "Retort Ready-to-Eat Butter Chicken",
+    name: "Butter Chicken",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -343,7 +343,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "rte-kerala-beef-fry",
-    name: "Retort Ready-to-Eat Kerala Beef Fry",
+    name: "Kerala Beef Fry",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -354,7 +354,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "rtc-dosa-batter-mix",
-    name: "Instant Dosa Batter Dry Mix",
+    name: "Dosa Batter Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -365,7 +365,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "rtc-biryani-paste-arcot",
-    name: "Arcot & Chettinad Biryani Pastes",
+    name: "Biryani Paste",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "21039090",
@@ -376,7 +376,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "val-traditional-ghee",
-    name: "Pure Traditional Desi Cow Ghee",
+    name: "Desi Cow Ghee",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "04059020",
@@ -387,7 +387,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "val-virgin-coconut-oil",
-    name: "Cold-Pressed Extra Virgin Coconut Oil",
+    name: "Virgin Coconut Oil",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "15131100",
@@ -398,7 +398,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "val-wild-forest-honey",
-    name: "Pure Wild Forest Honey & Comb",
+    name: "Wild Forest Honey",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "04090000",
@@ -409,7 +409,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "val-mango-pulp",
-    name: "Alphonso & Kesar Mango Pulp",
+    name: "Mango Pulp",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "20079910",
@@ -420,7 +420,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "val-cashew-kernels",
-    name: "Export Graded Cashew Kernels (W240 & W320)",
+    name: "Cashew Kernels",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "08013210",
@@ -431,7 +431,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "snack-kerala-banana-chips",
-    name: "Kerala Banana Chips (Pure Coconut Oil)",
+    name: "Banana Chips",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "20089999",
@@ -442,7 +442,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "snack-madras-mixture",
-    name: "Authentic Madras Mixture & Savory Crunch",
+    name: "Madras Mixture",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "21069099",
@@ -453,7 +453,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "snack-kai-murukku",
-    name: "Traditional Kai Murukku & Butter Murukku",
+    name: "Kai Murukku",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "19059090",
@@ -464,7 +464,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "snack-roasted-makhana",
-    name: "Roasted Fox Nuts (Makhana) - Spiced & Salted",
+    name: "Roasted Makhana",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "19041090",
@@ -475,7 +475,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "snack-peanut-chikki",
-    name: "Traditional Jaggery Peanut Chikki / Brittle",
+    name: "Peanut Chikki",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "17049020",
@@ -486,7 +486,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "frozen-samosas",
-    name: "Frozen Cocktail Samosas",
+    name: "Frozen Samosas",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "19059090",
@@ -497,7 +497,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "frozen-paneer-cubes",
-    name: "IQF Frozen Malai Paneer Cubes",
+    name: "Frozen Paneer Cubes",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "04061000",
@@ -508,7 +508,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "frozen-spring-rolls",
-    name: "Frozen Crispy Vegetable Spring Rolls",
+    name: "Frozen Spring Rolls",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "19049000",
@@ -519,7 +519,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "frozen-aloo-tikki",
-    name: "Frozen Spiced Aloo Tikki Patties",
+    name: "Frozen Aloo Tikki",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "20041000",
@@ -530,7 +530,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "frozen-bhatura",
-    name: "Frozen Fluffy Amritsari Bhatura",
+    name: "Frozen Bhatura",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "19059090",
@@ -541,7 +541,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "iqf-alphonso-mango-chunks",
-    name: "IQF Alphonso Mango Dices & Chunks",
+    name: "Frozen Mango Chunks",
     category: "Frozen Fruits",
     categorySlug: "frozen-fruits",
     hsnCode: "08119010",
@@ -552,7 +552,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "iqf-strawberry-whole",
-    name: "IQF Whole Strawberries & Halves",
+    name: "Frozen Strawberries",
     category: "Frozen Fruits",
     categorySlug: "frozen-fruits",
     hsnCode: "08111000",
@@ -563,7 +563,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "iqf-pomegranate-arils",
-    name: "IQF Pomegranate Arils (Ruby Kernels)",
+    name: "Frozen Pomegranate Arils",
     category: "Frozen Fruits",
     categorySlug: "frozen-fruits",
     hsnCode: "08119090",
@@ -574,7 +574,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "iqf-papaya-dices",
-    name: "IQF Red Papaya Chunks & Dices",
+    name: "Frozen Papaya Chunks",
     category: "Frozen Fruits",
     categorySlug: "frozen-fruits",
     hsnCode: "08119090",
@@ -585,7 +585,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "bio-areca-palm-plates-10inch",
-    name: "Areca Palm Leaf 10\" Round Dinner Plates",
+    name: "Areca Palm Round Plates",
     category: "Bio Disposables",
     categorySlug: "bio-disposables",
     hsnCode: "14049090",
@@ -596,7 +596,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "bio-areca-palm-compartment-trays",
-    name: "Areca Palm Leaf 4 & 5-Compartment Meal Trays",
+    name: "Areca Compartment Trays",
     category: "Bio Disposables",
     categorySlug: "bio-disposables",
     hsnCode: "14049090",
@@ -607,7 +607,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "bio-areca-palm-bowls",
-    name: "Areca Palm Leaf Soup & Dessert Bowls (4\" & 6\")",
+    name: "Areca Palm Bowls",
     category: "Bio Disposables",
     categorySlug: "bio-disposables",
     hsnCode: "14049090",
@@ -618,7 +618,7 @@ export const individualProducts: IndividualProduct[] = [
 
   {
     id: "bio-bagasse-clamshell-boxes",
-    name: "Sugarcane Bagasse Clamshell Burger & Meal Boxes",
+    name: "Bagasse Clamshell Boxes",
     category: "Bio Disposables",
     categorySlug: "bio-disposables",
     hsnCode: "48237090",

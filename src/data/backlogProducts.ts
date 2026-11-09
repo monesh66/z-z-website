@@ -20,7 +20,7 @@ export interface BacklogProduct {
 export const backlogProducts: BacklogProduct[] = [
   {
     id: "organic-chickpeas",
-    name: "Kabuli Chickpeas (Dollar Chana)",
+    name: "Kabuli Chickpeas",
     category: "Pulses & Dals",
     categorySlug: "pulses-and-dals",
     hsnCode: "07132000",
@@ -31,7 +31,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "red-lentils",
-    name: "Red Split Lentils (Masoor Dal)",
+    name: "Red Masoor Dal",
     category: "Pulses & Dals",
     categorySlug: "pulses-and-dals",
     hsnCode: "07134000",
@@ -42,7 +42,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "cavendish-bananas",
-    name: "Fresh Cavendish Bananas (G9)",
+    name: "Cavendish Bananas",
     category: "Fresh Fruits",
     categorySlug: "fresh-fruits",
     hsnCode: "08039010",
@@ -53,7 +53,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "fresh-pomegranates",
-    name: "Fresh Pomegranates (Bhagwa Grade A)",
+    name: "Fresh Pomegranates",
     category: "Fresh Fruits",
     categorySlug: "fresh-fruits",
     hsnCode: "08109010",
@@ -64,7 +64,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "indian-mangoes",
-    name: "Alphonso & Kesar Mangoes",
+    name: "Fresh Mangoes",
     category: "Fresh Fruits",
     categorySlug: "fresh-fruits",
     hsnCode: "08045020",
@@ -75,7 +75,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "fresh-table-grapes",
-    name: "Fresh Table Grapes (Thomson Seedless)",
+    name: "Table Grapes",
     category: "Fresh Fruits",
     categorySlug: "fresh-fruits",
     hsnCode: "08061000",
@@ -86,7 +86,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "fresh-coconuts",
-    name: "Semi-Husked Fresh Mature Coconuts",
+    name: "Fresh Mature Coconuts",
     category: "Fresh Fruits",
     categorySlug: "fresh-fruits",
     hsnCode: "08011910",
@@ -97,7 +97,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "fresh-red-onions",
-    name: "Fresh Red Onions (Nashik Quality)",
+    name: "Fresh Red Onions",
     category: "Fresh Vegetables",
     categorySlug: "fresh-vegetables",
     hsnCode: "07031010",
@@ -108,7 +108,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "fresh-tomatoes",
-    name: "Fresh Field Tomatoes",
+    name: "Fresh Tomatoes",
     category: "Fresh Vegetables",
     categorySlug: "fresh-vegetables",
     hsnCode: "07020000",
@@ -119,7 +119,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "fresh-potatoes",
-    name: "Fresh Table & Processing Potatoes",
+    name: "Fresh Potatoes",
     category: "Fresh Vegetables",
     categorySlug: "fresh-vegetables",
     hsnCode: "07019000",
@@ -130,7 +130,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "fresh-ginger",
-    name: "Fresh Ginger Roots (Shimoga Quality)",
+    name: "Fresh Ginger",
     category: "Fresh Vegetables",
     categorySlug: "fresh-vegetables",
     hsnCode: "07099910",
@@ -141,7 +141,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "fresh-garlic",
-    name: "Fresh Garlic Bulbs",
+    name: "Fresh Garlic",
     category: "Fresh Vegetables",
     categorySlug: "fresh-vegetables",
     hsnCode: "07032000",
@@ -152,7 +152,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "fresh-green-chillies",
-    name: "Fresh Green Chillies (G4)",
+    name: "Fresh Green Chillies",
     category: "Fresh Vegetables",
     categorySlug: "fresh-vegetables",
     hsnCode: "07096010",
@@ -163,7 +163,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "fresh-curry-leaves",
-    name: "Fresh Aromatic Curry Leaves",
+    name: "Fresh Curry Leaves",
     category: "Fresh Vegetables",
     categorySlug: "fresh-vegetables",
     hsnCode: "07099990",
@@ -185,7 +185,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "frozen-mixed-vegetables",
-    name: "IQF Frozen Mixed Vegetables",
+    name: "Frozen Mixed Vegetables",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "07109000",
@@ -196,7 +196,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "frozen-grated-coconut",
-    name: "Frozen Fresh Grated Coconut",
+    name: "Frozen Grated Coconut",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "08011990",
@@ -207,7 +207,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "frozen-whole-wheat-chapati",
-    name: "Frozen Plain Chapati & Phulka Roti",
+    name: "Frozen Chapati",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "19059090",
@@ -218,7 +218,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "frozen-cut-okra",
-    name: "IQF Frozen Cut Okra (Bhindi)",
+    name: "Frozen Cut Okra",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "07108090",
@@ -229,7 +229,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "frozen-drumsticks",
-    name: "IQF Frozen Cut Drumsticks (Moringa Pods)",
+    name: "Frozen Cut Drumsticks",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "07108090",
@@ -240,7 +240,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "frozen-baby-corn",
-    name: "IQF Frozen Tender Baby Corn Cuts",
+    name: "Frozen Baby Corn",
     category: "Frozen Foods",
     categorySlug: "frozen-foods",
     hsnCode: "07108090",
@@ -250,8 +250,64 @@ export const backlogProducts: BacklogProduct[] = [
   },
 
   {
+    id: "frozen-boneless-beef-cuts",
+    name: "Frozen Boneless Buffalo Meat / Beef Cuts",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "02023000",
+    image: "/images/products/frozen_boneless_beef.jpg",
+    specs: "Halal Certified | 95% - 98% Chemical Lean (CL) | Bobby Veal, Topside & Tenderloin | Blast Frozen -35°C",
+    origin: "APEDA Approved Integrated Meat Plants, Uttar Pradesh & Punjab, India"
+  },
+
+  {
+    id: "frozen-halal-buffalo-meat",
+    name: "Frozen Halal Buffalo Meat (Compensated)",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "02023000",
+    image: "/images/products/frozen_halal_buffalo.jpg",
+    specs: "60% Forequarter + 40% Hindquarter Ratio | IWP / IVP | -18°C Cold Chain",
+    origin: "APEDA Certified Processing Facilities, Maharashtra & UP, India"
+  },
+
+  {
+    id: "frozen-beef-mince-keema",
+    name: "Frozen Minced Buffalo Meat (Keema)",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "02023000",
+    image: "/images/products/frozen_beef_mince.jpg",
+    specs: "Finely Ground 85/15 Lean Ratio | Individually Quick Frozen | Zero Additives",
+    origin: "Certified Processing Units, India"
+  },
+
+  {
+    id: "frozen-kerala-beef-chilly",
+    name: "Frozen Kerala Spiced Beef Cuts",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "16025000",
+    image: "/images/products/frozen_beef_chilly.jpg",
+    specs: "Marinated in Crushed Black Pepper, Ginger, Garlic & Coconut Slivers | Blast Frozen RTC",
+    origin: "Kerala & Tamil Nadu, India"
+  },
+
+  {
+    id: "frozen-beef-curry-tray",
+    name: "Frozen Homestyle Beef Curry",
+    category: "Frozen Foods",
+    categorySlug: "frozen-foods",
+    hsnCode: "16025000",
+    image: "/images/products/frozen_beef_curry.jpg",
+    specs: "Slow Cooked in Roasted Spices & Shallots | Blast Frozen Tray Pack | 18M Shelf Life",
+    origin: "Kerala, India"
+  },
+
+
+  {
     id: "iqf-guava-slices",
-    name: "IQF Pink & White Guava Slices",
+    name: "Frozen Guava Slices",
     category: "Frozen Fruits",
     categorySlug: "frozen-fruits",
     hsnCode: "08119090",
@@ -262,7 +318,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "iqf-coconut-chunks",
-    name: "IQF Raw Coconut Flesh Chunks",
+    name: "Frozen Coconut Chunks",
     category: "Frozen Fruits",
     categorySlug: "frozen-fruits",
     hsnCode: "08119090",
@@ -273,7 +329,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "iqf-chikoo-sapota",
-    name: "IQF Sapota (Chikoo) Dices",
+    name: "Frozen Sapota Dices",
     category: "Frozen Fruits",
     categorySlug: "frozen-fruits",
     hsnCode: "08119090",
@@ -284,7 +340,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "iqf-custard-apple-pulp",
-    name: "IQF Custard Apple (Sitaphal) Chunks & Pulp",
+    name: "Frozen Custard Apple Pulp",
     category: "Frozen Fruits",
     categorySlug: "frozen-fruits",
     hsnCode: "08119090",
@@ -295,7 +351,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "bio-bagasse-compartment-trays",
-    name: "Sugarcane Bagasse 5-Compartment Meal Trays",
+    name: "Bagasse Compartment Trays",
     category: "Bio Disposables",
     categorySlug: "bio-disposables",
     hsnCode: "48237090",
@@ -306,7 +362,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "bio-birchwood-cutlery-set",
-    name: "Natural Birchwood Cutlery Set (Fork, Spoon & Knife)",
+    name: "Birchwood Cutlery Set",
     category: "Bio Disposables",
     categorySlug: "bio-disposables",
     hsnCode: "44199090",
@@ -317,7 +373,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "bio-kraft-paper-bowls",
-    name: "Biodegradable Kraft Paper Salad & Noodle Bowls",
+    name: "Kraft Paper Bowls",
     category: "Bio Disposables",
     categorySlug: "bio-disposables",
     hsnCode: "48239090",
@@ -328,7 +384,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "bio-bamboo-drinking-straws",
-    name: "Natural Bamboo & Paper Drinking Straws",
+    name: "Bamboo Straws",
     category: "Bio Disposables",
     categorySlug: "bio-disposables",
     hsnCode: "14011000",
@@ -339,7 +395,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "bio-cornstarch-garbage-bags",
-    name: "Cornstarch PLA 100% Compostable Waste Bags",
+    name: "Compostable Bags",
     category: "Bio Disposables",
     categorySlug: "bio-disposables",
     hsnCode: "39232990",
@@ -350,7 +406,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-idly-batter-mix",
-    name: "Instant Idly Batter Dry Mix",
+    name: "Idly Batter Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -361,7 +417,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-vada-mix",
-    name: "Instant Medu Vada Mix",
+    name: "Vada Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -372,7 +428,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-sambar-paste",
-    name: "Traditional Sambar & Kathamba Paste",
+    name: "Sambar Paste",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "21039090",
@@ -383,7 +439,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-prawns-pickle",
-    name: "Non-Veg Prawns & Fish Pickle",
+    name: "Prawns Pickle",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "20019000",
@@ -394,7 +450,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-cold-pressed-sesame-oil",
-    name: "Cold-Pressed Sesame (Gingelly) Oil",
+    name: "Sesame Oil",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "15155091",
@@ -405,7 +461,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-moringa-powder",
-    name: "Organic Moringa Leaf Powder & Health Mix",
+    name: "Moringa Leaf Powder",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "12119099",
@@ -416,7 +472,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rice-seeraga-samba",
-    name: "Seeraga Samba Biryani Rice (Jeera Samba)",
+    name: "Seeraga Samba Rice",
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063090",
@@ -427,7 +483,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rice-karuppu-kavuni",
-    name: "Karuppu Kavuni Black Rice (Heritage Superfood)",
+    name: "Karuppu Kavuni Rice",
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063090",
@@ -438,7 +494,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rice-mappillai-samba",
-    name: "Mappillai Samba (Ancient Red Rice)",
+    name: "Mappillai Samba Rice",
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063090",
@@ -449,7 +505,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "machine-retort-sterilization",
-    name: "Commercial Retort Sterilization Machine",
+    name: "Retort Sterilization Machine",
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84198990",
@@ -460,7 +516,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "machine-pouch-packing",
-    name: "Automated Food Pouch Packing & Sealing Machine",
+    name: "Pouch Packing Machine",
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84223000",
@@ -471,7 +527,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "machine-food-dehydrator",
-    name: "Commercial Cabinet & Tunnel Food Dehydrator",
+    name: "Food Dehydrator",
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84193900",
@@ -482,7 +538,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-vathakulambu-mix",
-    name: "Traditional Vathakulambu & Puliyodarai Mix",
+    name: "Vathakulambu Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "21039090",
@@ -493,7 +549,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-palada-pradhaman-mix",
-    name: "Kerala Palada Pradhaman & Payasam Mix",
+    name: "Palada Pradhaman Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -504,7 +560,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-fish-pickle-sardine",
-    name: "Coastal Sardine & Tuna Fish Pickle",
+    name: "Fish Pickle",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "20019000",
@@ -515,7 +571,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-chicken-beef-pickle",
-    name: "Traditional Chicken & Beef Pickle",
+    name: "Chicken & Beef Pickle",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "20019000",
@@ -526,7 +582,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "spice-chicken-65-masala",
-    name: "Authentic Chicken 65 & Kebab Masala",
+    name: "Chicken 65 Masala",
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
@@ -537,7 +593,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "spice-tandoori-masala",
-    name: "Tandoori BBQ & Tikka Spice Blend",
+    name: "Tandoori Masala",
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
@@ -548,7 +604,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "spice-butter-chicken-masala",
-    name: "Butter Chicken & Paneer Makhani Masala",
+    name: "Butter Chicken Masala",
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
@@ -559,7 +615,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "spice-mysore-mutton-masala",
-    name: "Mysore Mutton & Meat Masala Blend",
+    name: "Mutton Masala",
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
@@ -570,7 +626,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "spice-sambar-powder",
-    name: "Traditional Madras Sambar Powder",
+    name: "Sambar Powder",
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
@@ -581,7 +637,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "spice-rasam-powder",
-    name: "South Indian Pepper Rasam Powder",
+    name: "Rasam Powder",
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
@@ -592,7 +648,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "spice-garam-masala",
-    name: "Royal Shahi Garam Masala Blend",
+    name: "Garam Masala",
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
@@ -603,7 +659,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "spice-hyderabadi-biryani-masala",
-    name: "Hyderabadi Dum Biryani Masala",
+    name: "Biryani Masala",
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "09109100",
@@ -614,7 +670,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "spice-peri-peri-seasoning",
-    name: "Peri Peri & International Seasoning Blends",
+    name: "Peri Peri Seasoning",
     category: "Spices & Seasonings",
     categorySlug: "spices-and-seasonings",
     hsnCode: "21039040",
@@ -625,7 +681,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-desiccated-coconut",
-    name: "Desiccated Coconut (Fine & Medium Grade)",
+    name: "Desiccated Coconut",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "08011100",
@@ -636,7 +692,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-canned-coconut-milk",
-    name: "Canned Coconut Milk & Thick Cream",
+    name: "Canned Coconut Milk",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "20081900",
@@ -647,7 +703,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-coconut-milk-powder",
-    name: "Spray-Dried Coconut Milk Powder",
+    name: "Coconut Milk Powder",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "21069099",
@@ -658,7 +714,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-coconut-sugar",
-    name: "Organic Low-Glycemic Coconut Sugar",
+    name: "Coconut Sugar",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "17029090",
@@ -669,7 +725,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-groundnut-oil",
-    name: "Wood-Pressed Pure Groundnut (Peanut) Oil",
+    name: "Groundnut Oil",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "15089091",
@@ -680,7 +736,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-mustard-oil",
-    name: "Cold-Pressed Kachi Ghani Mustard Oil",
+    name: "Mustard Oil",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "15149110",
@@ -691,7 +747,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-dehydrated-fruits",
-    name: "Dehydrated Tropical Fruits (Mango & Pineapple)",
+    name: "Dehydrated Tropical Fruits",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "08134090",
@@ -702,7 +758,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-health-drinks-mix",
-    name: "Red Banana & Beetroot Health Drink Mixes",
+    name: "Red Banana Health Mix",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "21069099",
@@ -713,7 +769,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "snack-ghee-mysore-pak",
-    name: "Authentic Traditional Ghee Mysore Pak",
+    name: "Mysore Pak",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "17049020",
@@ -724,7 +780,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "snack-traditional-laddu",
-    name: "Traditional Boondi & Besan Laddu",
+    name: "Boondi Laddu",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "17049020",
@@ -735,7 +791,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "snack-coconut-burfi",
-    name: "Authentic Thengai Burfi (Coconut Fudge)",
+    name: "Coconut Burfi",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "17049020",
@@ -746,7 +802,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "snack-millet-ragi-laddu",
-    name: "Millet Kambu & Ragi Health Laddus",
+    name: "Millet Laddu",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "19041090",
@@ -757,7 +813,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "snack-roasted-chana-peanuts",
-    name: "Roasted Salted Chana & Spiced Peanuts",
+    name: "Roasted Chana",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "20081100",
@@ -768,7 +824,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rice-kichili-samba",
-    name: "Kichili Samba Traditional Aromatic Rice",
+    name: "Kichili Samba Rice",
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063090",
@@ -779,7 +835,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rice-kerala-red-matta",
-    name: "Kerala Palakkadan Red Matta Rice",
+    name: "Kerala Red Matta Rice",
     category: "Rice & Rice Products",
     categorySlug: "rice-and-rice-products",
     hsnCode: "10063010",
@@ -790,7 +846,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "pulse-horse-gram-kollu",
-    name: "Traditional Horse Gram (Kollu Whole)",
+    name: "Horse Gram (Kollu)",
     category: "Pulses & Dals",
     categorySlug: "pulses-and-dals",
     hsnCode: "07139090",
@@ -801,7 +857,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "machine-halwa-making",
-    name: "Industrial Sweet Halwa Making Machine",
+    name: "Halwa Making Machine",
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84388090",
@@ -812,7 +868,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "machine-gulab-jamun-laddu",
-    name: "Automatic Gulab Jamun & Laddu Machine",
+    name: "Gulab Jamun & Laddu Machine",
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84381010",
@@ -823,7 +879,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "machine-steam-cooking-kettle",
-    name: "Steam Jacketed Tilting Cooking Kettle",
+    name: "Tilting Cooking Kettle",
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84198990",
@@ -834,7 +890,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "machine-deep-frying-continuous",
-    name: "Commercial Continuous Deep Frying Machine",
+    name: "Continuous Frying Machine",
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84388090",
@@ -845,7 +901,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "machine-ffs-form-fill-seal",
-    name: "High-Speed Form Fill Seal (FFS) Machine",
+    name: "Form Fill Seal (FFS) Machine",
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84223000",
@@ -856,7 +912,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "machine-bottle-filling-capping",
-    name: "Automatic Liquid Bottle Filling & Capping System",
+    name: "Bottle Filling & Capping System",
     category: "Processing & Packaging Machinery",
     categorySlug: "processing-machinery",
     hsnCode: "84223000",
@@ -867,7 +923,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rte-fish-moilee",
-    name: "Retort Ready-to-Eat Fish Moilee",
+    name: "Fish Moilee",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -878,7 +934,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rte-kerala-chicken-curry",
-    name: "Retort Ready-to-Eat Kerala Chicken Curry",
+    name: "Kerala Chicken Curry",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -889,7 +945,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rte-beef-chilly-fry",
-    name: "Retort Ready-to-Eat Beef Chilly Fry",
+    name: "Beef Chilly Fry",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -900,7 +956,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-moringa-ghee",
-    name: "Moringa Infused Herbal Ghee",
+    name: "Moringa Infused Ghee",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "04059020",
@@ -911,7 +967,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "snack-spicy-banana-chips",
-    name: "Spicy Masala & Jaggery Banana Chips",
+    name: "Spicy Banana Chips",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "20089999",
@@ -922,7 +978,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rte-fish-mango-curry",
-    name: "Retort Ready-to-Eat Fish Mango Curry",
+    name: "Fish Mango Curry",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -933,7 +989,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rte-chilly-fish",
-    name: "Retort Ready-to-Eat Chilly Fish",
+    name: "Chilly Fish",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -944,7 +1000,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rte-kerala-fish-curry",
-    name: "Retort Traditional Kerala Fish Curry",
+    name: "Kerala Fish Curry",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -955,7 +1011,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rte-kadai-chicken",
-    name: "Retort Ready-to-Eat Kadai Chicken",
+    name: "Kadai Chicken",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -966,7 +1022,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rte-chilly-chicken",
-    name: "Retort Ready-to-Eat Chilly Chicken",
+    name: "Chilly Chicken",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -977,7 +1033,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rte-chicken-pepper-fry",
-    name: "Retort Ready-to-Eat Chicken Pepper Fry",
+    name: "Chicken Pepper Fry",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -988,7 +1044,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rte-kerala-beef-curry",
-    name: "Retort Ready-to-Eat Kerala Beef Curry",
+    name: "Kerala Beef Curry",
     category: "Ready-to-Eat & Retort Curries",
     categorySlug: "ready-to-eat-curries",
     hsnCode: "21069099",
@@ -999,7 +1055,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-adai-instant-mix",
-    name: "Instant Adai Multi-Lentil Breakfast Mix",
+    name: "Adai Instant Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -1010,7 +1066,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-multigrain-dosa-mix",
-    name: "Multi-Grain Dosa Instant Mix",
+    name: "Multi Grain Dosa Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -1021,7 +1077,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-rava-dosa-mix",
-    name: "Instant Rava Dosa Crispy Mix",
+    name: "Rava Dosa Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -1032,7 +1088,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-rava-kitchadi-mix",
-    name: "Instant Rava Kitchadi & Upma Mix",
+    name: "Rava Kitchadi Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -1043,7 +1099,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-millet-pongal-mix",
-    name: "Healthy Millet Pongal Breakfast Mix",
+    name: "Millet Pongal Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -1054,7 +1110,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-rice-pongal-mix",
-    name: "Traditional South Indian Ghee Pongal Mix",
+    name: "Rice Pongal Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -1065,7 +1121,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-rava-kesari-mix",
-    name: "Instant Rava Kesari Dessert Mix",
+    name: "Rava Kesari Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -1076,7 +1132,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "rtc-ragi-dosa-mix",
-    name: "Finger Millet (Ragi) Dosa Instant Mix",
+    name: "Ragi Dosa Mix",
     category: "Ready-to-Cook Mixes",
     categorySlug: "ready-to-cook-mixes",
     hsnCode: "19021900",
@@ -1087,7 +1143,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "val-multifloral-honey",
-    name: "Organic Multifloral & Comb Honey",
+    name: "Multifloral Honey",
     category: "Value-Added Produce",
     categorySlug: "value-added-produce",
     hsnCode: "04090000",
@@ -1098,7 +1154,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "snack-omapodi-sev",
-    name: "Traditional Omapodi & Fine Bhujia Sev",
+    name: "Omapodi Sev",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "19059090",
@@ -1109,7 +1165,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "snack-uppu-seedai",
-    name: "Traditional Uppu Seedai & Vella Seedai",
+    name: "Uppu Seedai",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "19059090",
@@ -1120,7 +1176,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "snack-kara-boondi",
-    name: "Spiced Kara Boondi & Masala Crunch",
+    name: "Kara Boondi",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "21069099",
@@ -1131,7 +1187,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "snack-baked-banana-chips",
-    name: "Baked Plantain Chips (Low-Oil Healthy)",
+    name: "Baked Plantain Chips",
     category: "Traditional & Healthy Snacks",
     categorySlug: "traditional-snacks",
     hsnCode: "20089999",
@@ -1142,7 +1198,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "millet-samai-little",
-    name: "Little Millet Grains (Samai Whole)",
+    name: "Little Millet (Samai)",
     category: "Millets & Superfoods",
     categorySlug: "millets-and-superfoods",
     hsnCode: "10082900",
@@ -1153,7 +1209,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "millet-kodo-varagu",
-    name: "Kodo Millet Grains (Varagu Whole)",
+    name: "Kodo Millet (Varagu)",
     category: "Millets & Superfoods",
     categorySlug: "millets-and-superfoods",
     hsnCode: "10082900",
@@ -1164,7 +1220,7 @@ export const backlogProducts: BacklogProduct[] = [
 
   {
     id: "millet-barnyard-kuthiraivali",
-    name: "Barnyard Millet (Kuthiraivali Whole)",
+    name: "Barnyard Millet (Kuthiraivali)",
     category: "Millets & Superfoods",
     categorySlug: "millets-and-superfoods",
     hsnCode: "10082900",
