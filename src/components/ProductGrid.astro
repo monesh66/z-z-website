@@ -2,64 +2,69 @@
 import ProductCard, { type ProductItem } from './ProductCard.astro';
 
 const landingCategories: ProductItem[] = [
-  // The 6 Original Core Trade Categories
+  // 1. Agricultural Products & Commodities
   {
     title: "Agricultural Products",
-    desc: "Grains, pulses, whole spices, and natural farm produce.",
+    desc: "Direct farm origin grains, pulses, whole spices, and natural produce.",
     image: "/images/products/agricultural.jpg",
-    href: "/products?category=agricultural",
+    href: "/products?category=agricultural-grains",
     badge: "DIRECT ORIGIN",
   },
+  // 2. Food Grains & Basmati Rice
   {
     title: "Food & Grains",
     desc: "1121 Basmati rice, milling wheat, pulses, and edible oilseeds.",
     image: "/images/products/food_grains.jpg",
-    href: "/products?category=food-grains",
+    href: "/products?category=rice-and-rice-products",
     badge: "APEDA CERTIFIED",
   },
+  // 3. Indian Spices & Condiments
   {
-    title: "Textiles & Garments",
-    desc: "Fabrics, apparel, yarns, and industrial textile raw materials.",
-    image: "/images/products/textiles.jpg",
-    href: "/products?category=textiles",
-    badge: "EXPORT GRADE",
+    title: "Spices & Seasonings",
+    desc: "Alleppey turmeric fingers, bold cardamom, black pepper, and red chillies.",
+    image: "/images/products/spices.jpg",
+    href: "/products?category=spices-and-condiments",
+    badge: "SPICES BOARD",
   },
+  // 4. Pulses, Dals & Millets
   {
-    title: "Industrial Supplies",
-    desc: "Metals, pipes, processing machinery, and industrial commodities.",
-    image: "/images/products/industrial.jpg",
-    href: "/products?category=industrial",
-    badge: "MILL TESTED",
+    title: "Pulses & Superfoods",
+    desc: "Sortex Toor dal, Moong, Urad, Chana dal, and nutritious ancient millets.",
+    image: "/images/products/pulses.jpg",
+    href: "/products?category=pulses-and-dals",
+    badge: "SORTEX CLEANED",
   },
-  {
-    title: "Consumer Goods",
-    desc: "Daily use, traditional packaged snacks, and culinary essentials.",
-    image: "/images/products/consumer.jpg",
-    href: "/products?category=consumer",
-    badge: "FMCG EXPORT",
-  },
-  {
-    title: "Custom Sourcing",
-    desc: "Tailored international trade procurement as per buyer specifications.",
-    image: "/images/products/custom_sourcing.jpg",
-    href: "/products?category=custom",
-    badge: "GLOBAL TRADE",
-  },
-
-  // The 2 Added Priority Categories Requested
+  // 5. Frozen Foods & Meats
   {
     title: "Frozen Foods",
-    desc: "Export Halal frozen meats, IQF fruits & vegetables, and parottas.",
+    desc: "Export Halal frozen meats, flaky Malabar parottas, samosas & appetizers.",
     image: "/images/products/frozen_malabar_parotta.jpg",
     href: "/products?category=frozen-foods",
     badge: "IQF -18°C",
   },
+  // 6. IQF Frozen Fruits & Produce
+  {
+    title: "Frozen Fruits (IQF)",
+    desc: "Individually quick frozen Alphonso mango chunks, strawberries & papaya.",
+    image: "/images/products/iqf_mango_chunks.jpg",
+    href: "/products?category=frozen-fruits",
+    badge: "BLAST FROZEN",
+  },
+  // 7. Bio Disposables Tableware
   {
     title: "Bio Disposables",
     desc: "Areca palm dinnerware, sugarcane bagasse clamshells & eco tableware.",
     image: "/images/products/bio_areca_round_plates.jpg",
     href: "/products?category=bio-disposables",
     badge: "100% COMPOSTABLE",
+  },
+  // 8. Custom Agri Procurement
+  {
+    title: "Custom Agri Sourcing",
+    desc: "Tailored commodity specifications, reefer container shipments & contract trade.",
+    image: "/images/products/custom_sourcing.jpg",
+    href: "/contact",
+    badge: "GLOBAL TRADE",
   },
 ];
 ---
@@ -72,15 +77,15 @@ const landingCategories: ProductItem[] = [
       <div class="space-y-2">
         <div class="flex items-center gap-2.5">
           <span class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#134E34] font-mono">
-            OUR PRODUCT CATEGORIES
+            CORE EXPORT SPECIALIZATION
           </span>
           <span class="w-8 h-0.5 bg-[#134E34]"></span>
         </div>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-navy-950 tracking-tight">
-          Diverse Products for Global Markets
+          Agricultural Commodities & Frozen Foods
         </h2>
         <p class="text-xs sm:text-sm text-slate-600 max-w-2xl">
-          Direct origin agricultural harvests, staple grains, cold-chain IQF frozen foods, and eco-friendly packaging supplied across international container lanes.
+          We specialize strictly in direct farm-origin Agricultural Commodities and blast-frozen Cold-Chain Foods — supplying verified food grains, spices, pulses, Halal meats, and IQF tropical produce across international container lanes.
         </p>
       </div>
 

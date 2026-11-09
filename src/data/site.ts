@@ -59,9 +59,9 @@ export const siteConfig: SiteConfig = {
   heroEyebrow: "IMPORT | EXPORT | GLOBAL SOURCING",
   heroHeadline: "The World, Within Reach.",
   heroSubheadline:
-    "ZIYA&ZARA TRADING COMPANY bridges international markets by sourcing and supplying premium commodities, industrial supplies, and consumer goods with uncompromising integrity and disciplined global execution.",
+    "ZIYA&ZARA TRADING COMPANY bridges international markets by sourcing and supplying premium agricultural commodities, staple food grains, spices, and cold-chain frozen foods with uncompromising integrity and disciplined global execution.",
   description:
-    "ZIYA&ZARA TRADING COMPANY connects global markets through verified supplier networks, strategic multi-modal logistics, and customer-first trade solutions.",
+    "ZIYA&ZARA TRADING COMPANY connects global markets through verified agricultural cooperatives, cold-chain logistics, and dedicated commodity trade solutions.",
   url: "https://ziyazara.com",
 
   // Official contact channels

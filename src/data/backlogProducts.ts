@@ -504,39 +504,6 @@ export const backlogProducts: BacklogProduct[] = [
   },
 
   {
-    id: "machine-retort-sterilization",
-    name: "Retort Sterilization Machine",
-    category: "Processing & Packaging Machinery",
-    categorySlug: "processing-machinery",
-    hsnCode: "84198990",
-    image: "/images/products/machine_retort.jpg",
-    specs: "High Pressure Steam (121°C+) | Kills Bacteria | 12-24M RTE Shelf Life",
-    origin: "CE Certified Machinery Works"
-  },
-
-  {
-    id: "machine-pouch-packing",
-    name: "Pouch Packing Machine",
-    category: "Processing & Packaging Machinery",
-    categorySlug: "processing-machinery",
-    hsnCode: "84223000",
-    image: "/images/products/machine_pouch_packing.jpg",
-    specs: "Multi-Head Weigher | Nitrogen Flushing | Form Fill Seal (FFS)",
-    origin: "Industrial Machinery Division"
-  },
-
-  {
-    id: "machine-food-dehydrator",
-    name: "Food Dehydrator",
-    category: "Processing & Packaging Machinery",
-    categorySlug: "processing-machinery",
-    hsnCode: "84193900",
-    image: "/images/products/machine_dehydrator.jpg",
-    specs: "Controlled Moisture Extraction | Fruits, Veg & Spices",
-    origin: "Engineering Division"
-  },
-
-  {
     id: "rtc-vathakulambu-mix",
     name: "Vathakulambu Mix",
     category: "Ready-to-Cook Mixes",
@@ -853,72 +820,6 @@ export const backlogProducts: BacklogProduct[] = [
     image: "/images/products/pulse_horse_gram.jpg",
     specs: "Highest Protein Ancient Pulse | Lowers Bad Cholesterol | Machine Cleaned",
     origin: "Tamil Nadu & Karnataka, India"
-  },
-
-  {
-    id: "machine-halwa-making",
-    name: "Halwa Making Machine",
-    category: "Processing & Packaging Machinery",
-    categorySlug: "processing-machinery",
-    hsnCode: "84388090",
-    image: "/images/products/machine_kettle_steamer.jpg",
-    specs: "Automatic Planetary Stirring | Gas / Steam Heating | 50L - 500L Capacity",
-    origin: "Coimbatore & Gujarat, India"
-  },
-
-  {
-    id: "machine-gulab-jamun-laddu",
-    name: "Gulab Jamun & Laddu Machine",
-    category: "Processing & Packaging Machinery",
-    categorySlug: "processing-machinery",
-    hsnCode: "84381010",
-    image: "/images/products/machine_kettle_steamer.jpg",
-    specs: "Uniform Ball Forming + Automatic Frying System | 2000 pcs/hr",
-    origin: "Coimbatore, Tamil Nadu, India"
-  },
-
-  {
-    id: "machine-steam-cooking-kettle",
-    name: "Tilting Cooking Kettle",
-    category: "Processing & Packaging Machinery",
-    categorySlug: "processing-machinery",
-    hsnCode: "84198990",
-    image: "/images/products/machine_kettle_steamer.jpg",
-    specs: "Food Grade SS304 / SS316 | Even Heating Prevents Burning | 100L - 1000L",
-    origin: "Engineering Division, India"
-  },
-
-  {
-    id: "machine-deep-frying-continuous",
-    name: "Continuous Frying Machine",
-    category: "Processing & Packaging Machinery",
-    categorySlug: "processing-machinery",
-    hsnCode: "84388090",
-    image: "/images/products/machinery.jpg",
-    specs: "Digital Temperature Controller | Oil Circulation Filter | Snacks & Sweets",
-    origin: "Engineering Division, India"
-  },
-
-  {
-    id: "machine-ffs-form-fill-seal",
-    name: "Form Fill Seal (FFS) Machine",
-    category: "Processing & Packaging Machinery",
-    categorySlug: "processing-machinery",
-    hsnCode: "84223000",
-    image: "/images/products/machine_ffs.jpg",
-    specs: "Multi-Head Weigher | Nitrogen Flush | Spices, Snacks & Grains",
-    origin: "Industrial Packaging Hub, India"
-  },
-
-  {
-    id: "machine-bottle-filling-capping",
-    name: "Bottle Filling & Capping System",
-    category: "Processing & Packaging Machinery",
-    categorySlug: "processing-machinery",
-    hsnCode: "84223000",
-    image: "/images/products/machine_bottle_filling.jpg",
-    specs: "Rotary Capping | Volumetric Piston Filling | Oils, Juices & Syrups",
-    origin: "Packaging Machinery Division"
   },
 
   {
