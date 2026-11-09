@@ -5,7 +5,7 @@
  * Temporarily withheld from active public catalogue to prevent visual imbalance with
  * our signature white marble & gold reference format.
  * 
- * Once luxury images are generated in batches, items are promoted back into individualProducts.ts.
+ * Quota reset timestamp for remaining generation: 2026-11-09T11:41:16Z
  */
 
 export interface BacklogProduct {
@@ -14,7 +14,7 @@ export interface BacklogProduct {
   category: string;
   categorySlug: string;
   hsnCode: string;
-  image: string; // Temporary mock / reference image
+  image: string;
   specs: string;
   origin: string;
 }
@@ -208,17 +208,6 @@ export const backlogProducts: BacklogProduct[] = [
   },
 
   {
-    id: "frozen-samosas",
-    name: "Frozen Cocktail Samosas",
-    category: "Frozen Foods",
-    categorySlug: "frozen-foods",
-    hsnCode: "19059090",
-    image: "/images/products/frozen_samosas.jpg",
-    specs: "Spiced Potato & Pea Filling | Ready to Fry | HORECA",
-    origin: "FSSAI / Halal / BRC Certified Facility"
-  },
-
-  {
     id: "frozen-whole-wheat-chapati",
     name: "Frozen Plain Chapati & Phulka Roti",
     category: "Frozen Foods",
@@ -227,50 +216,6 @@ export const backlogProducts: BacklogProduct[] = [
     image: "/images/products/frozen_chapati.jpg",
     specs: "100% Whole Wheat Atta | Soft & Fluffy | Zero Preservatives",
     origin: "Tamil Nadu & Kerala, India"
-  },
-
-  {
-    id: "frozen-paneer-cubes",
-    name: "IQF Frozen Malai Paneer Cubes",
-    category: "Frozen Foods",
-    categorySlug: "frozen-foods",
-    hsnCode: "04061000",
-    image: "/images/products/frozen_paneer.jpg",
-    specs: "Individually Quick Frozen (-18°C) | 100% Pure Cow Milk | Soft & Spongy",
-    origin: "Punjab & Haryana, India"
-  },
-
-  {
-    id: "frozen-spring-rolls",
-    name: "Frozen Crispy Vegetable Spring Rolls",
-    category: "Frozen Foods",
-    categorySlug: "frozen-foods",
-    hsnCode: "19049000",
-    image: "/images/products/frozen_spring_rolls.jpg",
-    specs: "Ready to Fry / Air-Fry | Crispy Pastry Crust | Indo-Chinese Veg Filling",
-    origin: "Certified Export Kitchen, India"
-  },
-
-  {
-    id: "frozen-aloo-tikki",
-    name: "Frozen Spiced Aloo Tikki Patties",
-    category: "Frozen Foods",
-    categorySlug: "frozen-foods",
-    hsnCode: "20041000",
-    image: "/images/products/frozen_aloo_tikki.jpg",
-    specs: "Crispy Golden Coating | Traditional Indian Spices | 0 Trans Fat",
-    origin: "Delhi NCR & Gujarat, India"
-  },
-
-  {
-    id: "frozen-bhatura",
-    name: "Frozen Fluffy Amritsari Bhatura",
-    category: "Frozen Foods",
-    categorySlug: "frozen-foods",
-    hsnCode: "19059090",
-    image: "/images/products/frozen_bhatura.jpg",
-    specs: "Pre-formed Leavened Dough | Ready to Puff | Authentic Recipe",
-    origin: "Punjab Basin, India"
   },
 
   {
@@ -304,50 +249,6 @@ export const backlogProducts: BacklogProduct[] = [
     image: "/images/products/frozen_baby_corn.jpg",
     specs: "Whole & Diagonally Cut | Crisp Texture | Export Graded",
     origin: "Karnataka & Maharashtra, India"
-  },
-
-  {
-    id: "iqf-alphonso-mango-chunks",
-    name: "IQF Alphonso Mango Dices & Chunks",
-    category: "Frozen Fruits",
-    categorySlug: "frozen-fruits",
-    hsnCode: "08119010",
-    image: "/images/products/iqf_mango_chunks.jpg",
-    specs: "10x10mm / 15x15mm Dices | 100% Ratnagiri Alphonso | Sweet & Aromatic | -18°C",
-    origin: "Konkan Belt, Maharashtra, India"
-  },
-
-  {
-    id: "iqf-strawberry-whole",
-    name: "IQF Whole Strawberries & Halves",
-    category: "Frozen Fruits",
-    categorySlug: "frozen-fruits",
-    hsnCode: "08111000",
-    image: "/images/products/iqf_strawberries.jpg",
-    specs: "Blast Frozen Sweet Crimson Berries | Calibrated 25-35mm | Grade A",
-    origin: "Mahabaleshwar, Maharashtra, India"
-  },
-
-  {
-    id: "iqf-pomegranate-arils",
-    name: "IQF Pomegranate Arils (Ruby Kernels)",
-    category: "Frozen Fruits",
-    categorySlug: "frozen-fruits",
-    hsnCode: "08119090",
-    image: "/images/products/iqf_pomegranate_arils.jpg",
-    specs: "Bhagwa Variety | Juicy Deep Red Seeds | Blemishes < 1% | Ready to Blend",
-    origin: "Solapur, Maharashtra, India"
-  },
-
-  {
-    id: "iqf-papaya-dices",
-    name: "IQF Red Papaya Chunks & Dices",
-    category: "Frozen Fruits",
-    categorySlug: "frozen-fruits",
-    hsnCode: "08119090",
-    image: "/images/products/iqf_papaya_chunks.jpg",
-    specs: "Red Lady Taiwan Variety | Sweet Flesh | 15x15mm Cuts | No Added Sugar",
-    origin: "Andhra Pradesh, India"
   },
 
   {
@@ -392,50 +293,6 @@ export const backlogProducts: BacklogProduct[] = [
     image: "/images/products/iqf_custard_apple.jpg",
     specs: "De-seeded Creamy Segments | 100% Pure Natural Fruit | Unsweetened",
     origin: "Maharashtra, India"
-  },
-
-  {
-    id: "bio-areca-palm-plates-10inch",
-    name: "Areca Palm Leaf 10\" Round Dinner Plates",
-    category: "Bio Disposables",
-    categorySlug: "bio-disposables",
-    hsnCode: "14049090",
-    image: "/images/products/bio_areca_round_plates.jpg",
-    specs: "100% Naturally Fallen Areca Sheath | Microwave & Oven Safe | Leakproof",
-    origin: "Shimoga, Karnataka & Tamil Nadu, India"
-  },
-
-  {
-    id: "bio-areca-palm-compartment-trays",
-    name: "Areca Palm Leaf 4 & 5-Compartment Meal Trays",
-    category: "Bio Disposables",
-    categorySlug: "bio-disposables",
-    hsnCode: "14049090",
-    image: "/images/products/bio_areca_compartment_trays.jpg",
-    specs: "Heavy-Duty Catering Strength | Oil & Heat Resistant | Backyard Compostable",
-    origin: "Western Ghats Belt, India"
-  },
-
-  {
-    id: "bio-areca-palm-bowls",
-    name: "Areca Palm Leaf Soup & Dessert Bowls (4\" & 6\")",
-    category: "Bio Disposables",
-    categorySlug: "bio-disposables",
-    hsnCode: "14049090",
-    image: "/images/products/bio_areca_bowls.jpg",
-    specs: "Chemical-Free Heat Pressed | Zero Plastic Coating | Liquid Safe",
-    origin: "Karnataka & Kerala, India"
-  },
-
-  {
-    id: "bio-bagasse-clamshell-boxes",
-    name: "Sugarcane Bagasse Clamshell Burger & Meal Boxes",
-    category: "Bio Disposables",
-    categorySlug: "bio-disposables",
-    hsnCode: "48237090",
-    image: "/images/products/bio_bagasse_clamshell.jpg",
-    specs: "Upcycled Sugarcane Fiber | 6\"x6\" & 9\"x9\" | Hinged Lid | 100% Biodegradable",
-    origin: "Maharashtra & Tamil Nadu, India"
   },
 
   {
