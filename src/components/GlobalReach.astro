@@ -1,6 +1,7 @@
 ---
 // Global Reach Section matching reference mockup 100%
 // Pale ice-blue background, dot-matrix world map with teardrop pins and trade route arcs, 3 clean logistics features
+import DottedWorldMap from './DottedWorldMap.astro';
 ---
 
 <section id="network" class="py-16 lg:py-24 bg-[#EAF3FA] text-navy-950 border-b border-slate-200/80 relative overflow-hidden">
@@ -46,17 +47,10 @@
 
       </div>
 
-      <!-- Center: Dot-Matrix Light Blue World Map with Pins & Trade Arcs Matching Mockup -->
+      <!-- Center: Real Animated Dotted World Map with Interactive Hubs & Arcs Matching Mockup -->
       <div class="lg:col-span-5 relative flex items-center justify-center">
-        <div class="scroll-reveal relative w-full aspect-[16/10] max-w-xl mx-auto flex items-center justify-center">
-          <img
-            src="/images/network/world_network_map.svg"
-            alt="Ziya Zara Global Trade Network Map"
-            width="800"
-            height="440"
-            class="w-full h-auto object-contain select-none filter drop-shadow-xs"
-            loading="lazy"
-          />
+        <div class="scroll-reveal relative w-full aspect-[2/1] max-w-2xl mx-auto flex items-center justify-center">
+          <DottedWorldMap />
         </div>
       </div>
 
