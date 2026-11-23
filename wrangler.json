@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "ziya-zara",
+  "name": "zz-website",
   "compatibility_date": "2026-11-23",
   "assets": {
     "directory": "./dist",
