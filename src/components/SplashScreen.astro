@@ -8,7 +8,13 @@
     try {
       var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       var isForced = window.location.search.indexOf('splash=true') !== -1;
-      if (!isForced) {
+      var isSkipped = window.location.search.indexOf('splash=false') !== -1;
+      var hasSeen = sessionStorage.getItem('ziya_zara_splash_shown') === 'true';
+
+      // Skip splash only if explicitly requested (?splash=false)
+      // or if returning to another page in the same session in production.
+      // On localhost or when reloaded, always let the intro animation play.
+      if (isSkipped || (!isLocal && !isForced && hasSeen)) {
         document.documentElement.classList.add('splash-dismissed');
       }
     } catch (e) {}
@@ -338,6 +344,7 @@
 
     const urlParams = new URLSearchParams(window.location.search);
     const forceSplash = urlParams.get('splash') === 'true';
+    const skipSplash = urlParams.get('splash') === 'false';
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
     let hasSeenSplash = false;
@@ -346,11 +353,14 @@
     } catch (e) {}
 
     const prefersReducedMotion = !forceSplash && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isAlreadyDismissed = document.documentElement.classList.contains('splash-dismissed');
 
-    if (hasSeenSplash || prefersReducedMotion) {
+    if (skipSplash || isAlreadyDismissed || hasSeenSplash || prefersReducedMotion) {
       root.style.display = 'none';
       root.setAttribute('aria-hidden', 'true');
       document.documentElement.classList.add('splash-dismissed');
+      document.body.classList.remove('overflow-hidden');
+      window.dispatchEvent(new CustomEvent('splashDismissed'));
       return;
     }
 
@@ -478,13 +488,20 @@
       }
     }, MIN_ANIM_DURATION);
 
-    // Safety timeout: proceed after 5.0s max even on slowest connections
+    // Safety timeout: proceed after 4.5s max even on slowest connections
     setTimeout(() => {
       if (!flightStarted && !isDismissed) {
         onImagesComplete();
         triggerProceed();
       }
-    }, 5000);
+    }, 4500);
+
+    // Ultimate failsafe: ensure site is completely unlocked and accessible no matter what happens
+    setTimeout(() => {
+      if (!isDismissed) {
+        completeSplash();
+      }
+    }, 5500);
 
     function triggerProceed() {
       if (flightStarted || isDismissed) return;
